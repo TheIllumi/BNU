@@ -1,0 +1,156 @@
+# ClassSync AI Default Configuration
+# This file contains all configurable parameters for the scheduling system
+
+# Algorithm Configuration
+algorithm:
+  name: genetic # Options: genetic, simulated_annealing (future)
+  parameters:
+    population_size: 50
+    generations: 100
+    elite_size: 5
+    mutation_rate: 0.15
+    crossover_rate: 0.8
+    tournament_size: 3
+    adaptive: true
+    adaptive_threshold: 10
+    mutation_rate_min: 0.05
+    mutation_rate_max: 0.3
+    early_stopping: true
+    early_stopping_generations: 20
+    verbose: true
+
+# Time Slot Configuration
+time_slots:
+  working_days:
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+  daily_start: "08:00"
+  daily_end: "17:00"
+  slot_duration_minutes: 90
+
+  # Virtual Class (VC) slot configuration
+  vc_slots:
+    enabled: true
+    days:
+      - Monday
+      - Tuesday
+      - Friday
+    start_time: "12:30"
+    end_time: "14:00"
+
+# Scheduling Constraints
+constraints:
+  max_daily_hours_per_instructor: 8
+  max_consecutive_sessions: 3
+  min_break_minutes: 15
+  preferred_gap_minutes: 30
+  allow_evening_classes: true
+  evening_threshold: "16:00"
+
+  # Priority sections (scheduled first)
+  priority_sections:
+    - CS4A
+    - CS4B
+    - CS2A
+    - CS2B
+
+  # Blocked time slots
+  blocked_slots:
+    - day: Friday
+      start: "12:00"
+      end: "13:00"
+      reason: "Prayer time"
+
+# Data Configuration
+data:
+  directory: data
+  courses_file: Courses_Processed.csv
+  rooms_file: Rooms.csv
+  constraints_file: constraints.json
+
+  # Data validation
+  validation:
+    check_duplicates: true
+    check_missing_instructors: true
+    check_room_capacity: false # Set to true if capacity data available
+
+# Output Configuration
+output:
+  directory: output
+  format:
+    - excel
+    - csv
+    # - pdf  # Future feature
+
+  # Excel specific settings
+  excel:
+    create_summary_sheet: true
+    color_by_course: true
+    include_statistics: true
+    separate_by_section: true
+    separate_by_instructor: true
+    separate_by_room: true
+
+  # CSV specific settings
+  csv:
+    delimiter: ","
+    include_headers: true
+    quote_style: minimal
+
+  # Report settings
+  reports:
+    generate_summary: true
+    generate_conflicts: true
+    generate_statistics: true
+    include_charts: false # Future feature
+
+# Logging Configuration
+logging:
+  level: INFO # Options: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file: logs/classsync.log
+  console: true
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  rotate: true
+  max_bytes: 10485760 # 10MB
+  backup_count: 5
+
+# Fitness Function Weights
+fitness_weights:
+  hard_constraint: 100.0
+  room_conflict: 50.0
+  instructor_conflict: 50.0
+  section_conflict: 40.0
+  forced_placement: 10.0
+  evening_class: 3.0
+  early_morning: 2.0
+  room_change: 2.0
+  gap_penalty: 1.0
+  coverage_bonus: 5.0
+  balanced_load_bonus: 2.0
+  optimal_room_usage: 3.0
+
+# Performance Settings
+performance:
+  parallel_processing: false # Future feature
+  cache_size: 1000
+  memory_limit_mb: 2048
+
+# UI Settings (for desktop app)
+ui:
+  theme: dark
+  window_size:
+    width: 1200
+    height: 800
+  auto_save: true
+  confirm_on_exit: true
+
+# Advanced Settings
+advanced:
+  seed: null # Set to integer for reproducible results
+  debug_mode: false
+  profile_performance: false
+  save_intermediate_results: false
+  intermediate_save_interval: 10 # Save every N generations

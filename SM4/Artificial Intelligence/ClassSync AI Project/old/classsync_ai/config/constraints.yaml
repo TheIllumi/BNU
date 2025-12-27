@@ -1,0 +1,19 @@
+# Scheduling constraints
+max_daily_hours_per_instructor: 8
+max_consecutive_sessions: 3
+min_break_minutes: 15
+preferred_gap_minutes: 30
+allow_evening_classes: true
+evening_threshold: "16:00"
+
+# Priority sections
+priority_sections:
+  - CS4A
+  - CS4B
+  - CS2A
+
+# Blocked time slots
+blocked_slots:
+  - day: Monday
+    start: "12:30"
+    end: "14:00"

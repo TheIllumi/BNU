@@ -1,0 +1,210 @@
+Artficial Intelligence Sec B CS4 Ms.Noreen Khalid (8:00 to 9:00)
+Graph Theory (CS8) Mr.Ali Haider
+Data Structures & Algorithms Sec C CS4 Mr.Muhammad Ali
+Math II Sec A (For Med Group ) (CS+SE2) Ms.Ujala Aftab
+Multivariable Calculus Sec A CS2 Dr.Zawar Hussain VF
+Intro to CyberSecurity -CS Elective CS6 Mr.Nabeel Ahsan 
+Artficial Intelligence Sec C CS4 Ms.Noreen Khalid (8:00 to 9:00)
+Database Management Systems MBC4 Ms.Shazia Rizwan (8:00 to 9:00 am) 
+Object Oriented Programming Sec F SE2 Mr.Ameer Hamza  
+Digital Logic Design Sec A  (CS2)  Dr.Shafaat Ahemed Bazaz(8:00 to 9:00)
+Digital Logic Design Sec B  (CS2) Mr.Uzair Bashir(8:00 to 9:00)
+Artficial Intelligence Sec B CS4 Ms.Noreen Khalid (8:00 to 9:00)
+Math II Sec B (For Med Group ) (CS+SE2) Ms.Ujala Aftab 
+Multivariable Calculus Sec C CS2 Mr.Farhan Ali 
+Graph Theory (CS8) Mr.Ali Haider 
+Data Structures & Algorithms Sec C CS4 Mr.Muhammad Ali
+Multivariable Calculus Sec A CS2 Dr.Zawar Hussain VF
+Database Management Systems MBC4 Ms.Shazia Rizwan (8:00 to 9:00 am) 
+Digital Logic Design Sec A  (CS2)  Dr.Shafaat Ahemed Bazaz (8:00 to 9:00)
+Artficial Intelligence Sec C CS4 Ms.Noreen Khalid (8:00 to 9:00)
+Object Oriented Programming Sec F SE2 Mr.Ameer Hamza
+Intro to CyberSecurity -CS Elective CS6 Mr.Nabeel Ahsan 
+Digital Logic Design Sec C  (CS2)  Ms.Arooma Amir   (8:00 to 9:00 am)
+Database Management Systems MBC4 Ms.Shazia Rizwan (8:00 to 9:00 am) 
+Digital Logic Design Sec B  (CS2) Mr.Uzair Bashir  (8:00 to 9:00)
+Advanced Database Management Systems Sec A CS4 (Ms.Talia Noreen) (9:30 to 10:30)
+Multivariable Calculus Sec C CS2 Mr.Farhan Ali 
+Math II Sec A (For Med Group ) (CS+SE2) Ms.Ujala Aftab 
+Object Oriented Programming Lab Sec F SE2 Mr.Ameer Hamza
+Multivariable Calculus Sec B CS2 Dr.Zawar Hussain VF
+Event Driven Programming (MBC2) Ms.Sheeza Batool 
+Multivariable Calculus Sec D CS2 Mr.Ali Haider 
+Probability & Statistics Sec C (CS2)  Dr.Aamir Majeed Chaudhary 
+Object Oriented Programming Sec E (SE2) Mr.Nabeel Ahsan  
+Business Process Engineering SE8 SMS Faculty 
+Artficial Intelligence (Sec A) CS6 Dr.Usman Nazir 
+Advanced Database Management Systems Lab Sec A (CS4) Mr.Ahsan Atiq 
+Computer Organization & Assembly Language LAB Sec B (CS4) Ms.Ayesha Seher
+Digital Logic Design Lab Sec A   CS2 Ms.Amna Rafiq
+Artficial Intelligence Lab Sec C (CS4 ) Ms.Noreen Khalid 
+Theory of Programming Languages (CS8) Ms.Huda Sarfraz
+Object Oriented Programming Sec A (CS2) Mr.Nouman Ali 
+Advanced Database Management Systems Sec B CS4 (Ms.Talia Noreen) (9:30 to 10:30)
+Professional Practices (Sec A+ B)  CS6 ( Dr.Natash Ali) 
+Multivariable Calculus Sec E SE2 Mr.Ali Haider 
+Probability & Statistics Sec B CS2 Ms.Amna Humayun
+Object Oriented Programming Sec D (CS2) Mr.Asim Irshad
+Object Oriented Programming Sec D (CS2) Mr.Asim Irshad 
+Linear Algebra Sec A CS4  Mr.Farhan Ali
+Computer Networks (MBC4) M.Muhammad Ali 
+Advanced Database Management Systems Sec A CS4 (Ms.Talia Noreen) (9:30 to 10:30)
+Business Process Engineering SE8 SMS Faculty 
+Artficial Intelligence Lab Sec B (CS4 ) Mr.Osama Tariq
+Artficial Intelligence (Sec A) CS6 Dr.Usman Nazir 
+Object Oriented Programming Sec E (SE2) Mr.Nabeel Ahsan  
+Event Driven Programming (MBC2) Ms.Sheeza Batool 
+Artficial Intelligence (Sec B) CS6 Mr.Saad Azhar Saeed
+Linear Algebra Sec C CS4 Mr.Farhan Ali
+Probability & Statistics Sec C (CS2) Dr.Aamir Majeed Chaudhary 
+Multivariable Calculus Sec D CS2 Mr.Ali Haider 
+Multivariable Calculus Sec B CS2 Dr.Zawar Hussain VF
+Linear Algebra Sec A CS4  Mr.Farhan Ali
+Advanced Database Management Systems Sec B CS4 (Ms.Talia Noreen) (9:30 to 10:30)
+Object Oriented Programming Sec A (CS2) Mr.Nouman Ali 
+Probability & Statistics Sec B CS2 Ms.Amna Humayun
+Data Structures & Algorithms LAB Sec C Mr.Muhammad Ali
+Theory of Programming Languages (CS8) Ms.Huda Sarfraz
+Professional Practices (Sec A+ B)  CS6 ( Dr.Natash Ali) 
+Digital Logic Design Sec C  (CS2) Ms.Arooma Amir (9:00 to 10:00 am)
+Multivariable Calculus Sec E SE2 Mr.Ali Haider 
+Data Structures & Algorithms LAB Sec A Ms.Hamna Anwar
+Artficial Intelligence (Sec B) CS6 Mr.Saad Azhar Saeed
+Business Computing LAB (MBC2) Ms.Talia Noreen
+Math II Sec B (For Med Group ) (CS+SE2) Ms.Ujala Aftab 
+Immersive Media Sec A (Hum Elective) CS+SE8 SMC Jou.9:30 to2:00 pm)
+Linear Algebra Sec C CS4 Mr.Farhan Ali
+Business Computing (MBC2) Ms.Sheeza Batool
+Programming Fundamentals-Repeat Sec B CS2 Mr.Asim Irshad
+Organizational Behavior MBC4 Dr.Shah Ali Murtaza
+Advanced Database Management Systems Sec C CS4 (Ms.Talia Noreen) (11:00 to 12:00)
+Probability & Statistics Sec D (CS2)  Dr.Aamir Majeed Chaudhary 
+Programming Fundamentals-Repeat Sec A CS2 Ms.Shazia Rizwan
+Computer Organization & Assembly Language LAB Sec B (CS4) Ms.Ayesha Seher
+Advanced Database Management Systems Lab Sec A (CS4) Mr.Ahsan Atiq 
+Computer Networks (Sec A+ B)(CS6)  Mr.Nabeel Ahsan 
+Digital Logic Design Lab Sec A   CS2 Ms.Amna Rafiq
+Multivariable Calculus Sec F SE2 Mr.Ali Haider 
+Artficial Intelligence Lab Sec C (CS4 ) Ms.Noreen Khalid 
+Object Oriented Programming Sec B (CS2) Mr.Nouman Ali 
+Media Entrepreneurship (Hum. Elective) (SE 8) SMC Jou.
+Linear Algebra Sec B CS4  Mr.Farhan Ali
+Operations Management MBC4  Dr.Naeem
+Object Oriented Programming Lab Sec D (CS2) Mr.Asim Irshad Object Oriented Programming Sec D (CS2) Mr.Asim Irshad 
+Data Structures & Algorithms Sec A CS4 Ms.Huda Sarfraz
+Probability & Statistics Sec A CS2 Ms.Amna Humayun
+Expository Writing Sec A (MBC2) Ms.Fatima Bilal
+Software Re Engineering (SE8) Ms.Ayesha Seher 
+Artficial Intelligence Lab Sec B (CS4 ) Mr.Osama Tariq
+Object Oriented Programming Lab Sec E SE2 Mr.Ameer Hamza
+Organizational Behavior MBC4 Dr.Shah Ali Murtaza
+Expository Writing Sec A (MBC2) Ms.Fatima Bilal
+Computer Networks (Sec A+ B)(CS6)  Mr.Nabeel Ahsan 
+Programming Fundamentals-Repeat Sec B CS2 Mr.Asim Irshad
+Advanced Database Management Systems Sec C CS4 (Ms.Talia Noreen) (11:00 to 12:00)
+Probability & Statistics Sec D (CS2)  Dr.Aamir Majeed Chaudhary 
+Programming Fundamentals-Repeat Sec A CS2 Ms.Shazia Rizwan
+Multivariable Calculus Sec F SE2 Mr.Ali Haider 
+Digital Logic Design Sec C (CS2)  Ms.Arooma Amir (11:00 to 12:00 pm)
+Object Oriented Programming Sec B (CS2) Mr.Nouman Ali 
+Applied Physics Lab Sec A SE2 Ms.Amna Rafiq 
+Computer Networks LAB B (CS6) Mr.Shazil Ali
+Media Entrepreneurship (Hum. Elective) (SE 8) SMC Jou.
+Data Structures & Algorithms Sec A CS4 Ms.Huda Sarfraz
+Probability & Statistics Sec A CS2 Ms.Amna Humayun
+Data Structures & Algorithms LAB Sec C Mr.Muhammad Ali
+Linear Algebra Sec B CS4  Mr.Farhan Ali
+Operations Management MBC4  Dr.Naeem
+Data Structures & Algorithms LAB Sec A Ms.Hamna Anwar
+Object Oriented Programming Sec C (CS2) Mr.Asim Irshad
+Business Computing LAB (MBC2) Ms.Talia Noreen
+Formal Methods in Software Engineering SE8 Dr.Natash Ali 
+Computer Networks (MBC4) M.Muhammad Ali 
+Object Oriented Programming Lab Sec F SE2 Mr.Ameer Hamza
+Digital Logic Design Lab Sec D CS2 Mr.Uzair Bashir 
+Business Computing (MBC2) Ms.Sheeza Batool
+Computer Organization & Assembly Language LAB Sec C (CS4) Ms.Ayesha Seher
+Object Oriented Programming Lab Sec E SE2 Mr.Ameer Hamza
+Object Oriented Programming Sec C (CS2) Mr.Asim Irshad
+Management Information Systems (MBC4) Dr.Natash Ali
+Object Oriented Programming Lab Sec A  CS2 Ms.Rameen
+Software Re Engineering (SE8) Ms.Ayesha Seher 
+Applied Physics Lab Sec A SE2 Ms.Amna Rafiq 
+Computer Networks LAB B (CS6) Mr.Shazil Ali
+Digital Logic Design Sec D  (CS2) Ms.Arooma Amir (12:00 to 1:00 pm)
+Object Oriented Programming Lab Sec C CS2 Ms.Rameen	
+Theory of Programming Languages (Sec A+ B) CS6 Ms.Huda Sarfraz	
+Computer Organization & Assembly Language Sec B CS4 Ms.Nimra Abbas 	
+Applied Physics Sec A SE2  Mr.Uzair Bashir (3:00 to 4:00)	
+Micro Economics MBC2 Ms.Fatima Malik	
+Artificial Intelligence Lab Sec A (CS4) Mr.Osama Tariq	
+Digital Logic Design Lab Sec B  CS2 Ms.Amna Rafiq	
+Research Methods for IT (CS&SE8) Dr.Usman Nazir	
+Computer Organization & Assembly Language Sec A CS4 Ms.Nimra Abbas 	
+Data Structures & Algorithms Sec B CS4 Ms.Hamna Anwar	
+Probability & Statistics Sec F SE2  Mr.Hamza Sarfraz 	
+Probability for Data Science MBC2 Ms.Amna Humayun	
+Digital Logic Design Lab Sec C CS2 Mr.Uzair Bashir 	
+Advanced Database Management Systems Lab Sec C Mr.Ahsan Atiq 	
+Digital Logic Design Lab Sec D CS2 Mr.Uzair Bashir 	
+Computer Organization & Assembly Language Sec B CS4 Ms.Nimra Abbas 	
+Formal Methods in Software Engineering SE8 Dr.Natash Ali 	
+Theory of Programming Languages (Sec A+ B) CS6 Ms.Huda Sarfraz	
+Computer Organization & Assembly Language LAB Sec C (CS4) Ms.Ayesha Seher
+Probability & Statistics Sec E SE2 Mr.Hamza Sarfraz 	
+Micro Economics MBC2 Ms.Fatima Malik	
+Computer Organization & Assembly Language Sec A CS4 Ms.Nimra Abbas 	
+Research Methods for IT (CS&SE8) Dr.Usman Nazir	
+Object Oriented Programming Lab Sec A  CS2 Ms.Rameen	
+Applied Physics Sec B SE2  Mr.Uzair Bashir (2:00 to 3:00)	
+Data Structures & Algorithms Sec B CS4 Ms.Hamna Anwar	
+Probability for Data Science MBC2 Ms.Amna Humayun	
+Ideology & Constitution of Pakistan Sec B CS2 (DLA dept.) (2:00 to 4:00) Mr.M Shafi
+Computer Organization & Assembly Language Lab Sec A CS4 Ms.Nimra Abbas 	
+Artficial Intelligence Lab Sec A (CS6) Mr.Osama Tariq	
+Applied Physics Lab Sec B SE2  Ms.Amna Rafiq	
+Immersive Media Sec A (Hum Elective) CS+SE8 SMC Jou.(2:00 to 6:30)	
+Ideology & Constitution of Pakistan Sec C CS2 (DLA dept.) (2:00 to 4:00) Mr.Syed Adeel Ijaz	
+Management Information Systems (MBC4) Dr.Natash Ali	
+Ideology & Constitution of Pakistan Sec A CS2 (DLA dept.) (2:00 to 4:00) Mr.Inam ul Haq	
+Object Oriented Programming Lab Sec C CS2 Ms.Rameen	
+Computer Organization & Assembly Language Sec C CS4 Ms.Nimra Abbas 	
+Applied Physics Sec B SE2  Mr.Uzair Bashir (3:30 to 4:30)	
+Artficial Intelligence Lab Sec A (CS4) Mr.Osama Tariq	
+Computer Networks Lab Sec A (CS6)  Mr.Shazil Ali 	
+Digital Logic Design Lab Sec B  CS2 Ms.Amna Rafiq	
+Artficial Intelligence Sec A CS4 Dr.Usman Nazir (8:00 to 9:00)	
+Programming for 2D & Web 3D Apps CS Elective CS6 Mr.Nouman Ali 	
+Database Management Systems Lab MBC4 Mr.Shazil Ali 	
+Digital Logic Design Lab Sec C CS2 Mr.Uzair Bashir 	
+Advanced Database Management Systems Lab Sec C Mr.Ahsan Atiq 	
+Probability & Statistics Sec E SE2 Mr.Hamza Sarfraz 	
+Programming Fundamentals-LAB Sec A Repeat CS2 Ms.Shazia Rizwan	
+Event Driven Programming LAB (MBC2) Mr.Shazil Ali 	
+Artficial Intelligence Lab Sec B (CS6) Mr.Osama Tariq	
+Computer Organization & Assembly Language Sec C CS4 Ms.Nimra Abbas 	
+Probability & Statistics Sec F SE2  Mr.Hamza Sarfraz 	
+Object Oriented Programming Sec D (CS2) Mr.Asim Irshad 	
+Advanced Database Management Systems Lab Sec B Mr.Ahsan Atiq 	
+Applied Physics Sec A SE2  Mr.Uzair Bashir (3:00 to 4:00)	
+Programming for 2D & Web 3D Apps CS Elective CS6 Mr.Nouman Ali 	
+Programming Fundamentals-LAB Sec B Repeat CS2 Mr.Asim Irshad	
+Artficial Intelligence Sec A CS4 Dr.Usman Nazir (8:00 to 9:00)	
+Digital Logic Design Sec D  (CS2) Ms.Arooma Amir (3:30 to 4:30 pm)	
+Object Oriented Programming Lab Sec B CS2 Ms.Rameen	
+Computer Organization & Assembly Language Lab Sec A CS4 Ms.Nimra Abbas 	
+Artficial Intelligence Lab Sec A (CS6) Mr.Osama Tariq	
+Applied Physics Lab Sec B SE2  Ms.Amna Rafiq	
+Data Structures & Algorithms LAB Sec B Ms.Hamna Anwar
+Computer Networks Lab Sec A (CS6)  Mr.Shazil Ali 	
+Database Management Systems Lab MBC4 Mr.Shazil Ali 	
+Programming Fundamentals-LAB Sec A Repeat CS2 Ms.Shazia Rizwan	
+Event Driven Programming LAB (MBC2) Mr.Shazil Ali 	
+Artficial Intelligence Lab Sec B (CS6) Mr.Osama Tariq	
+Object Oriented Programming Lab Sec D (CS2) Mr.Asim Irshad 	
+Advanced Database Management Systems Lab Sec B Mr.Ahsan Atiq 	
+Programming Fundamentals-LAB Sec B Repeat CS2 Mr.Asim Irshad	
+Digital Logic Design Sec D  (CS2) Ms.Arooma Amir (4:30 to 5:30 pm)	
+Object Oriented Programming Lab Sec B CS2 Ms.Rameen	
+Data Structures & Algorithms LAB Sec B Ms.Hamna Anwar
+
