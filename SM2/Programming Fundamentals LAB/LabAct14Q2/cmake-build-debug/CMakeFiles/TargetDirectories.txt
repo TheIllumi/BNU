@@ -1,0 +1,3 @@
+C:/Users/saadm/Downloads/BNU/SM2/Programming Fundamentals LAB/LabAct14Q2/cmake-build-debug/CMakeFiles/LabAct14Q2.dir
+C:/Users/saadm/Downloads/BNU/SM2/Programming Fundamentals LAB/LabAct14Q2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/saadm/Downloads/BNU/SM2/Programming Fundamentals LAB/LabAct14Q2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

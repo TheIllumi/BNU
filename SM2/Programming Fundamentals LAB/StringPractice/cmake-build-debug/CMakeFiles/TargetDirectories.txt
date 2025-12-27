@@ -1,0 +1,3 @@
+C:/Users/saadm/Downloads/BNU/SM2/Programming Fundamentals LAB/StringPractice/cmake-build-debug/CMakeFiles/StringPractice.dir
+C:/Users/saadm/Downloads/BNU/SM2/Programming Fundamentals LAB/StringPractice/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/saadm/Downloads/BNU/SM2/Programming Fundamentals LAB/StringPractice/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,9 @@
+# ninja log v5
+1	729	7334424045146765	CMakeFiles/samplePractice.dir/main.cpp.obj	3d890ef856ec785e
+731	895	7334424046758724	samplePractice.exe	5e8b6a78a958e39f
+4	1071	7334447501309203	CMakeFiles/samplePractice.dir/main.cpp.obj	3d890ef856ec785e
+1071	1244	7334447503006092	samplePractice.exe	5e8b6a78a958e39f
+3	595	7334470363960611	CMakeFiles/samplePractice.dir/main.cpp.obj	3d890ef856ec785e
+595	725	7334470365223791	samplePractice.exe	5e8b6a78a958e39f
+3	542	7334471794899370	CMakeFiles/samplePractice.dir/main.cpp.obj	3d890ef856ec785e
+543	639	7334471795824279	samplePractice.exe	5e8b6a78a958e39f

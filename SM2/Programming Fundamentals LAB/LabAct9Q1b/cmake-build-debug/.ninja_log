@@ -1,0 +1,14 @@
+# ninja log v5
+7	497	7315935936820642	build.ninja	a78ba76e3b588458
+606	717	7315933062331285	PracticeQuestions.exe	3cd18d64d13e666
+3	606	7315933061248460	CMakeFiles/PracticeQuestions.dir/main.cpp.obj	5654f90efba6e6ed
+4	850	7315942304705671	CMakeFiles/PracticeQuestions.dir/main.cpp.obj	71b9b71145babb5
+851	1012	7315942306282595	PracticeQuestions.exe	3cd18d64d13e666
+3	703	7315943866249970	CMakeFiles/PracticeQuestions.dir/main.cpp.obj	71b9b71145babb5
+703	812	7315943867297422	PracticeQuestions.exe	3cd18d64d13e666
+4	604	7315944165905147	CMakeFiles/PracticeQuestions.dir/main.cpp.obj	71b9b71145babb5
+604	718	7315944167017866	PracticeQuestions.exe	3cd18d64d13e666
+4	587	7315944213784532	CMakeFiles/PracticeQuestions.dir/main.cpp.obj	71b9b71145babb5
+587	713	7315944214976039	PracticeQuestions.exe	3cd18d64d13e666
+3	591	7315945387536204	CMakeFiles/PracticeQuestions.dir/main.cpp.obj	71b9b71145babb5
+592	702	7315945388598413	PracticeQuestions.exe	3cd18d64d13e666

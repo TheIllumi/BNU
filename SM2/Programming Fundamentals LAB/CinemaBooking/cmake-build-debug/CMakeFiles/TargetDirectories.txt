@@ -1,0 +1,3 @@
+C:/Users/saadm/Downloads/BNU/SM2/Programming Fundamentals LAB/CinemaBooking/cmake-build-debug/CMakeFiles/CinemaBooking.dir
+C:/Users/saadm/Downloads/BNU/SM2/Programming Fundamentals LAB/CinemaBooking/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/saadm/Downloads/BNU/SM2/Programming Fundamentals LAB/CinemaBooking/cmake-build-debug/CMakeFiles/rebuild_cache.dir
