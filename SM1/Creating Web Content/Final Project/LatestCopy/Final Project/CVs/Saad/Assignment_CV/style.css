@@ -1,0 +1,218 @@
+/*Lato*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans:wght@100;300;400;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/*Raleway*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans:wght@100;300;400;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/*------------------Main------------------*/
+*
+{
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body
+{
+    background: #FAF2E7;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.resume_wrapper
+{
+    display: flex;
+    width: 942.6666666666666666666666667px;
+    height: 1050px;
+    /*height: 1333.33333333333333333333333px;*/
+    margin: 50px auto;
+    background: #fff;
+    padding: 0;
+}
+
+/*------------------Right------------------*/
+
+.resume_wrapper .resume_right .resume_item .resume_title
+{
+    padding: 5px 0;
+    border-bottom: 1px solid #2A1D1A;    
+}
+
+.resume_wrapper .resume_right .resume_item .resume_title
+{
+    color: #2A1D1A;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.resume_wrapper .resume_right .resume_data .year
+{
+    width: 115px;
+    position: relative;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.resume_wrapper .resume_right .resume_data .content
+{
+    padding-right: 35px;
+    margin-bottom: 20px;
+}
+
+.resume_wrapper .resume_right .resume_data .role
+{
+    letter-spacing: 5px;
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.resume_wrapper .resume_right .resume_namerole .name
+{
+    font-size: 35px;
+    color: #2A1D1A;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    letter-spacing: 5px;
+}
+
+.resume_wrapper .resume_right .resume_namerole .role
+{
+    font-size: 20px;
+    color: #2A1D1A;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 10px;
+}
+
+.resume_wrapper .resume_right
+{
+    width: 75%;
+    padding: 20px 40px;    
+    color: #2A1D1A;
+}
+
+/*------------------Experience------------------*/
+/*
+.resume_wrapper .resume_experience
+{
+    padding: 30px;
+}
+*/
+
+
+/*------------------Line-Bullets on Right------------------*/
+/*
+.resume_wrapper .resume_right .resume_data .year::before
+{
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 10;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border: 2px solid #2A1D1A;
+    border-radius: 50%;
+}
+
+.resume_wrapper .resume_right .resume_data .year::after
+{
+    content: "";
+    position: absolute;
+    top: 17px;
+    right: 107px;
+    width: 2px;
+    height: 900%;
+    background: #2A1D1A;
+}
+*/
+
+/*------------------Left------------------*/
+
+.resume_wrapper .resume_left
+{
+    width: 35%;
+    background: #2A1D1A;
+}
+
+.resume_wrapper .resume_left .resume_image img
+{
+    width: 100%;
+    display: block;
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 17px;
+}
+
+.resume_wrapper .resume_title
+{
+    color: #FAF2E7;
+    text-transform: uppercase;
+    font-weight: 520;
+    font-size: 16px;
+    margin-bottom: 10px;
+    letter-spacing: 13px;
+}
+
+.resume_wrapper .resume_left .resume_info
+{
+    color: #FAF2E7;
+}
+
+.resume_wrapper .resume_left .resume_bottom
+{
+    /*padding: 20px 30px;*/
+    padding-left: 40px ;
+}
+
+.resume_wrapper .resume_left .resume_item .resume_title
+{
+    padding: 5px 0px 7px;
+    border-bottom: 1px solid #FAF2E7;
+    margin-bottom: 20px;  
+}
+
+.resume_wrapper .resume_left .resume_subtitle
+{
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px;
+}
+
+.resume_wrapper .resume_left .resume_info
+{
+    font-weight: 400;
+    padding-bottom: 15px;
+}
+
+.resume_wrapper .resume_left .resume_education .resume_subinfo
+{
+    padding-bottom: 15px;
+    font-weight: 400;
+}
+
+.resume_wrapper .resume_left .resume_item .resume_skills .resume_info
+{
+    font-weight: 400;
+}
+.colored-bullets 
+{
+    list-style: none; /* Remove default bullet points */
+}
+.colored-bullets li::before 
+{
+    content: "\2022"; /* Unicode character for bullet point */
+    color: #FAF2E7; /* Change color to your desired color */
+    display: inline-block;
+    width: 1em; /* Adjust the width as needed */
+    margin-left: 1em; /* Negative margin to align the bullet properly */
+    padding-right: 6px;
+}
+
