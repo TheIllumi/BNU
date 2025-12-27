@@ -1,0 +1,99 @@
+[{
+  "_id": {
+    "$oid": "681cfa011ecc07d54acd2299"
+  },
+  "name": "Web Course",
+  "price": 100,
+  "assignments": 12,
+  "projects": 45
+},
+{
+  "_id": {
+    "$oid": "681cfabf1ecc07d54acd22a4"
+  },
+  "name": "Python Masterclass",
+  "price": 0,
+  "assignments": 10,
+  "projects": 30
+},
+{
+  "_id": {
+    "$oid": "681cfabf1ecc07d54acd22a5"
+  },
+  "name": "JavaScript Basics",
+  "price": 0,
+  "assignments": 8,
+  "projects": 20
+},
+{
+  "_id": {
+    "$oid": "681cfabf1ecc07d54acd22a6"
+  },
+  "name": "C# for Beginners",
+  "price": 0,
+  "assignments": 15,
+  "projects": 40
+},
+{
+  "_id": {
+    "$oid": "681cfabf1ecc07d54acd22a7"
+  },
+  "name": "Web Development Fundamentals",
+  "price": 0,
+  "assignments": 12,
+  "projects": 35
+},
+{
+  "_id": {
+    "$oid": "681cfabf1ecc07d54acd22a8"
+  },
+  "name": "Java Programming Essentials",
+  "price": 0,
+  "assignments": 14,
+  "projects": 38
+},
+{
+  "_id": {
+    "$oid": "681cfabf1ecc07d54acd22a9"
+  },
+  "name": "ReactJS Crash Course",
+  "price": 0,
+  "assignments": 10,
+  "projects": 25
+},
+{
+  "_id": {
+    "$oid": "681cfabf1ecc07d54acd22aa"
+  },
+  "name": "SQL Simplified",
+  "price": 0,
+  "assignments": 12,
+  "projects": 30
+},
+{
+  "_id": {
+    "$oid": "681cfabf1ecc07d54acd22ab"
+  },
+  "name": "Responsive Web Design",
+  "price": 0,
+  "assignments": 10,
+  "projects": 28
+},
+{
+  "_id": {
+    "$oid": "681cfabf1ecc07d54acd22ac"
+  },
+  "name": "Node.js for Beginners",
+  "price": 0,
+  "assignments": 13,
+  "projects": 36
+},
+{
+  "_id": {
+    "$oid": "681cfabf1ecc07d54acd22ad"
+  },
+  "name": "Frontend Development with Vue.js",
+  "price": 0,
+  "assignments": 11,
+  "projects": 32
+}]
