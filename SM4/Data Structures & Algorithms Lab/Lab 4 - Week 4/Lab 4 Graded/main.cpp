@@ -1,0 +1,113 @@
+#include <iostream>
+#include <string>
+#include <cstring>
+using namespace std;
+
+bool isPalindrome(string words, int len);
+
+int main()
+{
+    // Q1
+    string word;
+    cout << "Enter a word to check if it is a palindrome: ";
+    cin >> word;
+    cout << endl;
+
+    int length = word.length();
+
+    if (isPalindrome(word, length))
+    {
+        cout << word << " is a palindrome." << endl;
+    }
+    else
+    {
+        cout << word << " is a not palindrome." << endl;
+    }
+
+    // Q2
+    cout << "The reverse of " << word << " is: ";
+    for (int i = length - 1; i >= 0; i--)
+    {
+        cout << word[i];
+    }
+
+    cout << endl;
+
+    // Q3
+    string word1, word2;
+    cout << "Enter the first string: ";
+    cin >> word1;
+    cout << "\nEnter the second string: ";
+    cin >> word2;
+
+    cout << "\nChecking if the second string appears in the first string..." << endl;
+
+    int lengthOne = word1.length();
+    int lengthTwo = word2.length();
+    int count = lengthTwo;
+
+    for (int i = 0; i < word2.length(); i++)
+    {
+        for (int j = 0; j < word1.length(); j++)
+        {
+            // check if word 2 appears in word 1
+            if (word2[i] == word1[j])
+            {
+                cout << "The character of the second string (" << word2[i] << ") is found in index (" << j << ") of the first string" << endl;
+                count--;
+            }
+        }
+    }
+    if (count == 0)
+    {
+        cout << "True" << endl;
+    }
+    else
+    {
+        cout << "False" << endl;
+    }
+
+    // Q4
+    string stringArray[6];
+
+    cout << "Enter 6 words: " << endl;
+    for (int i = 0; i < 6; i++)
+    {
+        cin >> stringArray[i];
+    }
+
+    cout << "\nWords containing numbers:\n";
+
+    for (int i = 0; i < 6; i++)
+    {
+        bool containsNumber = false;
+
+        for (int j = 0; j < stringArray[i].length(); j++)
+        {
+            if (stringArray[i][j] >= '0' && stringArray[i][j] <= '9')
+            {
+                containsNumber = true;
+                break;
+            }
+        }
+
+        if (containsNumber)
+        {
+            cout << stringArray[i] << endl;
+        }
+    }
+
+    return 0;
+}
+
+// Q1
+bool isPalindrome(string words, int len)
+{
+    // int length = words.length();
+    for (int i = 0; i < len / 2; i++)
+    {
+        if (words[i] != words[len - i - 1])
+            return false;
+    }
+    return true;
+}

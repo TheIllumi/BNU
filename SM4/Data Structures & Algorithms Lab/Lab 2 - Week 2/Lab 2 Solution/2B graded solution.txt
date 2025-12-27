@@ -1,0 +1,139 @@
+#include<iostream>
+#include<string>
+#include <iomanip>
+using namespace std;
+
+class Book {
+public:
+	string title;
+	double price;
+
+	//Constructor
+	Book(string s = "UNTITLED", double p = 0) : title(s), price(p) {}
+};
+
+
+int linearsearch_title(Book [], int, string);
+int linearsearch_price(Book[], int, double);
+int binarysearch_title(Book[], int, string);
+void print(Book[], int);
+
+int main()
+{
+	Book books[] =
+	{ Book("1", 20.15), Book("1984", 8.49), Book("2", 20.35), Book("Algorithms", 49.99),
+	Book("C++ Programming", 39.99), Book("Data Structures", 29.99), Book("Intro to Computer Science", 19.99), 
+	Book("Moby Dick", 15.50), Book("Pride and Prejudice", 9.99), Book("The Great Gatsby", 12.75), 
+	Book(), Book("To Kill a Mockingbird", 10.99), Book(),Book("War and Peace", 14.99), Book("abc alphabets",10.20)
+	};
+
+
+	int size = sizeof(books) / sizeof(books[0]);  // Calculate size of the array
+
+	cout << "Printing original array:" << endl;
+	print(books, size);
+	
+	string title_test[] = {"Intro to Computer Science", "Data StructureS"};
+	int title_test_size = sizeof(title_test) / sizeof(title_test[0]);
+
+	double price_test[] = {29.99, 150};
+	int price_test_size = sizeof(price_test) / sizeof(price_test[0]);
+
+	cout << "\ntesting for titles" << endl;
+	for (int i = 0; i < title_test_size; i++)
+	{
+		int result = linearsearch_title(books, size, title_test[i]);
+		if (result == -1)
+			cout << title_test[i] << " is not in the array" << endl;
+		else
+			cout<< title_test[i] << " is in the array" << endl;
+	}
+	cout << "\ntesting for prices" << endl;
+	for (int i = 0; i < price_test_size; i++)
+	{
+		int result = linearsearch_price(books, size, price_test[i]);
+		if (result == -1)
+			cout << price_test[i] << " is not in the array" << endl;
+		else
+			cout << price_test[i] << " is in the array" << endl;
+	}
+	cout << "\ntesting for titles" << endl;
+	for (int i = 0; i < title_test_size; i++)
+	{
+		int result = binarysearch_title(books, size, title_test[i]);
+		if (result == -1)
+			cout << title_test[i] << " is not in the array" << endl;
+		else
+			cout << title_test[i] << " is in the array" << endl;
+	}
+
+	return 0;
+}
+
+int binarysearch_title(Book arr [], int size, string input)
+{
+	int first = 0, // First array element 
+		last = size - 1, // Last array element 
+		middle, // Midpoint of search 
+		position = -1;// Position of search value 
+	bool found = false; // Flag 
+	while (!found && first <= last)
+	{
+		middle = (first + last) / 2; // Calculate midpoint 
+		if (arr[middle].title == input) // If value is found at mid 
+		{
+			found = true;
+			position = middle;
+		}
+		else if (arr[middle].title > input) // If value is in lower half 
+			last = middle - 1;
+		else
+			first = middle + 1; // If value is in upper half 
+	}
+	return position;
+}
+
+int linearsearch_title(Book arr[], int size, string input)
+{
+	int index = 0; // Used as a subscript to search array
+	int position = -1; // To record position of search value
+	bool found = false; // Flag to indicate if the value was found
+	while (index < size && !found)
+	{
+		if (arr[index].title == input)
+		{
+			found = true;
+			position = index;
+		}
+		index++;
+	}
+	return position;
+
+}
+
+int linearsearch_price(Book arr[], int size, double input)
+{
+	int index = 0; // Used as a subscript to search array
+	int position = -1; // To record position of search value
+	bool found = false; // Flag to indicate if the value was found
+	while (index < size && !found)
+	{
+		if (arr[index].price == input)
+		{
+			found = true;
+			position = index;
+		}
+		index++;
+	}
+	return position;
+
+}
+
+void print(Book arr[], int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i].title << '\t' << arr[i].price << endl;
+	}
+	cout << endl;
+}

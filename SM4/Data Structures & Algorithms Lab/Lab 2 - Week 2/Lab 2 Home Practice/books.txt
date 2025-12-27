@@ -1,0 +1,54 @@
+To Kill a Mockingbird,10.99
+1984,8.49
+The Great Gatsby,12.75
+Moby Dick,15.50
+War and Peace,14.99
+Pride and Prejudice,9.99
+abc alphabets,10
+1,20
+2,20
+The Catcher in the Rye,11.25
+Crime and Punishment,13.75
+Brave New World,10.50
+Jane Eyre,9.25
+Wuthering Heights,11.95
+Frankenstein,8.99
+Dracula,12.45
+The Odyssey,14.50
+Les Misérables,16.75
+Anna Karenina,13.99
+The Brothers Karamazov,15.99
+The Count of Monte Cristo,17.25
+Don Quixote,14.25
+The Divine Comedy,19.50
+Heart of Darkness,7.99
+The Picture of Dorian Gray,11.50
+Fahrenheit 451,9.75
+The Hobbit,13.25
+Lord of the Rings,20.99
+Harry Potter and the Sorcerer's Stone,14.99
+Harry Potter and the Chamber of Secrets,13.99
+Harry Potter and the Prisoner of Azkaban,15.49
+Harry Potter and the Goblet of Fire,18.99
+Harry Potter and the Order of the Phoenix,19.99
+Harry Potter and the Half-Blood Prince,17.49
+Harry Potter and the Deathly Hallows,18.49
+The Hunger Games,12.99
+Catching Fire,13.49
+Mockingjay,14.49
+The Maze Runner,10.25
+Divergent,11.75
+The Book Thief,12.99
+A Tale of Two Cities,14.75
+Great Expectations,13.50
+Oliver Twist,12.25
+The Alchemist,10.99
+The Kite Runner,11.99
+Life of Pi,9.99
+The Road,12.50
+Slaughterhouse-Five,11.25
+The Sun Also Rises,13.99
+Of Mice and Men,9.50
+The Grapes of Wrath,14.99
+Beloved,12.99
+One Hundred Years of Solitude,16.50

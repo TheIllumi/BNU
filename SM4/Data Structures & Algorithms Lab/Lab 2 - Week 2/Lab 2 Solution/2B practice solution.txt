@@ -1,0 +1,268 @@
+// Lab2B.cpp : This file contains the 'main' function. Program execution begins and ends there.
+
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+bool linearsearch(int [], int, int);
+int binarysearch(int [], int, int);
+void selectionSort(string [], int);
+void print(int[], int);
+void print_s(string[], int);
+
+int main()
+{
+    //Q1
+    //OPENING ACCOUNTS FILE FOR SIZE
+    ifstream inputFile("accounts.txt");  
+    if (!inputFile)     
+    {
+        cout << "Error opening file!" << endl;
+        return 1;
+    }
+
+    string line;
+    int size = 0;
+    while (getline(inputFile, line))    
+        size++;
+
+    inputFile.close();  
+
+    int * accounts = new int[size];
+
+    //REOPENING ACCOUNTS FILE FOR DATA
+    inputFile.clear();
+    inputFile.seekg(0);
+    inputFile.open("accounts.txt");  
+
+    if (!inputFile)     
+    {
+        cout << "Error opening file!" << endl;
+        return 1;
+    }
+
+
+    int i = 0;
+    while (getline(inputFile, line) && i < size)    
+    {
+        accounts[i] = stoi(line);
+        i++;
+    }
+
+    inputFile.close();
+
+    //INPUT ACCOUNT NUMBER AND VALIDATION
+    int input;
+    cout << "Enter an account number: ";
+    cin >> input;
+    while (input < 0)
+    {
+        cout << "Negative number entered. Re-enter number: ";
+        cin >> input;
+    }
+
+    //TESTING LINEAR SEARCH
+    bool lin_result = linearsearch(accounts, size, input);
+
+    cout << "\nTesting linear search:" << endl;
+    if (lin_result)
+    {
+        cout << input << " is a valid account number" << endl;
+    }
+    else
+    {
+        cout << input << " is not a valid account number" << endl;
+    }
+
+    
+    delete[] accounts;
+
+    //Q2:
+    //OPENING ACCOUNTS FILE FOR SIZE
+    inputFile.clear();
+    inputFile.seekg(0);
+    inputFile.open("accounts_sorted.txt");
+   
+    if (!inputFile)
+    {
+        cout << "Error opening file!" << endl;
+        return 1;
+    }
+
+    size = 0;
+    while (getline(inputFile, line))
+        size++;
+
+    inputFile.close();  
+    
+    accounts = new int[size];
+
+    //REOPENING ACCOUNTS FILE FOR DATA
+    inputFile.clear();
+    inputFile.seekg(0);
+    inputFile.open("accounts_sorted.txt");
+
+    if (!inputFile)
+    {
+        cout << "Error opening file!" << endl;
+        return 1;
+    }
+
+
+    i = 0;
+    while (getline(inputFile, line) && i < size) 
+    {
+        accounts[i] = stoi(line);
+        i++;
+    }
+
+    inputFile.close();
+
+    //INPUT ACCOUNT NUMBER AND VALIDATION
+    cout << "Enter an account number: ";
+    cin >> input;
+    while (input < 0)
+    {
+        cout << "Negative number entered. Re-enter number: ";
+        cin >> input;
+    }
+
+    //TESTING BINARY SEARCH
+    int bin_result = binarysearch(accounts, size, input);
+
+    cout << "\nTesting binary search:" << endl;
+    if (bin_result != -1)
+    {
+        cout << input << " present at " << input<< " index" << endl;
+    }
+    else
+    {
+        cout << input << " not present in the array" << endl;
+    }
+
+    delete[] accounts;
+
+    //Q3
+    //OPENING NAMES FILE FOR SIZE
+    inputFile.clear();
+    inputFile.seekg(0);
+    inputFile.open("names.txt");
+    if (!inputFile)
+    {
+        cout << "Error opening file!" << endl;
+        return 1;
+    }
+
+    size = 0;
+    while (getline(inputFile, line))
+        size++;
+
+    inputFile.close();
+
+    string* names = new string[size];
+
+    //REOPENING NAMES FILE FOR DATA
+    inputFile.clear();
+    inputFile.seekg(0);
+    inputFile.open("names.txt");
+
+    if (!inputFile)
+    {
+        cout << "Error opening file!" << endl;
+        return 1;
+    }
+
+
+    i = 0;
+    while (getline(inputFile, line) && i < size)
+    {
+        names[i] = line;
+        i++;
+    }
+    inputFile.close();
+
+    selectionSort(names, size);
+    print_s(names, size);
+
+    
+
+    return 0;
+}
+
+bool linearsearch(int arr[], int size, int input)
+{
+    for (int i = 0; i < size; i++)
+    {
+        if (arr[i] == input)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+int binarysearch(int array[], int numElems, int value)
+{
+    int first = 0, // First array element 
+        last = numElems - 1, // Last array element 
+        middle, // Midpoint of search 
+        position = -1; // Position of search value 
+    bool found = false; // Flag 
+    while (!found && first <= last)
+    {
+        middle = (first + last) / 2; // Calculate midpoint 
+        if (array[middle] == value) // If value is found at mid 
+        {
+            found = true;
+            position = middle;
+        }
+        else if (array[middle] > value) // If value is in lower half 
+            last = middle - 1;
+        else
+            first = middle + 1; // If value is in upper half 
+    }
+    return position;
+}
+
+void selectionSort(string array[], int size)
+{
+    int startScan, minIndex;
+    string minValue;
+    for (startScan = 0; startScan < (size - 1); startScan++)
+    {
+        minIndex = startScan;
+        minValue = array[startScan];
+        for (int index = startScan + 1; index < size; index++)
+        {
+            if (array[index] < minValue)
+            {
+                minValue = array[index];
+                minIndex = index;
+            }
+        }
+        array[minIndex] = array[startScan];
+        array[startScan] = minValue;
+    }
+}
+
+void print(int arr[], int size)
+{
+    cout << "\nPrinting array: " << endl;
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << endl;
+    }
+    cout << endl;
+}
+
+void print_s(string arr[], int size)
+{
+    cout << "\nPrinting array: " << endl;
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << endl;
+    }
+    cout << endl;
+
+}

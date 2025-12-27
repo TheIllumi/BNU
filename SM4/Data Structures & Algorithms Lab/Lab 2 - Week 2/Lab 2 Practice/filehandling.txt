@@ -1,0 +1,21 @@
+/OPENING ACCOUNTS FILE FOR SIZE
+ifstream inputFile(filename);  // Open file for reading
+if (!inputFile)     // Check if the file opened successfully
+{  
+    cout << "Error opening file!" << endl;
+    return 1;
+}
+
+string line;
+while (getline(inputFile, line))    // Read file line by line
+{
+      //get work done on the input line
+}
+inputFile.close();  // Close the file
+
+
+//if you want to use the same ifstream object then:
+inputFile.clear();
+inputFile.seekg(0);
+inputFile.open(filename);
+//then the file reading code will be used again here

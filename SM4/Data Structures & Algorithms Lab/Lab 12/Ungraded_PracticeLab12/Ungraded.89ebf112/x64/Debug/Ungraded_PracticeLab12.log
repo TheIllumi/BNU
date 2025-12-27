@@ -1,0 +1,3 @@
+﻿  main.cpp
+D:\BNU\SM4\Data Structures & Algorithms Lab\Lab 12\Ungraded_PracticeLab12\main.cpp(124,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Ungraded_PracticeLab12.vcxproj -> D:\BNU\SM4\Data Structures & Algorithms Lab\Lab 12\Ungraded_PracticeLab12\x64\Debug\Ungraded_PracticeLab12.exe

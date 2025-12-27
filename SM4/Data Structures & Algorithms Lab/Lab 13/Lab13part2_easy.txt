@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+class TreeNode 
+{
+public:
+    char value;
+    TreeNode* left;
+    TreeNode* right;
+
+    TreeNode(char v) : value(v), left(nullptr), right(nullptr) {}
+};
+
+class ExpressionTree 
+{
+public:
+    TreeNode* root;
+
+    ExpressionTree() 
+    {
+        // Building the tree for ((5+3)*(8-2))
+    }
+
+    string getPrefix(TreeNode* node = nullptr) 
+    {
+        // Write code here
+    }
+
+    string getPostfix(TreeNode* node = nullptr) 
+    {
+        // Write code here
+    }
+
+    int evaluate(TreeNode* node = nullptr) 
+    {
+        // Write code here
+    }
+};
+
+int main() 
+{
+    ExpressionTree tree;
+
+    cout << "Prefix: " << tree.getPrefix() << endl;
+    cout << "Postfix: " << tree.getPostfix() << endl;
+    cout << "Evaluation Result: " << tree.evaluate() << endl;
+
+    return 0;
+}

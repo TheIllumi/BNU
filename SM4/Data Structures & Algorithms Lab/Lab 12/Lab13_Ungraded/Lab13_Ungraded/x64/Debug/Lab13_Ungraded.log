@@ -1,0 +1,4 @@
+﻿  main.cpp
+D:\BNU\SM4\Data Structures & Algorithms Lab\Lab 12\Lab13_Ungraded\main.cpp(149,27): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\BNU\SM4\Data Structures & Algorithms Lab\Lab 12\Lab13_Ungraded\main.cpp(105,1): warning C4715: 'ExpressionTree::evaluate': not all control paths return a value
+  Lab13_Ungraded.vcxproj -> D:\BNU\SM4\Data Structures & Algorithms Lab\Lab 12\Lab13_Ungraded\x64\Debug\Lab13_Ungraded.exe
