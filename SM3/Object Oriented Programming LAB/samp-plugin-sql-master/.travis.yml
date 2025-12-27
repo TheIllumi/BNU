@@ -1,0 +1,12 @@
+language: cpp
+compiler:
+  - gcc
+env:
+  - MYSQL=true
+  - MYSQL=true STATIC=true
+  - PGSQL=true
+  - MYSQL=true PGSQL=true
+install:
+  - sudo apt-get install gcc-multilib g++-multilib
+script:
+  - make

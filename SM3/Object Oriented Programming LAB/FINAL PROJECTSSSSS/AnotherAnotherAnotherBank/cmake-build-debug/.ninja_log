@@ -1,0 +1,10 @@
+# ninja log v6
+12	2855	7597044059881064	CMakeFiles/AnotherAnotherAnotherBank.dir/main.cpp.obj	1074141bfc7475db
+2856	3098	7597044088319165	AnotherAnotherAnotherBank.exe	27b95b8aebea485c
+5	320	7597047121164363	build.ninja	f579cfd18ceef999
+15	1656	7598776366371015	CMakeFiles/AnotherAnotherAnotherBank.dir/main.cpp.obj	1074141bfc7475db
+1657	2071	7598776382785532	AnotherAnotherAnotherBank.exe	27b95b8aebea485c
+10	1366	7598796870282226	CMakeFiles/AnotherAnotherAnotherBank.dir/main.cpp.obj	1074141bfc7475db
+1366	1579	7598796883843004	AnotherAnotherAnotherBank.exe	27b95b8aebea485c
+20	1262	7599229011723658	CMakeFiles/AnotherAnotherAnotherBank.dir/main.cpp.obj	1074141bfc7475db
+1263	1619	7599229024157386	AnotherAnotherAnotherBank.exe	27b95b8aebea485c

@@ -1,0 +1,10 @@
+# ninja log v6
+37	335	7596684368518840	CMakeFiles/AnotherAnotherBank.dir/Source_Files/Business.cpp.obj	e839316a832b1498
+58	412	7596684368722354	CMakeFiles/AnotherAnotherBank.dir/Source_Files/Gold.cpp.obj	b23c86c0804d2da1
+27	533	7596684368422410	CMakeFiles/AnotherAnotherBank.dir/Source_Files/Bronze.cpp.obj	34007b30786c1ae7
+15	1273	7596684368298611	CMakeFiles/AnotherAnotherBank.dir/Source_Files/AccountType.cpp.obj	121eb6d8c3bdeda9
+43	1316	7596684368582323	CMakeFiles/AnotherAnotherBank.dir/Source_Files/Card.cpp.obj	e6e12dacebfddd81
+21	1367	7596684368358165	CMakeFiles/AnotherAnotherBank.dir/Source_Files/BankingEmployee.cpp.obj	e25c79b8db397e32
+66	1402	7596684368804307	CMakeFiles/AnotherAnotherBank.dir/Source_Files/Transaction.cpp.obj	399872af8a7ea11e
+50	1428	7596684368652339	CMakeFiles/AnotherAnotherBank.dir/Source_Files/CompanyClient.cpp.obj	791af10527236ca0
+75	1501	7596684368902541	CMakeFiles/AnotherAnotherBank.dir/Source_Files/User.cpp.obj	21c6e5618bb6d15a

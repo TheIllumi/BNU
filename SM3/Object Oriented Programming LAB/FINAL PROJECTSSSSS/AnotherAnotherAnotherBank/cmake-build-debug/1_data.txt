@@ -1,0 +1,8 @@
+User Name: Saad
+User Address: email
+User ID: 1
+Balance: 5000
+Daily Withdrawal Limit: 100000
+Has Company Account: No
+Cards:
+  Card Number: 1563

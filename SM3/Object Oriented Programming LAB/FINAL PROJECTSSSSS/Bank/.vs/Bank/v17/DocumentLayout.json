@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\saadm\\Downloads\\FINAL PROJECTSSSSS\\Bank\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{92D19FB9-B4C7-4FA7-8AE4-256CA4544AB4}|Bank.vcxproj|C:\\Users\\saadm\\Downloads\\FINAL PROJECTSSSSS\\Bank\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{92D19FB9-B4C7-4FA7-8AE4-256CA4544AB4}|Bank.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92D19FB9-B4C7-4FA7-8AE4-256CA4544AB4}|Bank.vcxproj|C:\\Users\\saadm\\Downloads\\FINAL PROJECTSSSSS\\Bank\\bank.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{92D19FB9-B4C7-4FA7-8AE4-256CA4544AB4}|Bank.vcxproj|solutionrelative:bank.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "bank.cpp",
+              "DocumentMoniker": "C:\\Users\\saadm\\Downloads\\FINAL PROJECTSSSSS\\Bank\\bank.cpp",
+              "RelativeDocumentMoniker": "bank.cpp",
+              "ToolTip": "C:\\Users\\saadm\\Downloads\\FINAL PROJECTSSSSS\\Bank\\bank.cpp",
+              "RelativeToolTip": "bank.cpp",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAUwFgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-29T14:23:37.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\saadm\\Downloads\\FINAL PROJECTSSSSS\\Bank\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "C:\\Users\\saadm\\Downloads\\FINAL PROJECTSSSSS\\Bank\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAADcAAAAAAAAAAAAUwFAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-29T13:58:37.234Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

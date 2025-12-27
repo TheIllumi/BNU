@@ -1,0 +1,10 @@
+1|DJ Bravo Charlie Alpha Rmasha|123456789|emial.com|321|1|helo
+1|Saad|address|3520263458155|123|9|a|999
+1|Saad|email|12354663|123654|9|a|100|Bronze
+1|Sara|emailnotemailing|3520263154568|987654|956|simbu|5|Bronze
+1|Ramsha|emailemai|123456789456|123456|999|abc|Bronze|100000
+1|Sana|asdhkdjsfh|5649831|293847|321|123|Business|2e+07
+1|Saad|email|156413546|123456|20|abc|Gold|500000
+1|abc|asjfdg|1564321|298347|55|55|Business|2e+07
+1|Saad|email|1654|1564|11|11|Business|2e+07
+12345321|Saad|email|123|9.23847e+06

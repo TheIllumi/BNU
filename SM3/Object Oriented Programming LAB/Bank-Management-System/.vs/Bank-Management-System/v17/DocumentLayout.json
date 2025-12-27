@@ -1,0 +1,197 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\db.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|solutionrelative:db.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\Transaction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|solutionrelative:Transaction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\Transaction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|solutionrelative:Transaction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\UserClient.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|solutionrelative:UserClient.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\UserClient.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|solutionrelative:UserClient.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\User.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|solutionrelative:User.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\database.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|solutionrelative:database.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\bank.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|solutionrelative:bank.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\User.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|solutionrelative:User.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\bank.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{77E34EB5-A7C5-4826-9395-8234E457443D}|Bank-Management-System.vcxproj|solutionrelative:bank.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Transaction.cpp",
+              "DocumentMoniker": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\Transaction.cpp",
+              "RelativeDocumentMoniker": "Transaction.cpp",
+              "ToolTip": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\Transaction.cpp",
+              "RelativeToolTip": "Transaction.cpp",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACAAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-29T15:59:14.191Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Transaction.h",
+              "DocumentMoniker": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\Transaction.h",
+              "RelativeDocumentMoniker": "Transaction.h",
+              "ToolTip": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\Transaction.h",
+              "RelativeToolTip": "Transaction.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-29T15:59:06.726Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserClient.h",
+              "DocumentMoniker": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\UserClient.h",
+              "RelativeDocumentMoniker": "UserClient.h",
+              "ToolTip": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\UserClient.h",
+              "RelativeToolTip": "UserClient.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-29T15:58:19.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserClient.cpp",
+              "DocumentMoniker": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\UserClient.cpp",
+              "RelativeDocumentMoniker": "UserClient.cpp",
+              "ToolTip": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\UserClient.cpp",
+              "RelativeToolTip": "UserClient.cpp",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAAMsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-29T15:57:58.173Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "User.cpp",
+              "DocumentMoniker": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\User.cpp",
+              "RelativeDocumentMoniker": "User.cpp",
+              "ToolTip": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\User.cpp",
+              "RelativeToolTip": "User.cpp",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAACMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-29T15:57:32.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "database.h",
+              "DocumentMoniker": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\database.h",
+              "RelativeDocumentMoniker": "database.h",
+              "ToolTip": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\database.h",
+              "RelativeToolTip": "database.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-29T14:39:26.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "db.cpp",
+              "DocumentMoniker": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\db.cpp",
+              "RelativeDocumentMoniker": "db.cpp",
+              "ToolTip": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\db.cpp",
+              "RelativeToolTip": "db.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-29T14:38:46.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "bank.h",
+              "DocumentMoniker": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\bank.h",
+              "RelativeDocumentMoniker": "bank.h",
+              "ToolTip": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\bank.h",
+              "RelativeToolTip": "bank.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-29T14:39:07.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "bank.cpp",
+              "DocumentMoniker": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\bank.cpp",
+              "RelativeDocumentMoniker": "bank.cpp",
+              "ToolTip": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\bank.cpp",
+              "RelativeToolTip": "bank.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-29T14:38:32.668Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-29T14:38:16.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "User.h",
+              "DocumentMoniker": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\User.h",
+              "RelativeDocumentMoniker": "User.h",
+              "ToolTip": "C:\\Users\\saadm\\Downloads\\BNU\\SM3\\Object Oriented Programming LAB\\Bank-Management-System\\User.h",
+              "RelativeToolTip": "User.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-29T15:57:02.491Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
