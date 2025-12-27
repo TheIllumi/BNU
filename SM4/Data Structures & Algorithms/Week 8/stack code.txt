@@ -1,0 +1,128 @@
+#include <iostream>
+using namespace std;
+
+class Node {
+public:
+    int data;
+    Node* next;
+
+    Node(int value) : data(value), next(nullptr) {}
+};
+
+class Stack {
+public:
+    Node* top;
+
+    Stack();                    // Constructor
+    void push(int value);       // Push an element onto the stack
+    bool pop(int& num);         // Pop the top element from the stack
+    int peek();                 // Return the top element without removing it
+    bool isEmpty();             // Check if the stack is empty
+    void makeNULL();            //Reset top pointer to NULL
+    void display();             // Display the stack elements
+    ~Stack();                   // Destructor to clean up the stack and free memory
+};
+
+
+Stack::Stack()
+{
+    top = nullptr;
+} 
+
+// Push an element onto the stack
+void Stack::push(int value) 
+{
+    Node* newNode = new Node(value);
+    newNode->next = top;
+    top = newNode;
+}
+
+// Pop the top element from the stack
+bool Stack::pop(int& num)
+{
+    if (isEmpty())
+    {
+        cout << "Stack is empty!" << endl;
+        return false;
+    }
+
+    Node* temp = top;
+    num = top->data;
+    top = top->next;
+    delete temp;
+    return true;
+}
+
+// Return the top element without removing it
+int Stack::peek()
+{
+    if (isEmpty())
+    {
+        cout << "Stack is empty!" << endl;
+        return -1;
+    }
+    return top->data;
+}
+
+// Check if the stack is empty
+bool Stack::isEmpty()
+{
+    return top == nullptr;
+}
+
+//reset top pointer to NULL
+void Stack::makeNULL()
+{
+    int x;
+    while (pop(x));
+}
+
+// Display the stack elements
+void Stack::display()
+{
+    if (isEmpty())
+    {
+        cout << "Stack is empty!" << endl;
+        return;
+    }
+
+    Node* temp = top;
+    while (temp)
+    {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+}
+
+// Destructor to clean up the stack and free memory
+Stack::~Stack()
+{
+    makeNULL();
+}
+
+
+int main() {
+    Stack stack;
+    int x;
+
+    stack.push(10); 
+    stack.push(20); 
+    stack.push(30); 
+
+    stack.display(); 
+
+    cout << "Top element is: " << stack.peek() << endl;
+    
+    if (stack.pop(x)) 
+    {
+        cout << "Popped element is: " << x << endl;
+    }
+    else {
+        cout << "Failed to pop element." << endl;
+    }
+
+    stack.display();
+
+    return 0;
+}

@@ -1,0 +1,51 @@
+#include "Scores.h"
+
+Scores::Scores(int input) {
+	capacity = input; 
+	entries = new GameEntry[capacity]; 
+	size = 0; 
+}
+
+Scores::~Scores() { 
+	delete[] entries;
+}
+
+void Scores::add(const GameEntry& e) 
+{ 
+	int newScore = e.getscore(); 
+	if (size == capacity)		// the array is full 
+	{ 
+		if (newScore <= entries[capacity - 1].getscore())			// not high enough - ignore
+			return; 
+		else 
+		{
+			remove(size - 1);
+			size++;
+		}
+	}
+	else
+	{
+		size++;					// if not full, one more entry
+	}
+	
+	int i = size - 2; // start with the next to last
+	while (i >= 0 && newScore > entries[i].getscore()) 
+	{
+		entries[i + 1] = entries[i];	//shifting values in a sorted array
+		i--;
+	}
+	entries[i + 1] = e; // put e in the empty spot
+}
+
+
+GameEntry Scores::remove(int i)
+{
+	if ((i < 0) || (i >= size))			// invalid index
+		return entries[capacity];
+
+	GameEntry e = entries[i];					// save the removed object
+	for (int j = i + 1; j < size; j++)
+		entries[j - 1] = entries[j];			// shift entries left
+	size--;										// one fewer entry
+	return e;									// return the removed object
+}

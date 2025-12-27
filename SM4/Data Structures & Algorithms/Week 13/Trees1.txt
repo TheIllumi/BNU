@@ -1,0 +1,95 @@
+// Trees1.cpp : This file contains the 'main' function. Program execution begins and ends there.
+#include <iostream>
+#include <string>
+#include <queue>        //STL Queue implementation
+using namespace std;
+
+class TreeNode
+{
+public:
+    string data;
+    TreeNode* left;
+    TreeNode* right;
+    
+
+    TreeNode() : data("X"), left(nullptr), right(nullptr) {}
+    TreeNode(string value) : data(value), left(nullptr), right(nullptr) {}
+};
+
+TreeNode* buildTree() 
+{
+    string val;
+    cout << "Enter value (? for NULL): ";
+    cin >> val;
+
+    if (val == "?") return nullptr;
+
+    TreeNode* newNode = new TreeNode(val);
+    cout << "Enter left child of " << val << endl;
+    newNode->left = buildTree();
+    cout << "Enter right child of " << val << endl;
+    newNode->right = buildTree();
+
+    return newNode;
+}
+
+void inorder(TreeNode* p)
+{
+    if (p != NULL)
+    {
+        inorder(p->left); 
+        cout << p->data << " "; 
+        inorder(p->right);
+    }
+}
+
+int main()
+{
+    //1st way of creating a tree manually
+    TreeNode* root = new TreeNode("A");
+    root->left = new TreeNode("B");
+    
+    root->left->left = new TreeNode("C");
+    root->left->right = new TreeNode("D");
+
+    root->left->right->left = new TreeNode("E");
+    root->left->right->right = new TreeNode("F");
+
+    root->right = new TreeNode("H");
+    root->right->left = new TreeNode("I");
+    root->right->left->left = new TreeNode("J");
+    root->right->left->right = new TreeNode("K");
+    
+    //2nd way of creating a tree
+    TreeNode* root2 = buildTree();
+
+    
+    // Create a queue and enqueue the root
+    queue<TreeNode*> q;
+    q.push(root);
+
+    cout << "Breath-first traversal: ";
+
+    // While queue is not empty
+    while (!q.empty()) 
+    {
+        // Get front node and print its data
+        TreeNode* current = q.front();
+        cout << current->data << " ";
+        q.pop();  // Remove front node
+
+        // Enqueue children if they exist
+        if (current->left != nullptr) {
+            q.push(current->left);
+        }
+        if (current->right != nullptr) {
+            q.push(current->right);
+        }
+    }
+
+    cout << endl;
+
+    //in-order traversal
+    inorder(root);
+}
+

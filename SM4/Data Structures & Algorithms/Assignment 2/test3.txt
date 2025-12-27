@@ -1,0 +1,289 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
+#include <string>
+using namespace std;
+
+// ------------------ Action Class ------------------
+class Action {
+private:
+    string type;
+    string timeStamp;
+public:
+    Action() : type(""), timeStamp("") {}
+    Action(const string& t, const string& ts) : type(t), timeStamp(ts) {}
+
+    void setData(const string& t, const string& ts) {
+        type = t;
+        timeStamp = ts;
+    }
+
+    void print() const {
+        cout << type << "," << timeStamp;
+    }
+
+    string getType() const { return type; }
+    string getTimeStamp() const { return timeStamp; }
+};
+
+// ------------------ Stack Class ------------------
+class Stack {
+private:
+    vector<Action> actions;
+public:
+    void push(Action action) {
+        actions.insert(actions.begin(), action);
+    }
+
+    Action pop() {
+        if (isEmpty()) {
+            throw runtime_error("Stack underflow");
+        }
+        Action a = actions.front();
+        actions.erase(actions.begin());
+        return a;
+    }
+
+    Action peek() {
+        if (isEmpty()) {
+            throw runtime_error("Stack is empty");
+        }
+        return actions.front();
+    }
+
+    bool isEmpty() const {
+        return actions.empty();
+    }
+
+    void clear() {
+        actions.clear();
+    }
+
+    int size() const {
+        return actions.size();
+    }
+
+    void print(const string& name) const {
+        cout << name << " (top -> bottom): [";
+        for (size_t i = 0; i < actions.size(); i++) {
+            actions[i].print();
+            if (i != actions.size() - 1) cout << ", ";
+        }
+        cout << "]" << endl;
+    }
+
+    vector<Action> getActions() const {
+        return actions;
+    }
+};
+
+// ------------------ Undo/Redo Functions ------------------
+void performAction(Stack& undoStack, Stack& redoStack, const Action& a) {
+    undoStack.push(a);
+    redoStack.clear();
+    cout << "Performed: "; a.print(); cout << endl;
+}
+
+void undo(Stack& undoStack, Stack& redoStack) {
+    if (undoStack.isEmpty()) {
+        cout << "Nothing to undo." << endl;
+        return;
+    }
+    Action a = undoStack.pop();
+    redoStack.push(a);
+    cout << "Undo: "; a.print(); cout << endl;
+}
+
+void redo(Stack& undoStack, Stack& redoStack) {
+    if (redoStack.isEmpty()) {
+        cout << "Nothing to redo." << endl;
+        return;
+    }
+    Action a = redoStack.pop();
+    undoStack.push(a);
+    cout << "Redo: "; a.print(); cout << endl;
+}
+
+// ------------------ Test Helper Functions ------------------
+void verifyTest(const Stack& undoStack, const Stack& redoStack, const vector<string>& expectedUndo, const vector<string>& expectedRedo, int testNo) {
+    bool passed = true;
+
+    // Verify undo stack
+    auto undoActions = undoStack.getActions();
+    if (undoActions.size() != expectedUndo.size()) {
+        passed = false;
+    }
+    else {
+        for (size_t i = 0; i < undoActions.size(); i++) {
+            if (undoActions[i].getType() != expectedUndo[i]) {
+                passed = false;
+                break;
+            }
+        }
+    }
+
+    // Verify redo stack
+    auto redoActions = redoStack.getActions();
+    if (redoActions.size() != expectedRedo.size()) {
+        passed = false;
+    }
+    else {
+        for (size_t i = 0; i < redoActions.size(); i++) {
+            if (redoActions[i].getType() != expectedRedo[i]) {
+                passed = false;
+                break;
+            }
+        }
+    }
+
+    cout << "Test " << testNo << ": " << (passed ? "PASSED" : "FAILED") << endl;
+    if (!passed) {
+        cout << "  Expected Undo: [";
+        for (const auto& a : expectedUndo) cout << a << ", ";
+        cout << "]" << endl;
+        cout << "  Actual Undo: ";
+        undoStack.print("  ");
+
+        cout << "  Expected Redo: [";
+        for (const auto& a : expectedRedo) cout << a << ", ";
+        cout << "]" << endl;
+        cout << "  Actual Redo: ";
+        redoStack.print("  ");
+    }
+}
+
+// ------------------ Test Cases Implementation ------------------
+void runTestCases() {
+    Stack undoStack, redoStack;
+
+    cout << "=== Running Test Cases ===" << endl;
+
+    // Test Case 1: Basic Undo and Redo Sequence
+    undoStack.clear();
+    redoStack.clear();
+    performAction(undoStack, redoStack, Action("Study", "9AM"));
+    performAction(undoStack, redoStack, Action("Play", "10AM"));
+    performAction(undoStack, redoStack, Action("Procrastinate", "11AM"));
+    undo(undoStack, redoStack);
+    undo(undoStack, redoStack);
+    redo(undoStack, redoStack);
+    redo(undoStack, redoStack);
+    verifyTest(undoStack, redoStack, { "Procrastinate", "Play", "Study" }, {}, 1);
+
+    // Test Case 2: Perform Action after Undo
+    undoStack.clear();
+    redoStack.clear();
+    performAction(undoStack, redoStack, Action("Study", "9AM"));
+    performAction(undoStack, redoStack, Action("Play", "10AM"));
+    undo(undoStack, redoStack);
+    performAction(undoStack, redoStack, Action("Procrastinate", "11AM"));
+    verifyTest(undoStack, redoStack, { "Procrastinate", "Study" }, {}, 2);
+
+    // Test Case 3: Redo after Clear Undo Stack
+    undoStack.clear();
+    redoStack.clear();
+    performAction(undoStack, redoStack, Action("Study", "9AM"));
+    performAction(undoStack, redoStack, Action("Play", "10AM"));
+    performAction(undoStack, redoStack, Action("Procrastinate", "11AM"));
+    undo(undoStack, redoStack);
+    undo(undoStack, redoStack);
+    undo(undoStack, redoStack);
+    performAction(undoStack, redoStack, Action("New Action", "12PM"));
+    verifyTest(undoStack, redoStack, { "New Action" }, {}, 3);
+
+    // Test Case 4: No Undo to Perform
+    undoStack.clear();
+    redoStack.clear();
+    try {
+        undo(undoStack, redoStack);
+    }
+    catch (...) {}
+    verifyTest(undoStack, redoStack, {}, {}, 4);
+
+    // Test Case 5: No Redo to Perform
+    undoStack.clear();
+    redoStack.clear();
+    try {
+        redo(undoStack, redoStack);
+    }
+    catch (...) {}
+    verifyTest(undoStack, redoStack, {}, {}, 5);
+
+    // Test Case 6: Mixed Perform, Undo, and Redo Operations
+    undoStack.clear();
+    redoStack.clear();
+    performAction(undoStack, redoStack, Action("Study", "9AM"));
+    performAction(undoStack, redoStack, Action("Play", "10AM"));
+    performAction(undoStack, redoStack, Action("Procrastinate", "11AM"));
+    performAction(undoStack, redoStack, Action("Study", "12PM"));
+    undo(undoStack, redoStack);
+    undo(undoStack, redoStack);
+    redo(undoStack, redoStack);
+    verifyTest(undoStack, redoStack, { "Study", "Play", "Procrastinate" }, { "Study" }, 6);
+
+    // Test Case 7: Undo All Actions
+    undoStack.clear();
+    redoStack.clear();
+    performAction(undoStack, redoStack, Action("Study", "9AM"));
+    performAction(undoStack, redoStack, Action("Play", "10AM"));
+    performAction(undoStack, redoStack, Action("Procrastinate", "11AM"));
+    undo(undoStack, redoStack);
+    undo(undoStack, redoStack);
+    undo(undoStack, redoStack);
+    verifyTest(undoStack, redoStack, {}, { "Procrastinate", "Play", "Study" }, 7);
+
+    // Test Case 8: Redo All Actions
+    undoStack.clear();
+    redoStack.clear();
+    performAction(undoStack, redoStack, Action("Study", "9AM"));
+    performAction(undoStack, redoStack, Action("Play", "10AM"));
+    performAction(undoStack, redoStack, Action("Procrastinate", "11AM"));
+    undo(undoStack, redoStack);
+    undo(undoStack, redoStack);
+    undo(undoStack, redoStack);
+    redo(undoStack, redoStack);
+    redo(undoStack, redoStack);
+    redo(undoStack, redoStack);
+    verifyTest(undoStack, redoStack, { "Study", "Play", "Procrastinate" }, {}, 8);
+
+    // Test Case 9: Perform After Redo Stack Is Empty
+    undoStack.clear();
+    redoStack.clear();
+    performAction(undoStack, redoStack, Action("Study", "9AM"));
+    performAction(undoStack, redoStack, Action("Play", "10AM"));
+    performAction(undoStack, redoStack, Action("Procrastinate", "11AM"));
+    undo(undoStack, redoStack);
+    undo(undoStack, redoStack);
+    undo(undoStack, redoStack);
+    performAction(undoStack, redoStack, Action("New Action", "12PM"));
+    verifyTest(undoStack, redoStack, { "New Action" }, {}, 9);
+
+    // Test Case 10: Edge Cases Large Number of Undo/Redo
+    undoStack.clear();
+    redoStack.clear();
+    for (int i = 0; i < 50; i++) {
+        performAction(undoStack, redoStack, Action("Action" + to_string(i + 1), "Time"));
+    }
+    for (int i = 0; i < 25; i++) {
+        undo(undoStack, redoStack);
+    }
+    for (int i = 0; i < 25; i++) {
+        redo(undoStack, redoStack);
+    }
+    for (int i = 0; i < 10; i++) {
+        undo(undoStack, redoStack);
+    }
+
+    vector<string> expectedUndo, expectedRedo;
+    for (int i = 1; i <= 40; i++) expectedUndo.push_back("Action" + to_string(i));
+    for (int i = 40; i >= 31; i--) expectedRedo.push_back("Action" + to_string(i));
+
+    verifyTest(undoStack, redoStack, expectedUndo, expectedRedo, 10);
+}
+
+int main() {
+    runTestCases();
+    return 0;
+}

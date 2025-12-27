@@ -1,0 +1,4 @@
+﻿  main.cpp
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 2\Assignment_2\main.cpp(201,36): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 2\Assignment_2\main.cpp(238,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Assignment_2.vcxproj -> D:\BNU\SM4\Data Structures & Algorithms\Assignment 2\Assignment_2\x64\Debug\Assignment_2.exe

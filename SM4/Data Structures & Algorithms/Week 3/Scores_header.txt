@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include <stdexcept>
+#include "GameEntry.h"
+#pragma once
+
+class Scores
+{
+private:
+	int capacity;
+	int size;
+	GameEntry* entries;
+
+
+
+public:
+	Scores(int maxEnt = 10);
+	~Scores();
+	void add(const GameEntry& e);
+	GameEntry remove(int i);
+
+};
+
+
+

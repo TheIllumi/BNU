@@ -1,0 +1,214 @@
+// DoublyLinkedList.cpp : This file contains the 'main' function. Program execution begins and ends there.
+
+#include <iostream>
+using namespace std;
+
+class Node
+{
+public:
+    double data;
+    Node* next;
+    Node* prev;
+};
+
+class List
+{
+private:
+    Node* head;
+    Node* tail;
+public:
+    List();
+    ~List();
+    List(List&);
+    bool isEmpty();
+    bool Insert(int index, double x);
+    int Find(double x);
+    int Delete(double x);
+    void DisplayList(); 
+    int Count();
+    void reverse();
+
+};
+
+List::List()
+{
+    head = tail = nullptr;
+}
+
+List::~List()
+{
+    //write the destructor yourself
+    
+}
+
+List::List(List& other)
+{
+    //write the copy constructor yourself
+}
+
+int Count()
+{
+   //write the function to count the number of nodes in the linked list
+}
+
+void reverse()
+{
+  //write the function to reverse the data in the linked list
+}
+
+bool List::isEmpty()
+{
+    return (head == nullptr);
+}
+
+bool List::Insert(int index, double x)
+{
+    //if index is incorrect
+    if (index <= 0)
+        return false;
+
+    //create a new node
+    Node* newNode = new Node;
+    newNode->data = x;
+    newNode->next = nullptr;
+    newNode->prev = nullptr;
+
+    //inserting into an empty list
+    if (head == nullptr)
+    {
+        if (index == 1)
+        {
+            head = newNode;
+            tail = newNode;
+            return true;
+        }
+        else
+        {
+            delete newNode;
+            return false;
+
+        }
+    }
+
+    //if insertion is at the front of the list
+    if (index == 1)
+    {
+        newNode->next = head;
+        head->prev = newNode;
+        head = newNode;
+
+        return true;
+    }
+
+    int i = 1;
+    Node* ptr = head;
+
+    //trying to find the index for insertion
+    while (ptr != NULL && i < index - 1)
+    {
+        ptr = ptr->next;
+        i++;
+    }
+
+    //if the index does not exist in the list
+    if (ptr == NULL)
+    {
+        delete newNode;
+        return false;
+    }
+
+    //inserting in the middle of the list
+    if (ptr->next != nullptr)
+    {
+        newNode->next = ptr->next;
+        newNode->prev = ptr;
+
+        ptr->next->prev = newNode;
+        ptr->next = newNode;
+        return true;
+    }
+    //inserting at the end of the list
+    else
+    {
+        ptr->next = newNode;
+        newNode->prev = ptr;
+        tail = newNode;
+        return true;
+    }
+    
+}
+
+int List::Find(double x)
+{
+    Node* ptr = head;
+    int i = 1;
+    while (ptr && ptr->data != x)
+    {
+        ptr = ptr->next;
+        i++;
+    }
+    if (ptr)
+        return i;
+    return -1;
+}
+
+int List::Delete(double x)
+{
+    Node* currNode = head;
+    int currIndex = 1;
+
+
+    while (currNode && currNode->data != x)
+    {
+        currNode = currNode->next;
+        currIndex++;
+    }
+
+    //if node not found
+    if (currNode == nullptr)
+    {
+        return -1;
+    }
+
+    //if currNode is head
+    if (currNode == head)
+    {
+        head = currNode->next;
+        if (head) 
+            head->prev = nullptr;
+        delete currNode;
+        return currIndex;
+    }
+
+    //if currNode is tail
+    if(currNode == tail)
+    {
+        tail = currNode->prev;
+        if (tail) 
+            tail->next = nullptr;
+        delete currNode;
+        return currIndex;
+    }
+
+    //if currNode is anywhere in the middle of the list
+    currNode->prev->next = currNode->next;
+    currNode->next->prev = currNode->prev;
+    delete currNode;
+    return currIndex;
+}
+
+void List::DisplayList()
+{
+    Node* ptr = head;
+    while (ptr)
+    {
+        cout << ptr->data << endl;
+        ptr = ptr->next;
+
+    }
+}
+
+int main()
+{
+    cout << "Hello World!\n";
+}

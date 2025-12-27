@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+#include <stdexcept>
+using namespace std;
+
+#pragma once
+class GameEntry
+{
+private:
+    string name;
+    int score;
+public:
+    GameEntry();
+    GameEntry(string s, int input);
+    void setname(string s);
+    void setscore(int s);
+    string getname() const;
+    int getscore() const;
+};

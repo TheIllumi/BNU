@@ -1,0 +1,112 @@
+// PracticeLab8B.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Node
+{
+public:
+
+    string url;
+    Node* next;
+    Node* prev;
+    // Constructor
+    Node(string input) : url(input), next(this), prev(this) {}
+
+};
+
+
+class BrowserHistory
+{
+public:
+    Node* cursor;
+    // Constructor
+    BrowserHistory() : cursor(nullptr) {}
+
+
+    void visitNewSite(string url);
+    void goBack();
+    void goForward();
+    void displayHistory();
+};
+
+
+
+void BrowserHistory::visitNewSite(string url)
+{
+    if (cursor == NULL)
+    {
+        Node* newNode = new Node(url);
+        cursor = newNode;
+        return;
+    }
+
+    Node* newNode = new Node(url);
+    newNode->next = cursor->next;
+    newNode->prev = cursor;
+
+    cursor->next->prev = newNode;
+    cursor->next = newNode;
+    
+    
+    cursor = cursor->next;
+
+
+}
+void BrowserHistory::goBack()
+{
+    cursor = cursor->prev;
+}
+void BrowserHistory::goForward()
+{
+    cursor = cursor->next;
+}
+void BrowserHistory::displayHistory()
+{
+    if (cursor == NULL)
+        return;
+
+    Node* temp = cursor;
+    do
+    {
+        cout << temp->url << endl;
+        temp = temp->prev;
+    } while (temp != cursor);
+    cout << endl << endl;
+}
+
+
+
+
+int main()
+{
+    BrowserHistory list;
+
+    list.visitNewSite("google.com");
+    list.visitNewSite("stackoverflow.com");
+    list.visitNewSite("github.com");
+    list.visitNewSite("reddit.com");
+    list.visitNewSite("medium.com");
+    cout << "Browsing history: (the most recently visited): " << endl;
+    list.displayHistory();
+
+    list.goBack();
+    list.goBack();
+
+    cout << "After going back twice: " << endl;
+    cout << "Current website: " << list.cursor->url << endl << endl;
+
+    
+    list.visitNewSite("news.com");
+    cout << "After visiting news.com: " << endl;
+    cout << "Current website: " << list.cursor->url << endl << endl;
+
+    list.goForward();
+    cout << "After going forward once: " << endl;
+    cout << "Current website: " << list.cursor->url << endl << endl;
+
+    cout << "Browsing history: (the most recently visited): " << endl;
+    list.displayHistory();
+}

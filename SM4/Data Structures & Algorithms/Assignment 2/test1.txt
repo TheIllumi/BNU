@@ -1,0 +1,160 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+class Action {
+private:
+    char type[30];
+    char timeStamp[15];
+public:
+    void setData(const char* t, const char* ts) {
+        int i = 0;
+        while (t[i] != '\0') {
+            type[i] = t[i];
+            i++;
+        }
+        type[i] = '\0';
+
+        i = 0;
+        while (ts[i] != '\0') {
+            timeStamp[i] = ts[i];
+            i++;
+        }
+        timeStamp[i] = '\0';
+    }
+
+    void print() {
+        cout << type << "," << timeStamp << endl;
+    }
+};
+
+struct Node {
+    Action action;
+    Node* next;
+};
+
+class Stack {
+private:
+    Node* top;
+    int count;
+public:
+    Stack() {
+        top = nullptr;
+        count = 0;
+    }
+
+    void push(Action action) {
+        Node* newNode = new Node;
+        newNode->action = action;
+        newNode->next = top;
+        top = newNode;
+        count++;
+    }
+
+    Action pop() {
+        if (isEmpty()) {
+            cout << "Stack underflow" << endl;
+            exit(1);
+        }
+        Node* temp = top;
+        Action a = temp->action;
+        top = top->next;
+        delete temp;
+        count--;
+        return a;
+    }
+
+    Action peek() {
+        if (isEmpty()) {
+            cout << "Stack is empty" << endl;
+            exit(1);
+        }
+        return top->action;
+    }
+
+    bool isEmpty() {
+        return top == nullptr;
+    }
+
+    int size() {
+        return count;
+    }
+
+    void print() {
+        Node* temp = top;
+        while (temp != nullptr) {
+            temp->action.print();
+            temp = temp->next;
+        }
+    }
+
+    ~Stack() {
+        while (!isEmpty()) {
+            pop();
+        }
+    }
+};
+
+// Helper to split a line like "Study,9:00AM"
+void splitLine(char* line, char* type, char* timeStamp) {
+    int i = 0, j = 0;
+    while (line[i] != ',' && line[i] != '\0') {
+        type[j++] = line[i++];
+    }
+    type[j] = '\0';
+
+    i++;
+    while (line[i] == ' ') i++;
+
+    j = 0;
+    while (line[i] != '\0' && line[i] != '\n') {
+        timeStamp[j++] = line[i++];
+    }
+    timeStamp[j] = '\0';
+}
+
+void readAction() {
+    ifstream file("full_actions.txt");
+    if (!file) {
+        cout << "Error opening file." << endl;
+        return;
+    }
+
+    char line[50];
+    char type[30];
+    char timeStamp[15];
+
+    int day = 1;
+    int actionCount = 0;
+
+    Stack dailyStack;
+
+    while (file.getline(line, 50)) {
+        splitLine(line, type, timeStamp);
+        Action action;
+        action.setData(type, timeStamp);
+        dailyStack.push(action);
+        actionCount++;
+
+        // If 12 actions read, consider it end of a day
+        if (actionCount == 12) {
+            cout << "Day " << day << " Actions (Most Recent First):" << endl;
+            dailyStack.print();
+            cout << "------------------------------" << endl;
+            actionCount = 0;
+            day++;
+            dailyStack = Stack(); // reset stack for next day
+        }
+    }
+
+    file.close();
+}
+
+int main() {
+    readAction();
+    
+
+    return 0;
+}

@@ -1,0 +1,351 @@
+// DoublyLinkedList.cpp : This file contains the 'main' function. Program execution begins and ends there.
+
+#include <iostream>
+using namespace std;
+
+class Node
+{
+public:
+    double data;
+    Node* next;
+    Node* prev;
+};
+
+class List
+{
+private:
+    Node* head;
+    Node* tail;
+public:
+    List();
+    ~List();
+    List(List&);
+    bool isEmpty();
+    bool Insert(int index, double x);
+    int Find(double x);
+    int Delete(double x);
+    void DisplayList(); 
+    int Count();
+    void Reverse();
+    void ReverseLinksFromTail();
+    void ReverseLinksFromHead();
+    void MergeTwoLists(List&);
+   
+};
+
+List::List()
+{
+    head = nullptr;
+    tail = nullptr;
+}
+
+List::~List()
+{
+    Node* currNode = head;
+    Node* nextNode = NULL;
+
+    while (currNode != NULL)
+    {
+        nextNode = currNode->next;
+        delete currNode; // destroy the current node
+        currNode = nextNode;
+    }
+    head = nullptr;
+    tail = nullptr;
+}
+
+List::List(List& other)
+{
+    if (this == &other)
+        return;
+
+    if (other.head == NULL)
+    {
+        head = NULL;
+        tail = NULL;
+        return;
+    }
+
+    Node* headNode = new Node;
+    headNode->data = other.head->data;
+    headNode->next = NULL;
+    headNode->prev = NULL;
+    head = headNode;
+
+    Node* nextold = other.head->next;
+
+    Node* currentnew = head;
+
+    while (nextold)
+    {
+        Node* newNode = new Node;
+        newNode->data = nextold->data;
+        newNode->next = NULL;
+        newNode->prev = currentnew;
+        currentnew->next = newNode;
+        currentnew = currentnew->next;
+
+        nextold = nextold->next;
+    }
+    tail = currentnew;
+}
+
+int List::Count()
+{
+    Node* ptr = head;
+    int counter = 0;
+    while (ptr)
+    {
+        counter++;
+        ptr = ptr->next;
+    }
+    return counter;
+}
+
+void List::ReverseLinksFromTail()
+{
+    Node* temp = NULL;
+    Node* ptr = tail;
+    
+    while (ptr)
+    {
+        temp = ptr->next;
+        ptr->next = ptr->prev;
+        ptr->prev = temp;
+
+        ptr = ptr->next;
+    }
+
+    ptr = head;
+    head = tail;
+    tail = ptr;
+}
+
+void List::ReverseLinksFromHead()
+{
+    Node* temp = NULL;
+    Node* ptr = head;
+
+    while (ptr)
+    {
+        temp = ptr->next;
+        ptr->next = ptr->prev;
+        ptr->prev = temp;
+
+        ptr = ptr->prev;
+    }
+    ptr = head;
+    head = tail;
+    tail = ptr;
+}
+
+bool List::isEmpty()
+{
+    return (head == nullptr);
+}
+
+bool List::Insert(int index, double x)
+{
+    //if index is incorrect
+    if (index <= 0)
+    {
+        cout << "Out of bounds index" << endl;
+        return false;
+    }
+        
+    //create a new node
+    Node* newNode = new Node;
+    newNode->data = x;
+    newNode->next = nullptr;
+    newNode->prev = nullptr;
+
+    //inserting into an empty list
+    if (head == nullptr)
+    {
+        if (index == 1)
+        {
+            head = newNode;
+            tail = newNode;
+            cout << "Inserted into an empty list" << endl;
+            return true;
+        }
+        else
+        {
+            cout << "Cannot insert at this index in an empty list" << endl;
+            delete newNode;
+            return false;
+
+        }
+    }
+
+    //if insertion is at the front of the list
+    if (index == 1)
+    {
+        newNode->next = head;
+        head->prev = newNode;
+        head = newNode;
+        cout << "Insertion at the front of the list" << endl;
+        return true;
+    }
+
+    int i = 1;
+    Node* ptr = head;
+
+    //trying to find the index for insertion
+    while (ptr != NULL && i < index - 1)
+    {
+        ptr = ptr->next;
+        i++;
+    }
+
+    //if the index does not exist in the list
+    if (ptr == NULL)
+    {
+        cout << "Incorrect index" << endl;
+        delete newNode;
+        return false;
+    }
+
+    //inserting in the middle of the list
+    if (ptr->next != nullptr)
+    {
+        newNode->next = ptr->next;
+        newNode->prev = ptr;
+
+        ptr->next->prev = newNode;
+        ptr->next = newNode;
+        cout << "Inserting in the middle of the list" << endl;
+        return true;
+    }
+    //inserting at the end of the list
+    else
+    {
+        cout << "Inserting at the end of the list" << endl;
+        ptr->next = newNode;
+        newNode->prev = ptr;
+        tail = newNode;
+        return true;
+    }
+    
+}
+
+int List::Find(double x)
+{
+    Node* ptr = head;
+    int i = 1;
+    while (ptr && ptr->data != x)
+    {
+        ptr = ptr->next;
+        i++;
+    }
+    if (ptr)
+        return i;
+    return -1;
+}
+
+int List::Delete(double x)
+{
+    Node* currNode = head;
+    int currIndex = 1;
+
+
+    while (currNode && currNode->data != x)
+    {
+        currNode = currNode->next;
+        currIndex++;
+    }
+
+    //if node not found
+    if (currNode == nullptr)
+    {
+        return -1;
+    }
+
+    //if currNode is head
+    if (currNode == head)
+    {
+        head = currNode->next;
+        if (head) 
+            head->prev = nullptr;
+        delete currNode;
+        return currIndex;
+    }
+
+    //if currNode is tail
+    if(currNode == tail)
+    {
+        tail = currNode->prev;
+        if (tail) 
+            tail->next = nullptr;
+        delete currNode;
+        return currIndex;
+    }
+
+    //if currNode is anywhere in the middle of the list
+    currNode->prev->next = currNode->next;
+    currNode->next->prev = currNode->prev;
+    delete currNode;
+    return currIndex;
+}
+
+void List::DisplayList()
+{
+    Node* ptr = head;
+    cout << "Printing list:" << endl;
+    while (ptr)
+    {
+        cout << ptr->data << endl;
+        ptr = ptr->next;
+
+    }
+    cout << endl << endl;
+}
+
+void List::MergeTwoLists(List& other) //deletes the other list
+{
+    if (other.head == NULL)
+        return;
+    if (head == NULL)
+    {
+        head = other.head;
+        tail = other.tail;
+        return;
+    }
+    
+    tail->next = other.head;
+    other.head->prev = tail;
+    tail = other.tail;
+    other.head = nullptr;
+    other.tail = nullptr;
+}
+
+
+int main()
+{
+    cout << "Hello World!\n";
+    List listA;
+    listA.Insert(1, 2);
+    listA.Insert(2, 4);
+    listA.Insert(3, 6);
+    listA.Insert(4, 8);
+
+    List listB = listA;
+    //listB.DisplayList();
+
+    listB.Insert(1, 100);
+    listB.Insert(1, 110);
+    listB.Insert(1, 120);
+    listB.Insert(1, 130);
+    listB.Insert(1, 140);
+
+    
+    listB.DisplayList();
+    //listB.ReverseLinksFromHead();
+    //listB.DisplayList();
+
+
+    listB.MergeTwoLists(listA);
+    listB.DisplayList();
+
+    List listC(listA);
+ }

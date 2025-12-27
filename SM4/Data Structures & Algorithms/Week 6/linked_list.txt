@@ -1,0 +1,228 @@
+/ Linked_Lists.cpp : This file contains the 'main' function. Program execution begins and ends there.
+#include <iostream>
+using namespace std;
+
+class Node {
+public:
+    double data;   //data
+    Node* next; //pointer to the next node
+
+};
+
+class List {
+private:
+    Node* head;     
+public:
+    List();
+    ~List();
+    List(List&);
+    bool IsEmpty();
+    bool Insert(int index, double x);
+    int Find(double x);
+    int Delete(double x);
+    void DisplayList();
+
+};
+
+List::List()
+{
+    head = NULL;
+}
+
+bool List::IsEmpty()
+{
+    return head == NULL;
+}
+
+bool List::Insert(int index, double x)
+{
+    //if index is incorrect
+    if (index <= 0)
+        return false;       
+
+    //Create a new node
+    Node* newNode = new Node;
+    newNode->data = x;
+    newNode->next = NULL;
+
+    //if list is empty
+    if (head == NULL)
+    {   //if we are inserting at the front of the empty list
+        if (index == 1)
+        {
+            head = newNode;
+            return true;
+        }
+        //if we are inserting at any index other than 1 in an empty list
+        else
+        {
+            delete newNode;
+            return false;
+        }
+    }
+    
+    //if insertion is at the front of the list
+    if (index == 1)
+    {
+        newNode->next = head;
+        head = newNode;
+        return true;
+    }
+
+    int i = 1;
+    Node* ptr = head;
+
+    //trying to find the index for insertion
+    while (ptr != NULL && i < index - 1)
+    {
+        ptr = ptr->next;
+        i++;
+    } 
+
+    //if the index does not exist in the list
+    if (ptr == NULL)
+    {
+        delete newNode;
+        return false;
+    }
+
+    //inserting in the middle or at the end of the list
+    newNode->next = ptr->next;
+    ptr->next = newNode;
+    return true;
+}
+
+int List::Find(double x)
+{
+    Node* currNode = head;
+    int currIndex = 1;
+    while (currNode && currNode->data != x) 
+    {
+        currNode = currNode->next;
+        currIndex++;
+    }
+    if (currNode) 
+        return currIndex;
+    return 0;
+
+}
+
+int List::Delete(double x)
+{
+    Node* prevNode = NULL;
+    Node* currNode = head;
+
+    int currIndex = 1;
+    while (currNode && currNode->data != x) 
+    {
+        prevNode = currNode;
+        currNode = currNode->next;
+        currIndex++;
+    }
+
+    if (currNode) 
+    {
+        if (prevNode) 
+        {
+            prevNode->next = currNode->next;
+            delete currNode;
+        }
+        else 
+        {
+            head = currNode->next;
+            delete currNode;
+        }
+        return currIndex;
+    }
+    return 0;
+}
+
+void List::DisplayList()
+{
+    int num = 0;
+    Node* currNode = head;
+    while (currNode != NULL) {
+        cout << currNode->data << endl;
+        currNode = currNode->next;
+        num++;
+    }
+    cout << "Number of nodes in the list: " << num << endl;
+
+}
+
+List::~List(void) {
+    Node* currNode = head;
+    Node* nextNode = NULL;
+    
+    while (currNode != NULL)
+    {
+        nextNode = currNode->next;
+        delete currNode; // destroy the current node
+        currNode = nextNode;
+    }
+}
+
+List::List(List& other)
+{
+    if (this == &other)
+        return;
+
+    if (other.head == NULL)
+    {
+        head = NULL;
+        return;
+    }
+
+    Node* headNode = new Node;
+    headNode->data = other.head->data;
+    headNode->next = NULL;
+    head = headNode;
+
+    Node* nextold = other.head->next;
+
+    Node* currentnew = head;
+    
+    while (nextold)
+    {
+        Node* newNode = new Node;
+        newNode->data = nextold->data;
+        newNode->next = NULL;
+        currentnew->next = newNode;
+        currentnew = currentnew->next;
+
+        nextold = nextold->next;
+    }
+}
+
+int main()
+{
+    List list;
+    list.Insert(1, 7.0); // successful
+    list.Insert(2, 5.0); // successful
+    list.Insert(-1, 5.0); // unsuccessful
+    list.Insert(1, 6.0); // successful
+    list.Insert(8, 4.0); // unsuccessful
+    // print all the elements
+    list.DisplayList();
+
+    if (list.Find(5.0) > 0) cout << "5.0 found" << endl;
+    else cout << "5.0 not found" << endl;
+    if (list.Find(4.5) > 0) cout << "4.5 found" << endl;
+    else cout << "4.5 not found" << endl;
+
+    list.Delete(7.0);
+    list.Insert(1, 10.0); // successful
+    list.DisplayList();
+    List listnew(list);
+    cout << "Dispalying new List" << endl;
+    listnew.DisplayList();
+
+    list.Insert(1, 100);
+    cout << "Displaying old list after insertion" << endl;
+    list.DisplayList();
+    
+    cout << "Displaying new list to confirm deep copying" << endl;
+    listnew.DisplayList();
+
+    return 0;
+}

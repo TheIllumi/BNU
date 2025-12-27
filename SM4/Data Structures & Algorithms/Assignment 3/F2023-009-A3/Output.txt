@@ -1,0 +1,7 @@
+Preorder: CBADEFGJHIK
+Inorder: ABCDEFGHIJK
+Postorder: ABCDEFGHIJK
+Breadth-First: CKDEFGJBAHI
+Height: 6
+Total .txt files: 11
+Balanced: No

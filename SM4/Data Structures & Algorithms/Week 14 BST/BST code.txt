@@ -1,0 +1,198 @@
+// Trees2.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+using namespace std;
+
+
+struct TreeNode
+{
+    int value;
+    TreeNode* left;
+    TreeNode* right;
+};
+
+class IntBinaryTree {
+private:
+    TreeNode* root; // Pointer to the root of BST
+    void destroySubTree(TreeNode*); //Recursively delete all tree nodes
+    void deleteNode(int, TreeNode*&);
+    void makeDeletion(TreeNode*&);
+    void displayInOrder(TreeNode*);
+    void displayPreOrder(TreeNode*);
+    void displayPostOrder(TreeNode*);
+public:
+    IntBinaryTree() { root = NULL; }
+    ~IntBinaryTree() { destroySubTree(root); }
+    void insertNode(int);
+    bool find(int);
+    void remove(int);
+    void showNodesInOrder() { displayInOrder(root); }
+    void showNodesPreOrder() { displayPreOrder(root); }
+    void showNodesPostOrder() { displayPostOrder(root); }
+};
+
+void IntBinaryTree::destroySubTree(TreeNode* p) //Recursively delete all tree nodes
+{
+    if (p == nullptr)
+        return;
+
+    destroySubTree(p->left);
+    destroySubTree(p->right);
+    delete p;
+}
+
+bool IntBinaryTree::find(int num) {
+    // The function starts from the root
+    TreeNode* nodePtr = root;
+    while (nodePtr) {
+        if (nodePtr->value == num)
+            return true; // value is found
+        else if (num < nodePtr->value)
+            nodePtr = nodePtr->left;
+        else
+            nodePtr = nodePtr->right;
+    }
+    return false; // value not found
+}
+
+void IntBinaryTree::insertNode(int num) {
+    TreeNode* newNode = new TreeNode; // Create a new node
+    newNode->value = num;
+    newNode->left = newNode->right = NULL;
+    if (!root) root = newNode; // If tree is empty.
+    else { // Tree is not empty
+        TreeNode* nodePtr = root; // create a pointer to traverse the tree
+        while (true) {
+            if (num < nodePtr->value) { // Left subtree
+                if (nodePtr->left) { nodePtr = nodePtr->left; }
+                else { nodePtr->left = newNode; return; }
+            }
+            else if (num > nodePtr->value) { // Right subtree
+                if (nodePtr->right) nodePtr = nodePtr->right;
+                else { nodePtr->right = newNode; return; }
+            }
+            else { cout << "Duplicate value found in tree.\n"; break; }
+        }
+    }
+}
+
+void IntBinaryTree::remove(int num)
+{
+    deleteNode(num, root);
+}
+
+void IntBinaryTree::deleteNode(int num, TreeNode*& nodePtr)
+{
+    if (nodePtr == NULL) // node does not exist in the tree
+        cout << num << "not found.\n"; 
+    else if (num < nodePtr->value)
+        deleteNode(num, nodePtr->left); // find in left subtree
+    else if (num > nodePtr->value)
+        deleteNode(num, nodePtr->right); // find in right subtree
+    else // num == nodePtr->value i.e. node is found
+        makeDeletion(nodePtr); // actually deletes node from BST
+}
+
+void IntBinaryTree::makeDeletion(TreeNode*& nodePtr) {
+    TreeNode* tempNodePtr; // Temperary pointer
+    if (nodePtr->right == NULL) { // case for leaf and one (left) child
+        tempNodePtr = nodePtr;
+        nodePtr = nodePtr->left; // Reattach the left child
+        delete tempNodePtr;
+    }
+    else if (nodePtr->left == NULL) { // case for one (right) child
+        tempNodePtr = nodePtr;
+        nodePtr = nodePtr->right; // Reattach the right child
+        delete tempNodePtr;
+    }
+    else { // case for two children.
+        tempNodePtr = nodePtr->right; // Move one node to the right
+        while (tempNodePtr->left) { // Go to the extreme left node
+            tempNodePtr = tempNodePtr->left;
+        }
+        tempNodePtr->left = nodePtr->left; // Reattach the left subtree
+        tempNodePtr = nodePtr;
+        nodePtr = nodePtr->right; // Reattach the right subtree
+        delete tempNodePtr;
+    }
+}
+
+void IntBinaryTree::displayInOrder(TreeNode* p)
+{
+    if (p != NULL)
+    {
+        displayInOrder(p->left);
+        cout << p->value << " ";
+        displayInOrder(p->right);
+    }
+}
+void IntBinaryTree::displayPreOrder(TreeNode* p)
+{
+    if (p != NULL)
+    {
+        cout << p->value << " ";
+        displayPreOrder(p->left);
+        displayPreOrder(p->right);
+    }
+}
+void IntBinaryTree::displayPostOrder(TreeNode* p)
+{
+    if (p != NULL)
+    {
+        displayPreOrder(p->left);
+        displayPreOrder(p->right);
+        cout << p->value << " ";
+    }
+}
+
+
+int main()
+{
+    cout << "Hello World!\n";
+}
+
+
+
+void IntBinaryTree::makeDeletion(TreeNode*& nodePtr) {
+    // Case 1: Leaf node (no children)
+    if (nodePtr->left == nullptr && nodePtr->right == nullptr) {
+        delete nodePtr;
+        nodePtr = nullptr;
+    }
+
+    // Case 2: Node with only left child
+    else if (nodePtr->right == nullptr) {
+        TreeNode* tempNodePtr = nodePtr;
+        nodePtr = nodePtr->left;
+        delete tempNodePtr;
+    }
+
+    // Case 3: Node with only right child
+    else if (nodePtr->left == nullptr) {
+        TreeNode* tempNodePtr = nodePtr;
+        nodePtr = nodePtr->right;
+        delete tempNodePtr;
+    }
+
+    // Case 4: Node with two children
+    else {
+        // Find the inorder successor (leftmost node in right subtree)
+        TreeNode* successorParent = nodePtr;
+        TreeNode* successor = nodePtr->right;
+
+        while (successor->left != nullptr) {
+            successorParent = successor;
+            successor = successor->left;
+        }
+
+        // Replace nodePtr's value with successor's value
+        nodePtr->value = successor->value;
+
+        // Recursively delete the inorder successor
+        if (successorParent->left == successor)
+            makeDeletion(successorParent->left);  // delete successor
+        else
+            makeDeletion(successorParent->right); // happens if successorParent == nodePtr
+    }
+}

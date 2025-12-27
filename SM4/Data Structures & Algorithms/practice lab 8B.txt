@@ -1,0 +1,165 @@
+// PracticeLab8B.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+using namespace std;
+
+class Node
+{
+public:
+    
+    int songID;
+    string songName;
+    Node* next;
+    // Constructor
+    Node(int value, string input) : songName(input), next(this), songID(value) {}
+
+};
+
+
+class CircularPlaylist
+{
+public:
+    Node* cursor;
+    // Constructor
+    CircularPlaylist() : cursor(nullptr) {}
+
+    void addSong(int, string);
+    void removeSong(int);
+    void displayPlaylist();
+    void playNextSong();
+};
+
+/*void CircularPlaylist::addSong(int id, string name)
+{
+    Node* newNode = new Node(id, name);
+    if (cursor == nullptr) 
+    {
+        newNode->next = newNode;
+        cursor = newNode;
+    }
+    else {
+        Node* temp = cursor;
+        while (temp->next != cursor) 
+        {
+            temp = temp->next;
+        }
+        temp->next = newNode;
+        newNode->next = cursor;
+    }
+}
+
+*/
+
+void CircularPlaylist::addSong(int id, string name)
+{
+    Node* newNode = new Node(id, name);
+    if (cursor == nullptr)
+    {
+        newNode->next = newNode;
+        cursor = newNode;
+    }
+    else
+    {
+        newNode->next = cursor->next;
+        cursor->next = newNode;
+        cursor = newNode;
+    }
+}
+
+void CircularPlaylist::removeSong(int input)
+{
+    if (cursor == NULL)
+    {
+        cout << "Empty list" << endl;
+        return;
+    }
+
+    Node* curr = cursor->next;
+    Node* prev = cursor;
+
+    do
+    {
+        if (curr->songID == input)
+        {
+            prev->next = curr->next;
+            delete curr;
+            return;
+        }
+        prev = curr;
+        curr = curr->next;
+
+    } while (prev != cursor);
+
+    cout << "SongID not found" << endl;
+}
+
+void CircularPlaylist::displayPlaylist()
+{
+    if (cursor == NULL)
+        return;
+
+    Node* temp = cursor->next;
+    do
+    {
+        cout << temp->songName << endl;
+        temp = temp->next;
+    } while (temp != cursor->next);
+    cout << endl << endl;
+}
+
+/*void CircularPlaylist::displayPlaylist()    
+{
+    if (cursor == NULL)
+        return;
+    Node* ptr = cursor;
+    
+    while (true)
+    {
+        cout << ptr->songName << "->";
+        if (ptr->next == cursor)
+        {
+            break;
+        }
+        ptr = ptr->next;
+
+    }
+}
+*/
+
+void CircularPlaylist::playNextSong()
+{
+    if (cursor == NULL)
+    {
+        cout << "Empty list" << endl;
+        return;
+    }
+
+    Node* temp = cursor;
+    int i = 0;
+    do
+    {
+        cout << temp->songName << endl;
+        temp = temp->next;
+        i++;
+    } while (temp != cursor && i < 3);
+
+}
+
+
+int main()
+{
+    CircularPlaylist list;
+
+    list.addSong(101, "Song A");
+    list.addSong(102, "Song B");
+    list.addSong(103, "Song C");
+    list.addSong(104, "Song D");
+    list.addSong(105, "Song E");
+
+    list.displayPlaylist();
+    
+    list.removeSong(104);
+
+    list.displayPlaylist();
+}

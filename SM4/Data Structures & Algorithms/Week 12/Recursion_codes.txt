@@ -1,0 +1,132 @@
+// Recursion1.cpp : This file contains the 'main' function. Program execution begins and ends there.
+#include <iostream>
+using namespace std;
+
+void message(int times)
+{
+    cout << "message called with " << times << " in times.\n";
+
+    if (times > 0)
+    {
+        cout << "This is a recursive function.\n";
+        message(times - 1);
+    }
+
+    cout << "message returning with " << times << " in times.\n";
+}
+
+int mystery(int n)
+{
+    if (n <= 0)
+        return 0;
+    return n + mystery(n - 2);
+}
+
+void fun(int n)
+{
+    if (n == 0)
+        return;
+    cout << n << " ";
+    fun(n - 1);
+    cout << n << " ";
+}
+
+void tailRec(int n)
+{
+    if (n == 0)
+        return;
+    cout << n << " ";
+    tailRec(n - 1);
+}
+
+void showMe(int arg)
+{
+    if (arg < 10)
+        showMe(++arg);
+    else
+        cout << arg << endl;
+}
+
+int sum(int n)
+{
+    if (n == 0)
+        return 0;
+    return n + sum(n - 1);
+}
+
+int factorial(int n)
+{
+    if (n == 0)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
+
+
+int fib(int n)
+{
+    if (n <= 0)
+        return 0;
+    if (n == 1)
+        return 1;
+    else
+    {
+        return fib(n - 1) + fib(n - 2);
+    }
+        
+
+}
+struct Node
+{
+    int data;
+    Node* next;
+    Node(int val) : data(val), next(nullptr) {}
+};
+
+void printList(Node* head)
+{
+    if (head == nullptr)
+        return;
+    cout << head->data << " ";
+    printList(head->next);
+}
+
+Node* reverseList(Node* ptr)
+{
+    if (ptr == nullptr || ptr->next == nullptr)
+        return ptr;
+    Node* rest = reverseList(ptr->next);
+    ptr->next->next = ptr;
+    ptr->next = nullptr;
+    return rest;
+}
+
+
+int main()
+{
+    //message(5);
+
+    //cout << mystery(5);
+
+    //fun(3);
+
+    showMe(0);
+
+    //tailRec(5);
+
+    //cout << sum(3);
+
+    //cout << factorial(5);
+
+    //cout << fib(3);
+    
+    //Node* head = new Node(1);
+    //head->next = new Node(2);
+    //head->next->next = new Node(3);
+    //printList(head);
+
+    //Node* ptr = reverseList(head);
+    //cout << ptr->data << endl;
+
+}
+

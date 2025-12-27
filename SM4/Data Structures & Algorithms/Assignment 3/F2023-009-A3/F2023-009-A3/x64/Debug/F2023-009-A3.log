@@ -1,0 +1,48 @@
+﻿  main.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(7,21): error C2039: 'filesystem': is not a member of 'std'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\string(23,1):
+      see declaration of 'std'
+  
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(7,21): error C2878: 'filesystem': a namespace or class of this name does not exist
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(9,21): error C2653: 'fs': is not a class or namespace name
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(9,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(9,29): error C2143: syntax error: missing ',' before '&'
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(10,10): error C2653: 'fs': is not a class or namespace name
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(10,14): error C3861: 'exists': identifier not found
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(12,5): error C2653: 'fs': is not a class or namespace name
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(12,14): error C2146: syntax error: missing ';' before identifier 'leftPath'
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(12,14): error C2065: 'leftPath': undeclared identifier
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(12,30): error C2297: '/': not valid as right operand has type 'const char [5]'
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(13,5): error C2653: 'fs': is not a class or namespace name
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(13,14): error C2146: syntax error: missing ';' before identifier 'rightPath'
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(13,14): error C2065: 'rightPath': undeclared identifier
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(13,31): error C2297: '/': not valid as right operand has type 'const char [6]'
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(15,9): error C2653: 'fs': is not a class or namespace name
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(15,20): error C2065: 'leftPath': undeclared identifier
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(15,13): error C3861: 'exists': identifier not found
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(15,33): error C2653: 'fs': is not a class or namespace name
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(15,44): error C2065: 'rightPath': undeclared identifier
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(15,37): error C3861: 'exists': identifier not found
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(16,13): error C2653: 'fs': is not a class or namespace name
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(16,24): error C2065: 'leftPath': undeclared identifier
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(16,17): error C3861: 'exists': identifier not found
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(17,22): error C2065: 'leftPath': undeclared identifier
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(18,13): error C2653: 'fs': is not a class or namespace name
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(18,24): error C2065: 'rightPath': undeclared identifier
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(18,17): error C3861: 'exists': identifier not found
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(19,22): error C2065: 'rightPath': undeclared identifier
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(23,34): error C2653: 'fs': is not a class or namespace name
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(23,26): error C2530: 'entry': references must be initialized
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(23,26): error C3531: 'entry': a symbol whose type contains 'auto' must have an initializer
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(23,32): error C2143: syntax error: missing ';' before ':'
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(23,38): error C3861: 'directory_iterator': identifier not found
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(23,62): error C2143: syntax error: missing ';' before ')'
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(25,25): warning C4566: character represented by universal-character-name '\U0001F4C4' cannot be represented in the current code page (1252)
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(29,29): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(34,25): warning C4566: character represented by universal-character-name '\U0001F520' cannot be represented in the current code page (1252)
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(47,5): error C2653: 'fs': is not a class or namespace name
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(47,9): error C2065: 'path': undeclared identifier
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(47,14): error C2146: syntax error: missing ';' before identifier 'root'
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(47,14): error C2065: 'root': undeclared identifier
+D:\BNU\SM4\Data Structures & Algorithms\Assignment 3\F2023-009-A3\main.cpp(48,14): error C2065: 'root': undeclared identifier

@@ -1,0 +1,32 @@
+#include "GameEntry.h"
+
+GameEntry::GameEntry()
+{
+    name = "UNTITLED";
+    score = 0;
+}
+
+GameEntry::GameEntry(string s, int input)
+{
+    name = s;
+    score = input;
+}
+
+void GameEntry::setname(string s)
+{
+    name = s;
+}
+
+void GameEntry::setscore(int input)
+{
+    score = input;
+}
+
+string GameEntry::getname() const
+{
+    return name;
+}
+int GameEntry::getscore() const
+{
+    return score;
+}

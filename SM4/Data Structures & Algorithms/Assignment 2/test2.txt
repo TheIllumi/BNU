@@ -1,0 +1,228 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+// ------------------ Action Class ------------------
+class Action {
+private:
+    char type[30];
+    char timeStamp[15];
+public:
+    void setData(const char* t, const char* ts) {
+        int i = 0;
+        while (t[i] != '\0' && i < 29) {
+            type[i] = t[i];
+            i++;
+        }
+        type[i] = '\0';
+
+        i = 0;
+        while (ts[i] != '\0' && i < 14) {
+            timeStamp[i] = ts[i];
+            i++;
+        }
+        timeStamp[i] = '\0';
+    }
+
+    void print() const {
+        cout << type << "," << timeStamp;
+    }
+};
+
+// ------------------ Node for Linked List ------------------
+struct Node {
+    Action action;
+    Node* next;
+};
+
+// ------------------ Stack Class ------------------
+class Stack {
+private:
+    Node* top;
+    int count;
+public:
+    Stack() {
+        top = nullptr;
+        count = 0;
+    }
+
+    void push(Action action) {
+        Node* newNode = new Node;
+        newNode->action = action;
+        newNode->next = top;
+        top = newNode;
+        count++;
+    }
+
+    Action pop() {
+        if (isEmpty()) {
+            cout << "Stack underflow" << endl;
+            exit(1);
+        }
+        Node* temp = top;
+        Action a = temp->action;
+        top = top->next;
+        delete temp;
+        count--;
+        return a;
+    }
+
+    Action peek() {
+        if (isEmpty()) {
+            cout << "Stack is empty" << endl;
+            exit(1);
+        }
+        return top->action;
+    }
+
+    bool isEmpty() {
+        return top == nullptr;
+    }
+
+    void clear() {
+        while (!isEmpty()) {
+            pop();
+        }
+    }
+
+    int size() {
+        return count;
+    }
+
+    void print(const char* name) {
+        cout << name << " (top -> bottom): [";
+        Node* temp = top;
+        while (temp != nullptr) {
+            temp->action.print();
+            if (temp->next != nullptr) cout << ", ";
+            temp = temp->next;
+        }
+        cout << "]" << endl;
+    }
+
+    ~Stack() {
+        clear();
+    }
+};
+
+// ------------------ Helpers ------------------
+void splitLine(char* line, char* type, char* timeStamp) {
+    int i = 0, j = 0;
+    while (line[i] != ',' && line[i] != '\0') {
+        type[j++] = line[i++];
+    }
+    type[j] = '\0';
+    i++;
+    while (line[i] == ' ') i++;
+    j = 0;
+    while (line[i] != '\0' && line[i] != '\n') {
+        timeStamp[j++] = line[i++];
+    }
+    timeStamp[j] = '\0';
+}
+
+void readActionsFromFile(Action actions[][12], int days) {
+    ifstream file("full_actions.txt");
+    if (!file) {
+        cout << "Error opening file." << endl;
+        exit(1);
+    }
+    char line[50], type[30], timeStamp[15];
+    for (int day = 0; day < days; day++) {
+        for (int hour = 0; hour < 12; hour++) {
+            if (file.getline(line, 50)) {
+                splitLine(line, type, timeStamp);
+                actions[day][hour].setData(type, timeStamp);
+            }
+            else {
+                // If file ends prematurely, fill with default actions
+                actions[day][hour].setData("Default", "9:00AM");
+            }
+        }
+    }
+    file.close();
+}
+
+// ------------------ Undo/Redo Logic ------------------
+void performAction(Stack& undoStack, Stack& redoStack, Action a) {
+    undoStack.push(a);
+    redoStack.clear();
+    cout << "Performed: "; a.print(); cout << endl;
+}
+
+void undo(Stack& undoStack, Stack& redoStack) {
+    if (undoStack.isEmpty()) {
+        cout << "Nothing to undo." << endl;
+        return;
+    }
+    Action a = undoStack.pop();
+    redoStack.push(a);
+    cout << "Undo: "; a.print(); cout << endl;
+}
+
+void redo(Stack& undoStack, Stack& redoStack) {
+    if (redoStack.isEmpty()) {
+        cout << "Nothing to redo." << endl;
+        return;
+    }
+    Action a = redoStack.pop();
+    undoStack.push(a);
+    cout << "Redo: "; a.print(); cout << endl;
+}
+
+void simulateRandomOperations(Stack& undoStack, Stack& redoStack, Action actions[][12], int days) {
+    srand(time(0));
+    const int totalOperations = 50;
+    int performedDays = 0;
+
+    for (int i = 0; i < totalOperations; i++) {
+        int operation = rand() % 3; // 0=perform, 1=undo, 2=redo
+
+        if (operation == 0 && performedDays < days) {
+            // Perform all 12 actions for the day
+            cout << "\n=== Performing day " << performedDays + 1 << " actions ===" << endl;
+            for (int hour = 0; hour < 12; hour++) {
+                performAction(undoStack, redoStack, actions[performedDays][hour]);
+            }
+            performedDays++;
+        }
+        else if (operation == 1) {
+            cout << "\n=== Undo operation ===" << endl;
+            undo(undoStack, redoStack);
+        }
+        else {
+            cout << "\n=== Redo operation ===" << endl;
+            redo(undoStack, redoStack);
+        }
+
+        // Visualize stacks after each operation
+        undoStack.print("Undo Stack");
+        redoStack.print("Redo Stack");
+        cout << "------------------------" << endl;
+    }
+}
+
+// ------------------ Main Function ------------------
+int main() {
+    const int days = 90;
+    const int actionsPerDay = 12;
+    Action allActions[days][actionsPerDay];
+
+    // Part 1: Read all 90 days of actions
+    readActionsFromFile(allActions, days);
+
+    Stack undoStack, redoStack;
+
+    // Part 2: Simulate random operations
+    simulateRandomOperations(undoStack, redoStack, allActions, days);
+
+    // Final statistics
+    cout << "\n=== Simulation Complete ===" << endl;
+    cout << "Total days performed: " << undoStack.size() / 12 << endl;
+    cout << "Final Undo Stack size: " << undoStack.size() << endl;
+    cout << "Final Redo Stack size: " << redoStack.size() << endl;
+
+    return 0;
+}

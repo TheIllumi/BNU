@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\BNU\\SM4\\Data Structures \u0026 Algorithms\\Assignment 1\\F2023-630-A1\\Q2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0624036E-B779-46D4-822D-88EF2582C5E3}|Q2.vcxproj|D:\\BNU\\SM4\\Data Structures \u0026 Algorithms\\Assignment 1\\F2023-630-A1\\Q2\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0624036E-B779-46D4-822D-88EF2582C5E3}|Q2.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\BNU\\SM4\\Data Structures \u0026 Algorithms\\Assignment 1\\F2023-630-A1\\Q2\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "D:\\BNU\\SM4\\Data Structures \u0026 Algorithms\\Assignment 1\\F2023-630-A1\\Q2\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-12T16:38:22.006Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

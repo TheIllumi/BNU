@@ -1,0 +1,129 @@
+#include <iostream>
+#include <string>
+#include <stdexcept>
+
+using namespace std;
+
+class ScoreBoard {
+
+private:
+    int capacity;       // total size
+    int size;           // current size
+    string* names;      // manage player names
+    int* scores;        // manage player scores
+
+public:
+    
+    ScoreBoard(int maxEnt = 10) : capacity(maxEnt), size(0) 
+    {
+        names = new string[capacity];   
+        scores = new int[capacity];         
+    }
+
+    
+    ~ScoreBoard() 
+    {
+        delete[] names;   
+        delete[] scores;  
+    }
+
+    
+    void addEntry(const string& name, int score) 
+    {
+        if (size == capacity) 
+        {
+            if (score <= scores[capacity- 1])          //capacity - 1 holds the smallest score in the scores array
+            {     
+                return;                             
+            }
+            else
+            {
+                removeEntry(size - 1);
+                size++;
+            }
+        }
+        else 
+        {
+            size++;                                 //get ready to insert a score and name in the leaderboard
+        }
+        
+        int i = size - 2;    
+        //cout << i << endl;
+        //so we can move values at i + 1
+        while (i >= 0 && score > scores[i]) {
+            names[i + 1] = names[i];    
+            scores[i + 1] = scores[i];  
+            i--;
+            cout << i << endl;
+        }
+
+        names[i + 1] = name;   //inserting names and score
+        scores[i + 1] = score; 
+    }
+
+
+    void removeEntry(int index) 
+    {
+        if (index < 0 || index >= size) {
+            throw out_of_range("Invalid index");        //what will this do?
+        }
+        //cout << "Removing " << names[index] << "\t" << scores[index] << endl;
+        for (int j = index + 1; j < size; j++) {
+            names[j - 1] = names[j];    
+            scores[j - 1] = scores[j];  
+        }
+        size--;                 //update size to reflect the smaller array
+    }
+
+   
+    void displayScores() const 
+    {
+        if (size == 0) 
+        {
+            cout << "No scores to display." << endl;
+            return;
+        }
+
+        cout << "High scores list:" << endl;
+        for (int i = 0; i < size; ++i) 
+        {
+            cout << names[i] << " *** " << scores[i] << endl;
+        }
+        cout << endl;
+
+    }
+
+
+};
+
+
+int main() 
+{
+    ScoreBoard board(5); //5 capacity
+
+    board.addEntry("Alice", 150);
+    board.displayScores();
+
+    board.addEntry("Bob", 200);
+    board.displayScores();
+    
+    board.addEntry("Charlie", 180);
+    board.displayScores();
+    
+    board.addEntry("Diana", 220);
+    board.displayScores();
+    
+    board.addEntry("Eve", 170);
+    board.displayScores();
+    
+    board.addEntry("Frank", 200); //will be ignored unless it has a score higher than others, what if the score is higher than the last element?
+
+    board.displayScores(); 
+
+    cout << "\nRemoving entry at index 2...\n";
+    board.removeEntry(2); 
+    board.displayScores();
+
+    return 0;
+}
+
