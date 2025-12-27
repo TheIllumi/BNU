@@ -1,0 +1,39 @@
+{
+    "name": "Saad Mughal",
+    "roll_no": "F2023-009",
+    "order_details": {
+      "order_id": "ORDER-630",
+      "customer": {
+        "customer_id": "CUST001",
+        "name": "Sheikh Muhammad Ibrahim",
+        "phone": "+92-300-1234567",
+        "address": "House #12, Street #3, H-Block, Lahore"
+      },
+      "order_items": [
+        {
+          "item_id": "FOOD001",
+          "item_name": "The BEAST Burger",
+          "quantity": 2,
+          "price_per_unit": 1250
+        },
+        {
+          "item_id": "FOOD002",
+          "item_name": "Curly Fries",
+          "quantity": 1,
+          "price_per_unit": 450
+        },
+        {
+          "item_id": "FOOD003",
+          "item_name": "Cola Next",
+          "quantity": 2,
+          "price_per_unit": 100
+        }
+      ],
+      "payment": {
+        "method": "Sadapay",
+        "total_amount": 3150,
+        "status": "Paid"
+      },
+      "delivery_status": "On the way"
+    }
+  }
