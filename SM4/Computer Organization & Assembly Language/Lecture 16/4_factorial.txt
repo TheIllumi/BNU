@@ -1,0 +1,25 @@
+.model small
+.stack 100h
+.data
+.code
+main:
+    mov ax, 5
+    call FACTORIAL
+    ; Result in BX
+
+    mov ah, 4ch
+    int 21h
+
+FACTORIAL proc
+    mov bx, 1
+next:
+    cmp ax, 1
+    jbe done
+    mul bx
+    mov bx, ax
+    dec ax
+    jmp next
+done:
+    ret
+FACTORIAL endp
+end main

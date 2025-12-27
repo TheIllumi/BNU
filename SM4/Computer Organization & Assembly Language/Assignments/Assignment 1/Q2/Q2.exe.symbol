@@ -1,0 +1,15 @@
+< THE SYMBOL TABLE >  Q2.exe  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+STACK                    	00000     	-5        	SEGMENT   	(ITSELF)  
+DATA                     	00007     	-5        	SEGMENT   	(ITSELF)  
+CODE                     	00007     	-5        	SEGMENT   	(ITSELF)  
+MAIN                     	00000     	-1        	NEAR      	code      
+REVERSE_LOOP             	00012     	-1        	LABEL     	code      
+NOT_PALINDROME           	00021     	-1        	LABEL     	code      
+DONE                     	00024     	-1        	LABEL     	code      
+===================================================================================================
+[ 13/04/2025  --  4:02:55 pm ] 
+< END >
+ 

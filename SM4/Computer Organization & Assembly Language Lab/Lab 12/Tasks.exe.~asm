@@ -1,0 +1,20 @@
+.model small
+.stack 100h
+.data
+result db ?
+.code
+start:
+main proc
+mov ax, @data       ; Initialize DS
+mov ds, ax
+
+mov al, -4          ; AL = -4 ? binary: 1111 1100
+sal al, 1           ; Shift left by 1 ? AL = -8 (1111 1000)
+
+mov [result], al    ; Store result in memory
+
+mov ah, 4Ch         ; Terminate program
+int 21h
+main endp
+end start
+

@@ -1,0 +1,42 @@
+.model small
+.stack 100h
+.data
+    str db 'hello world$', 0
+.code
+main:
+    mov ax, @data
+    mov ds, ax
+
+    lea si, str
+    call COUNT_VOWELS
+
+    ; Result in AL
+
+    mov ah, 4ch
+    int 21h
+
+COUNT_VOWELS proc
+    mov al, 0
+next_char:
+    lodsb
+    cmp al, 0
+    je done
+    cmp al, 'a'
+    je inc_count
+    cmp al, 'e'
+    je inc_count
+    cmp al, 'i'
+    je inc_count
+    cmp al, 'o'
+    je inc_count
+    cmp al, 'u'
+    je inc_count
+    jmp next_char
+inc_count:
+    inc bl
+    jmp next_char
+done:
+    mov al, bl
+    ret
+COUNT_VOWELS endp
+end main

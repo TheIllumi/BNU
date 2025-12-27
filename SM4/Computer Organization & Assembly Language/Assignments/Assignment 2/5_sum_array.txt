@@ -1,0 +1,27 @@
+.model small
+.stack 100h
+.data
+    arr db 10, 20, 30, 40, 50
+.code
+main:
+    mov ax, @data
+    mov ds, ax
+
+    lea si, arr
+    mov cx, 5
+    call SUM_ARRAY
+    ; Result in AX
+
+    mov ah, 4ch
+    int 21h
+
+SUM_ARRAY proc
+    xor ax, ax
+sum_loop:
+    mov bl, [si]
+    add al, bl
+    inc si
+    loop sum_loop
+    ret
+SUM_ARRAY endp
+end main

@@ -1,0 +1,17 @@
+; Calculate the result of executing ADD AX, 0xFF00 if AX = 0x1100.
+.MODEL SMALL
+.STACK 100H
+
+.DATA
+num DW 0x1100
+
+.CODE
+MAIN PROC
+MOV AX, num
+ADD AX, 0xFF00
+
+MOV AH, 4CH
+INT 21H
+MAIN ENDP
+END MAIN
+

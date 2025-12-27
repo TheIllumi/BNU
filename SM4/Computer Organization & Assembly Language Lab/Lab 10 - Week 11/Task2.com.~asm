@@ -1,0 +1,28 @@
+org 100h
+.model small
+.stack 100h
+.data
+num:     dw 10,20,30,40,50,10,20,30,40,50
+total:   dw 0
+.code
+main proc
+mov ax, @data
+mov ds, ax
+
+mov bx, 0
+mov ax, 0
+
+label:  add ax, [num + bx]
+add bx, 2
+cmp bx, 20
+jne label
+
+mov [total], ax
+
+mov ah, 4ch
+int 21h
+
+main endp
+end main
+ret
+

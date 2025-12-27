@@ -1,0 +1,24 @@
+.model small
+.stack 100h
+.data
+.code
+main:
+    mov ax, 1234
+    call DIGIT_SUM
+    ; Result in BX
+
+    mov ah, 4ch
+    int 21h
+
+DIGIT_SUM proc
+    xor bx, bx
+digit_loop:
+    xor dx, dx
+    mov cx, 10
+    div cx
+    add bx, dx
+    test ax, ax
+    jnz digit_loop
+    ret
+DIGIT_SUM endp
+end main

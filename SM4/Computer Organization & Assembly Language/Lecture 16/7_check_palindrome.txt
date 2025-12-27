@@ -1,0 +1,44 @@
+.model small
+.stack 100h
+.data
+    str db 'madam$', 0
+.code
+main:
+    mov ax, @data
+    mov ds, ax
+
+    lea si, str
+    call IS_PALINDROME
+    ; Result in AL
+
+    mov ah, 4ch
+    int 21h
+
+IS_PALINDROME proc
+    mov di, si
+find_end:
+    lodsb
+    cmp al, 0
+    je check_palindrome
+    inc di
+    jmp find_end
+check_palindrome:
+    dec di
+    mov cx, di
+    sub cx, si
+    shr cx, 1
+    mov al, 1
+check_loop:
+    mov ah, [si]
+    mov bh, [di]
+    cmp ah, bh
+    jne not_palindrome
+    inc si
+    dec di
+    loop check_loop
+    ret
+not_palindrome:
+    mov al, 0
+    ret
+IS_PALINDROME endp
+end main

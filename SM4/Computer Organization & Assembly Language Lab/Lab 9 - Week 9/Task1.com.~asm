@@ -1,0 +1,14 @@
+
+org 100h
+
+add ax, 0xEDAB
+add ax, bx
+add bx, 0xf00
+
+ret
+
+
+
+
+
+

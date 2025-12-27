@@ -1,0 +1,33 @@
+.model small
+.stack 100h
+.data
+    str db 'hello world$', 0
+.code
+main:
+    mov ax, @data
+    mov ds, ax
+
+    lea si, str
+    call TO_UPPERCASE
+
+    mov ah, 4ch
+    int 21h
+
+TO_UPPERCASE proc
+next_char:
+    mov al, [si]
+    cmp al, 0
+    je done
+    cmp al, 'a'
+    jb skip
+    cmp al, 'z'
+    ja skip
+    sub al, 32
+    mov [si], al
+skip:
+    inc si
+    jmp next_char
+done:
+    ret
+TO_UPPERCASE endp
+end main

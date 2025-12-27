@@ -1,0 +1,23 @@
+.model small
+.stack 100h
+.data
+.code
+main:
+    mov al, 25h
+    mov bl, 3Ah
+    call FIND_MAX
+    ; Result in CL
+
+    mov ah, 4ch
+    int 21h
+
+FIND_MAX proc
+    cmp al, bl
+    jge A_is_max
+    mov cl, bl
+    ret
+A_is_max:
+    mov cl, al
+    ret
+FIND_MAX endp
+end main

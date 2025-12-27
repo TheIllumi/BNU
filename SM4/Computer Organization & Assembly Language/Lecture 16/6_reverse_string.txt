@@ -1,0 +1,39 @@
+.model small
+.stack 100h
+.data
+    str db 'hello$', 0
+.code
+main:
+    mov ax, @data
+    mov ds, ax
+
+    lea si, str
+    call REVERSE_STRING
+
+    mov ah, 4ch
+    int 21h
+
+REVERSE_STRING proc
+    mov di, si
+find_end:
+    lodsb
+    cmp al, 0
+    je reverse
+    inc di
+    jmp find_end
+reverse:
+    dec di
+    mov cx, di
+    sub cx, si
+    shr cx, 1
+rev_loop:
+    mov al, [si]
+    mov bl, [di]
+    mov [si], bl
+    mov [di], al
+    inc si
+    dec di
+    loop rev_loop
+    ret
+REVERSE_STRING endp
+end main

@@ -1,0 +1,43 @@
+org 100h
+.model small
+.stack 100h
+.data
+jmp start
+temp dw 60,55,45,50,40,35,25,30,10,0
+
+
+.code
+start:
+main proc
+mov ax,@data
+mov ds,ax
+
+mov dx,9
+
+loop1:
+mov cx,dx
+mov bx,offset temp
+loop2:
+mov ax,[bx]
+cmp ax,[bx+2]
+jbe noswap
+
+xchg ax,[bx+2]
+mov  [bx],ax
+
+noswap:
+add bx,2
+loop loop2
+
+
+
+dec dx
+cmp dx,0
+jne loop1
+
+mov ah,4ch
+int 21h
+hlt
+main endp
+end main
+
