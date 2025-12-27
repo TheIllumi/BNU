@@ -1,0 +1,217 @@
+Web Engineering (CSC-324) — Assignment 3
+Instructor: Syed Nouman Ali Shah
+Max Marks: 50
+Date: November 5, 2025
+Submission Date: November 15, 2025
+
+======================================================================
+Assignment Theme
+======================================================================
+"Course Registration & Enrollment Mini-System"
+
+Context:
+Build a small Course Registration & Enrollment backend and a simple React front-end
+using Spring Boot + Spring Data JPA + REST. This assignment extends IoC/DI concepts
+and focuses on entities, repositories, business rules, and a live React client.
+
+You will model a Student–Course–Registration domain and expose it via REST APIs
+that a React app will consume.
+
+======================================================================
+Target Domain Model (Minimum Requirements)
+======================================================================
+Use the following minimal entities (you may add more if you like).
+
+1) Student
+   - id (Long, PK)
+   - rollNo (String, unique)
+   - name (String, not null)
+   - email (String, unique, valid email)
+   - program (String, e.g., "BSCS", "BSE")
+   - semester (int)
+
+2) Course
+   - id (Long, PK)
+   - code (String, unique, e.g., "CSC-324")
+   - title (String, not null)
+   - creditHours (int)
+   - maxSeats (int)
+   - prerequisite (self-reference, optional – another Course)
+
+3) Registration
+   - id (Long, PK)
+   - student (Many-to-One → Student)
+   - course (Many-to-One → Course)
+   - semester (String, e.g., "Fall 2025")
+   - status (String: "REGISTERED", "DROPPED", "COMPLETED")
+   - grade (String, optional for now, e.g., "A", "B+")
+
+======================================================================
+Part 1 — Spring Data JPA Domain & Repositories (15 marks)
+======================================================================
+Task 1: Entity Design & Validation (Objective: proper entities + JPA mappings)
+Instructions:
+1. Create the three entities: Student, Course, Registration.
+2. Use appropriate JPA annotations:
+   - @Entity, @Id, @GeneratedValue
+   - @ManyToOne, @OneToMany, @JoinColumn
+   - @ManyToOne(optional = true) for prerequisites
+3. Add validation annotations where appropriate:
+   - @NotBlank / @NotNull
+   - @Email
+   - @Min, @Max (for credit hours / semester)
+4. Optional but recommended bidirectional relationships:
+   - Student ↔ Registration
+   - Course ↔ Registration
+5. Use Lombok (@Data, @NoArgsConstructor, @AllArgsConstructor) if allowed.
+
+Learning Outcome: Understand entity design, relationships, and bean validation.
+
+Task 2: JPA Repositories & Sample Data (Objective: interact with DB via repositories)
+Instructions:
+1. Create repository interfaces:
+   - StudentRepository extends JpaRepository<Student, Long>
+   - CourseRepository extends JpaRepository<Course, Long>
+   - RegistrationRepository extends JpaRepository<Registration, Long>
+2. Add derived query methods, e.g.:
+   - List<Registration> findByStudentId(Long studentId);
+   - List<Registration> findByCourseId(Long courseId);
+   - List<Registration> findBySemester(String semester);
+3. Seed data using a CommandLineRunner/DataLoader:
+   - At least 5 students
+   - At least 5 courses (with at least one prerequisite course)
+   - 3–5 sample registrations
+
+Learning Outcome: Define repository interfaces and seed the database.
+
+======================================================================
+Part 2 — RESTful APIs for Course Registration (20 marks)
+======================================================================
+Task 3: Basic CRUD Endpoints (Objective: expose REST for Student & Course)
+Instructions:
+1. Controllers:
+   - StudentController (base path: /api/students)
+   - CourseController  (base path: /api/courses)
+2. Implement CRUD:
+   - GET    /api/students                → list all students
+   - GET    /api/students/{id}           → get single student
+   - POST   /api/students                → add new student
+   - PUT    /api/students/{id}           → update student
+   - DELETE /api/students/{id}           → delete student (soft delete optional)
+   - Same style for /api/courses
+3. Return proper HTTP status codes:
+   - 201 CREATED on successful POST
+   - 200 OK for GET/PUT
+   - 204 NO CONTENT for DELETE
+   - 404 NOT FOUND when record is missing
+
+Learning Outcome: Design clean REST APIs with JPA and status codes.
+
+Task 4: Registration Endpoints with Business Rules (Objective: implement rules)
+Required Business Rules (minimum):
+1. A student cannot register in more than 5 active courses (status REGISTERED)
+   in the same semester.
+2. A course cannot exceed its maxSeats for a given semester.
+3. If a course has a prerequisite, the student must have a COMPLETED registration
+   for that prerequisite course before registering.
+
+Instructions:
+1. Create RegistrationService and RegistrationController (base path: /api/registrations).
+2. Endpoints:
+   - POST /api/registrations
+     Request body: studentId, courseId, semester
+     Apply business rules; if violated, return 400 BAD REQUEST with JSON error.
+   - GET  /api/registrations                         → list all registrations
+   - GET  /api/students/{id}/registrations           → registrations of a student
+   - GET  /api/courses/{id}/registrations            → registrations for a course
+3. Use a DTO for POST (e.g., RegistrationRequestDTO) instead of exposing the entity.
+
+Learning Outcome: Implement domain rules in service layer with REST.
+
+Task 5: Central Error Handling (Mini-Exception Layer) (Objective: better API quality)
+Instructions:
+1. Create custom exceptions, e.g.:
+   - StudentNotFoundException
+   - CourseNotFoundException
+   - BusinessRuleViolationException
+2. Create a @RestControllerAdvice to map exceptions to structured JSON responses.
+3. Ensure controllers rely on services that may throw these exceptions.
+
+Learning Outcome: Handle errors cleanly and return consistent JSON.
+
+======================================================================
+Part 3 — React Frontend: Registration UI (10 marks)
+======================================================================
+Task 6: Course Listing & Registration Form (Objective: consume REST APIs)
+Instructions:
+1. Create a React app (Vite or CRA).
+2. CourseList component:
+   - On mount, call GET /api/courses
+   - Display courses (code, title, credit hours, max seats)
+   - Add a client-side filter by code/title
+3. For each course, a "Register" button opens a small form/modal:
+   - Select Student (dropdown via GET /api/students)
+   - Choose Semester (text or dropdown)
+   - On submit, POST /api/registrations
+   - Handle success and errors (show alerts accordingly)
+
+Learning Outcome: Integrate React forms with backend APIs.
+
+Task 7: Student Dashboard View (Objective: multi-endpoint dashboard)
+Instructions:
+1. StudentDashboard component:
+   - Select a student (by rollNo or name)
+   - On selection, GET /api/students/{id}/registrations
+2. Display registrations in a table:
+   - Columns: Course Code | Course Title | Semester | Status | Grade
+3. Add a small status filter (e.g., show only REGISTERED or COMPLETED).
+
+Learning Outcome: Build a simple dashboard consuming multiple endpoints.
+
+======================================================================
+Part 4 — Optional Bonus (Up to +5 marks)
+======================================================================
+1) Pagination & Sorting (Backend + Frontend)
+   - Use Pageable for /api/courses and /api/students
+   - Add simple Next/Previous page controls in the frontend
+
+2) Profiles & H2/MySQL Switch
+   - Use Spring profiles (dev, prod) to switch between:
+     • H2 in-memory DB
+     • MySQL (or any RDBMS)
+   - Expose current profile at /api/envinfo
+
+3) Basic Authentication/Security
+   - Simple Spring Security rules:
+     • Only authenticated users can POST /api/registrations
+     • GET endpoints remain public
+
+======================================================================
+Submission Deliverables
+======================================================================
+Backend (Spring Boot Project)
+- Zipped src folder with entities, repositories, services, controllers,
+  exception handlers, and sample data loader.
+- Include application.properties / application.yml.
+
+Frontend (React App)
+- Zipped React project (only src folder also acceptable) showing:
+  • Course listing
+  • Register form
+  • Student dashboard
+
+Short Report (2–4 pages)
+- Describe:
+  (a) Domain model and relationships
+  (b) Business rules implemented and where
+  (c) Sample screenshots (success and rule-violation cases)
+  (d) Any optional/bonus features completed
+
+======================================================================
+Marking Breakdown (Suggested)
+======================================================================
+- Part 1 — Entities & Repositories: 15 marks
+- Part 2 — REST APIs & Business Rules: 20 marks
+- Part 3 — React Frontend Integration: 10 marks
+- Code Quality & Report: 5 marks
+- Bonus (Optional): up to +5 marks
