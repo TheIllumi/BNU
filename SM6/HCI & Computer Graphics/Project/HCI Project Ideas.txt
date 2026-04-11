@@ -1,0 +1,41 @@
+Team Name: patches
+Team no: 10
+Team Members: Saad Mughal & Khadijah Zahoor
+
+Idea 1
+
+Title: Modern Usability Redesign of Retro FPS (“Boomer Shooter”) Interfaces
+Challenge: Create Your Own
+
+Target Users: Beginner players aged 18–25 who are new to retro-style FPS games
+
+Problem: Retro FPS games prioritize nostalgic aesthetics over usability, resulting in cluttered HUDs, unclear visual hierarchy, and high cognitive load for new players.
+
+Solution: Design a modernized main menu and in-game HUD that preserves retro Quake-style aesthetics while improving readability, accessibility, and learnability using HCI principles.
+
+----------------------------
+
+Idea 2
+
+Title: Adaptive Academic Productivity System for Reducing Student Burnout
+Challenge: Productivity & Organization
+
+Target Users: Undergraduate university students aged 18–25 experiencing academic stress and task overload.
+
+Problem: Students manage assignments, deadlines, and personal habits across multiple platforms, leading to scattered information, cognitive overload, and burnout. Existing productivity tools focus only on deadlines and task completion rather than mental energy and stress management.
+
+Solution: A mobile productivity app that integrates academic tasks and personal habits into a unified system with energy-based task prioritization and burnout-aware workload visualization. The interface will be designed using HCI principles to reduce cognitive load, decision fatigue, and overwhelm.
+
+----------------------------
+
+Idea 3
+
+Title: Interactive Namaz Learning and Guidance App for Muslim Communities
+
+Challenge: Community Technology
+
+Target Users: Muslims of all ages who are learning Namaz for the first time, relearning after a gap, or seeking structured guidance in a private and accessible way.
+
+Problem: Many Muslims rely on informal or passive resources such as family guidance, YouTube videos, or printed materials to learn Namaz. These methods lack interactivity, structured progression, progress tracking, and accessible design, which can lead to confusion, inconsistency, and lack of confidence.
+
+Solution: A mobile app providing step-by-step interactive Namaz guidance using synchronized visual and audio instruction, structured learning modes, and progress tracking. The interface will be designed using HCI principles to ensure clarity, accessibility, and reduced cognitive overload while maintaining cultural sensitivity.

@@ -1,0 +1,28 @@
+✅ 1: Convert to Full Hex Target
+❓ Question:
+Given:
+mantissa = `0x00ffff`
+exponent = `0x1d`
+
+Find full target in hex form.
+---
+
+✅ 2: Compare Two Difficulties
+❓ Question:
+Which network state is harder?
+A: current target = ( 2^{230} )
+B: current target = ( 2^{220} )
+---
+
+ ✅ 3: Find Hash Rate ( P )
+❓ Question:
+If: [n = 40]
+Find ( P ).
+---
+
+✅ 4: Compare Two Miners
+❓ Question:
+Miner A: ( P = 10^6 )
+Miner B: ( P = 10^9 )
+Find difference in ( n ).
+---

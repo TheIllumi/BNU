@@ -1,0 +1,38 @@
+✅ 1: Basic Computation
+❓ Question:
+Given:
+mantissa = `0x1b0404`
+exponent = `0x1d` (decimal 29)
+Find the target.
+---
+
+✅ 2 : Compare Two Targets
+❓ Question:
+Which is harder?
+A: mantissa = `0x00ffff`, exponent = 0x1d
+B: mantissa = `0x00ffff`, exponent = 0x1c
+---
+
+✅ 3 : Basic Difficulty Calculation
+❓ Question:
+Given:
+difficulty₁ target = ( 2^{224} )
+current target = ( 2^{220} )
+Find difficulty.
+---
+
+✅ 4 : Find Current Target
+❓ Question:
+Given:
+difficulty = 8
+difficulty₁ target = ( 2^{240} )
+Find current target.
+---
+✅ 5: Find ( n ) from Hash Rate
+
+❓ Question:
+
+If a miner performs:
+[P = 10^6 { hashes/sec}]
+Find ( n ).
+---
