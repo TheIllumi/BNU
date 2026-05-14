@@ -1,0 +1,5 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Artificial_Intelligence_Lab_CS4_B_S1,Artificial_Intelligence_Lab_CS4_B,Artificial Intelligence Lab,CS4,B,Mr. Osama Tariq,True,Thursday,11:00,14:00,SB 304
+Artificial_Intelligence_Lab_CS4_C_S1,Artificial_Intelligence_Lab_CS4_C,Artificial Intelligence Lab,CS4,C,Ms. Noreen Khalid,True,Tuesday,12:30,15:30,SB 304
+Computer_Organization_&_Assembly_Language_Lab_CS4_A_S1,Computer_Organization_&_Assembly_Language_Lab_CS4_A,Computer Organization & Assembly Language Lab,CS4,A,Ms. Nimra Abbas,True,Friday,11:00,14:00,SB 304
+Data_Structures_&_Algorithms_CS4_C_S2,Data_Structures_&_Algorithms_CS4_C,Data Structures & Algorithms,CS4,C,Mr. Muhammad Ali,False,Thursday,08:00,09:30,SB 304

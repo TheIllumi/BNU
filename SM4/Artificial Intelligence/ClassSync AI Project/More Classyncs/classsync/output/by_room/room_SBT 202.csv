@@ -1,0 +1,8 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Artificial_Intelligence_CS4_B_S1,Artificial_Intelligence_CS4_B,Artificial Intelligence,CS4,B,Ms. Noreen Khalid,False,Friday,08:00,09:30,SBT 202
+Artificial_Intelligence_Lab_CS4_A_S1,Artificial_Intelligence_Lab_CS4_A,Artificial Intelligence Lab,CS4,A,Mr. Osama Tariq,True,Friday,09:30,12:30,SBT 202
+Computer_Organization_&_Assembly_Language_CS4_A_S1,Computer_Organization_&_Assembly_Language_CS4_A,Computer Organization & Assembly Language,CS4,A,Ms. Nimra Abbas,False,Wednesday,14:00,15:30,SBT 202
+Computer_Organization_&_Assembly_Language_CS4_C_S2,Computer_Organization_&_Assembly_Language_CS4_C,Computer Organization & Assembly Language,CS4,C,Ms. Nimra Abbas,False,Tuesday,11:00,12:30,SBT 202
+Micro_Economics_MBC2_-_S1,Micro_Economics_MBC2_-,Micro Economics,MBC2,-,Ms. Fatima Malik,False,Tuesday,15:30,17:00,SBT 202
+Programming_Fundamentals-Lab_Repeat_CS2_A_S1,Programming_Fundamentals-Lab_Repeat_CS2_A,Programming Fundamentals-Lab Repeat,CS2,A,Ms. Shazia Rizwan,True,Thursday,12:30,15:30,SBT 202
+Software_Re_Engineering_SE8_-_S1,Software_Re_Engineering_SE8_-,Software Re Engineering,SE8,-,Ms. Ayesha Seher,False,Thursday,12:30,14:00,SBT 202

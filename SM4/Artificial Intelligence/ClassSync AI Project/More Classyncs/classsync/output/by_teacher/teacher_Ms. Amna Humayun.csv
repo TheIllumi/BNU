@@ -1,0 +1,7 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Probability_&_Statistics_CS2_A_S1,Probability_&_Statistics_CS2_A,Probability & Statistics,CS2,A,Ms. Amna Humayun,False,Monday,11:00,12:30,SB 003 LAB
+Probability_&_Statistics_CS2_A_S2,Probability_&_Statistics_CS2_A,Probability & Statistics,CS2,A,Ms. Amna Humayun,False,Friday,12:30,14:00,SB 306
+Probability_&_Statistics_CS2_B_S1,Probability_&_Statistics_CS2_B,Probability & Statistics,CS2,B,Ms. Amna Humayun,False,Wednesday,14:00,15:30,SLASS 206
+Probability_&_Statistics_CS2_B_S2,Probability_&_Statistics_CS2_B,Probability & Statistics,CS2,B,Ms. Amna Humayun,False,Friday,09:30,11:00,SLASS B002
+Probability_for_Data_Science_MBC2_-_S1,Probability_for_Data_Science_MBC2_-,Probability for Data Science,MBC2,-,Ms. Amna Humayun,False,Monday,12:30,14:00,SB 301
+Probability_for_Data_Science_MBC2_-_S2,Probability_for_Data_Science_MBC2_-,Probability for Data Science,MBC2,-,Ms. Amna Humayun,False,Wednesday,09:30,11:00,SLASS 015

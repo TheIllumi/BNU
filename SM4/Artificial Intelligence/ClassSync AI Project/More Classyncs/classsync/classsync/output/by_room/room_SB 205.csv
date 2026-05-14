@@ -1,0 +1,4 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Artificial_Intelligence_CS4_A_S2,Artificial_Intelligence_CS4_A,Artificial Intelligence,CS4,A,Dr. Usman Nazir,False,Wednesday,12:30,14:00,SB 205
+Object_Oriented_Programming_CS2_B_S1,Object_Oriented_Programming_CS2_B,Object Oriented Programming,CS2,B,Mr. Nouman Ali,False,Tuesday,15:30,17:00,SB 205
+Probability_&_Statistics_CS2_D_S2,Probability_&_Statistics_CS2_D,Probability & Statistics,CS2,D,Dr. Aamir Majeed Chaudhary,False,Tuesday,12:30,14:00,SB 205

@@ -1,0 +1,40 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Business_Computing_MBC2_-_S1,Business_Computing_MBC2_-,Business Computing,MBC2,-,Ms. Sheeza Batool,False,Thursday,12:30,14:00,SB 003 LAB
+Business_Computing_MBC2_-_S2,Business_Computing_MBC2_-,Business Computing,MBC2,-,Ms. Sheeza Batool,False,Tuesday,14:00,15:30,SLASS 202
+Business_Computing_Lab_MBC2_-_S1,Business_Computing_Lab_MBC2_-,Business Computing Lab,MBC2,-,Ms. Talia Noreen,True,Tuesday,09:30,12:30,SLASS B002
+Business_Process_Engineering_SE8_-_S1,Business_Process_Engineering_SE8_-,Business Process Engineering,SE8,-,SMS Faculty,False,Wednesday,14:00,15:30,SB 301
+Business_Process_Engineering_SE8_-_S2,Business_Process_Engineering_SE8_-,Business Process Engineering,SE8,-,SMS Faculty,False,Thursday,15:30,17:00,SLASS 201
+Computer_Networks_MBC4_-_S1,Computer_Networks_MBC4_-,Computer Networks,MBC4,-,Mr. Muhammad Ali,False,Tuesday,14:00,15:30,SB 004
+Computer_Networks_MBC4_-_S2,Computer_Networks_MBC4_-,Computer Networks,MBC4,-,Mr. Muhammad Ali,False,Friday,08:00,09:30,SLASS 203
+Database_Management_Systems_MBC4_-_S1,Database_Management_Systems_MBC4_-,Database Management Systems,MBC4,-,Ms. Shazia Rizwan,False,Thursday,11:00,12:30,SB 003 LAB
+Database_Management_Systems_MBC4_-_S2,Database_Management_Systems_MBC4_-,Database Management Systems,MBC4,-,Ms. Shazia Rizwan,False,Wednesday,15:30,17:00,SBT 202
+Database_Management_Systems_Lab_MBC4_-_S1,Database_Management_Systems_Lab_MBC4_-,Database Management Systems Lab,MBC4,-,Mr. Shazil Ali,True,Thursday,12:30,15:30,SLASS 118
+Event_Driven_Programming_MBC2_-_S1,Event_Driven_Programming_MBC2_-,Event Driven Programming,MBC2,-,Ms. Sheeza Batool,False,Thursday,15:30,17:00,SB AUD 001
+Event_Driven_Programming_MBC2_-_S2,Event_Driven_Programming_MBC2_-,Event Driven Programming,MBC2,-,Ms. Sheeza Batool,False,Monday,14:00,15:30,SLASS 309
+Event_Driven_Programming_Lab_MBC2_-_S1,Event_Driven_Programming_Lab_MBC2_-,Event Driven Programming Lab,MBC2,-,Mr. Shazil Ali,True,Wednesday,09:30,12:30,Central block 004
+Formal_Methods_in_Software_Engineering_SE8_-_S1,Formal_Methods_in_Software_Engineering_SE8_-,Formal Methods in Software Engineering,SE8,-,Dr. Natash Ali,False,Friday,14:00,15:30,SLASS 208
+Formal_Methods_in_Software_Engineering_SE8_-_S2,Formal_Methods_in_Software_Engineering_SE8_-,Formal Methods in Software Engineering,SE8,-,Dr. Natash Ali,False,Monday,12:30,14:00,SB 307
+Graph_Theory_CS8_-_S1,Graph_Theory_CS8_-,Graph Theory,CS8,-,Mr. Ali Haider,False,Monday,14:00,15:30,SBT 204
+Graph_Theory_CS8_-_S2,Graph_Theory_CS8_-,Graph Theory,CS8,-,Mr. Ali Haider,False,Friday,11:00,12:30,SB AUD 001
+Intro_to_CyberSecurity_(Elective)_CS6_-_S1,Intro_to_CyberSecurity_(Elective)_CS6_-,Intro to CyberSecurity (Elective),CS6,-,Mr. Nabeel Ahsan,False,Tuesday,09:30,11:00,Central block 002
+Intro_to_CyberSecurity_(Elective)_CS6_-_S2,Intro_to_CyberSecurity_(Elective)_CS6_-,Intro to CyberSecurity (Elective),CS6,-,Mr. Nabeel Ahsan,False,Tuesday,11:00,12:30,SB 307
+Management_Information_Systems_MBC4_-_S1,Management_Information_Systems_MBC4_-,Management Information Systems,MBC4,-,Dr. Natash Ali,False,Thursday,12:30,14:00,Central block 003
+Management_Information_Systems_MBC4_-_S2,Management_Information_Systems_MBC4_-,Management Information Systems,MBC4,-,Dr. Natash Ali,False,Wednesday,15:30,17:00,SLASS 202
+Media_Entrepreneurship_SE8_-_S1,Media_Entrepreneurship_SE8_-,Media Entrepreneurship,SE8,-,SMC Jou.,False,Friday,08:00,09:30,SLASS 202
+Media_Entrepreneurship_SE8_-_S2,Media_Entrepreneurship_SE8_-,Media Entrepreneurship,SE8,-,SMC Jou.,False,Tuesday,12:30,14:00,SLASS 203
+Micro_Economics_MBC2_-_S1,Micro_Economics_MBC2_-,Micro Economics,MBC2,-,Ms. Fatima Malik,False,Wednesday,14:00,15:30,SBT 204
+Micro_Economics_MBC2_-_S2,Micro_Economics_MBC2_-,Micro Economics,MBC2,-,Ms. Fatima Malik,False,Tuesday,09:30,11:00,SB 206
+Operations_Management_MBC4_-_S1,Operations_Management_MBC4_-,Operations Management,MBC4,-,Dr. Naeem,False,Wednesday,15:30,17:00,SLASS 013
+Operations_Management_MBC4_-_S2,Operations_Management_MBC4_-,Operations Management,MBC4,-,Dr. Naeem,False,Wednesday,15:30,17:00,SLASS 201
+Organizational_Behavior_MBC4_-_S1,Organizational_Behavior_MBC4_-,Organizational Behavior,MBC4,-,Dr. Shah Ali Murtaza,False,Thursday,14:00,15:30,SVAD 403 Lab
+Organizational_Behavior_MBC4_-_S2,Organizational_Behavior_MBC4_-,Organizational Behavior,MBC4,-,Dr. Shah Ali Murtaza,False,Wednesday,09:30,11:00,SVAD 403 Lab
+Probability_for_Data_Science_MBC2_-_S1,Probability_for_Data_Science_MBC2_-,Probability for Data Science,MBC2,-,Ms. Amna Humayun,False,Thursday,11:00,12:30,SLASS 208
+Probability_for_Data_Science_MBC2_-_S2,Probability_for_Data_Science_MBC2_-,Probability for Data Science,MBC2,-,Ms. Amna Humayun,False,Friday,14:00,15:30,Central block 003
+Programming_for_2D_&_Web_3D_Apps_CS6_-_S1,Programming_for_2D_&_Web_3D_Apps_CS6_-,Programming for 2D & Web 3D Apps,CS6,-,Mr. Nouman Ali,False,Tuesday,15:30,17:00,SLASS 207
+Programming_for_2D_&_Web_3D_Apps_CS6_-_S2,Programming_for_2D_&_Web_3D_Apps_CS6_-,Programming for 2D & Web 3D Apps,CS6,-,Mr. Nouman Ali,False,Monday,11:00,12:30,SB 302
+Research_Methods_for_IT_CS&SE8_-_S1,Research_Methods_for_IT_CS&SE8_-,Research Methods for IT,CS&SE8,-,Dr. Usman Nazir,False,Wednesday,12:30,14:00,SLASS 015
+Research_Methods_for_IT_CS&SE8_-_S2,Research_Methods_for_IT_CS&SE8_-,Research Methods for IT,CS&SE8,-,Dr. Usman Nazir,False,Wednesday,09:30,11:00,SB 206
+Software_Re_Engineering_SE8_-_S1,Software_Re_Engineering_SE8_-,Software Re Engineering,SE8,-,Ms. Ayesha Seher,False,Tuesday,15:30,17:00,SB 301
+Software_Re_Engineering_SE8_-_S2,Software_Re_Engineering_SE8_-,Software Re Engineering,SE8,-,Ms. Ayesha Seher,False,Tuesday,15:30,17:00,SLASS 015
+Theory_of_Programming_Languages_CS8_-_S1,Theory_of_Programming_Languages_CS8_-,Theory of Programming Languages,CS8,-,Ms. Huda Sarfraz,False,Tuesday,15:30,17:00,SLASS 309
+Theory_of_Programming_Languages_CS8_-_S2,Theory_of_Programming_Languages_CS8_-,Theory of Programming Languages,CS8,-,Ms. Huda Sarfraz,False,Thursday,14:00,15:30,Central block 002

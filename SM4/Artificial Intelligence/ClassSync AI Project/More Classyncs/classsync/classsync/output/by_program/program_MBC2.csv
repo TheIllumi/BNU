@@ -1,0 +1,13 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Business_Computing_MBC2_-_S1,Business_Computing_MBC2_-,Business Computing,MBC2,-,Ms. Sheeza Batool,False,Thursday,12:30,14:00,SB 003 LAB
+Business_Computing_MBC2_-_S2,Business_Computing_MBC2_-,Business Computing,MBC2,-,Ms. Sheeza Batool,False,Tuesday,14:00,15:30,SLASS 202
+Business_Computing_Lab_MBC2_-_S1,Business_Computing_Lab_MBC2_-,Business Computing Lab,MBC2,-,Ms. Talia Noreen,True,Tuesday,09:30,12:30,SLASS B002
+Event_Driven_Programming_MBC2_-_S1,Event_Driven_Programming_MBC2_-,Event Driven Programming,MBC2,-,Ms. Sheeza Batool,False,Thursday,15:30,17:00,SB AUD 001
+Event_Driven_Programming_MBC2_-_S2,Event_Driven_Programming_MBC2_-,Event Driven Programming,MBC2,-,Ms. Sheeza Batool,False,Monday,14:00,15:30,SLASS 309
+Event_Driven_Programming_Lab_MBC2_-_S1,Event_Driven_Programming_Lab_MBC2_-,Event Driven Programming Lab,MBC2,-,Mr. Shazil Ali,True,Wednesday,09:30,12:30,Central block 004
+Expository_Writing_MBC2_A_S1,Expository_Writing_MBC2_A,Expository Writing,MBC2,A,Ms. Fatima Bilal,False,Monday,12:30,14:00,SLASS 013
+Expository_Writing_MBC2_A_S2,Expository_Writing_MBC2_A,Expository Writing,MBC2,A,Ms. Fatima Bilal,False,Wednesday,08:00,09:30,SBT 305
+Micro_Economics_MBC2_-_S1,Micro_Economics_MBC2_-,Micro Economics,MBC2,-,Ms. Fatima Malik,False,Wednesday,14:00,15:30,SBT 204
+Micro_Economics_MBC2_-_S2,Micro_Economics_MBC2_-,Micro Economics,MBC2,-,Ms. Fatima Malik,False,Tuesday,09:30,11:00,SB 206
+Probability_for_Data_Science_MBC2_-_S1,Probability_for_Data_Science_MBC2_-,Probability for Data Science,MBC2,-,Ms. Amna Humayun,False,Thursday,11:00,12:30,SLASS 208
+Probability_for_Data_Science_MBC2_-_S2,Probability_for_Data_Science_MBC2_-,Probability for Data Science,MBC2,-,Ms. Amna Humayun,False,Friday,14:00,15:30,Central block 003

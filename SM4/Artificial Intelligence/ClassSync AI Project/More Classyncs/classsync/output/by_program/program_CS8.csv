@@ -1,0 +1,5 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Graph_Theory_CS8_-_S1,Graph_Theory_CS8_-,Graph Theory,CS8,-,Mr. Ali Haider,False,Wednesday,09:30,11:00,SB 306
+Graph_Theory_CS8_-_S2,Graph_Theory_CS8_-,Graph Theory,CS8,-,Mr. Ali Haider,False,Friday,15:30,17:00,SB 003 LAB
+Theory_of_Programming_Languages_CS8_-_S1,Theory_of_Programming_Languages_CS8_-,Theory of Programming Languages,CS8,-,Ms. Huda Sarfraz,False,Friday,14:00,15:30,SB 004
+Theory_of_Programming_Languages_CS8_-_S2,Theory_of_Programming_Languages_CS8_-,Theory of Programming Languages,CS8,-,Ms. Huda Sarfraz,False,Thursday,08:00,09:30,SB 307

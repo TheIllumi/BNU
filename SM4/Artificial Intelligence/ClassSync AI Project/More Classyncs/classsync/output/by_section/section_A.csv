@@ -1,0 +1,41 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Advanced_Database_Management_Systems_CS4_A_S1,Advanced_Database_Management_Systems_CS4_A,Advanced Database Management Systems,CS4,A,Ms. Talia Noreen,False,Thursday,12:30,14:00,SLASS 212
+Advanced_Database_Management_Systems_CS4_A_S2,Advanced_Database_Management_Systems_CS4_A,Advanced Database Management Systems,CS4,A,Ms. Talia Noreen,False,Wednesday,14:00,15:30,Central block 105
+Advanced_Database_Management_Systems_Lab_CS4_A_S1,Advanced_Database_Management_Systems_Lab_CS4_A,Advanced Database Management Systems Lab,CS4,A,Mr. Ahsan Atiq,True,Monday,08:00,11:00,SLASS 202
+Applied_Physics_SE2_A_S1,Applied_Physics_SE2_A,Applied Physics,SE2,A,Mr. Uzair Bashir,False,Monday,08:00,09:30,SB 307
+Applied_Physics_SE2_A_S2,Applied_Physics_SE2_A,Applied Physics,SE2,A,Mr. Uzair Bashir,False,Monday,08:00,09:30,SLASS 309
+Applied_Physics_Lab_SE2_A_S1,Applied_Physics_Lab_SE2_A,Applied Physics Lab,SE2,A,Ms. Amna Rafiq,True,Wednesday,14:00,17:00,SBT 305
+Artificial_Intelligence_CS4_A_S1,Artificial_Intelligence_CS4_A,Artificial Intelligence,CS4,A,Dr. Usman Nazir,False,Friday,14:00,15:30,SLASS 212
+Artificial_Intelligence_CS4_A_S2,Artificial_Intelligence_CS4_A,Artificial Intelligence,CS4,A,Dr. Usman Nazir,False,Thursday,08:00,09:30,SLASS 118
+Artificial_Intelligence_CS6_A_S1,Artificial_Intelligence_CS6_A,Artificial Intelligence,CS6,A,Dr. Usman Nazir,False,Tuesday,14:00,15:30,SLASS 208
+Artificial_Intelligence_CS6_A_S2,Artificial_Intelligence_CS6_A,Artificial Intelligence,CS6,A,Dr. Usman Nazir,False,Friday,09:30,11:00,SLASS 203
+Artificial_Intelligence_Lab_CS4_A_S1,Artificial_Intelligence_Lab_CS4_A,Artificial Intelligence Lab,CS4,A,Mr. Osama Tariq,True,Friday,09:30,12:30,SBT 202
+Artificial_Intelligence_Lab_CS6_A_S1,Artificial_Intelligence_Lab_CS6_A,Artificial Intelligence Lab,CS6,A,Mr. Osama Tariq,True,Friday,15:30,18:30,SB 205
+Computer_Networks_Lab_CS6_A_S1,Computer_Networks_Lab_CS6_A,Computer Networks Lab,CS6,A,Mr. Shazil Ali,True,Tuesday,12:30,15:30,SLASS 013
+Computer_Organization_&_Assembly_Language_CS4_A_S1,Computer_Organization_&_Assembly_Language_CS4_A,Computer Organization & Assembly Language,CS4,A,Ms. Nimra Abbas,False,Wednesday,14:00,15:30,SBT 202
+Computer_Organization_&_Assembly_Language_CS4_A_S2,Computer_Organization_&_Assembly_Language_CS4_A,Computer Organization & Assembly Language,CS4,A,Ms. Nimra Abbas,False,Wednesday,15:30,17:00,SB 005
+Computer_Organization_&_Assembly_Language_Lab_CS4_A_S1,Computer_Organization_&_Assembly_Language_Lab_CS4_A,Computer Organization & Assembly Language Lab,CS4,A,Ms. Nimra Abbas,True,Tuesday,09:30,12:30,SLASS 201
+Data_Structures_&_Algorithms_CS4_A_S1,Data_Structures_&_Algorithms_CS4_A,Data Structures & Algorithms,CS4,A,Ms. Huda Sarfraz,False,Tuesday,11:00,12:30,SLASS SMC 001 Lab
+Data_Structures_&_Algorithms_CS4_A_S2,Data_Structures_&_Algorithms_CS4_A,Data Structures & Algorithms,CS4,A,Ms. Huda Sarfraz,False,Friday,09:30,11:00,SVAD 403 Lab
+Data_Structures_&_Algorithms_Lab_CS4_A_S1,Data_Structures_&_Algorithms_Lab_CS4_A,Data Structures & Algorithms Lab,CS4,A,Ms. Hamna Anwar,True,Friday,14:00,17:00,SVAD 403 Lab
+Digital_Logic_Design_CS2_A_S1,Digital_Logic_Design_CS2_A,Digital Logic Design,CS2,A,Dr. Shafaat Ahmed Bazaz,False,Monday,08:00,09:30,SLASS 015
+Digital_Logic_Design_CS2_A_S2,Digital_Logic_Design_CS2_A,Digital Logic Design,CS2,A,Dr. Shafaat Ahmed Bazaz,False,Tuesday,08:00,09:30,SLASS 206
+Digital_Logic_Design_Lab_CS2_A_S1,Digital_Logic_Design_Lab_CS2_A,Digital Logic Design Lab,CS2,A,Ms. Amna Rafiq,True,Friday,15:30,18:30,Central block 002
+Expository_Writing_MBC2_A_S1,Expository_Writing_MBC2_A,Expository Writing,MBC2,A,Ms. Fatima Bilal,False,Monday,12:30,14:00,SLASS 203
+Expository_Writing_MBC2_A_S2,Expository_Writing_MBC2_A,Expository Writing,MBC2,A,Ms. Fatima Bilal,False,Thursday,14:00,15:30,Central block 002
+Ideology_&_Constitution_of_Pakistan_CS2_A_S1,Ideology_&_Constitution_of_Pakistan_CS2_A,Ideology & Constitution of Pakistan,CS2,A,Mr. Inam ul Haq,False,Monday,15:30,17:00,SLASS 015
+Ideology_&_Constitution_of_Pakistan_CS2_A_S2,Ideology_&_Constitution_of_Pakistan_CS2_A,Ideology & Constitution of Pakistan,CS2,A,Mr. Inam ul Haq,False,Wednesday,11:00,12:30,SLASS 207
+Immersive_Media_CS+SE8_A_S1,Immersive_Media_CS+SE8_A,Immersive Media,CS+SE8,A,SMC Jou.,False,Tuesday,11:00,12:30,SB 304
+Immersive_Media_CS+SE8_A_S2,Immersive_Media_CS+SE8_A,Immersive Media,CS+SE8,A,SMC Jou.,False,Monday,14:00,15:30,SLASS 204
+Linear_Algebra_CS4_A_S1,Linear_Algebra_CS4_A,Linear Algebra,CS4,A,Mr. Farhan Ali,False,Friday,12:30,14:00,SLASS 203
+Linear_Algebra_CS4_A_S2,Linear_Algebra_CS4_A,Linear Algebra,CS4,A,Mr. Farhan Ali,False,Friday,15:30,17:00,SBT 204
+Multivariable_Calculus_CS2_A_S1,Multivariable_Calculus_CS2_A,Multivariable Calculus,CS2,A,Dr. Zawar Hussain VF,False,Wednesday,12:30,14:00,SLASS 202
+Multivariable_Calculus_CS2_A_S2,Multivariable_Calculus_CS2_A,Multivariable Calculus,CS2,A,Dr. Zawar Hussain VF,False,Thursday,14:00,15:30,Central block 003
+Object_Oriented_Programming_CS2_A_S1,Object_Oriented_Programming_CS2_A,Object Oriented Programming,CS2,A,Mr. Nouman Ali,False,Monday,09:30,11:00,SB 005
+Object_Oriented_Programming_CS2_A_S2,Object_Oriented_Programming_CS2_A,Object Oriented Programming,CS2,A,Mr. Nouman Ali,False,Monday,08:00,09:30,SLASS 013
+Object_Oriented_Programming_Lab_CS2_A_S1,Object_Oriented_Programming_Lab_CS2_A,Object Oriented Programming Lab,CS2,A,Ms. Rameen,True,Friday,11:00,14:00,Central block 003
+Probability_&_Statistics_CS2_A_S1,Probability_&_Statistics_CS2_A,Probability & Statistics,CS2,A,Ms. Amna Humayun,False,Monday,11:00,12:30,SB 003 LAB
+Probability_&_Statistics_CS2_A_S2,Probability_&_Statistics_CS2_A,Probability & Statistics,CS2,A,Ms. Amna Humayun,False,Friday,12:30,14:00,SB 306
+Programming_Fundamentals-Lab_Repeat_CS2_A_S1,Programming_Fundamentals-Lab_Repeat_CS2_A,Programming Fundamentals-Lab Repeat,CS2,A,Ms. Shazia Rizwan,True,Thursday,12:30,15:30,SBT 202
+Programming_Fundamentals-Repeat_CS2_A_S1,Programming_Fundamentals-Repeat_CS2_A,Programming Fundamentals-Repeat,CS2,A,Ms. Shazia Rizwan,False,Wednesday,12:30,14:00,SBT 305
+Programming_Fundamentals-Repeat_CS2_A_S2,Programming_Fundamentals-Repeat_CS2_A,Programming Fundamentals-Repeat,CS2,A,Ms. Shazia Rizwan,False,Friday,12:30,14:00,SB 304

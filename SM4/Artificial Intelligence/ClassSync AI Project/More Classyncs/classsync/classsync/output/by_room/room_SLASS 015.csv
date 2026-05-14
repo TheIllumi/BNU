@@ -1,0 +1,9 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Advanced_Database_Management_Systems_CS4_A_S1,Advanced_Database_Management_Systems_CS4_A,Advanced Database Management Systems,CS4,A,Ms. Talia Noreen,False,Thursday,09:30,11:00,SLASS 015
+Digital_Logic_Design_CS2_C_S1,Digital_Logic_Design_CS2_C,Digital Logic Design,CS2,C,Ms. Arooma Amir,False,Tuesday,14:00,15:30,SLASS 015
+Ideology_&_Constitution_of_Pakistan_CS2_C_S1,Ideology_&_Constitution_of_Pakistan_CS2_C,Ideology & Constitution of Pakistan,CS2,C,Mr. Syed Adeel Ijaz,False,Wednesday,12:30,14:00,SLASS 015
+Multivariable_Calculus_CS2_D_S1,Multivariable_Calculus_CS2_D,Multivariable Calculus,CS2,D,Mr. Ali Haider,False,Wednesday,15:30,17:00,SLASS 015
+Probability_&_Statistics_CS2_B_S1,Probability_&_Statistics_CS2_B,Probability & Statistics,CS2,B,Ms. Amna Humayun,False,Friday,08:00,09:30,SLASS 015
+Programming_Fundamentals-Repeat_CS2_A_S2,Programming_Fundamentals-Repeat_CS2_A,Programming Fundamentals-Repeat,CS2,A,Ms. Shazia Rizwan,False,Thursday,15:30,17:00,SLASS 015
+Research_Methods_for_IT_CS&SE8_-_S1,Research_Methods_for_IT_CS&SE8_-,Research Methods for IT,CS&SE8,-,Dr. Usman Nazir,False,Wednesday,12:30,14:00,SLASS 015
+Software_Re_Engineering_SE8_-_S2,Software_Re_Engineering_SE8_-,Software Re Engineering,SE8,-,Ms. Ayesha Seher,False,Tuesday,15:30,17:00,SLASS 015

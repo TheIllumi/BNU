@@ -1,0 +1,30 @@
+mkdir classsync-visual && cd classsync-visual && (
+    mkdir ui utils config &&
+    type nul > app.py &&
+    type nul > requirements.txt &&
+    type nul > build.spec &&
+    type nul > setup.bat &&
+    type nul > build.bat &&
+    type nul > test_app.py &&
+    type nul > README.md &&
+    type nul > SETUP_GUIDE.md &&
+
+    cd ui && (
+        type nul > __init__.py &&
+        type nul > main_window.py &&
+        type nul > config_window.py &&
+        type nul > components.py
+    ) && cd .. &&
+
+    cd utils && (
+        type nul > __init__.py &&
+        type nul > config_manager.py &&
+        type nul > processor.py &&
+        type nul > excel_generator.py &&
+        type nul > analytics.py
+    ) && cd .. &&
+
+    cd config && (
+        type nul > default_config.json
+    )
+)

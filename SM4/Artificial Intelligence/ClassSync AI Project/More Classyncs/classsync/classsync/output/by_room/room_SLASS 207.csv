@@ -1,0 +1,5 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Artificial_Intelligence_CS4_B_S1,Artificial_Intelligence_CS4_B,Artificial Intelligence,CS4,B,Ms. Noreen Khalid,False,Friday,14:00,15:30,SLASS 207
+Object_Oriented_Programming_Lab_CS2_B_S1,Object_Oriented_Programming_Lab_CS2_B,Object Oriented Programming Lab,CS2,B,Ms. Rameen,True,Wednesday,15:30,18:30,SLASS 207
+Programming_Fundamentals-Repeat_CS2_B_S2,Programming_Fundamentals-Repeat_CS2_B,Programming Fundamentals-Repeat,CS2,B,Mr. Asim Irshad,False,Monday,09:30,11:00,SLASS 207
+Programming_for_2D_&_Web_3D_Apps_CS6_-_S1,Programming_for_2D_&_Web_3D_Apps_CS6_-,Programming for 2D & Web 3D Apps,CS6,-,Mr. Nouman Ali,False,Tuesday,15:30,17:00,SLASS 207

@@ -1,0 +1,99 @@
+ClassSync v1.0
+==============
+
+USER MANUAL
+-----------
+
+INTRODUCTION
+------------
+ClassSync helps you create optimized schedules for classes, rooms,
+resources, or personnel. This manual explains how to use the application
+step by step.
+
+
+STARTING THE APPLICATION
+------------------------
+1. Locate the folder where you extracted ClassSync.
+2. Double-click ClassSync.exe to launch the program.
+3. The main window will appear with tabs for Data, Configuration, and Results.
+
+
+MAIN WORKFLOW
+-------------
+Using ClassSync follows a simple sequence:
+
+1. Enter or load your data
+2. Save all data
+3. Configure optimization settings
+4. Generate the schedule
+5. Export the results
+
+
+STEP 1: ENTERING DATA
+---------------------
+- Go to the **Data tab**.
+- Import your CSV files (e.g., Courses.csv, Rooms.csv).
+- You can also type data directly into the provided fields.
+- Use the included "sample" folder for examples of correct formatting.
+- IMPORTANT: Make sure all names and spellings are consistent.
+
+
+STEP 2: SAVING DATA
+-------------------
+- After entering your data, click **Save All Data**.
+- This stores your input for use in the optimization step.
+- Always save before moving on.
+
+
+STEP 3: CONFIGURING SETTINGS
+----------------------------
+- Go to the **Configuration tab**.
+- Choose your optimization parameters:
+  * Population size
+  * Number of generations
+  * Mutation rate
+  * Crossover rate
+- These control how the optimization algorithm works.
+- For most cases, the default values will work fine.
+
+
+STEP 4: GENERATING THE SCHEDULE
+-------------------------------
+- Click **Generate Schedule**.
+- The program will start running the optimization.
+- You will see a progress bar and updates in real time.
+- Depending on the amount of data, this may take some time.
+
+
+STEP 5: VIEWING AND EXPORTING RESULTS
+-------------------------------------
+- Once optimization completes, results appear in the **Results tab**.
+- Review the generated schedule and resource usage.
+- Click **Export to Excel** to save your results.
+- Files will be placed in the "output" folder with organized subfolders.
+
+
+TIPS FOR SUCCESS
+----------------
+- Always check your data carefully before running optimization.
+- Start with smaller test datasets to understand the workflow.
+- If optimization seems slow, reduce the population size or generations.
+- Use the sample files as templates when creating new datasets.
+
+
+SUPPORT
+-------
+If you need help, contact:
+
+f2023-009@bnu.edu.pk  
+f2023-630@bnu.edu.pk  
+f2023-956@bnu.edu.pk  
+
+When reporting issues, include:
+- Your operating system
+- A description of the problem
+- Any error messages
+- Example input files (without sensitive data)
+
+
+END OF MANUAL

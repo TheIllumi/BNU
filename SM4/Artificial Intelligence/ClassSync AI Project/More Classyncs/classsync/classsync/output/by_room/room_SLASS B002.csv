@@ -1,0 +1,3 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Business_Computing_Lab_MBC2_-_S1,Business_Computing_Lab_MBC2_-,Business Computing Lab,MBC2,-,Ms. Talia Noreen,True,Tuesday,09:30,12:30,SLASS B002
+Computer_Networks_Lab_CS6_B_S1,Computer_Networks_Lab_CS6_B,Computer Networks Lab,CS6,B,Mr. Shazil Ali,True,Monday,11:00,14:00,SLASS B002

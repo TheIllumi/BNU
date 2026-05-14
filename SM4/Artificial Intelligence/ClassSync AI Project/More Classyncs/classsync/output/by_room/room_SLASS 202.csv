@@ -1,0 +1,6 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Advanced_Database_Management_Systems_Lab_CS4_A_S1,Advanced_Database_Management_Systems_Lab_CS4_A,Advanced Database Management Systems Lab,CS4,A,Mr. Ahsan Atiq,True,Monday,08:00,11:00,SLASS 202
+Advanced_Database_Management_Systems_Lab_CS4_C_S1,Advanced_Database_Management_Systems_Lab_CS4_C,Advanced Database Management Systems Lab,CS4,C,Mr. Ahsan Atiq,True,Friday,14:00,17:00,SLASS 202
+Multivariable_Calculus_CS2_A_S1,Multivariable_Calculus_CS2_A,Multivariable Calculus,CS2,A,Dr. Zawar Hussain VF,False,Wednesday,12:30,14:00,SLASS 202
+Multivariable_Calculus_SE2_E_S1,Multivariable_Calculus_SE2_E,Multivariable Calculus,SE2,E,Mr. Ali Haider,False,Monday,11:00,12:30,SLASS 202
+Object_Oriented_Programming_CS2_B_S2,Object_Oriented_Programming_CS2_B,Object Oriented Programming,CS2,B,Mr. Nouman Ali,False,Thursday,14:00,15:30,SLASS 202

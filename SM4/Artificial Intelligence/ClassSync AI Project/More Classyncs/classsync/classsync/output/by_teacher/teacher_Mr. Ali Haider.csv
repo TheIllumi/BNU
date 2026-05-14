@@ -1,0 +1,9 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Graph_Theory_CS8_-_S1,Graph_Theory_CS8_-,Graph Theory,CS8,-,Mr. Ali Haider,False,Monday,14:00,15:30,SBT 204
+Graph_Theory_CS8_-_S2,Graph_Theory_CS8_-,Graph Theory,CS8,-,Mr. Ali Haider,False,Friday,11:00,12:30,SB AUD 001
+Multivariable_Calculus_CS2_D_S1,Multivariable_Calculus_CS2_D,Multivariable Calculus,CS2,D,Mr. Ali Haider,False,Wednesday,15:30,17:00,SLASS 015
+Multivariable_Calculus_CS2_D_S2,Multivariable_Calculus_CS2_D,Multivariable Calculus,CS2,D,Mr. Ali Haider,False,Tuesday,09:30,11:00,Central block 002
+Multivariable_Calculus_SE2_E_S1,Multivariable_Calculus_SE2_E,Multivariable Calculus,SE2,E,Mr. Ali Haider,False,Tuesday,12:30,14:00,SB 206
+Multivariable_Calculus_SE2_E_S2,Multivariable_Calculus_SE2_E,Multivariable Calculus,SE2,E,Mr. Ali Haider,False,Friday,14:00,15:30,SB 005
+Multivariable_Calculus_SE2_F_S1,Multivariable_Calculus_SE2_F,Multivariable Calculus,SE2,F,Mr. Ali Haider,False,Tuesday,11:00,12:30,SBT 303
+Multivariable_Calculus_SE2_F_S2,Multivariable_Calculus_SE2_F,Multivariable Calculus,SE2,F,Mr. Ali Haider,False,Friday,12:30,14:00,SB 005

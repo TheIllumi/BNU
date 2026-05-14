@@ -1,0 +1,3 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Advanced_Database_Management_Systems_CS4_B_S2,Advanced_Database_Management_Systems_CS4_B,Advanced Database Management Systems,CS4,B,Ms. Talia Noreen,False,Friday,11:00,12:30,SB 004
+Theory_of_Programming_Languages_CS8_-_S1,Theory_of_Programming_Languages_CS8_-,Theory of Programming Languages,CS8,-,Ms. Huda Sarfraz,False,Friday,14:00,15:30,SB 004

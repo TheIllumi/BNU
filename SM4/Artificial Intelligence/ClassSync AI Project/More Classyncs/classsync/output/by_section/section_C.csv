@@ -1,0 +1,27 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Advanced_Database_Management_Systems_CS4_C_S1,Advanced_Database_Management_Systems_CS4_C,Advanced Database Management Systems,CS4,C,Ms. Talia Noreen,False,Tuesday,11:00,12:30,SLASS 201
+Advanced_Database_Management_Systems_CS4_C_S2,Advanced_Database_Management_Systems_CS4_C,Advanced Database Management Systems,CS4,C,Ms. Talia Noreen,False,Monday,14:00,15:30,SB 306
+Advanced_Database_Management_Systems_Lab_CS4_C_S1,Advanced_Database_Management_Systems_Lab_CS4_C,Advanced Database Management Systems Lab,CS4,C,Mr. Ahsan Atiq,True,Friday,14:00,17:00,SLASS 202
+Artificial_Intelligence_CS4_C_S1,Artificial_Intelligence_CS4_C,Artificial Intelligence,CS4,C,Ms. Noreen Khalid,False,Thursday,12:30,14:00,SBT 204
+Artificial_Intelligence_CS4_C_S2,Artificial_Intelligence_CS4_C,Artificial Intelligence,CS4,C,Ms. Noreen Khalid,False,Thursday,14:00,15:30,SLASS 207
+Artificial_Intelligence_Lab_CS4_C_S1,Artificial_Intelligence_Lab_CS4_C,Artificial Intelligence Lab,CS4,C,Ms. Noreen Khalid,True,Monday,11:00,14:00,SB AUD 001
+Computer_Organization_&_Assembly_Language_CS4_C_S1,Computer_Organization_&_Assembly_Language_CS4_C,Computer Organization & Assembly Language,CS4,C,Ms. Nimra Abbas,False,Tuesday,12:30,14:00,SBT 303
+Computer_Organization_&_Assembly_Language_CS4_C_S2,Computer_Organization_&_Assembly_Language_CS4_C,Computer Organization & Assembly Language,CS4,C,Ms. Nimra Abbas,False,Tuesday,11:00,12:30,SBT 202
+Computer_Organization_&_Assembly_Language_Lab_CS4_C_S1,Computer_Organization_&_Assembly_Language_Lab_CS4_C,Computer Organization & Assembly Language Lab,CS4,C,Ms. Ayesha Seher,True,Thursday,09:30,12:30,Central block 004
+Data_Structures_&_Algorithms_CS4_C_S1,Data_Structures_&_Algorithms_CS4_C,Data Structures & Algorithms,CS4,C,Mr. Muhammad Ali,False,Monday,15:30,17:00,SLASS SMC 001 Lab
+Data_Structures_&_Algorithms_CS4_C_S2,Data_Structures_&_Algorithms_CS4_C,Data Structures & Algorithms,CS4,C,Mr. Muhammad Ali,False,Wednesday,09:30,11:00,SLASS 207
+Data_Structures_&_Algorithms_Lab_CS4_C_S1,Data_Structures_&_Algorithms_Lab_CS4_C,Data Structures & Algorithms Lab,CS4,C,Mr. Muhammad Ali,True,Wednesday,14:00,17:00,Central block 105
+Digital_Logic_Design_CS2_C_S1,Digital_Logic_Design_CS2_C,Digital Logic Design,CS2,C,Ms. Arooma Amir,False,Tuesday,08:00,09:30,SB 301
+Digital_Logic_Design_CS2_C_S2,Digital_Logic_Design_CS2_C,Digital Logic Design,CS2,C,Ms. Arooma Amir,False,Tuesday,14:00,15:30,SB 304
+Digital_Logic_Design_Lab_CS2_C_S1,Digital_Logic_Design_Lab_CS2_C,Digital Logic Design Lab,CS2,C,Mr. Uzair Bashir,True,Wednesday,14:00,17:00,SLASS SMC 001 Lab
+Ideology_&_Constitution_of_Pakistan_CS2_C_S1,Ideology_&_Constitution_of_Pakistan_CS2_C,Ideology & Constitution of Pakistan,CS2,C,Mr. Syed Adeel Ijaz,False,Thursday,14:00,15:30,SLASS 208
+Ideology_&_Constitution_of_Pakistan_CS2_C_S2,Ideology_&_Constitution_of_Pakistan_CS2_C,Ideology & Constitution of Pakistan,CS2,C,Mr. Syed Adeel Ijaz,False,Thursday,15:30,17:00,SB 302
+Linear_Algebra_CS4_C_S1,Linear_Algebra_CS4_C,Linear Algebra,CS4,C,Mr. Farhan Ali,False,Thursday,15:30,17:00,SLASS B002
+Linear_Algebra_CS4_C_S2,Linear_Algebra_CS4_C,Linear Algebra,CS4,C,Mr. Farhan Ali,False,Friday,08:00,09:30,SBT 305
+Multivariable_Calculus_CS2_C_S1,Multivariable_Calculus_CS2_C,Multivariable Calculus,CS2,C,Mr. Farhan Ali,False,Tuesday,08:00,09:30,SLASS 013
+Multivariable_Calculus_CS2_C_S2,Multivariable_Calculus_CS2_C,Multivariable Calculus,CS2,C,Mr. Farhan Ali,False,Tuesday,08:00,09:30,SBT 303
+Object_Oriented_Programming_CS2_C_S1,Object_Oriented_Programming_CS2_C,Object Oriented Programming,CS2,C,Mr. Asim Irshad,False,Wednesday,08:00,09:30,SLASS 201
+Object_Oriented_Programming_CS2_C_S2,Object_Oriented_Programming_CS2_C,Object Oriented Programming,CS2,C,Mr. Asim Irshad,False,Thursday,14:00,15:30,SBT 305
+Object_Oriented_Programming_Lab_CS2_C_S1,Object_Oriented_Programming_Lab_CS2_C,Object Oriented Programming Lab,CS2,C,Ms. Rameen,True,Friday,15:30,18:30,Central block 004
+Probability_&_Statistics_CS2_C_S1,Probability_&_Statistics_CS2_C,Probability & Statistics,CS2,C,Dr. Aamir Majeed Chaudhary,False,Monday,14:00,15:30,SLASS B002
+Probability_&_Statistics_CS2_C_S2,Probability_&_Statistics_CS2_C,Probability & Statistics,CS2,C,Dr. Aamir Majeed Chaudhary,False,Wednesday,08:00,09:30,SLASS 309

@@ -1,0 +1,5 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Applied_Physics_SE2_A_S1,Applied_Physics_SE2_A,Applied Physics,SE2,A,Mr. Uzair Bashir,False,Monday,08:00,09:30,SB 307
+Digital_Logic_Design_CS2_B_S1,Digital_Logic_Design_CS2_B,Digital Logic Design,CS2,B,Mr. Uzair Bashir,False,Friday,11:00,12:30,SB 307
+Intro_to_CyberSecurity_(Elective)_CS6_-_S1,Intro_to_CyberSecurity_(Elective)_CS6_-,Intro to CyberSecurity (Elective),CS6,-,Mr. Nabeel Ahsan,False,Wednesday,15:30,17:00,SB 307
+Theory_of_Programming_Languages_CS8_-_S2,Theory_of_Programming_Languages_CS8_-,Theory of Programming Languages,CS8,-,Ms. Huda Sarfraz,False,Thursday,08:00,09:30,SB 307

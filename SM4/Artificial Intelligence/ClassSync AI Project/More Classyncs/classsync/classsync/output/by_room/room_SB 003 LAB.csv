@@ -1,0 +1,6 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Business_Computing_MBC2_-_S1,Business_Computing_MBC2_-,Business Computing,MBC2,-,Ms. Sheeza Batool,False,Thursday,12:30,14:00,SB 003 LAB
+Database_Management_Systems_MBC4_-_S1,Database_Management_Systems_MBC4_-,Database Management Systems,MBC4,-,Ms. Shazia Rizwan,False,Thursday,11:00,12:30,SB 003 LAB
+Math_II_CS+SE2_B_(Med)_S2,Math_II_CS+SE2_B_(Med),Math II,CS+SE2,B (Med),Ms. Ujala Aftab,False,Friday,15:30,17:00,SB 003 LAB
+Multivariable_Calculus_CS2_A_S1,Multivariable_Calculus_CS2_A,Multivariable Calculus,CS2,A,Dr. Zawar Hussain VF,False,Monday,15:30,17:00,SB 003 LAB
+Probability_&_Statistics_CS2_C_S1,Probability_&_Statistics_CS2_C,Probability & Statistics,CS2,C,Dr. Aamir Majeed Chaudhary,False,Thursday,09:30,11:00,SB 003 LAB

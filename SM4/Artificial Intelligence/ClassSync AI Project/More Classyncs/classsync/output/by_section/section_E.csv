@@ -1,0 +1,8 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Multivariable_Calculus_SE2_E_S1,Multivariable_Calculus_SE2_E,Multivariable Calculus,SE2,E,Mr. Ali Haider,False,Monday,11:00,12:30,SLASS 202
+Multivariable_Calculus_SE2_E_S2,Multivariable_Calculus_SE2_E,Multivariable Calculus,SE2,E,Mr. Ali Haider,False,Tuesday,14:00,15:30,Central block 105
+Object_Oriented_Programming_SE2_E_S1,Object_Oriented_Programming_SE2_E,Object Oriented Programming,SE2,E,Mr. Nabeel Ahsan,False,Wednesday,14:00,15:30,SB 205
+Object_Oriented_Programming_SE2_E_S2,Object_Oriented_Programming_SE2_E,Object Oriented Programming,SE2,E,Mr. Nabeel Ahsan,False,Thursday,08:00,09:30,Central block 002
+Object_Oriented_Programming_Lab_SE2_E_S1,Object_Oriented_Programming_Lab_SE2_E,Object Oriented Programming Lab,SE2,E,Mr. Ameer Hamza,True,Thursday,09:30,12:30,SB 003 LAB
+Probability_&_Statistics_SE2_E_S1,Probability_&_Statistics_SE2_E,Probability & Statistics,SE2,E,Mr. Hamza Sarfraz,False,Monday,08:00,09:30,Central block 002
+Probability_&_Statistics_SE2_E_S2,Probability_&_Statistics_SE2_E,Probability & Statistics,SE2,E,Mr. Hamza Sarfraz,False,Tuesday,14:00,15:30,SBT 303

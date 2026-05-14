@@ -1,0 +1,6 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Computer_Organization_&_Assembly_Language_CS4_B_S1,Computer_Organization_&_Assembly_Language_CS4_B,Computer Organization & Assembly Language,CS4,B,Ms. Nimra Abbas,False,Friday,14:00,15:30,SLASS SMC 001 Lab
+Linear_Algebra_CS4_C_S2,Linear_Algebra_CS4_C,Linear Algebra,CS4,C,Mr. Farhan Ali,False,Monday,09:30,11:00,SLASS SMC 001 Lab
+Object_Oriented_Programming_SE2_F_S2,Object_Oriented_Programming_SE2_F,Object Oriented Programming,SE2,F,Mr. Ameer Hamza,False,Monday,08:00,09:30,SLASS SMC 001 Lab
+Object_Oriented_Programming_Lab_CS2_D_S1,Object_Oriented_Programming_Lab_CS2_D,Object Oriented Programming Lab,CS2,D,Mr. Asim Irshad,True,Tuesday,12:30,15:30,SLASS SMC 001 Lab
+Object_Oriented_Programming_Lab_SE2_E_S1,Object_Oriented_Programming_Lab_SE2_E,Object Oriented Programming Lab,SE2,E,Mr. Ameer Hamza,True,Tuesday,08:00,11:00,SLASS SMC 001 Lab

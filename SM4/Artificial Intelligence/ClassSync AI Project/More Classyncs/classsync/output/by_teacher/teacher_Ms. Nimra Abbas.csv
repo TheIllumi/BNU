@@ -1,0 +1,8 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Computer_Organization_&_Assembly_Language_CS4_A_S1,Computer_Organization_&_Assembly_Language_CS4_A,Computer Organization & Assembly Language,CS4,A,Ms. Nimra Abbas,False,Wednesday,14:00,15:30,SBT 202
+Computer_Organization_&_Assembly_Language_CS4_A_S2,Computer_Organization_&_Assembly_Language_CS4_A,Computer Organization & Assembly Language,CS4,A,Ms. Nimra Abbas,False,Wednesday,15:30,17:00,SB 005
+Computer_Organization_&_Assembly_Language_CS4_B_S1,Computer_Organization_&_Assembly_Language_CS4_B,Computer Organization & Assembly Language,CS4,B,Ms. Nimra Abbas,False,Monday,11:00,12:30,SBT 204
+Computer_Organization_&_Assembly_Language_CS4_B_S2,Computer_Organization_&_Assembly_Language_CS4_B,Computer Organization & Assembly Language,CS4,B,Ms. Nimra Abbas,False,Thursday,15:30,17:00,SLASS 118
+Computer_Organization_&_Assembly_Language_CS4_C_S1,Computer_Organization_&_Assembly_Language_CS4_C,Computer Organization & Assembly Language,CS4,C,Ms. Nimra Abbas,False,Tuesday,12:30,14:00,SBT 303
+Computer_Organization_&_Assembly_Language_CS4_C_S2,Computer_Organization_&_Assembly_Language_CS4_C,Computer Organization & Assembly Language,CS4,C,Ms. Nimra Abbas,False,Tuesday,11:00,12:30,SBT 202
+Computer_Organization_&_Assembly_Language_Lab_CS4_A_S1,Computer_Organization_&_Assembly_Language_Lab_CS4_A,Computer Organization & Assembly Language Lab,CS4,A,Ms. Nimra Abbas,True,Tuesday,09:30,12:30,SLASS 201

@@ -1,0 +1,678 @@
+import os
+import json
+import random
+from datetime import time, datetime, timedelta
+
+import numpy as np
+import pandas as pd
+from tqdm import tqdm
+
+VERBOSE = False
+
+# ==============================
+# Enhanced Configuration Settings
+# ==============================
+
+def _normalize_days(days_str: str):
+    """Normalize a comma-separated list of days to full names (e.g., Mon -> Monday)."""
+    mapping = {
+        "mon": "Monday", "monday": "Monday",
+        "tue": "Tuesday", "tues": "Tuesday", "tuesday": "Tuesday",
+        "wed": "Wednesday", "weds": "Wednesday", "wednesday": "Wednesday",
+        "thu": "Thursday", "thur": "Thursday", "thurs": "Thursday", "thursday": "Thursday",
+        "fri": "Friday", "friday": "Friday",
+        "sat": "Saturday", "saturday": "Saturday",
+        "sun": "Sunday", "sunday": "Sunday",
+    }
+    parts = [p.strip() for p in (days_str or "").split(",") if p.strip()]
+    if not parts:
+        return ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+    normalized = []
+    for p in parts:
+        key = p.lower()
+        normalized.append(mapping.get(key, p.title()))
+    return normalized
+
+def load_ui_config():
+    """Load configuration from UI-generated JSON file and normalize values."""
+    config_path = os.path.join(os.path.dirname(__file__), "data", "ui_config.json")
+
+    # Defaults
+    default_config = {
+        "working_days": "Mon,Tue,Wed,Thu,Fri",
+        "daily_start_time": "08:00",
+        "daily_end_time": "15:30",
+        "class_duration_minutes": 60,
+        "max_classes_per_day": 4,
+        "preferred_room_gap": 1,
+        "allow_back_to_back": True,
+        "allow_mixed_sections": True,
+        "allow_evening_classes": True,
+        "population_size": 30,
+        "generations": 100,
+        "generate_visual_timetables": True,
+    }
+
+    # Load or fall back
+    try:
+        if os.path.exists(config_path):
+            with open(config_path, "r", encoding="utf-8") as f:
+                raw = json.load(f)
+            print(f" Configuration loaded from {config_path}")
+        else:
+            raw = default_config
+            print("  Configuration file not found, using defaults")
+    except Exception as e:
+        print(f" Error loading configuration: {e}, using defaults")
+        raw = default_config
+
+    # Times
+    def _parse_hhmm(s, default_h, default_m):
+        try:
+            hh, mm = str(s).split(":")
+            return time(int(hh), int(mm))
+        except Exception:
+            return time(default_h, default_m)
+
+    daily_start = _parse_hhmm(raw.get("daily_start_time", "08:00"), 8, 0)
+    daily_end = _parse_hhmm(raw.get("daily_end_time", "15:30"), 15, 30)
+
+    return {
+        "working_days": _normalize_days(raw.get("working_days", "Mon,Tue,Wed,Thu,Fri")),
+        "daily_start": daily_start,
+        "daily_end": daily_end,
+        "slot_duration_minutes": int(raw.get("class_duration_minutes", 60)),
+        "vc_slot_days": ["Monday", "Tuesday", "Friday"],  # reserved time window to skip
+        "vc_slot_time": (time(12, 30), time(14, 0)),
+        "lab_duration_slots": 2,
+        "disallow_weekends": True,
+        "max_daily_hours_per_instructor": 8,
+        "preferred_gap_minutes": int(raw.get("preferred_room_gap", 1)) * 30,
+        "evening_penalty_threshold": time(16, 0),
+        "max_classes_per_day": int(raw.get("max_classes_per_day", 4)),
+        "allow_back_to_back": bool(raw.get("allow_back_to_back", True)),
+        "allow_mixed_sections": bool(raw.get("allow_mixed_sections", True)),
+        "allow_evening_classes": bool(raw.get("allow_evening_classes", True)),
+        "population_size": int(raw.get("population_size", 30)),
+        "generations": int(raw.get("generations", 100)),
+        "generate_visual_timetables": bool(raw.get("generate_visual_timetables", True)),
+    }
+
+CONFIG = load_ui_config()
+
+# ==============================
+# Time slots
+# ==============================
+
+def generate_time_slots(config):
+    """
+    Generate all possible time slots based on the configuration.
+    Each slot duration = config['slot_duration_minutes'] (default 60).
+    Skips VC (video-conference) window for specific days.
+    Returns list of tuples: (Weekday, StartTime, EndTime)
+    """
+    slots = []
+    slot_minutes = int(config.get("slot_duration_minutes", 60))
+    vc_days = set(config.get("vc_slot_days", []))
+    vc_start, vc_end = config.get("vc_slot_time", (time(12, 30), time(14, 0)))
+
+    for day in config["working_days"]:
+        current = datetime.combine(datetime.today(), config["daily_start"])
+        end = datetime.combine(datetime.today(), config["daily_end"])
+
+        while current + timedelta(minutes=slot_minutes) <= end:
+            slot_start = current.time()
+            slot_end = (current + timedelta(minutes=slot_minutes)).time()
+
+            # Skip VC window on configured days
+            if day in vc_days:
+                if (vc_start <= slot_start < vc_end) or (vc_start < slot_end <= vc_end):
+                    current += timedelta(minutes=slot_minutes)
+                    continue
+
+            slots.append((day, slot_start, slot_end))
+            current += timedelta(minutes=slot_minutes)
+
+    return slots
+
+# ==============================
+# Data Loading & Cleaning
+# ==============================
+
+def load_course_and_room_data(course_path, room_path):
+    """Load and preprocess course and room data with robust string handling."""
+    courses_df = pd.read_csv(course_path)
+    rooms_df = pd.read_csv(room_path)
+
+    # Normalize column names
+    courses_df.columns = courses_df.columns.str.strip()
+    rooms_df.columns = rooms_df.columns.str.strip()
+
+    # Debug
+    if "Course Name" in courses_df.columns:
+        print(f"Loaded courses data shape: ({len(courses_df)}, {len(courses_df.columns)})")
+        print(f"Course columns: {list(courses_df.columns)}")
+        print(f"Course Name data type: {courses_df['Course Name'].dtype}")
+        print(f"NaN values in Course Name: {courses_df['Course Name'].isna().sum()}")
+
+    # Safe string conversions
+    courses_df["Course Name"] = courses_df.get("Course Name", "").fillna("Unknown_Course").astype(str)
+    courses_df["Program"] = courses_df.get("Program", "General").fillna("General").astype(str)
+    courses_df["Section"] = courses_df.get("Section", "A").fillna("A").astype(str)
+    courses_df["Instructor"] = courses_df.get("Instructor", "TBD").fillna("TBD").astype(str)
+
+    # Remove rows with obviously bad course names
+    courses_df = courses_df[
+        (courses_df["Course Name"].str.lower() != "nan")
+        & (courses_df["Course Name"].str.strip() != "")
+        & (courses_df["Course Name"] != "Unknown_Course")
+    ]
+
+    print(f"After cleaning: {courses_df.shape[0]} courses remain")
+
+    # Keys & flags
+    courses_df["Course_Key"] = (
+        courses_df["Course Name"].str.strip()
+        + " - "
+        + courses_df["Program"].str.strip()
+        + courses_df["Section"].str.strip()
+    )
+    courses_df["Is_Lab"] = courses_df["Course Name"].str.contains("Lab", case=False, na=False)
+
+    # Rooms
+    rooms_df["Rooms"] = rooms_df.get("Rooms", "Room-1").fillna("Room-1").astype(str)
+    rooms_df = rooms_df[
+        (rooms_df["Rooms"].str.lower() != "nan")
+        & (rooms_df["Rooms"].str.strip() != "")
+    ]
+    if rooms_df.empty:
+        # Ensure at least one room exists to avoid random.choice([]) errors
+        rooms_df = pd.DataFrame({"Rooms": ["Room-1"]})
+
+    print(f"Final data: {len(courses_df)} courses, {len(rooms_df)} rooms")
+    return courses_df, rooms_df
+
+# ==============================
+# Sessions
+# ==============================
+
+def create_sessions_from_courses(courses_df: pd.DataFrame) -> pd.DataFrame:
+    """Create one or two session entries per course (labs=1x2slots, theory=2x1slot)."""
+    sessions = []
+    for _, row in courses_df.iterrows():
+        session_count = 1 if bool(row["Is_Lab"]) else 2
+        for session_num in range(1, session_count + 1):
+            sessions.append(
+                {
+                    "Course_Key": row["Course_Key"],
+                    "Course_Name": row["Course Name"],
+                    "Instructor": row["Instructor"],
+                    "Section": row["Section"],
+                    "Program": row["Program"],
+                    "Is_Lab": bool(row["Is_Lab"]),
+                    "Duration_Slots": 2 if bool(row["Is_Lab"]) else 1,
+                    "Session_Number": session_num,
+                }
+            )
+    return pd.DataFrame(sessions)
+
+# ==============================
+# Individual generation (placement)
+# ==============================
+
+def generate_individual(
+    sessions_df: pd.DataFrame,
+    available_slots,
+    rooms_df: pd.DataFrame,
+    max_trials: int = 1000,
+    show_progress: bool = False,
+):
+    """Place sessions greedily with conflict checks; returns (schedule_df, forced_log, missed)."""
+    schedule = []
+    forced_log = []
+    missed_sessions = []
+
+    all_rooms = rooms_df["Rooms"].tolist()
+    if not all_rooms:
+        all_rooms = ["Room-1"]
+
+    # Prioritize harder sessions
+    def _priority(s):
+        score = 0
+        if "CS2" in s["Section"] or "CS4" in s["Section"]:
+            score += 100
+        if s["Is_Lab"]:
+            score += 50
+        return score
+
+    sessions_df = sessions_df.copy()
+    sessions_df["Priority_Score"] = sessions_df.apply(_priority, axis=1)
+    sessions_df = sessions_df.sort_values(by="Priority_Score", ascending=False)
+
+    # Track instructor daily hours
+    instructor_daily_hours = {}
+
+    def get_hours(instr, day):
+        return instructor_daily_hours.get(f"{instr}_{day}", 0)
+
+    def add_hours(instr, day, hours):
+        k = f"{instr}_{day}"
+        instructor_daily_hours[k] = instructor_daily_hours.get(k, 0) + hours
+
+    def conflicts(session, day, start_t, end_t, room):
+        for s in schedule:
+            if s["Weekday"] != day:
+                continue
+            s_start = datetime.strptime(s["Start_Time"], "%H:%M").time()
+            s_end = datetime.strptime(s["End_Time"], "%H:%M").time()
+            overlap = not (end_t <= s_start or start_t >= s_end)
+            if overlap:
+                if s["Room"] == room:
+                    return "room_conflict"
+                if s["Instructor"] == session["Instructor"]:
+                    return "instructor_conflict"
+                if s["Section"] == session["Section"]:
+                    return "section_conflict"
+        return None
+
+    iterator = (
+        tqdm(sessions_df.iterrows(), total=len(sessions_df), desc="📅 Placing Sessions", unit="session")
+        if show_progress
+        else sessions_df.iterrows()
+    )
+
+    for _, session in iterator:
+        placed = False
+        trials = 0
+
+        while not placed and trials < max_trials:
+            trials += 1
+            day, start_time, _ = random.choice(available_slots)
+
+            # Instructor daily hour limit
+            session_hours = 3 if session["Is_Lab"] else 1.5
+            if get_hours(session["Instructor"], day) + session_hours > CONFIG["max_daily_hours_per_instructor"]:
+                continue
+
+            room = random.choice(all_rooms)
+
+            if session["Is_Lab"]:
+                # Need 2 consecutive slots -> end time = next slot end, if same day
+                slot_idx = next((i for i, s in enumerate(available_slots) if s[0] == day and s[1] == start_time), -1)
+                if slot_idx == -1 or slot_idx + 1 >= len(available_slots):
+                    continue
+                next_slot = available_slots[slot_idx + 1]
+                if next_slot[0] != day:
+                    continue
+                end_time = next_slot[2]
+                if end_time > CONFIG["daily_end"]:
+                    continue
+            else:
+                # Theory = 1.5h (90m)
+                end_time = (datetime.combine(datetime.today(), start_time) + timedelta(minutes=90)).time()
+                if end_time > CONFIG["daily_end"]:
+                    continue
+
+            if conflicts(session, day, start_time, end_time, room) is None:
+                schedule.append(
+                    {
+                        **session,
+                        "Weekday": day,
+                        "Start_Time": start_time.strftime("%H:%M"),
+                        "End_Time": end_time.strftime("%H:%M"),
+                        "Room": room,
+                    }
+                )
+                add_hours(session["Instructor"], day, session_hours)
+                placed = True
+
+        if not placed:
+            missed_sessions.append(
+                {
+                    "Course": session["Course_Key"],
+                    "Instructor": session["Instructor"],
+                    "Section": session["Section"],
+                    "Is_Lab": session["Is_Lab"],
+                    "Reason": f"Failed after {max_trials} trials",
+                }
+            )
+
+    return pd.DataFrame(schedule), forced_log, missed_sessions
+
+# ==============================
+# Population generation
+# ==============================
+
+def generate_population(pop_size, sessions_df, available_slots, rooms_df, show_progress=False):
+    population = []
+    all_forced = []
+    all_missed = []
+
+    for i in range(pop_size):
+        if show_progress:
+            print(f"Generating individual {i+1}/{pop_size}")
+        schedule, forced_log, missed_sessions = generate_individual(
+            sessions_df, available_slots, rooms_df, show_progress=False
+        )
+        population.append(schedule)
+        all_forced.extend(forced_log)
+        all_missed.extend(missed_sessions)
+
+    return population, all_forced, all_missed
+
+# ==============================
+# Fitness, Crossover, Mutation, GA
+# ==============================
+
+def calculate_fitness(individual: pd.DataFrame):
+    """Higher is better. Penalize conflicts, forced/late, reward coverage & balance."""
+    if individual.empty:
+        return 1
+
+    penalty = 0
+    bonus = 0
+
+    ind = individual.copy()
+    ind["Start_Time_obj"] = pd.to_datetime(ind["Start_Time"], format="%H:%M").dt.time
+    ind["End_Time_obj"] = pd.to_datetime(ind["End_Time"], format="%H:%M").dt.time
+
+    for i, row in ind.iterrows():
+        overlapping = ind[
+            (ind["Weekday"] == row["Weekday"])
+            & (ind.index != i)
+            & (ind["Start_Time_obj"] < row["End_Time_obj"])
+            & (ind["End_Time_obj"] > row["Start_Time_obj"])
+        ]
+        penalty += (overlapping["Instructor"] == row["Instructor"]).sum() * 50
+        penalty += (overlapping["Room"] == row["Room"]).sum() * 30
+        penalty += (overlapping["Section"] == row["Section"]).sum() * 40
+
+        # Evening penalty
+        if row["Start_Time_obj"] >= CONFIG["evening_penalty_threshold"]:
+            penalty += 3
+
+        # Bonus for good lab placement (non-forced labs)
+        if row.get("Is_Lab", False) and not row.get("Forced", False):
+            bonus += 5
+
+    # Instructor balance
+    instructor_hours = {}
+    for _, row in ind.iterrows():
+        k = f"{row['Instructor']}_{row['Weekday']}"
+        hours = 3 if row.get("Is_Lab") else 1.5
+        instructor_hours[k] = instructor_hours.get(k, 0) + hours
+
+    for hours in instructor_hours.values():
+        if 3 <= hours <= 6:
+            bonus += 2
+        elif hours > 8:
+            penalty += 10
+
+    coverage_bonus = len(ind) * 2
+    base = 1000
+    return max(1, base - penalty + bonus + coverage_bonus)
+
+def crossover(parent1: pd.DataFrame, parent2: pd.DataFrame):
+    if parent1.empty or parent2.empty:
+        return parent1.copy(), parent2.copy()
+
+    # Instructor-based split if possible
+    instr1 = set(parent1["Instructor"].unique())
+    instr2 = set(parent2["Instructor"].unique())
+    common = instr1.intersection(instr2)
+
+    if common:
+        split_instr = random.choice(list(common))
+        child1 = pd.concat(
+            [parent1[parent1["Instructor"] <= split_instr], parent2[parent2["Instructor"] > split_instr]],
+            ignore_index=True,
+        )
+        child2 = pd.concat(
+            [parent2[parent2["Instructor"] <= split_instr], parent1[parent1["Instructor"] > split_instr]],
+            ignore_index=True,
+        )
+    else:
+        split = len(parent1) // 2
+        child1 = pd.concat([parent1.iloc[:split], parent2.iloc[split:]], ignore_index=True)
+        child2 = pd.concat([parent2.iloc[:split], parent1.iloc[split:]], ignore_index=True)
+
+    child1 = child1.drop_duplicates(subset=["Course_Key", "Session_Number"], keep="first").reset_index(drop=True)
+    child2 = child2.drop_duplicates(subset=["Course_Key", "Session_Number"], keep="first").reset_index(drop=True)
+    return child1, child2
+
+def mutate(individual: pd.DataFrame, available_slots, rooms_df: pd.DataFrame, mutation_rate=0.1):
+    if individual.empty or random.random() >= mutation_rate:
+        return individual
+
+    ind = individual.copy()
+    all_rooms = rooms_df["Rooms"].tolist() or ["Room-1"]
+
+    num_mut = max(1, int(len(ind) * mutation_rate))
+    idxs = random.sample(range(len(ind)), min(num_mut, len(ind)))
+
+    for idx in idxs:
+        session = ind.iloc[idx]
+        for _ in range(50):
+            day, start_time, _ = random.choice(available_slots)
+            room = random.choice(all_rooms)
+
+            if session.get("Is_Lab", False):
+                # Prefer two slots, else 180m fallback
+                slot_idx = next((i for i, s in enumerate(available_slots) if s[0] == day and s[1] == start_time), -1)
+                if slot_idx != -1 and slot_idx + 1 < len(available_slots) and available_slots[slot_idx + 1][0] == day:
+                    end_time = available_slots[slot_idx + 1][2]
+                else:
+                    end_time = (datetime.combine(datetime.today(), start_time) + timedelta(minutes=180)).time()
+            else:
+                end_time = (datetime.combine(datetime.today(), start_time) + timedelta(minutes=90)).time()
+
+            if end_time <= CONFIG["daily_end"]:
+                ind.at[idx, "Weekday"] = day
+                ind.at[idx, "Start_Time"] = start_time.strftime("%H:%M")
+                ind.at[idx, "End_Time"] = end_time.strftime("%H:%M")
+                ind.at[idx, "Room"] = room
+                # Clear forced flags if present
+                if "Forced" in ind.columns:
+                    ind.at[idx, "Forced"] = False
+                if "Strategy" in ind.columns:
+                    ind.at[idx, "Strategy"] = None
+                break
+
+    return ind
+
+def optimize(
+    population,
+    available_slots,
+    rooms_df,
+    generations=100,
+    elite_size=3,
+    mutation_rate=0.15,
+    adaptive=True,
+):
+    """Simple GA loop returning (best_individual, best_score, score_history)."""
+    history = []
+    stagnation = 0
+    cur_mut = mutation_rate
+
+    progress = tqdm(range(generations), desc="🧬 Optimizing Schedule", unit="gen")
+    for gen in progress:
+        scores = [calculate_fitness(ind) for ind in population]
+        best = max(scores)
+        avg = float(np.mean(scores)) if scores else 0.0
+        history.append(best)
+
+        progress.set_postfix({"Best": f"{best:.0f}", "Avg": f"{avg:.0f}", "MutRate": f"{cur_mut:.3f}"})
+
+        # Adaptive mutation
+        if adaptive and gen > 0:
+            if best <= history[-2]:
+                stagnation += 1
+                if stagnation > 10:
+                    cur_mut = min(0.3, cur_mut * 1.1)
+                    stagnation = 0
+            else:
+                stagnation = 0
+                cur_mut = max(0.05, cur_mut * 0.95)
+
+        # Selection: elites
+        elite_idx = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:elite_size]
+        new_pop = [population[i].copy() for i in elite_idx]
+
+        # Fill via tournament + crossover + mutation
+        while len(new_pop) < len(population):
+            k = 3  # tournament size
+            p1_idx = max(random.sample(range(len(population)), min(k, len(population))), key=lambda i: scores[i])
+            p2_idx = max(random.sample(range(len(population)), min(k, len(population))), key=lambda i: scores[i])
+
+            c1, c2 = crossover(population[p1_idx], population[p2_idx])
+            new_pop.append(mutate(c1, available_slots, rooms_df, cur_mut))
+            if len(new_pop) < len(population):
+                new_pop.append(mutate(c2, available_slots, rooms_df, cur_mut))
+
+        population = new_pop
+
+    final_scores = [calculate_fitness(ind) for ind in population]
+    best_idx = final_scores.index(max(final_scores)) if final_scores else 0
+    return population[best_idx], (final_scores[best_idx] if final_scores else 1), history
+
+# ==============================
+# Reporting / Utilities
+# ==============================
+
+def format_schedule_by_day(schedule_df: pd.DataFrame):
+    """Pretty-print grouped by weekday."""
+    if schedule_df.empty:
+        print("❌ No schedule to display - empty DataFrame")
+        return
+
+    days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+    for day in days:
+        day_df = schedule_df[schedule_df["Weekday"] == day]
+        if day_df.empty:
+            continue
+
+        print(f"\n📅 {day.upper()}")
+        print("=" * 80)
+        day_df = day_df.sort_values(by="Start_Time")
+
+        for _, row in day_df.iterrows():
+            forced_marker = ""
+            if row.get("Forced", False):
+                strategy = row.get("Strategy", "unknown")
+                forced_marker = f" [FORCED:{strategy}]"
+            lab_marker = " [LAB]" if row.get("Is_Lab", False) else ""
+            print(
+                f"{row['Start_Time']}-{row['End_Time']} | "
+                f"{row['Course_Key']:<35} | "
+                f"{row['Instructor']:<20} | "
+                f"{row['Room']:<10}"
+                f"{lab_marker}{forced_marker}"
+            )
+
+def analyze_schedule_quality(schedule_df: pd.DataFrame, sessions_df: pd.DataFrame):
+    """Basic quality metrics & top counts."""
+    print("\n📊 SCHEDULE QUALITY ANALYSIS")
+    print("=" * 50)
+
+    total_expected = len(sessions_df)
+    total_scheduled = len(schedule_df)
+    coverage = (total_scheduled / total_expected * 100) if total_expected > 0 else 0
+    print(f"📈 Coverage: {total_scheduled}/{total_expected} sessions ({coverage:.1f}%)")
+
+    if schedule_df.empty:
+        return
+
+    # Instructor workload
+    print(f"\n👥 Instructor workload (top 5):")
+    for instr, cnt in schedule_df["Instructor"].value_counts().head().items():
+        print(f"   - {instr}: {cnt} sessions")
+
+    # Room utilization
+    print(f"\n🏢 Room utilization (top 5):")
+    for room, cnt in schedule_df["Room"].value_counts().head().items():
+        print(f"   - {room}: {cnt} sessions")
+
+    # Time distribution
+    print(f"\n⏰ Time slot distribution:")
+    time_dist = schedule_df["Start_Time"].value_counts().sort_index()
+    for t, cnt in time_dist.items():
+        print(f"   - {t}: {cnt} sessions")
+
+def check_long_sessions(df: pd.DataFrame):
+    """Return list of (Course_Key, Weekday, Start, End, duration_minutes) for >3h."""
+    long_sessions = []
+    for _, row in df.iterrows():
+        start = datetime.strptime(row["Start_Time"], "%H:%M")
+        end = datetime.strptime(row["End_Time"], "%H:%M")
+        duration = (end - start).seconds / 60
+        if duration > 180:
+            long_sessions.append((row["Course_Key"], row["Weekday"], row["Start_Time"], row["End_Time"], duration))
+    return long_sessions
+
+def export_schedule_by_section(schedule_df: pd.DataFrame, output_dir="exports/sections"):
+    """Export schedules grouped by section."""
+    if schedule_df.empty:
+        print("No schedule data to export")
+        return
+    os.makedirs(output_dir, exist_ok=True)
+    for section in schedule_df["Section"].unique():
+        section_df = schedule_df[schedule_df["Section"] == section]
+        filename = os.path.join(output_dir, f"schedule_{str(section).replace(' ', '_')}.csv")
+        section_df.to_csv(filename, index=False)
+        print(f"📄 Exported {section} schedule to {filename}")
+    master_filename = os.path.join(output_dir, "../master_schedule.csv")
+    schedule_df.to_csv(master_filename, index=False)
+    print(f"📄 Exported master schedule to {master_filename}")
+
+def export_schedule_by_teacher(schedule_df: pd.DataFrame, output_dir="exports/teachers"):
+    """Export schedules grouped by teacher."""
+    if schedule_df.empty:
+        print("No schedule data to export")
+        return
+    os.makedirs(output_dir, exist_ok=True)
+    for teacher in schedule_df["Instructor"].unique():
+        safe_teacher = str(teacher).replace(" ", "_").replace("/", "_")
+        teacher_df = schedule_df[schedule_df["Instructor"] == teacher]
+        filename = os.path.join(output_dir, f"schedule_{safe_teacher}.csv")
+        teacher_df.to_csv(filename, index=False)
+        print(f"📄 Exported {teacher} schedule to {filename}")
+    master_filename = os.path.join(output_dir, "../master_schedule_teachers.csv")
+    schedule_df.to_csv(master_filename, index=False)
+    print(f"📄 Exported teacher master schedule to {master_filename}")
+
+def export_schedule_by_room(schedule_df: pd.DataFrame, output_dir="exports/rooms"):
+    """Export schedules grouped by room."""
+    if schedule_df.empty:
+        print("No schedule data to export")
+        return
+    os.makedirs(output_dir, exist_ok=True)
+    for room in schedule_df["Room"].unique():
+        safe_room = str(room).replace(" ", "_").replace("/", "_")
+        room_df = schedule_df[schedule_df["Room"] == room]
+        filename = os.path.join(output_dir, f"schedule_{safe_room}.csv")
+        room_df.to_csv(filename, index=False)
+        print(f"📄 Exported {room} schedule to {filename}")
+    master_filename = os.path.join(output_dir, "../master_schedule_rooms.csv")
+    schedule_df.to_csv(master_filename, index=False)
+    print(f"📄 Exported room master schedule to {master_filename}")
+
+# Public exports expected by enhanced_run_optimizer.py
+__all__ = [
+    "CONFIG",
+    "load_ui_config",
+    "generate_time_slots",
+    "load_course_and_room_data",
+    "create_sessions_from_courses",
+    "generate_individual",
+    "generate_population",
+    "calculate_fitness",
+    "crossover",
+    "mutate",
+    "optimize",
+    "format_schedule_by_day",
+    "analyze_schedule_quality",
+    "check_long_sessions",
+    "export_schedule_by_section",
+    "export_schedule_by_teacher",
+    "export_schedule_by_room",
+]

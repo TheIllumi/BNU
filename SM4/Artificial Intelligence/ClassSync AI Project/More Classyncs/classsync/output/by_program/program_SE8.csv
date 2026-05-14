@@ -1,0 +1,9 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Business_Process_Engineering_SE8_-_S1,Business_Process_Engineering_SE8_-,Business Process Engineering,SE8,-,SMS Faculty,False,Friday,09:30,11:00,SLASS 207
+Business_Process_Engineering_SE8_-_S2,Business_Process_Engineering_SE8_-,Business Process Engineering,SE8,-,SMS Faculty,False,Wednesday,12:30,14:00,SLASS 204
+Formal_Methods_in_Software_Engineering_SE8_-_S1,Formal_Methods_in_Software_Engineering_SE8_-,Formal Methods in Software Engineering,SE8,-,Dr. Natash Ali,False,Tuesday,14:00,15:30,SVAD 403 Lab
+Formal_Methods_in_Software_Engineering_SE8_-_S2,Formal_Methods_in_Software_Engineering_SE8_-,Formal Methods in Software Engineering,SE8,-,Dr. Natash Ali,False,Friday,09:30,11:00,SB 003 LAB
+Media_Entrepreneurship_SE8_-_S1,Media_Entrepreneurship_SE8_-,Media Entrepreneurship,SE8,-,SMC Jou.,False,Thursday,11:00,12:30,SLASS 118
+Media_Entrepreneurship_SE8_-_S2,Media_Entrepreneurship_SE8_-,Media Entrepreneurship,SE8,-,SMC Jou.,False,Wednesday,11:00,12:30,SLASS 207
+Software_Re_Engineering_SE8_-_S1,Software_Re_Engineering_SE8_-,Software Re Engineering,SE8,-,Ms. Ayesha Seher,False,Thursday,12:30,14:00,SBT 202
+Software_Re_Engineering_SE8_-_S2,Software_Re_Engineering_SE8_-,Software Re Engineering,SE8,-,Ms. Ayesha Seher,False,Thursday,14:00,15:30,SB 301

@@ -1,0 +1,5 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Probability_&_Statistics_CS2_C_S1,Probability_&_Statistics_CS2_C,Probability & Statistics,CS2,C,Dr. Aamir Majeed Chaudhary,False,Thursday,09:30,11:00,SB 003 LAB
+Probability_&_Statistics_CS2_C_S2,Probability_&_Statistics_CS2_C,Probability & Statistics,CS2,C,Dr. Aamir Majeed Chaudhary,False,Tuesday,15:30,17:00,SB 004
+Probability_&_Statistics_CS2_D_S1,Probability_&_Statistics_CS2_D,Probability & Statistics,CS2,D,Dr. Aamir Majeed Chaudhary,False,Wednesday,14:00,15:30,SB 206
+Probability_&_Statistics_CS2_D_S2,Probability_&_Statistics_CS2_D,Probability & Statistics,CS2,D,Dr. Aamir Majeed Chaudhary,False,Tuesday,12:30,14:00,SB 205

@@ -1,0 +1,5 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Object_Oriented_Programming_SE2_F_S1,Object_Oriented_Programming_SE2_F,Object Oriented Programming,SE2,F,Mr. Ameer Hamza,False,Tuesday,08:00,09:30,SBT 303
+Object_Oriented_Programming_SE2_F_S2,Object_Oriented_Programming_SE2_F,Object Oriented Programming,SE2,F,Mr. Ameer Hamza,False,Monday,08:00,09:30,SLASS SMC 001 Lab
+Object_Oriented_Programming_Lab_SE2_E_S1,Object_Oriented_Programming_Lab_SE2_E,Object Oriented Programming Lab,SE2,E,Mr. Ameer Hamza,True,Tuesday,08:00,11:00,SLASS SMC 001 Lab
+Object_Oriented_Programming_Lab_SE2_F_S1,Object_Oriented_Programming_Lab_SE2_F,Object Oriented Programming Lab,SE2,F,Mr. Ameer Hamza,True,Monday,15:30,18:30,Central block 003

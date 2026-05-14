@@ -1,0 +1,8 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Applied_Physics_SE2_A_S2,Applied_Physics_SE2_A,Applied Physics,SE2,A,Mr. Uzair Bashir,False,Thursday,14:00,15:30,SB 206
+Artificial_Intelligence_CS4_B_S2,Artificial_Intelligence_CS4_B,Artificial Intelligence,CS4,B,Ms. Noreen Khalid,False,Thursday,14:00,15:30,SB 206
+Micro_Economics_MBC2_-_S2,Micro_Economics_MBC2_-,Micro Economics,MBC2,-,Ms. Fatima Malik,False,Tuesday,09:30,11:00,SB 206
+Multivariable_Calculus_SE2_E_S1,Multivariable_Calculus_SE2_E,Multivariable Calculus,SE2,E,Mr. Ali Haider,False,Tuesday,12:30,14:00,SB 206
+Object_Oriented_Programming_CS2_D_S1,Object_Oriented_Programming_CS2_D,Object Oriented Programming,CS2,D,Mr. Asim Irshad,False,Monday,15:30,17:00,SB 206
+Probability_&_Statistics_CS2_D_S1,Probability_&_Statistics_CS2_D,Probability & Statistics,CS2,D,Dr. Aamir Majeed Chaudhary,False,Wednesday,14:00,15:30,SB 206
+Research_Methods_for_IT_CS&SE8_-_S2,Research_Methods_for_IT_CS&SE8_-,Research Methods for IT,CS&SE8,-,Dr. Usman Nazir,False,Wednesday,09:30,11:00,SB 206

@@ -1,0 +1,3 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Database_Management_Systems_Lab_MBC4_-_S1,Database_Management_Systems_Lab_MBC4_-,Database Management Systems Lab,MBC4,-,Mr. Shazil Ali,True,Thursday,12:30,15:30,SLASS 118
+Probability_&_Statistics_CS2_A_S2,Probability_&_Statistics_CS2_A,Probability & Statistics,CS2,A,Ms. Amna Humayun,False,Wednesday,12:30,14:00,SLASS 118

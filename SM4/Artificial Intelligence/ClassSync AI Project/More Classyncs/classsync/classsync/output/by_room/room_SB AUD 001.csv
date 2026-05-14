@@ -1,0 +1,5 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Advanced_Database_Management_Systems_CS4_B_S2,Advanced_Database_Management_Systems_CS4_B,Advanced Database Management Systems,CS4,B,Ms. Talia Noreen,False,Monday,09:30,11:00,SB AUD 001
+Event_Driven_Programming_MBC2_-_S1,Event_Driven_Programming_MBC2_-,Event Driven Programming,MBC2,-,Ms. Sheeza Batool,False,Thursday,15:30,17:00,SB AUD 001
+Graph_Theory_CS8_-_S2,Graph_Theory_CS8_-,Graph Theory,CS8,-,Mr. Ali Haider,False,Friday,11:00,12:30,SB AUD 001
+Math_II_CS+SE2_B_(Med)_S1,Math_II_CS+SE2_B_(Med),Math II,CS+SE2,B (Med),Ms. Ujala Aftab,False,Thursday,15:30,17:00,SB AUD 001

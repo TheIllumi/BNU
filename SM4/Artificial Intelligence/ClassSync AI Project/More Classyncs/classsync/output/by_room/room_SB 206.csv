@@ -1,0 +1,3 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Advanced_Database_Management_Systems_Lab_CS4_B_S1,Advanced_Database_Management_Systems_Lab_CS4_B,Advanced Database Management Systems Lab,CS4,B,Mr. Ahsan Atiq,True,Tuesday,09:30,12:30,SB 206
+Digital_Logic_Design_Lab_CS2_B_S1,Digital_Logic_Design_Lab_CS2_B,Digital Logic Design Lab,CS2,B,Ms. Amna Rafiq,True,Tuesday,08:00,11:00,SB 206

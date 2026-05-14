@@ -1,0 +1,7 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Artificial_Intelligence_CS4_B_S2,Artificial_Intelligence_CS4_B,Artificial Intelligence,CS4,B,Ms. Noreen Khalid,False,Tuesday,15:30,17:00,SLASS B002
+Event_Driven_Programming_MBC2_-_S2,Event_Driven_Programming_MBC2_-,Event Driven Programming,MBC2,-,Ms. Sheeza Batool,False,Tuesday,08:00,09:30,SLASS B002
+Linear_Algebra_CS4_C_S1,Linear_Algebra_CS4_C,Linear Algebra,CS4,C,Mr. Farhan Ali,False,Thursday,15:30,17:00,SLASS B002
+Multivariable_Calculus_CS2_D_S1,Multivariable_Calculus_CS2_D,Multivariable Calculus,CS2,D,Mr. Ali Haider,False,Thursday,11:00,12:30,SLASS B002
+Probability_&_Statistics_CS2_B_S2,Probability_&_Statistics_CS2_B,Probability & Statistics,CS2,B,Ms. Amna Humayun,False,Friday,09:30,11:00,SLASS B002
+Probability_&_Statistics_CS2_C_S1,Probability_&_Statistics_CS2_C,Probability & Statistics,CS2,C,Dr. Aamir Majeed Chaudhary,False,Monday,14:00,15:30,SLASS B002

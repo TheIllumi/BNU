@@ -1,0 +1,7 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Computer_Networks_MBC4_-_S1,Computer_Networks_MBC4_-,Computer Networks,MBC4,-,Mr. Muhammad Ali,False,Tuesday,08:00,09:30,SVAD 403 Lab
+Data_Structures_&_Algorithms_CS4_A_S2,Data_Structures_&_Algorithms_CS4_A,Data Structures & Algorithms,CS4,A,Ms. Huda Sarfraz,False,Friday,09:30,11:00,SVAD 403 Lab
+Data_Structures_&_Algorithms_Lab_CS4_A_S1,Data_Structures_&_Algorithms_Lab_CS4_A,Data Structures & Algorithms Lab,CS4,A,Ms. Hamna Anwar,True,Friday,14:00,17:00,SVAD 403 Lab
+Formal_Methods_in_Software_Engineering_SE8_-_S1,Formal_Methods_in_Software_Engineering_SE8_-,Formal Methods in Software Engineering,SE8,-,Dr. Natash Ali,False,Tuesday,14:00,15:30,SVAD 403 Lab
+Probability_&_Statistics_SE2_F_S2,Probability_&_Statistics_SE2_F,Probability & Statistics,SE2,F,Mr. Hamza Sarfraz,False,Monday,11:00,12:30,SVAD 403 Lab
+Programming_Fundamentals-Repeat_CS2_B_S2,Programming_Fundamentals-Repeat_CS2_B,Programming Fundamentals-Repeat,CS2,B,Mr. Asim Irshad,False,Tuesday,14:00,15:30,SVAD 403 Lab

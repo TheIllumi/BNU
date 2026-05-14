@@ -1,0 +1,7 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Applied_Physics_SE2_B_S2,Applied_Physics_SE2_B,Applied Physics,SE2,B,Mr. Uzair Bashir,False,Friday,12:30,14:00,SLASS 203
+Artificial_Intelligence_CS4_C_S1,Artificial_Intelligence_CS4_C,Artificial Intelligence,CS4,C,Ms. Noreen Khalid,False,Thursday,12:30,14:00,SLASS 203
+Artificial_Intelligence_Lab_CS6_A_S1,Artificial_Intelligence_Lab_CS6_A,Artificial Intelligence Lab,CS6,A,Mr. Osama Tariq,True,Monday,15:30,18:30,SLASS 203
+Computer_Networks_MBC4_-_S2,Computer_Networks_MBC4_-,Computer Networks,MBC4,-,Mr. Muhammad Ali,False,Friday,08:00,09:30,SLASS 203
+Digital_Logic_Design_Lab_CS2_D_S1,Digital_Logic_Design_Lab_CS2_D,Digital Logic Design Lab,CS2,D,Mr. Uzair Bashir,True,Monday,09:30,12:30,SLASS 203
+Media_Entrepreneurship_SE8_-_S2,Media_Entrepreneurship_SE8_-,Media Entrepreneurship,SE8,-,SMC Jou.,False,Tuesday,12:30,14:00,SLASS 203

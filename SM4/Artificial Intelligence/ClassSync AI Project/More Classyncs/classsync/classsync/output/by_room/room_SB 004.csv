@@ -1,0 +1,7 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Computer_Networks_MBC4_-_S1,Computer_Networks_MBC4_-,Computer Networks,MBC4,-,Mr. Muhammad Ali,False,Tuesday,14:00,15:30,SB 004
+Computer_Organization_&_Assembly_Language_CS4_A_S1,Computer_Organization_&_Assembly_Language_CS4_A,Computer Organization & Assembly Language,CS4,A,Ms. Nimra Abbas,False,Wednesday,11:00,12:30,SB 004
+Object_Oriented_Programming_CS2_A_S2,Object_Oriented_Programming_CS2_A,Object Oriented Programming,CS2,A,Mr. Nouman Ali,False,Monday,08:00,09:30,SB 004
+Object_Oriented_Programming_SE2_E_S2,Object_Oriented_Programming_SE2_E,Object Oriented Programming,SE2,E,Mr. Nabeel Ahsan,False,Thursday,15:30,17:00,SB 004
+Probability_&_Statistics_CS2_C_S2,Probability_&_Statistics_CS2_C,Probability & Statistics,CS2,C,Dr. Aamir Majeed Chaudhary,False,Tuesday,15:30,17:00,SB 004
+Programming_Fundamentals-Repeat_CS2_A_S1,Programming_Fundamentals-Repeat_CS2_A,Programming Fundamentals-Repeat,CS2,A,Ms. Shazia Rizwan,False,Thursday,11:00,12:30,SB 004

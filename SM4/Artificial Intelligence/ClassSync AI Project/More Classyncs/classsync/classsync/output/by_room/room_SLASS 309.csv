@@ -1,0 +1,6 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Data_Structures_&_Algorithms_Lab_CS4_A_S1,Data_Structures_&_Algorithms_Lab_CS4_A,Data Structures & Algorithms Lab,CS4,A,Ms. Hamna Anwar,True,Thursday,12:30,15:30,SLASS 309
+Event_Driven_Programming_MBC2_-_S2,Event_Driven_Programming_MBC2_-,Event Driven Programming,MBC2,-,Ms. Sheeza Batool,False,Monday,14:00,15:30,SLASS 309
+Linear_Algebra_CS4_A_S1,Linear_Algebra_CS4_A,Linear Algebra,CS4,A,Mr. Farhan Ali,False,Friday,15:30,17:00,SLASS 309
+Professional_Practices_CS6_A+B_S2,Professional_Practices_CS6_A+B,Professional Practices,CS6,A+B,Dr. Natash Ali,False,Tuesday,14:00,15:30,SLASS 309
+Theory_of_Programming_Languages_CS8_-_S1,Theory_of_Programming_Languages_CS8_-,Theory of Programming Languages,CS8,-,Ms. Huda Sarfraz,False,Tuesday,15:30,17:00,SLASS 309

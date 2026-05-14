@@ -1,0 +1,10 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Artificial_Intelligence_CS6_A_S1,Artificial_Intelligence_CS6_A,Artificial Intelligence,CS6,A,Dr. Usman Nazir,False,Wednesday,11:00,12:30,SB 307
+Computer_Networks_Lab_CS6_A_S1,Computer_Networks_Lab_CS6_A,Computer Networks Lab,CS6,A,Mr. Shazil Ali,True,Thursday,12:30,15:30,SB 307
+Computer_Organization_&_Assembly_Language_CS4_A_S2,Computer_Organization_&_Assembly_Language_CS4_A,Computer Organization & Assembly Language,CS4,A,Ms. Nimra Abbas,False,Tuesday,11:00,12:30,SB 307
+Data_Structures_&_Algorithms_CS4_B_S1,Data_Structures_&_Algorithms_CS4_B,Data Structures & Algorithms,CS4,B,Ms. Hamna Anwar,False,Wednesday,12:30,14:00,SB 307
+Formal_Methods_in_Software_Engineering_SE8_-_S2,Formal_Methods_in_Software_Engineering_SE8_-,Formal Methods in Software Engineering,SE8,-,Dr. Natash Ali,False,Monday,12:30,14:00,SB 307
+Ideology_&_Constitution_of_Pakistan_CS2_A_S2,Ideology_&_Constitution_of_Pakistan_CS2_A,Ideology & Constitution of Pakistan,CS2,A,Mr. Inam ul Haq,False,Wednesday,14:00,15:30,SB 307
+Intro_to_CyberSecurity_(Elective)_CS6_-_S2,Intro_to_CyberSecurity_(Elective)_CS6_-,Intro to CyberSecurity (Elective),CS6,-,Mr. Nabeel Ahsan,False,Tuesday,11:00,12:30,SB 307
+Multivariable_Calculus_CS2_C_S1,Multivariable_Calculus_CS2_C,Multivariable Calculus,CS2,C,Mr. Farhan Ali,False,Thursday,11:00,12:30,SB 307
+Object_Oriented_Programming_CS2_D_S2,Object_Oriented_Programming_CS2_D,Object Oriented Programming,CS2,D,Mr. Asim Irshad,False,Friday,09:30,11:00,SB 307

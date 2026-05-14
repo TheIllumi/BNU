@@ -1,0 +1,5 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Advanced_Database_Management_Systems_CS4_C_S1,Advanced_Database_Management_Systems_CS4_C,Advanced Database Management Systems,CS4,C,Ms. Talia Noreen,False,Tuesday,11:00,12:30,SLASS 201
+Applied_Physics_SE2_B_S2,Applied_Physics_SE2_B,Applied Physics,SE2,B,Mr. Uzair Bashir,False,Monday,08:00,09:30,SLASS 201
+Computer_Organization_&_Assembly_Language_Lab_CS4_A_S1,Computer_Organization_&_Assembly_Language_Lab_CS4_A,Computer Organization & Assembly Language Lab,CS4,A,Ms. Nimra Abbas,True,Tuesday,09:30,12:30,SLASS 201
+Object_Oriented_Programming_CS2_C_S1,Object_Oriented_Programming_CS2_C,Object Oriented Programming,CS2,C,Mr. Asim Irshad,False,Wednesday,08:00,09:30,SLASS 201

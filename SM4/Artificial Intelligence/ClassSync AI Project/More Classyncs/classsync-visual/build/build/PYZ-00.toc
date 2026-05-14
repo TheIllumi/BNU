@@ -1,0 +1,2344 @@
+('D:\\Sunbird Solutions\\classsync-visual\\build\\build\\PYZ-00.pyz',
+ [('__future__',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\__future__.py',
+   'PYMODULE'),
+  ('_aix_support',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\_aix_support.py',
+   'PYMODULE'),
+  ('_colorize',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\_colorize.py',
+   'PYMODULE'),
+  ('_compat_pickle',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\_compat_pickle.py',
+   'PYMODULE'),
+  ('_compression',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\_compression.py',
+   'PYMODULE'),
+  ('_ios_support',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\_ios_support.py',
+   'PYMODULE'),
+  ('_opcode_metadata',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\_opcode_metadata.py',
+   'PYMODULE'),
+  ('_py_abc',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\_py_abc.py',
+   'PYMODULE'),
+  ('_pydatetime',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\_pydatetime.py',
+   'PYMODULE'),
+  ('_pydecimal',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\_pydecimal.py',
+   'PYMODULE'),
+  ('_strptime',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\_strptime.py',
+   'PYMODULE'),
+  ('_threading_local',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\_threading_local.py',
+   'PYMODULE'),
+  ('ast',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\ast.py',
+   'PYMODULE'),
+  ('base64',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\base64.py',
+   'PYMODULE'),
+  ('bisect',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\bisect.py',
+   'PYMODULE'),
+  ('bz2',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\bz2.py',
+   'PYMODULE'),
+  ('calendar',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\calendar.py',
+   'PYMODULE'),
+  ('contextlib',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\contextlib.py',
+   'PYMODULE'),
+  ('contextvars',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\contextvars.py',
+   'PYMODULE'),
+  ('copy',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\copy.py',
+   'PYMODULE'),
+  ('csv',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\csv.py',
+   'PYMODULE'),
+  ('ctypes',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\ctypes\\__init__.py',
+   'PYMODULE'),
+  ('ctypes._aix',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\ctypes\\_aix.py',
+   'PYMODULE'),
+  ('ctypes._endian',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\ctypes\\_endian.py',
+   'PYMODULE'),
+  ('ctypes.macholib',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\ctypes\\macholib\\__init__.py',
+   'PYMODULE'),
+  ('ctypes.macholib.dyld',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\ctypes\\macholib\\dyld.py',
+   'PYMODULE'),
+  ('ctypes.macholib.dylib',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\ctypes\\macholib\\dylib.py',
+   'PYMODULE'),
+  ('ctypes.macholib.framework',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\ctypes\\macholib\\framework.py',
+   'PYMODULE'),
+  ('ctypes.util',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\ctypes\\util.py',
+   'PYMODULE'),
+  ('ctypes.wintypes',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\ctypes\\wintypes.py',
+   'PYMODULE'),
+  ('dataclasses',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\dataclasses.py',
+   'PYMODULE'),
+  ('datetime',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\datetime.py',
+   'PYMODULE'),
+  ('dateutil',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\dateutil\\__init__.py',
+   'PYMODULE'),
+  ('dateutil._common',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\dateutil\\_common.py',
+   'PYMODULE'),
+  ('dateutil._version',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\dateutil\\_version.py',
+   'PYMODULE'),
+  ('dateutil.easter',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\dateutil\\easter.py',
+   'PYMODULE'),
+  ('dateutil.parser',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\dateutil\\parser\\__init__.py',
+   'PYMODULE'),
+  ('dateutil.parser._parser',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\dateutil\\parser\\_parser.py',
+   'PYMODULE'),
+  ('dateutil.parser.isoparser',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\dateutil\\parser\\isoparser.py',
+   'PYMODULE'),
+  ('dateutil.relativedelta',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\dateutil\\relativedelta.py',
+   'PYMODULE'),
+  ('dateutil.rrule',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\dateutil\\rrule.py',
+   'PYMODULE'),
+  ('dateutil.tz',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\dateutil\\tz\\__init__.py',
+   'PYMODULE'),
+  ('dateutil.tz._common',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\dateutil\\tz\\_common.py',
+   'PYMODULE'),
+  ('dateutil.tz._factories',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\dateutil\\tz\\_factories.py',
+   'PYMODULE'),
+  ('dateutil.tz.tz',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\dateutil\\tz\\tz.py',
+   'PYMODULE'),
+  ('dateutil.tz.win',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\dateutil\\tz\\win.py',
+   'PYMODULE'),
+  ('dateutil.zoneinfo',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\dateutil\\zoneinfo\\__init__.py',
+   'PYMODULE'),
+  ('decimal',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\decimal.py',
+   'PYMODULE'),
+  ('dis',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\dis.py',
+   'PYMODULE'),
+  ('et_xmlfile',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\et_xmlfile\\__init__.py',
+   'PYMODULE'),
+  ('et_xmlfile.incremental_tree',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\et_xmlfile\\incremental_tree.py',
+   'PYMODULE'),
+  ('et_xmlfile.xmlfile',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\et_xmlfile\\xmlfile.py',
+   'PYMODULE'),
+  ('fnmatch',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\fnmatch.py',
+   'PYMODULE'),
+  ('fractions',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\fractions.py',
+   'PYMODULE'),
+  ('getopt',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\getopt.py',
+   'PYMODULE'),
+  ('getpass',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\getpass.py',
+   'PYMODULE'),
+  ('gettext',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\gettext.py',
+   'PYMODULE'),
+  ('glob',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\glob.py',
+   'PYMODULE'),
+  ('gzip',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\gzip.py',
+   'PYMODULE'),
+  ('hashlib',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\hashlib.py',
+   'PYMODULE'),
+  ('importlib',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\__init__.py',
+   'PYMODULE'),
+  ('importlib._abc',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\_abc.py',
+   'PYMODULE'),
+  ('importlib._bootstrap',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\_bootstrap.py',
+   'PYMODULE'),
+  ('importlib._bootstrap_external',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\_bootstrap_external.py',
+   'PYMODULE'),
+  ('importlib.abc',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\abc.py',
+   'PYMODULE'),
+  ('importlib.machinery',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\machinery.py',
+   'PYMODULE'),
+  ('importlib.metadata',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\metadata\\__init__.py',
+   'PYMODULE'),
+  ('importlib.metadata._adapters',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\metadata\\_adapters.py',
+   'PYMODULE'),
+  ('importlib.metadata._collections',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\metadata\\_collections.py',
+   'PYMODULE'),
+  ('importlib.metadata._functools',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\metadata\\_functools.py',
+   'PYMODULE'),
+  ('importlib.metadata._itertools',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\metadata\\_itertools.py',
+   'PYMODULE'),
+  ('importlib.metadata._meta',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\metadata\\_meta.py',
+   'PYMODULE'),
+  ('importlib.metadata._text',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\metadata\\_text.py',
+   'PYMODULE'),
+  ('importlib.readers',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\readers.py',
+   'PYMODULE'),
+  ('importlib.resources',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\resources\\__init__.py',
+   'PYMODULE'),
+  ('importlib.resources._adapters',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\resources\\_adapters.py',
+   'PYMODULE'),
+  ('importlib.resources._common',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\resources\\_common.py',
+   'PYMODULE'),
+  ('importlib.resources._functional',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\resources\\_functional.py',
+   'PYMODULE'),
+  ('importlib.resources._itertools',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\resources\\_itertools.py',
+   'PYMODULE'),
+  ('importlib.resources.abc',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\resources\\abc.py',
+   'PYMODULE'),
+  ('importlib.resources.readers',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\resources\\readers.py',
+   'PYMODULE'),
+  ('importlib.util',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\importlib\\util.py',
+   'PYMODULE'),
+  ('inspect',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\inspect.py',
+   'PYMODULE'),
+  ('ipaddress',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\ipaddress.py',
+   'PYMODULE'),
+  ('json',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\json\\__init__.py',
+   'PYMODULE'),
+  ('json.decoder',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\json\\decoder.py',
+   'PYMODULE'),
+  ('json.encoder',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\json\\encoder.py',
+   'PYMODULE'),
+  ('json.scanner',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\json\\scanner.py',
+   'PYMODULE'),
+  ('logging',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\logging\\__init__.py',
+   'PYMODULE'),
+  ('lzma',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\lzma.py',
+   'PYMODULE'),
+  ('mimetypes',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\mimetypes.py',
+   'PYMODULE'),
+  ('nturl2path',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\nturl2path.py',
+   'PYMODULE'),
+  ('numbers',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\numbers.py',
+   'PYMODULE'),
+  ('opcode',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\opcode.py',
+   'PYMODULE'),
+  ('openpyxl',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl._constants',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\_constants.py',
+   'PYMODULE'),
+  ('openpyxl.cell',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\cell\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.cell._writer',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\cell\\_writer.py',
+   'PYMODULE'),
+  ('openpyxl.cell.cell',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\cell\\cell.py',
+   'PYMODULE'),
+  ('openpyxl.cell.read_only',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\cell\\read_only.py',
+   'PYMODULE'),
+  ('openpyxl.cell.rich_text',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\cell\\rich_text.py',
+   'PYMODULE'),
+  ('openpyxl.cell.text',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\cell\\text.py',
+   'PYMODULE'),
+  ('openpyxl.chart',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.chart._3d',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\_3d.py',
+   'PYMODULE'),
+  ('openpyxl.chart._chart',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.area_chart',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\area_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.axis',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\axis.py',
+   'PYMODULE'),
+  ('openpyxl.chart.bar_chart',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\bar_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.bubble_chart',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\bubble_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.chartspace',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\chartspace.py',
+   'PYMODULE'),
+  ('openpyxl.chart.data_source',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\data_source.py',
+   'PYMODULE'),
+  ('openpyxl.chart.descriptors',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\descriptors.py',
+   'PYMODULE'),
+  ('openpyxl.chart.error_bar',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\error_bar.py',
+   'PYMODULE'),
+  ('openpyxl.chart.label',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\label.py',
+   'PYMODULE'),
+  ('openpyxl.chart.layout',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\layout.py',
+   'PYMODULE'),
+  ('openpyxl.chart.legend',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\legend.py',
+   'PYMODULE'),
+  ('openpyxl.chart.line_chart',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\line_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.marker',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\marker.py',
+   'PYMODULE'),
+  ('openpyxl.chart.picture',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\picture.py',
+   'PYMODULE'),
+  ('openpyxl.chart.pie_chart',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\pie_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.pivot',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\pivot.py',
+   'PYMODULE'),
+  ('openpyxl.chart.plotarea',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\plotarea.py',
+   'PYMODULE'),
+  ('openpyxl.chart.print_settings',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\print_settings.py',
+   'PYMODULE'),
+  ('openpyxl.chart.radar_chart',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\radar_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.reader',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\reader.py',
+   'PYMODULE'),
+  ('openpyxl.chart.reference',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\reference.py',
+   'PYMODULE'),
+  ('openpyxl.chart.scatter_chart',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\scatter_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.series',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\series.py',
+   'PYMODULE'),
+  ('openpyxl.chart.series_factory',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\series_factory.py',
+   'PYMODULE'),
+  ('openpyxl.chart.shapes',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\shapes.py',
+   'PYMODULE'),
+  ('openpyxl.chart.stock_chart',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\stock_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.surface_chart',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\surface_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.text',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\text.py',
+   'PYMODULE'),
+  ('openpyxl.chart.title',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\title.py',
+   'PYMODULE'),
+  ('openpyxl.chart.trendline',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\trendline.py',
+   'PYMODULE'),
+  ('openpyxl.chart.updown_bars',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chart\\updown_bars.py',
+   'PYMODULE'),
+  ('openpyxl.chartsheet',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chartsheet\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.chartsheet.chartsheet',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chartsheet\\chartsheet.py',
+   'PYMODULE'),
+  ('openpyxl.chartsheet.custom',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chartsheet\\custom.py',
+   'PYMODULE'),
+  ('openpyxl.chartsheet.properties',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chartsheet\\properties.py',
+   'PYMODULE'),
+  ('openpyxl.chartsheet.protection',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chartsheet\\protection.py',
+   'PYMODULE'),
+  ('openpyxl.chartsheet.publish',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chartsheet\\publish.py',
+   'PYMODULE'),
+  ('openpyxl.chartsheet.relation',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chartsheet\\relation.py',
+   'PYMODULE'),
+  ('openpyxl.chartsheet.views',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\chartsheet\\views.py',
+   'PYMODULE'),
+  ('openpyxl.comments',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\comments\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.comments.author',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\comments\\author.py',
+   'PYMODULE'),
+  ('openpyxl.comments.comment_sheet',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\comments\\comment_sheet.py',
+   'PYMODULE'),
+  ('openpyxl.comments.comments',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\comments\\comments.py',
+   'PYMODULE'),
+  ('openpyxl.comments.shape_writer',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\comments\\shape_writer.py',
+   'PYMODULE'),
+  ('openpyxl.compat',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\compat\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.compat.numbers',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\compat\\numbers.py',
+   'PYMODULE'),
+  ('openpyxl.compat.strings',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\compat\\strings.py',
+   'PYMODULE'),
+  ('openpyxl.descriptors',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\descriptors\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.descriptors.base',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\descriptors\\base.py',
+   'PYMODULE'),
+  ('openpyxl.descriptors.excel',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\descriptors\\excel.py',
+   'PYMODULE'),
+  ('openpyxl.descriptors.namespace',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\descriptors\\namespace.py',
+   'PYMODULE'),
+  ('openpyxl.descriptors.nested',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\descriptors\\nested.py',
+   'PYMODULE'),
+  ('openpyxl.descriptors.sequence',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\descriptors\\sequence.py',
+   'PYMODULE'),
+  ('openpyxl.descriptors.serialisable',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\descriptors\\serialisable.py',
+   'PYMODULE'),
+  ('openpyxl.drawing',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\drawing\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.colors',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\drawing\\colors.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.connector',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\drawing\\connector.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.drawing',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\drawing\\drawing.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.effect',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\drawing\\effect.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.fill',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\drawing\\fill.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.geometry',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\drawing\\geometry.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.graphic',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\drawing\\graphic.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.image',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\drawing\\image.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.line',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\drawing\\line.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.picture',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\drawing\\picture.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.properties',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\drawing\\properties.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.relation',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\drawing\\relation.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.spreadsheet_drawing',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\drawing\\spreadsheet_drawing.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.text',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\drawing\\text.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.xdr',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\drawing\\xdr.py',
+   'PYMODULE'),
+  ('openpyxl.formatting',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\formatting\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.formatting.formatting',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\formatting\\formatting.py',
+   'PYMODULE'),
+  ('openpyxl.formatting.rule',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\formatting\\rule.py',
+   'PYMODULE'),
+  ('openpyxl.formula',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\formula\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.formula.tokenizer',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\formula\\tokenizer.py',
+   'PYMODULE'),
+  ('openpyxl.formula.translate',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\formula\\translate.py',
+   'PYMODULE'),
+  ('openpyxl.packaging',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\packaging\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.packaging.core',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\packaging\\core.py',
+   'PYMODULE'),
+  ('openpyxl.packaging.custom',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\packaging\\custom.py',
+   'PYMODULE'),
+  ('openpyxl.packaging.extended',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\packaging\\extended.py',
+   'PYMODULE'),
+  ('openpyxl.packaging.manifest',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\packaging\\manifest.py',
+   'PYMODULE'),
+  ('openpyxl.packaging.relationship',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\packaging\\relationship.py',
+   'PYMODULE'),
+  ('openpyxl.packaging.workbook',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\packaging\\workbook.py',
+   'PYMODULE'),
+  ('openpyxl.pivot',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\pivot\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.pivot.cache',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\pivot\\cache.py',
+   'PYMODULE'),
+  ('openpyxl.pivot.fields',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\pivot\\fields.py',
+   'PYMODULE'),
+  ('openpyxl.pivot.record',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\pivot\\record.py',
+   'PYMODULE'),
+  ('openpyxl.pivot.table',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\pivot\\table.py',
+   'PYMODULE'),
+  ('openpyxl.reader',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\reader\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.reader.drawings',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\reader\\drawings.py',
+   'PYMODULE'),
+  ('openpyxl.reader.excel',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\reader\\excel.py',
+   'PYMODULE'),
+  ('openpyxl.reader.strings',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\reader\\strings.py',
+   'PYMODULE'),
+  ('openpyxl.reader.workbook',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\reader\\workbook.py',
+   'PYMODULE'),
+  ('openpyxl.styles',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\styles\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.styles.alignment',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\styles\\alignment.py',
+   'PYMODULE'),
+  ('openpyxl.styles.borders',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\styles\\borders.py',
+   'PYMODULE'),
+  ('openpyxl.styles.builtins',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\styles\\builtins.py',
+   'PYMODULE'),
+  ('openpyxl.styles.cell_style',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\styles\\cell_style.py',
+   'PYMODULE'),
+  ('openpyxl.styles.colors',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\styles\\colors.py',
+   'PYMODULE'),
+  ('openpyxl.styles.differential',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\styles\\differential.py',
+   'PYMODULE'),
+  ('openpyxl.styles.fills',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\styles\\fills.py',
+   'PYMODULE'),
+  ('openpyxl.styles.fonts',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\styles\\fonts.py',
+   'PYMODULE'),
+  ('openpyxl.styles.named_styles',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\styles\\named_styles.py',
+   'PYMODULE'),
+  ('openpyxl.styles.numbers',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\styles\\numbers.py',
+   'PYMODULE'),
+  ('openpyxl.styles.protection',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\styles\\protection.py',
+   'PYMODULE'),
+  ('openpyxl.styles.proxy',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\styles\\proxy.py',
+   'PYMODULE'),
+  ('openpyxl.styles.styleable',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\styles\\styleable.py',
+   'PYMODULE'),
+  ('openpyxl.styles.stylesheet',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\styles\\stylesheet.py',
+   'PYMODULE'),
+  ('openpyxl.styles.table',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\styles\\table.py',
+   'PYMODULE'),
+  ('openpyxl.utils',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\utils\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.utils.bound_dictionary',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\utils\\bound_dictionary.py',
+   'PYMODULE'),
+  ('openpyxl.utils.cell',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\utils\\cell.py',
+   'PYMODULE'),
+  ('openpyxl.utils.datetime',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\utils\\datetime.py',
+   'PYMODULE'),
+  ('openpyxl.utils.escape',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\utils\\escape.py',
+   'PYMODULE'),
+  ('openpyxl.utils.exceptions',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\utils\\exceptions.py',
+   'PYMODULE'),
+  ('openpyxl.utils.formulas',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\utils\\formulas.py',
+   'PYMODULE'),
+  ('openpyxl.utils.indexed_list',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\utils\\indexed_list.py',
+   'PYMODULE'),
+  ('openpyxl.utils.protection',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\utils\\protection.py',
+   'PYMODULE'),
+  ('openpyxl.utils.units',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\utils\\units.py',
+   'PYMODULE'),
+  ('openpyxl.workbook',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\workbook\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.workbook._writer',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\workbook\\_writer.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.child',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\workbook\\child.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.defined_name',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\workbook\\defined_name.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.external_link',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\workbook\\external_link\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.external_link.external',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\workbook\\external_link\\external.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.external_reference',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\workbook\\external_reference.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.function_group',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\workbook\\function_group.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.properties',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\workbook\\properties.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.protection',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\workbook\\protection.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.smart_tags',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\workbook\\smart_tags.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.views',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\workbook\\views.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.web',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\workbook\\web.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.workbook',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\workbook\\workbook.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet._read_only',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\_read_only.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet._reader',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\_reader.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet._write_only',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\_write_only.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet._writer',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\_writer.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.cell_range',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\cell_range.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.copier',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\copier.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.datavalidation',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\datavalidation.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.dimensions',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\dimensions.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.drawing',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\drawing.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.filters',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\filters.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.formula',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\formula.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.header_footer',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\header_footer.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.hyperlink',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\hyperlink.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.merge',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\merge.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.page',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\page.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.pagebreak',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\pagebreak.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.print_settings',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\print_settings.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.properties',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\properties.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.protection',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\protection.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.related',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\related.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.scenario',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\scenario.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.table',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\table.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.views',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\views.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.worksheet',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\worksheet\\worksheet.py',
+   'PYMODULE'),
+  ('openpyxl.writer',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\writer\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.writer.excel',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\writer\\excel.py',
+   'PYMODULE'),
+  ('openpyxl.writer.theme',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\writer\\theme.py',
+   'PYMODULE'),
+  ('openpyxl.xml',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\xml\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.xml.constants',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\xml\\constants.py',
+   'PYMODULE'),
+  ('openpyxl.xml.functions',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\openpyxl\\xml\\functions.py',
+   'PYMODULE'),
+  ('pandas',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\__init__.py',
+   'PYMODULE'),
+  ('pandas._config',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\_config\\__init__.py',
+   'PYMODULE'),
+  ('pandas._config.config',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\_config\\config.py',
+   'PYMODULE'),
+  ('pandas._config.dates',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\_config\\dates.py',
+   'PYMODULE'),
+  ('pandas._config.display',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\_config\\display.py',
+   'PYMODULE'),
+  ('pandas._config.localization',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\_config\\localization.py',
+   'PYMODULE'),
+  ('pandas._libs',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\_libs\\__init__.py',
+   'PYMODULE'),
+  ('pandas._libs.tslibs',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\_libs\\tslibs\\__init__.py',
+   'PYMODULE'),
+  ('pandas._libs.window',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\_libs\\window\\__init__.py',
+   'PYMODULE'),
+  ('pandas._testing',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\_testing\\__init__.py',
+   'PYMODULE'),
+  ('pandas._testing._io',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\_testing\\_io.py',
+   'PYMODULE'),
+  ('pandas._testing._warnings',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\_testing\\_warnings.py',
+   'PYMODULE'),
+  ('pandas._testing.asserters',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\_testing\\asserters.py',
+   'PYMODULE'),
+  ('pandas._testing.compat',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\_testing\\compat.py',
+   'PYMODULE'),
+  ('pandas._testing.contexts',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\_testing\\contexts.py',
+   'PYMODULE'),
+  ('pandas._typing',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\_typing.py',
+   'PYMODULE'),
+  ('pandas._version',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\_version.py',
+   'PYMODULE'),
+  ('pandas._version_meson',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\_version_meson.py',
+   'PYMODULE'),
+  ('pandas.api',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\api\\__init__.py',
+   'PYMODULE'),
+  ('pandas.api.extensions',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\api\\extensions\\__init__.py',
+   'PYMODULE'),
+  ('pandas.api.indexers',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\api\\indexers\\__init__.py',
+   'PYMODULE'),
+  ('pandas.api.interchange',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\api\\interchange\\__init__.py',
+   'PYMODULE'),
+  ('pandas.api.types',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\api\\types\\__init__.py',
+   'PYMODULE'),
+  ('pandas.api.typing',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\api\\typing\\__init__.py',
+   'PYMODULE'),
+  ('pandas.arrays',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\arrays\\__init__.py',
+   'PYMODULE'),
+  ('pandas.compat',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\compat\\__init__.py',
+   'PYMODULE'),
+  ('pandas.compat._constants',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\compat\\_constants.py',
+   'PYMODULE'),
+  ('pandas.compat._optional',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\compat\\_optional.py',
+   'PYMODULE'),
+  ('pandas.compat.compressors',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\compat\\compressors.py',
+   'PYMODULE'),
+  ('pandas.compat.numpy',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\compat\\numpy\\__init__.py',
+   'PYMODULE'),
+  ('pandas.compat.numpy.function',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\compat\\numpy\\function.py',
+   'PYMODULE'),
+  ('pandas.compat.pickle_compat',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\compat\\pickle_compat.py',
+   'PYMODULE'),
+  ('pandas.compat.pyarrow',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\compat\\pyarrow.py',
+   'PYMODULE'),
+  ('pandas.core',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core._numba',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\_numba\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core._numba.executor',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\_numba\\executor.py',
+   'PYMODULE'),
+  ('pandas.core._numba.extensions',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\_numba\\extensions.py',
+   'PYMODULE'),
+  ('pandas.core._numba.kernels',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\_numba\\kernels\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core._numba.kernels.mean_',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\_numba\\kernels\\mean_.py',
+   'PYMODULE'),
+  ('pandas.core._numba.kernels.min_max_',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\_numba\\kernels\\min_max_.py',
+   'PYMODULE'),
+  ('pandas.core._numba.kernels.shared',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\_numba\\kernels\\shared.py',
+   'PYMODULE'),
+  ('pandas.core._numba.kernels.sum_',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\_numba\\kernels\\sum_.py',
+   'PYMODULE'),
+  ('pandas.core._numba.kernels.var_',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\_numba\\kernels\\var_.py',
+   'PYMODULE'),
+  ('pandas.core.accessor',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\accessor.py',
+   'PYMODULE'),
+  ('pandas.core.algorithms',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\algorithms.py',
+   'PYMODULE'),
+  ('pandas.core.api',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\api.py',
+   'PYMODULE'),
+  ('pandas.core.apply',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\apply.py',
+   'PYMODULE'),
+  ('pandas.core.array_algos',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\array_algos\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core.array_algos.datetimelike_accumulations',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\array_algos\\datetimelike_accumulations.py',
+   'PYMODULE'),
+  ('pandas.core.array_algos.masked_accumulations',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\array_algos\\masked_accumulations.py',
+   'PYMODULE'),
+  ('pandas.core.array_algos.masked_reductions',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\array_algos\\masked_reductions.py',
+   'PYMODULE'),
+  ('pandas.core.array_algos.putmask',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\array_algos\\putmask.py',
+   'PYMODULE'),
+  ('pandas.core.array_algos.quantile',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\array_algos\\quantile.py',
+   'PYMODULE'),
+  ('pandas.core.array_algos.replace',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\array_algos\\replace.py',
+   'PYMODULE'),
+  ('pandas.core.array_algos.take',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\array_algos\\take.py',
+   'PYMODULE'),
+  ('pandas.core.array_algos.transforms',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\array_algos\\transforms.py',
+   'PYMODULE'),
+  ('pandas.core.arraylike',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arraylike.py',
+   'PYMODULE'),
+  ('pandas.core.arrays',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core.arrays._arrow_string_mixins',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\_arrow_string_mixins.py',
+   'PYMODULE'),
+  ('pandas.core.arrays._mixins',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\_mixins.py',
+   'PYMODULE'),
+  ('pandas.core.arrays._ranges',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\_ranges.py',
+   'PYMODULE'),
+  ('pandas.core.arrays._utils',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\_utils.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.arrow',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\arrow\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.arrow._arrow_utils',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\arrow\\_arrow_utils.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.arrow.accessors',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\arrow\\accessors.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.arrow.array',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\arrow\\array.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.arrow.extension_types',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\arrow\\extension_types.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.base',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\base.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.boolean',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\boolean.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.categorical',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\categorical.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.datetimelike',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\datetimelike.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.datetimes',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\datetimes.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.floating',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\floating.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.integer',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\integer.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.interval',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\interval.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.masked',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\masked.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.numeric',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\numeric.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.numpy_',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\numpy_.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.period',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\period.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.sparse',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\sparse\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.sparse.accessor',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\sparse\\accessor.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.sparse.array',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\sparse\\array.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.sparse.scipy_sparse',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\sparse\\scipy_sparse.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.string_',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\string_.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.string_arrow',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\string_arrow.py',
+   'PYMODULE'),
+  ('pandas.core.arrays.timedeltas',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\arrays\\timedeltas.py',
+   'PYMODULE'),
+  ('pandas.core.base',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\base.py',
+   'PYMODULE'),
+  ('pandas.core.common',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\common.py',
+   'PYMODULE'),
+  ('pandas.core.computation',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\computation\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core.computation.align',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\computation\\align.py',
+   'PYMODULE'),
+  ('pandas.core.computation.api',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\computation\\api.py',
+   'PYMODULE'),
+  ('pandas.core.computation.check',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\computation\\check.py',
+   'PYMODULE'),
+  ('pandas.core.computation.common',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\computation\\common.py',
+   'PYMODULE'),
+  ('pandas.core.computation.engines',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\computation\\engines.py',
+   'PYMODULE'),
+  ('pandas.core.computation.eval',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\computation\\eval.py',
+   'PYMODULE'),
+  ('pandas.core.computation.expr',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\computation\\expr.py',
+   'PYMODULE'),
+  ('pandas.core.computation.expressions',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\computation\\expressions.py',
+   'PYMODULE'),
+  ('pandas.core.computation.ops',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\computation\\ops.py',
+   'PYMODULE'),
+  ('pandas.core.computation.parsing',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\computation\\parsing.py',
+   'PYMODULE'),
+  ('pandas.core.computation.pytables',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\computation\\pytables.py',
+   'PYMODULE'),
+  ('pandas.core.computation.scope',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\computation\\scope.py',
+   'PYMODULE'),
+  ('pandas.core.config_init',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\config_init.py',
+   'PYMODULE'),
+  ('pandas.core.construction',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\construction.py',
+   'PYMODULE'),
+  ('pandas.core.dtypes',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\dtypes\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core.dtypes.api',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\dtypes\\api.py',
+   'PYMODULE'),
+  ('pandas.core.dtypes.astype',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\dtypes\\astype.py',
+   'PYMODULE'),
+  ('pandas.core.dtypes.base',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\dtypes\\base.py',
+   'PYMODULE'),
+  ('pandas.core.dtypes.cast',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\dtypes\\cast.py',
+   'PYMODULE'),
+  ('pandas.core.dtypes.common',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\dtypes\\common.py',
+   'PYMODULE'),
+  ('pandas.core.dtypes.concat',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\dtypes\\concat.py',
+   'PYMODULE'),
+  ('pandas.core.dtypes.dtypes',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\dtypes\\dtypes.py',
+   'PYMODULE'),
+  ('pandas.core.dtypes.generic',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\dtypes\\generic.py',
+   'PYMODULE'),
+  ('pandas.core.dtypes.inference',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\dtypes\\inference.py',
+   'PYMODULE'),
+  ('pandas.core.dtypes.missing',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\dtypes\\missing.py',
+   'PYMODULE'),
+  ('pandas.core.flags',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\flags.py',
+   'PYMODULE'),
+  ('pandas.core.frame',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\frame.py',
+   'PYMODULE'),
+  ('pandas.core.generic',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\generic.py',
+   'PYMODULE'),
+  ('pandas.core.groupby',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\groupby\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core.groupby.base',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\groupby\\base.py',
+   'PYMODULE'),
+  ('pandas.core.groupby.categorical',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\groupby\\categorical.py',
+   'PYMODULE'),
+  ('pandas.core.groupby.generic',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\groupby\\generic.py',
+   'PYMODULE'),
+  ('pandas.core.groupby.groupby',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\groupby\\groupby.py',
+   'PYMODULE'),
+  ('pandas.core.groupby.grouper',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\groupby\\grouper.py',
+   'PYMODULE'),
+  ('pandas.core.groupby.indexing',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\groupby\\indexing.py',
+   'PYMODULE'),
+  ('pandas.core.groupby.numba_',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\groupby\\numba_.py',
+   'PYMODULE'),
+  ('pandas.core.groupby.ops',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\groupby\\ops.py',
+   'PYMODULE'),
+  ('pandas.core.indexers',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\indexers\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core.indexers.objects',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\indexers\\objects.py',
+   'PYMODULE'),
+  ('pandas.core.indexers.utils',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\indexers\\utils.py',
+   'PYMODULE'),
+  ('pandas.core.indexes',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\indexes\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core.indexes.accessors',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\indexes\\accessors.py',
+   'PYMODULE'),
+  ('pandas.core.indexes.api',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\indexes\\api.py',
+   'PYMODULE'),
+  ('pandas.core.indexes.base',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\indexes\\base.py',
+   'PYMODULE'),
+  ('pandas.core.indexes.category',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\indexes\\category.py',
+   'PYMODULE'),
+  ('pandas.core.indexes.datetimelike',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\indexes\\datetimelike.py',
+   'PYMODULE'),
+  ('pandas.core.indexes.datetimes',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\indexes\\datetimes.py',
+   'PYMODULE'),
+  ('pandas.core.indexes.extension',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\indexes\\extension.py',
+   'PYMODULE'),
+  ('pandas.core.indexes.frozen',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\indexes\\frozen.py',
+   'PYMODULE'),
+  ('pandas.core.indexes.interval',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\indexes\\interval.py',
+   'PYMODULE'),
+  ('pandas.core.indexes.multi',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\indexes\\multi.py',
+   'PYMODULE'),
+  ('pandas.core.indexes.period',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\indexes\\period.py',
+   'PYMODULE'),
+  ('pandas.core.indexes.range',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\indexes\\range.py',
+   'PYMODULE'),
+  ('pandas.core.indexes.timedeltas',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\indexes\\timedeltas.py',
+   'PYMODULE'),
+  ('pandas.core.indexing',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\indexing.py',
+   'PYMODULE'),
+  ('pandas.core.interchange',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\interchange\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core.interchange.buffer',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\interchange\\buffer.py',
+   'PYMODULE'),
+  ('pandas.core.interchange.column',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\interchange\\column.py',
+   'PYMODULE'),
+  ('pandas.core.interchange.dataframe',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\interchange\\dataframe.py',
+   'PYMODULE'),
+  ('pandas.core.interchange.dataframe_protocol',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\interchange\\dataframe_protocol.py',
+   'PYMODULE'),
+  ('pandas.core.interchange.from_dataframe',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\interchange\\from_dataframe.py',
+   'PYMODULE'),
+  ('pandas.core.interchange.utils',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\interchange\\utils.py',
+   'PYMODULE'),
+  ('pandas.core.internals',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\internals\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core.internals.api',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\internals\\api.py',
+   'PYMODULE'),
+  ('pandas.core.internals.array_manager',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\internals\\array_manager.py',
+   'PYMODULE'),
+  ('pandas.core.internals.base',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\internals\\base.py',
+   'PYMODULE'),
+  ('pandas.core.internals.blocks',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\internals\\blocks.py',
+   'PYMODULE'),
+  ('pandas.core.internals.concat',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\internals\\concat.py',
+   'PYMODULE'),
+  ('pandas.core.internals.construction',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\internals\\construction.py',
+   'PYMODULE'),
+  ('pandas.core.internals.managers',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\internals\\managers.py',
+   'PYMODULE'),
+  ('pandas.core.internals.ops',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\internals\\ops.py',
+   'PYMODULE'),
+  ('pandas.core.methods',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\methods\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core.methods.describe',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\methods\\describe.py',
+   'PYMODULE'),
+  ('pandas.core.methods.selectn',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\methods\\selectn.py',
+   'PYMODULE'),
+  ('pandas.core.methods.to_dict',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\methods\\to_dict.py',
+   'PYMODULE'),
+  ('pandas.core.missing',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\missing.py',
+   'PYMODULE'),
+  ('pandas.core.nanops',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\nanops.py',
+   'PYMODULE'),
+  ('pandas.core.ops',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\ops\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core.ops.array_ops',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\ops\\array_ops.py',
+   'PYMODULE'),
+  ('pandas.core.ops.common',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\ops\\common.py',
+   'PYMODULE'),
+  ('pandas.core.ops.dispatch',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\ops\\dispatch.py',
+   'PYMODULE'),
+  ('pandas.core.ops.docstrings',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\ops\\docstrings.py',
+   'PYMODULE'),
+  ('pandas.core.ops.invalid',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\ops\\invalid.py',
+   'PYMODULE'),
+  ('pandas.core.ops.mask_ops',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\ops\\mask_ops.py',
+   'PYMODULE'),
+  ('pandas.core.ops.missing',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\ops\\missing.py',
+   'PYMODULE'),
+  ('pandas.core.resample',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\resample.py',
+   'PYMODULE'),
+  ('pandas.core.reshape',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\reshape\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core.reshape.api',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\reshape\\api.py',
+   'PYMODULE'),
+  ('pandas.core.reshape.concat',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\reshape\\concat.py',
+   'PYMODULE'),
+  ('pandas.core.reshape.encoding',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\reshape\\encoding.py',
+   'PYMODULE'),
+  ('pandas.core.reshape.melt',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\reshape\\melt.py',
+   'PYMODULE'),
+  ('pandas.core.reshape.merge',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\reshape\\merge.py',
+   'PYMODULE'),
+  ('pandas.core.reshape.pivot',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\reshape\\pivot.py',
+   'PYMODULE'),
+  ('pandas.core.reshape.reshape',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\reshape\\reshape.py',
+   'PYMODULE'),
+  ('pandas.core.reshape.tile',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\reshape\\tile.py',
+   'PYMODULE'),
+  ('pandas.core.reshape.util',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\reshape\\util.py',
+   'PYMODULE'),
+  ('pandas.core.roperator',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\roperator.py',
+   'PYMODULE'),
+  ('pandas.core.sample',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\sample.py',
+   'PYMODULE'),
+  ('pandas.core.series',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\series.py',
+   'PYMODULE'),
+  ('pandas.core.shared_docs',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\shared_docs.py',
+   'PYMODULE'),
+  ('pandas.core.sorting',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\sorting.py',
+   'PYMODULE'),
+  ('pandas.core.strings',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\strings\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core.strings.accessor',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\strings\\accessor.py',
+   'PYMODULE'),
+  ('pandas.core.strings.base',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\strings\\base.py',
+   'PYMODULE'),
+  ('pandas.core.strings.object_array',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\strings\\object_array.py',
+   'PYMODULE'),
+  ('pandas.core.tools',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\tools\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core.tools.datetimes',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\tools\\datetimes.py',
+   'PYMODULE'),
+  ('pandas.core.tools.numeric',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\tools\\numeric.py',
+   'PYMODULE'),
+  ('pandas.core.tools.timedeltas',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\tools\\timedeltas.py',
+   'PYMODULE'),
+  ('pandas.core.tools.times',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\tools\\times.py',
+   'PYMODULE'),
+  ('pandas.core.util',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\util\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core.util.hashing',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\util\\hashing.py',
+   'PYMODULE'),
+  ('pandas.core.util.numba_',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\util\\numba_.py',
+   'PYMODULE'),
+  ('pandas.core.window',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\window\\__init__.py',
+   'PYMODULE'),
+  ('pandas.core.window.common',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\window\\common.py',
+   'PYMODULE'),
+  ('pandas.core.window.doc',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\window\\doc.py',
+   'PYMODULE'),
+  ('pandas.core.window.ewm',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\window\\ewm.py',
+   'PYMODULE'),
+  ('pandas.core.window.expanding',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\window\\expanding.py',
+   'PYMODULE'),
+  ('pandas.core.window.numba_',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\window\\numba_.py',
+   'PYMODULE'),
+  ('pandas.core.window.online',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\window\\online.py',
+   'PYMODULE'),
+  ('pandas.core.window.rolling',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\core\\window\\rolling.py',
+   'PYMODULE'),
+  ('pandas.errors',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\errors\\__init__.py',
+   'PYMODULE'),
+  ('pandas.io',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\__init__.py',
+   'PYMODULE'),
+  ('pandas.io._util',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\_util.py',
+   'PYMODULE'),
+  ('pandas.io.api',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\api.py',
+   'PYMODULE'),
+  ('pandas.io.clipboard',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\clipboard\\__init__.py',
+   'PYMODULE'),
+  ('pandas.io.clipboards',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\clipboards.py',
+   'PYMODULE'),
+  ('pandas.io.common',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\common.py',
+   'PYMODULE'),
+  ('pandas.io.excel',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\excel\\__init__.py',
+   'PYMODULE'),
+  ('pandas.io.excel._base',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\excel\\_base.py',
+   'PYMODULE'),
+  ('pandas.io.excel._calamine',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\excel\\_calamine.py',
+   'PYMODULE'),
+  ('pandas.io.excel._odfreader',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\excel\\_odfreader.py',
+   'PYMODULE'),
+  ('pandas.io.excel._odswriter',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\excel\\_odswriter.py',
+   'PYMODULE'),
+  ('pandas.io.excel._openpyxl',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\excel\\_openpyxl.py',
+   'PYMODULE'),
+  ('pandas.io.excel._pyxlsb',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\excel\\_pyxlsb.py',
+   'PYMODULE'),
+  ('pandas.io.excel._util',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\excel\\_util.py',
+   'PYMODULE'),
+  ('pandas.io.excel._xlrd',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\excel\\_xlrd.py',
+   'PYMODULE'),
+  ('pandas.io.excel._xlsxwriter',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\excel\\_xlsxwriter.py',
+   'PYMODULE'),
+  ('pandas.io.feather_format',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\feather_format.py',
+   'PYMODULE'),
+  ('pandas.io.formats',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\formats\\__init__.py',
+   'PYMODULE'),
+  ('pandas.io.formats._color_data',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\formats\\_color_data.py',
+   'PYMODULE'),
+  ('pandas.io.formats.console',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\formats\\console.py',
+   'PYMODULE'),
+  ('pandas.io.formats.css',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\formats\\css.py',
+   'PYMODULE'),
+  ('pandas.io.formats.csvs',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\formats\\csvs.py',
+   'PYMODULE'),
+  ('pandas.io.formats.excel',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\formats\\excel.py',
+   'PYMODULE'),
+  ('pandas.io.formats.format',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\formats\\format.py',
+   'PYMODULE'),
+  ('pandas.io.formats.html',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\formats\\html.py',
+   'PYMODULE'),
+  ('pandas.io.formats.info',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\formats\\info.py',
+   'PYMODULE'),
+  ('pandas.io.formats.printing',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\formats\\printing.py',
+   'PYMODULE'),
+  ('pandas.io.formats.string',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\formats\\string.py',
+   'PYMODULE'),
+  ('pandas.io.formats.style',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\formats\\style.py',
+   'PYMODULE'),
+  ('pandas.io.formats.style_render',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\formats\\style_render.py',
+   'PYMODULE'),
+  ('pandas.io.formats.xml',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\formats\\xml.py',
+   'PYMODULE'),
+  ('pandas.io.gbq',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\gbq.py',
+   'PYMODULE'),
+  ('pandas.io.html',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\html.py',
+   'PYMODULE'),
+  ('pandas.io.json',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\json\\__init__.py',
+   'PYMODULE'),
+  ('pandas.io.json._json',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\json\\_json.py',
+   'PYMODULE'),
+  ('pandas.io.json._normalize',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\json\\_normalize.py',
+   'PYMODULE'),
+  ('pandas.io.json._table_schema',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\json\\_table_schema.py',
+   'PYMODULE'),
+  ('pandas.io.orc',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\orc.py',
+   'PYMODULE'),
+  ('pandas.io.parquet',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\parquet.py',
+   'PYMODULE'),
+  ('pandas.io.parsers',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\parsers\\__init__.py',
+   'PYMODULE'),
+  ('pandas.io.parsers.arrow_parser_wrapper',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\parsers\\arrow_parser_wrapper.py',
+   'PYMODULE'),
+  ('pandas.io.parsers.base_parser',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\parsers\\base_parser.py',
+   'PYMODULE'),
+  ('pandas.io.parsers.c_parser_wrapper',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\parsers\\c_parser_wrapper.py',
+   'PYMODULE'),
+  ('pandas.io.parsers.python_parser',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\parsers\\python_parser.py',
+   'PYMODULE'),
+  ('pandas.io.parsers.readers',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\parsers\\readers.py',
+   'PYMODULE'),
+  ('pandas.io.pickle',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\pickle.py',
+   'PYMODULE'),
+  ('pandas.io.pytables',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\pytables.py',
+   'PYMODULE'),
+  ('pandas.io.sas',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\sas\\__init__.py',
+   'PYMODULE'),
+  ('pandas.io.sas.sas7bdat',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\sas\\sas7bdat.py',
+   'PYMODULE'),
+  ('pandas.io.sas.sas_constants',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\sas\\sas_constants.py',
+   'PYMODULE'),
+  ('pandas.io.sas.sas_xport',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\sas\\sas_xport.py',
+   'PYMODULE'),
+  ('pandas.io.sas.sasreader',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\sas\\sasreader.py',
+   'PYMODULE'),
+  ('pandas.io.spss',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\spss.py',
+   'PYMODULE'),
+  ('pandas.io.sql',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\sql.py',
+   'PYMODULE'),
+  ('pandas.io.stata',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\stata.py',
+   'PYMODULE'),
+  ('pandas.io.xml',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\io\\xml.py',
+   'PYMODULE'),
+  ('pandas.plotting',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\plotting\\__init__.py',
+   'PYMODULE'),
+  ('pandas.plotting._core',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\plotting\\_core.py',
+   'PYMODULE'),
+  ('pandas.plotting._misc',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\plotting\\_misc.py',
+   'PYMODULE'),
+  ('pandas.testing',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\testing.py',
+   'PYMODULE'),
+  ('pandas.tseries',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\tseries\\__init__.py',
+   'PYMODULE'),
+  ('pandas.tseries.api',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\tseries\\api.py',
+   'PYMODULE'),
+  ('pandas.tseries.frequencies',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\tseries\\frequencies.py',
+   'PYMODULE'),
+  ('pandas.tseries.holiday',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\tseries\\holiday.py',
+   'PYMODULE'),
+  ('pandas.tseries.offsets',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\tseries\\offsets.py',
+   'PYMODULE'),
+  ('pandas.util',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\util\\__init__.py',
+   'PYMODULE'),
+  ('pandas.util._decorators',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\util\\_decorators.py',
+   'PYMODULE'),
+  ('pandas.util._exceptions',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\util\\_exceptions.py',
+   'PYMODULE'),
+  ('pandas.util._print_versions',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\util\\_print_versions.py',
+   'PYMODULE'),
+  ('pandas.util._tester',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\util\\_tester.py',
+   'PYMODULE'),
+  ('pandas.util._validators',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\util\\_validators.py',
+   'PYMODULE'),
+  ('pandas.util.version',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pandas\\util\\version\\__init__.py',
+   'PYMODULE'),
+  ('pathlib',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\pathlib\\__init__.py',
+   'PYMODULE'),
+  ('pathlib._abc',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\pathlib\\_abc.py',
+   'PYMODULE'),
+  ('pathlib._local',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\pathlib\\_local.py',
+   'PYMODULE'),
+  ('pickle',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\pickle.py',
+   'PYMODULE'),
+  ('pickletools',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\pickletools.py',
+   'PYMODULE'),
+  ('pkgutil',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\pkgutil.py',
+   'PYMODULE'),
+  ('platform',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\platform.py',
+   'PYMODULE'),
+  ('pprint',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\pprint.py',
+   'PYMODULE'),
+  ('py_compile',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\py_compile.py',
+   'PYMODULE'),
+  ('pytz',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pytz\\__init__.py',
+   'PYMODULE'),
+  ('pytz.exceptions',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pytz\\exceptions.py',
+   'PYMODULE'),
+  ('pytz.lazy',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pytz\\lazy.py',
+   'PYMODULE'),
+  ('pytz.tzfile',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pytz\\tzfile.py',
+   'PYMODULE'),
+  ('pytz.tzinfo',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\pytz\\tzinfo.py',
+   'PYMODULE'),
+  ('quopri',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\quopri.py',
+   'PYMODULE'),
+  ('random',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\random.py',
+   'PYMODULE'),
+  ('selectors',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\selectors.py',
+   'PYMODULE'),
+  ('shlex',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\shlex.py',
+   'PYMODULE'),
+  ('shutil',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\shutil.py',
+   'PYMODULE'),
+  ('signal',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\signal.py',
+   'PYMODULE'),
+  ('six',
+   'D:\\Sunbird Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\six.py',
+   'PYMODULE'),
+  ('socket',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\socket.py',
+   'PYMODULE'),
+  ('ssl',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\ssl.py',
+   'PYMODULE'),
+  ('statistics',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\statistics.py',
+   'PYMODULE'),
+  ('string',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\string.py',
+   'PYMODULE'),
+  ('stringprep',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\stringprep.py',
+   'PYMODULE'),
+  ('subprocess',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\subprocess.py',
+   'PYMODULE'),
+  ('sysconfig',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\sysconfig\\__init__.py',
+   'PYMODULE'),
+  ('tarfile',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\tarfile.py',
+   'PYMODULE'),
+  ('tempfile',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\tempfile.py',
+   'PYMODULE'),
+  ('textwrap',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\textwrap.py',
+   'PYMODULE'),
+  ('threading',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\threading.py',
+   'PYMODULE'),
+  ('tkinter',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\tkinter\\__init__.py',
+   'PYMODULE'),
+  ('tkinter.colorchooser',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\tkinter\\colorchooser.py',
+   'PYMODULE'),
+  ('tkinter.commondialog',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\tkinter\\commondialog.py',
+   'PYMODULE'),
+  ('tkinter.constants',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\tkinter\\constants.py',
+   'PYMODULE'),
+  ('tkinter.dialog',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\tkinter\\dialog.py',
+   'PYMODULE'),
+  ('tkinter.filedialog',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\tkinter\\filedialog.py',
+   'PYMODULE'),
+  ('tkinter.messagebox',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\tkinter\\messagebox.py',
+   'PYMODULE'),
+  ('tkinter.scrolledtext',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\tkinter\\scrolledtext.py',
+   'PYMODULE'),
+  ('tkinter.simpledialog',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\tkinter\\simpledialog.py',
+   'PYMODULE'),
+  ('tkinter.ttk',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\tkinter\\ttk.py',
+   'PYMODULE'),
+  ('tkinterdnd2',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\tkinterdnd2\\__init__.py',
+   'PYMODULE'),
+  ('tkinterdnd2.TkinterDnD',
+   'D:\\Sunbird '
+   'Solutions\\classsync-visual\\.venv\\Lib\\site-packages\\tkinterdnd2\\TkinterDnD.py',
+   'PYMODULE'),
+  ('token',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\token.py',
+   'PYMODULE'),
+  ('tokenize',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\tokenize.py',
+   'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('typing',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\typing.py',
+   'PYMODULE'),
+  ('ui',
+   'D:\\Sunbird Solutions\\classsync-visual\\ui\\__init__.py',
+   'PYMODULE'),
+  ('ui.components',
+   'D:\\Sunbird Solutions\\classsync-visual\\ui\\components.py',
+   'PYMODULE'),
+  ('ui.config_window',
+   'D:\\Sunbird Solutions\\classsync-visual\\ui\\config_window.py',
+   'PYMODULE'),
+  ('ui.main_window',
+   'D:\\Sunbird Solutions\\classsync-visual\\ui\\main_window.py',
+   'PYMODULE'),
+  ('urllib',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\__init__.py',
+   'PYMODULE'),
+  ('urllib.error',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\error.py',
+   'PYMODULE'),
+  ('urllib.parse',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\parse.py',
+   'PYMODULE'),
+  ('urllib.request',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\request.py',
+   'PYMODULE'),
+  ('urllib.response',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\response.py',
+   'PYMODULE'),
+  ('utils',
+   'D:\\Sunbird Solutions\\classsync-visual\\utils\\__init__.py',
+   'PYMODULE'),
+  ('utils.analytics',
+   'D:\\Sunbird Solutions\\classsync-visual\\utils\\analytics.py',
+   'PYMODULE'),
+  ('utils.config_manager',
+   'D:\\Sunbird Solutions\\classsync-visual\\utils\\config_manager.py',
+   'PYMODULE'),
+  ('utils.excel_generator',
+   'D:\\Sunbird Solutions\\classsync-visual\\utils\\excel_generator.py',
+   'PYMODULE'),
+  ('utils.processor',
+   'D:\\Sunbird Solutions\\classsync-visual\\utils\\processor.py',
+   'PYMODULE'),
+  ('uuid',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\uuid.py',
+   'PYMODULE'),
+  ('webbrowser',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\webbrowser.py',
+   'PYMODULE'),
+  ('zipfile',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\zipfile\\__init__.py',
+   'PYMODULE'),
+  ('zipfile._path',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\zipfile\\_path\\__init__.py',
+   'PYMODULE'),
+  ('zipfile._path.glob',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\zipfile\\_path\\glob.py',
+   'PYMODULE'),
+  ('zipimport',
+   'C:\\Users\\saadm\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\zipimport.py',
+   'PYMODULE')])

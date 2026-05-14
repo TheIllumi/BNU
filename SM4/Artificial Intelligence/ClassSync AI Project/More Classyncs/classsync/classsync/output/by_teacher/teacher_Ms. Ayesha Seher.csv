@@ -1,0 +1,5 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Computer_Organization_&_Assembly_Language_Lab_CS4_B_S1,Computer_Organization_&_Assembly_Language_Lab_CS4_B,Computer Organization & Assembly Language Lab,CS4,B,Ms. Ayesha Seher,True,Wednesday,12:30,15:30,SLASS 201
+Computer_Organization_&_Assembly_Language_Lab_CS4_C_S1,Computer_Organization_&_Assembly_Language_Lab_CS4_C,Computer Organization & Assembly Language Lab,CS4,C,Ms. Ayesha Seher,True,Tuesday,15:30,18:30,SLASS 208
+Software_Re_Engineering_SE8_-_S1,Software_Re_Engineering_SE8_-,Software Re Engineering,SE8,-,Ms. Ayesha Seher,False,Tuesday,15:30,17:00,SB 301
+Software_Re_Engineering_SE8_-_S2,Software_Re_Engineering_SE8_-,Software Re Engineering,SE8,-,Ms. Ayesha Seher,False,Tuesday,15:30,17:00,SLASS 015

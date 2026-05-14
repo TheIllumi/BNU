@@ -1,0 +1,7 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Data_Structures_&_Algorithms_CS4_B_S2,Data_Structures_&_Algorithms_CS4_B,Data Structures & Algorithms,CS4,B,Ms. Hamna Anwar,False,Thursday,14:00,15:30,SB 005
+Data_Structures_&_Algorithms_Lab_CS4_C_S1,Data_Structures_&_Algorithms_Lab_CS4_C,Data Structures & Algorithms Lab,CS4,C,Mr. Muhammad Ali,True,Tuesday,11:00,14:00,SB 005
+Digital_Logic_Design_Lab_CS2_B_S1,Digital_Logic_Design_Lab_CS2_B,Digital Logic Design Lab,CS2,B,Ms. Amna Rafiq,True,Monday,09:30,12:30,SB 005
+Digital_Logic_Design_Lab_CS2_C_S1,Digital_Logic_Design_Lab_CS2_C,Digital Logic Design Lab,CS2,C,Mr. Uzair Bashir,True,Friday,09:30,12:30,SB 005
+Multivariable_Calculus_SE2_E_S2,Multivariable_Calculus_SE2_E,Multivariable Calculus,SE2,E,Mr. Ali Haider,False,Friday,14:00,15:30,SB 005
+Multivariable_Calculus_SE2_F_S2,Multivariable_Calculus_SE2_F,Multivariable Calculus,SE2,F,Mr. Ali Haider,False,Friday,12:30,14:00,SB 005

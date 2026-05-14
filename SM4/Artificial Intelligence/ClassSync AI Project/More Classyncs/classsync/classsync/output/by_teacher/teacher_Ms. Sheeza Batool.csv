@@ -1,0 +1,5 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Business_Computing_MBC2_-_S1,Business_Computing_MBC2_-,Business Computing,MBC2,-,Ms. Sheeza Batool,False,Thursday,12:30,14:00,SB 003 LAB
+Business_Computing_MBC2_-_S2,Business_Computing_MBC2_-,Business Computing,MBC2,-,Ms. Sheeza Batool,False,Tuesday,14:00,15:30,SLASS 202
+Event_Driven_Programming_MBC2_-_S1,Event_Driven_Programming_MBC2_-,Event Driven Programming,MBC2,-,Ms. Sheeza Batool,False,Thursday,15:30,17:00,SB AUD 001
+Event_Driven_Programming_MBC2_-_S2,Event_Driven_Programming_MBC2_-,Event Driven Programming,MBC2,-,Ms. Sheeza Batool,False,Monday,14:00,15:30,SLASS 309

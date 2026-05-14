@@ -1,0 +1,6 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Database_Management_Systems_MBC4_-_S1,Database_Management_Systems_MBC4_-,Database Management Systems,MBC4,-,Ms. Shazia Rizwan,False,Thursday,11:00,12:30,SB 003 LAB
+Database_Management_Systems_MBC4_-_S2,Database_Management_Systems_MBC4_-,Database Management Systems,MBC4,-,Ms. Shazia Rizwan,False,Wednesday,15:30,17:00,SBT 202
+Programming_Fundamentals-Lab_Repeat_CS2_A_S1,Programming_Fundamentals-Lab_Repeat_CS2_A,Programming Fundamentals-Lab Repeat,CS2,A,Ms. Shazia Rizwan,True,Friday,11:00,14:00,SLASS 201
+Programming_Fundamentals-Repeat_CS2_A_S1,Programming_Fundamentals-Repeat_CS2_A,Programming Fundamentals-Repeat,CS2,A,Ms. Shazia Rizwan,False,Thursday,11:00,12:30,SB 004
+Programming_Fundamentals-Repeat_CS2_A_S2,Programming_Fundamentals-Repeat_CS2_A,Programming Fundamentals-Repeat,CS2,A,Ms. Shazia Rizwan,False,Thursday,15:30,17:00,SLASS 015

@@ -1,0 +1,5 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Computer_Organization_&_Assembly_Language_CS4_C_S1,Computer_Organization_&_Assembly_Language_CS4_C,Computer Organization & Assembly Language,CS4,C,Ms. Nimra Abbas,False,Monday,08:00,09:30,SVAD 403 Lab
+Object_Oriented_Programming_CS2_C_S2,Object_Oriented_Programming_CS2_C,Object Oriented Programming,CS2,C,Mr. Asim Irshad,False,Thursday,08:00,09:30,SVAD 403 Lab
+Organizational_Behavior_MBC4_-_S1,Organizational_Behavior_MBC4_-,Organizational Behavior,MBC4,-,Dr. Shah Ali Murtaza,False,Thursday,14:00,15:30,SVAD 403 Lab
+Organizational_Behavior_MBC4_-_S2,Organizational_Behavior_MBC4_-,Organizational Behavior,MBC4,-,Dr. Shah Ali Murtaza,False,Wednesday,09:30,11:00,SVAD 403 Lab

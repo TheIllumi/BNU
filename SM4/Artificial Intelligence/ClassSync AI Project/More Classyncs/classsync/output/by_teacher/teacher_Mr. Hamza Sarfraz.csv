@@ -1,0 +1,5 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Probability_&_Statistics_SE2_E_S1,Probability_&_Statistics_SE2_E,Probability & Statistics,SE2,E,Mr. Hamza Sarfraz,False,Monday,08:00,09:30,Central block 002
+Probability_&_Statistics_SE2_E_S2,Probability_&_Statistics_SE2_E,Probability & Statistics,SE2,E,Mr. Hamza Sarfraz,False,Tuesday,14:00,15:30,SBT 303
+Probability_&_Statistics_SE2_F_S1,Probability_&_Statistics_SE2_F,Probability & Statistics,SE2,F,Mr. Hamza Sarfraz,False,Friday,12:30,14:00,SLASS 206
+Probability_&_Statistics_SE2_F_S2,Probability_&_Statistics_SE2_F,Probability & Statistics,SE2,F,Mr. Hamza Sarfraz,False,Monday,11:00,12:30,SVAD 403 Lab

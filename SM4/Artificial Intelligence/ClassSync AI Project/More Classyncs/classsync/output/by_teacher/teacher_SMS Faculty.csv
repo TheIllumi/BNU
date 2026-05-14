@@ -1,0 +1,3 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Business_Process_Engineering_SE8_-_S1,Business_Process_Engineering_SE8_-,Business Process Engineering,SE8,-,SMS Faculty,False,Friday,09:30,11:00,SLASS 207
+Business_Process_Engineering_SE8_-_S2,Business_Process_Engineering_SE8_-,Business Process Engineering,SE8,-,SMS Faculty,False,Wednesday,12:30,14:00,SLASS 204

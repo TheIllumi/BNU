@@ -1,0 +1,43 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Advanced_Database_Management_Systems_CS4_A_S1,Advanced_Database_Management_Systems_CS4_A,Advanced Database Management Systems,CS4,A,Ms. Talia Noreen,False,Thursday,12:30,14:00,SLASS 212
+Advanced_Database_Management_Systems_CS4_A_S2,Advanced_Database_Management_Systems_CS4_A,Advanced Database Management Systems,CS4,A,Ms. Talia Noreen,False,Wednesday,14:00,15:30,Central block 105
+Advanced_Database_Management_Systems_CS4_B_S1,Advanced_Database_Management_Systems_CS4_B,Advanced Database Management Systems,CS4,B,Ms. Talia Noreen,False,Friday,14:00,15:30,SBT 303
+Advanced_Database_Management_Systems_CS4_B_S2,Advanced_Database_Management_Systems_CS4_B,Advanced Database Management Systems,CS4,B,Ms. Talia Noreen,False,Friday,11:00,12:30,SB 004
+Advanced_Database_Management_Systems_CS4_C_S1,Advanced_Database_Management_Systems_CS4_C,Advanced Database Management Systems,CS4,C,Ms. Talia Noreen,False,Tuesday,11:00,12:30,SLASS 201
+Advanced_Database_Management_Systems_CS4_C_S2,Advanced_Database_Management_Systems_CS4_C,Advanced Database Management Systems,CS4,C,Ms. Talia Noreen,False,Monday,14:00,15:30,SB 306
+Advanced_Database_Management_Systems_Lab_CS4_A_S1,Advanced_Database_Management_Systems_Lab_CS4_A,Advanced Database Management Systems Lab,CS4,A,Mr. Ahsan Atiq,True,Monday,08:00,11:00,SLASS 202
+Advanced_Database_Management_Systems_Lab_CS4_B_S1,Advanced_Database_Management_Systems_Lab_CS4_B,Advanced Database Management Systems Lab,CS4,B,Mr. Ahsan Atiq,True,Tuesday,09:30,12:30,SB 206
+Advanced_Database_Management_Systems_Lab_CS4_C_S1,Advanced_Database_Management_Systems_Lab_CS4_C,Advanced Database Management Systems Lab,CS4,C,Mr. Ahsan Atiq,True,Friday,14:00,17:00,SLASS 202
+Artificial_Intelligence_CS4_A_S1,Artificial_Intelligence_CS4_A,Artificial Intelligence,CS4,A,Dr. Usman Nazir,False,Friday,14:00,15:30,SLASS 212
+Artificial_Intelligence_CS4_A_S2,Artificial_Intelligence_CS4_A,Artificial Intelligence,CS4,A,Dr. Usman Nazir,False,Thursday,08:00,09:30,SLASS 118
+Artificial_Intelligence_CS4_B_S1,Artificial_Intelligence_CS4_B,Artificial Intelligence,CS4,B,Ms. Noreen Khalid,False,Friday,08:00,09:30,SBT 202
+Artificial_Intelligence_CS4_B_S2,Artificial_Intelligence_CS4_B,Artificial Intelligence,CS4,B,Ms. Noreen Khalid,False,Tuesday,15:30,17:00,SLASS B002
+Artificial_Intelligence_CS4_C_S1,Artificial_Intelligence_CS4_C,Artificial Intelligence,CS4,C,Ms. Noreen Khalid,False,Thursday,12:30,14:00,SBT 204
+Artificial_Intelligence_CS4_C_S2,Artificial_Intelligence_CS4_C,Artificial Intelligence,CS4,C,Ms. Noreen Khalid,False,Thursday,14:00,15:30,SLASS 207
+Artificial_Intelligence_Lab_CS4_A_S1,Artificial_Intelligence_Lab_CS4_A,Artificial Intelligence Lab,CS4,A,Mr. Osama Tariq,True,Friday,09:30,12:30,SBT 202
+Artificial_Intelligence_Lab_CS4_B_S1,Artificial_Intelligence_Lab_CS4_B,Artificial Intelligence Lab,CS4,B,Mr. Osama Tariq,True,Tuesday,14:00,17:00,SLASS 309
+Artificial_Intelligence_Lab_CS4_C_S1,Artificial_Intelligence_Lab_CS4_C,Artificial Intelligence Lab,CS4,C,Ms. Noreen Khalid,True,Monday,11:00,14:00,SB AUD 001
+Computer_Organization_&_Assembly_Language_CS4_A_S1,Computer_Organization_&_Assembly_Language_CS4_A,Computer Organization & Assembly Language,CS4,A,Ms. Nimra Abbas,False,Wednesday,14:00,15:30,SBT 202
+Computer_Organization_&_Assembly_Language_CS4_A_S2,Computer_Organization_&_Assembly_Language_CS4_A,Computer Organization & Assembly Language,CS4,A,Ms. Nimra Abbas,False,Wednesday,15:30,17:00,SB 005
+Computer_Organization_&_Assembly_Language_CS4_B_S1,Computer_Organization_&_Assembly_Language_CS4_B,Computer Organization & Assembly Language,CS4,B,Ms. Nimra Abbas,False,Monday,11:00,12:30,SBT 204
+Computer_Organization_&_Assembly_Language_CS4_B_S2,Computer_Organization_&_Assembly_Language_CS4_B,Computer Organization & Assembly Language,CS4,B,Ms. Nimra Abbas,False,Thursday,15:30,17:00,SLASS 118
+Computer_Organization_&_Assembly_Language_CS4_C_S1,Computer_Organization_&_Assembly_Language_CS4_C,Computer Organization & Assembly Language,CS4,C,Ms. Nimra Abbas,False,Tuesday,12:30,14:00,SBT 303
+Computer_Organization_&_Assembly_Language_CS4_C_S2,Computer_Organization_&_Assembly_Language_CS4_C,Computer Organization & Assembly Language,CS4,C,Ms. Nimra Abbas,False,Tuesday,11:00,12:30,SBT 202
+Computer_Organization_&_Assembly_Language_Lab_CS4_B_S1,Computer_Organization_&_Assembly_Language_Lab_CS4_B,Computer Organization & Assembly Language Lab,CS4,B,Ms. Ayesha Seher,True,Monday,14:00,17:00,SLASS 204
+Computer_Organization_&_Assembly_Language_Lab_CS4_C_S1,Computer_Organization_&_Assembly_Language_Lab_CS4_C,Computer Organization & Assembly Language Lab,CS4,C,Ms. Ayesha Seher,True,Thursday,09:30,12:30,Central block 004
+Computer_Organization_&_Assembly_Language_Lab_CS4_A_S1,Computer_Organization_&_Assembly_Language_Lab_CS4_A,Computer Organization & Assembly Language Lab,CS4,A,Ms. Nimra Abbas,True,Tuesday,09:30,12:30,SLASS 201
+Data_Structures_&_Algorithms_CS4_A_S1,Data_Structures_&_Algorithms_CS4_A,Data Structures & Algorithms,CS4,A,Ms. Huda Sarfraz,False,Tuesday,11:00,12:30,SLASS SMC 001 Lab
+Data_Structures_&_Algorithms_CS4_A_S2,Data_Structures_&_Algorithms_CS4_A,Data Structures & Algorithms,CS4,A,Ms. Huda Sarfraz,False,Friday,09:30,11:00,SVAD 403 Lab
+Data_Structures_&_Algorithms_CS4_B_S1,Data_Structures_&_Algorithms_CS4_B,Data Structures & Algorithms,CS4,B,Ms. Hamna Anwar,False,Thursday,12:30,14:00,SLASS 015
+Data_Structures_&_Algorithms_CS4_B_S2,Data_Structures_&_Algorithms_CS4_B,Data Structures & Algorithms,CS4,B,Ms. Hamna Anwar,False,Friday,14:00,15:30,Central block 002
+Data_Structures_&_Algorithms_CS4_C_S1,Data_Structures_&_Algorithms_CS4_C,Data Structures & Algorithms,CS4,C,Mr. Muhammad Ali,False,Monday,15:30,17:00,SLASS SMC 001 Lab
+Data_Structures_&_Algorithms_CS4_C_S2,Data_Structures_&_Algorithms_CS4_C,Data Structures & Algorithms,CS4,C,Mr. Muhammad Ali,False,Wednesday,09:30,11:00,SLASS 207
+Data_Structures_&_Algorithms_Lab_CS4_A_S1,Data_Structures_&_Algorithms_Lab_CS4_A,Data Structures & Algorithms Lab,CS4,A,Ms. Hamna Anwar,True,Friday,14:00,17:00,SVAD 403 Lab
+Data_Structures_&_Algorithms_Lab_CS4_B_S1,Data_Structures_&_Algorithms_Lab_CS4_B,Data Structures & Algorithms Lab,CS4,B,Ms. Hamna Anwar,True,Tuesday,15:30,18:30,SB 003 LAB
+Data_Structures_&_Algorithms_Lab_CS4_C_S1,Data_Structures_&_Algorithms_Lab_CS4_C,Data Structures & Algorithms Lab,CS4,C,Mr. Muhammad Ali,True,Wednesday,14:00,17:00,Central block 105
+Linear_Algebra_CS4_A_S1,Linear_Algebra_CS4_A,Linear Algebra,CS4,A,Mr. Farhan Ali,False,Friday,12:30,14:00,SLASS 203
+Linear_Algebra_CS4_A_S2,Linear_Algebra_CS4_A,Linear Algebra,CS4,A,Mr. Farhan Ali,False,Friday,15:30,17:00,SBT 204
+Linear_Algebra_CS4_B_S1,Linear_Algebra_CS4_B,Linear Algebra,CS4,B,Mr. Farhan Ali,False,Thursday,08:00,09:30,Central block 105
+Linear_Algebra_CS4_B_S2,Linear_Algebra_CS4_B,Linear Algebra,CS4,B,Mr. Farhan Ali,False,Monday,15:30,17:00,SLASS 208
+Linear_Algebra_CS4_C_S1,Linear_Algebra_CS4_C,Linear Algebra,CS4,C,Mr. Farhan Ali,False,Thursday,15:30,17:00,SLASS B002
+Linear_Algebra_CS4_C_S2,Linear_Algebra_CS4_C,Linear Algebra,CS4,C,Mr. Farhan Ali,False,Friday,08:00,09:30,SBT 305

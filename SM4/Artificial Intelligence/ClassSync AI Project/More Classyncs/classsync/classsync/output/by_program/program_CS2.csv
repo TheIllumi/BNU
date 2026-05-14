@@ -1,0 +1,53 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Digital_Logic_Design_CS2_A_S1,Digital_Logic_Design_CS2_A,Digital Logic Design,CS2,A,Dr. Shafaat Ahmed Bazaz,False,Friday,12:30,14:00,Central block 003
+Digital_Logic_Design_CS2_A_S2,Digital_Logic_Design_CS2_A,Digital Logic Design,CS2,A,Dr. Shafaat Ahmed Bazaz,False,Thursday,14:00,15:30,SB 306
+Digital_Logic_Design_CS2_B_S1,Digital_Logic_Design_CS2_B,Digital Logic Design,CS2,B,Mr. Uzair Bashir,False,Monday,08:00,09:30,SB 306
+Digital_Logic_Design_CS2_B_S2,Digital_Logic_Design_CS2_B,Digital Logic Design,CS2,B,Mr. Uzair Bashir,False,Wednesday,08:00,09:30,SLASS 201
+Digital_Logic_Design_CS2_C_S1,Digital_Logic_Design_CS2_C,Digital Logic Design,CS2,C,Ms. Arooma Amir,False,Tuesday,14:00,15:30,SLASS 015
+Digital_Logic_Design_CS2_C_S2,Digital_Logic_Design_CS2_C,Digital Logic Design,CS2,C,Ms. Arooma Amir,False,Tuesday,12:30,14:00,SLASS 201
+Digital_Logic_Design_CS2_D_S1,Digital_Logic_Design_CS2_D,Digital Logic Design,CS2,D,Ms. Arooma Amir,False,Wednesday,12:30,14:00,Central block 004
+Digital_Logic_Design_CS2_D_S2,Digital_Logic_Design_CS2_D,Digital Logic Design,CS2,D,Ms. Arooma Amir,False,Thursday,15:30,17:00,SBT 202
+Digital_Logic_Design_Lab_CS2_A_S1,Digital_Logic_Design_Lab_CS2_A,Digital Logic Design Lab,CS2,A,Ms. Amna Rafiq,True,Tuesday,11:00,14:00,SLASS 202
+Digital_Logic_Design_Lab_CS2_B_S1,Digital_Logic_Design_Lab_CS2_B,Digital Logic Design Lab,CS2,B,Ms. Amna Rafiq,True,Monday,09:30,12:30,SB 005
+Digital_Logic_Design_Lab_CS2_C_S1,Digital_Logic_Design_Lab_CS2_C,Digital Logic Design Lab,CS2,C,Mr. Uzair Bashir,True,Friday,09:30,12:30,SB 005
+Digital_Logic_Design_Lab_CS2_D_S1,Digital_Logic_Design_Lab_CS2_D,Digital Logic Design Lab,CS2,D,Mr. Uzair Bashir,True,Monday,09:30,12:30,SLASS 203
+Ideology_&_Constitution_of_Pakistan_CS2_A_S1,Ideology_&_Constitution_of_Pakistan_CS2_A,Ideology & Constitution of Pakistan,CS2,A,Mr. Inam ul Haq,False,Tuesday,09:30,11:00,Central block 003
+Ideology_&_Constitution_of_Pakistan_CS2_A_S2,Ideology_&_Constitution_of_Pakistan_CS2_A,Ideology & Constitution of Pakistan,CS2,A,Mr. Inam ul Haq,False,Wednesday,14:00,15:30,SB 307
+Ideology_&_Constitution_of_Pakistan_CS2_B_S1,Ideology_&_Constitution_of_Pakistan_CS2_B,Ideology & Constitution of Pakistan,CS2,B,Mr. M Shafi,False,Tuesday,09:30,11:00,SLASS 206
+Ideology_&_Constitution_of_Pakistan_CS2_B_S2,Ideology_&_Constitution_of_Pakistan_CS2_B,Ideology & Constitution of Pakistan,CS2,B,Mr. M Shafi,False,Friday,08:00,09:30,SBT 202
+Ideology_&_Constitution_of_Pakistan_CS2_C_S1,Ideology_&_Constitution_of_Pakistan_CS2_C,Ideology & Constitution of Pakistan,CS2,C,Mr. Syed Adeel Ijaz,False,Wednesday,12:30,14:00,SLASS 015
+Ideology_&_Constitution_of_Pakistan_CS2_C_S2,Ideology_&_Constitution_of_Pakistan_CS2_C,Ideology & Constitution of Pakistan,CS2,C,Mr. Syed Adeel Ijaz,False,Friday,12:30,14:00,SLASS 204
+Multivariable_Calculus_CS2_A_S1,Multivariable_Calculus_CS2_A,Multivariable Calculus,CS2,A,Dr. Zawar Hussain VF,False,Monday,15:30,17:00,SB 003 LAB
+Multivariable_Calculus_CS2_A_S2,Multivariable_Calculus_CS2_A,Multivariable Calculus,CS2,A,Dr. Zawar Hussain VF,False,Thursday,15:30,17:00,Central block 004
+Multivariable_Calculus_CS2_B_S1,Multivariable_Calculus_CS2_B,Multivariable Calculus,CS2,B,Dr. Zawar Hussain VF,False,Friday,08:00,09:30,SLASS 202
+Multivariable_Calculus_CS2_B_S2,Multivariable_Calculus_CS2_B,Multivariable Calculus,CS2,B,Dr. Zawar Hussain VF,False,Monday,14:00,15:30,SLASS 201
+Multivariable_Calculus_CS2_C_S1,Multivariable_Calculus_CS2_C,Multivariable Calculus,CS2,C,Mr. Farhan Ali,False,Thursday,11:00,12:30,SB 307
+Multivariable_Calculus_CS2_C_S2,Multivariable_Calculus_CS2_C,Multivariable Calculus,CS2,C,Mr. Farhan Ali,False,Tuesday,14:00,15:30,SBT 202
+Multivariable_Calculus_CS2_D_S1,Multivariable_Calculus_CS2_D,Multivariable Calculus,CS2,D,Mr. Ali Haider,False,Wednesday,15:30,17:00,SLASS 015
+Multivariable_Calculus_CS2_D_S2,Multivariable_Calculus_CS2_D,Multivariable Calculus,CS2,D,Mr. Ali Haider,False,Tuesday,09:30,11:00,Central block 002
+Object_Oriented_Programming_CS2_A_S1,Object_Oriented_Programming_CS2_A,Object Oriented Programming,CS2,A,Mr. Nouman Ali,False,Friday,15:30,17:00,SLASS 202
+Object_Oriented_Programming_CS2_A_S2,Object_Oriented_Programming_CS2_A,Object Oriented Programming,CS2,A,Mr. Nouman Ali,False,Monday,08:00,09:30,SB 004
+Object_Oriented_Programming_CS2_B_S1,Object_Oriented_Programming_CS2_B,Object Oriented Programming,CS2,B,Mr. Nouman Ali,False,Tuesday,15:30,17:00,SB 205
+Object_Oriented_Programming_CS2_B_S2,Object_Oriented_Programming_CS2_B,Object Oriented Programming,CS2,B,Mr. Nouman Ali,False,Thursday,09:30,11:00,SLASS 202
+Object_Oriented_Programming_CS2_C_S1,Object_Oriented_Programming_CS2_C,Object Oriented Programming,CS2,C,Mr. Asim Irshad,False,Monday,11:00,12:30,SBT 303
+Object_Oriented_Programming_CS2_C_S2,Object_Oriented_Programming_CS2_C,Object Oriented Programming,CS2,C,Mr. Asim Irshad,False,Thursday,08:00,09:30,SVAD 403 Lab
+Object_Oriented_Programming_CS2_D_S1,Object_Oriented_Programming_CS2_D,Object Oriented Programming,CS2,D,Mr. Asim Irshad,False,Monday,15:30,17:00,SB 206
+Object_Oriented_Programming_CS2_D_S2,Object_Oriented_Programming_CS2_D,Object Oriented Programming,CS2,D,Mr. Asim Irshad,False,Friday,09:30,11:00,SB 307
+Object_Oriented_Programming_Lab_CS2_A_S1,Object_Oriented_Programming_Lab_CS2_A,Object Oriented Programming Lab,CS2,A,Ms. Rameen,True,Monday,15:30,18:30,SB 301
+Object_Oriented_Programming_Lab_CS2_B_S1,Object_Oriented_Programming_Lab_CS2_B,Object Oriented Programming Lab,CS2,B,Ms. Rameen,True,Wednesday,15:30,18:30,SLASS 207
+Object_Oriented_Programming_Lab_CS2_C_S1,Object_Oriented_Programming_Lab_CS2_C,Object Oriented Programming Lab,CS2,C,Ms. Rameen,True,Tuesday,15:30,18:30,SLASS 206
+Object_Oriented_Programming_Lab_CS2_D_S1,Object_Oriented_Programming_Lab_CS2_D,Object Oriented Programming Lab,CS2,D,Mr. Asim Irshad,True,Tuesday,12:30,15:30,SLASS SMC 001 Lab
+Probability_&_Statistics_CS2_A_S1,Probability_&_Statistics_CS2_A,Probability & Statistics,CS2,A,Ms. Amna Humayun,False,Monday,14:00,15:30,SBT 305
+Probability_&_Statistics_CS2_A_S2,Probability_&_Statistics_CS2_A,Probability & Statistics,CS2,A,Ms. Amna Humayun,False,Wednesday,12:30,14:00,SLASS 118
+Probability_&_Statistics_CS2_B_S1,Probability_&_Statistics_CS2_B,Probability & Statistics,CS2,B,Ms. Amna Humayun,False,Friday,08:00,09:30,SLASS 015
+Probability_&_Statistics_CS2_B_S2,Probability_&_Statistics_CS2_B,Probability & Statistics,CS2,B,Ms. Amna Humayun,False,Monday,08:00,09:30,SB 306
+Probability_&_Statistics_CS2_C_S1,Probability_&_Statistics_CS2_C,Probability & Statistics,CS2,C,Dr. Aamir Majeed Chaudhary,False,Thursday,09:30,11:00,SB 003 LAB
+Probability_&_Statistics_CS2_C_S2,Probability_&_Statistics_CS2_C,Probability & Statistics,CS2,C,Dr. Aamir Majeed Chaudhary,False,Tuesday,15:30,17:00,SB 004
+Probability_&_Statistics_CS2_D_S1,Probability_&_Statistics_CS2_D,Probability & Statistics,CS2,D,Dr. Aamir Majeed Chaudhary,False,Wednesday,14:00,15:30,SB 206
+Probability_&_Statistics_CS2_D_S2,Probability_&_Statistics_CS2_D,Probability & Statistics,CS2,D,Dr. Aamir Majeed Chaudhary,False,Tuesday,12:30,14:00,SB 205
+Programming_Fundamentals-Lab_Repeat_CS2_A_S1,Programming_Fundamentals-Lab_Repeat_CS2_A,Programming Fundamentals-Lab Repeat,CS2,A,Ms. Shazia Rizwan,True,Friday,11:00,14:00,SLASS 201
+Programming_Fundamentals-Lab_Repeat_CS2_B_S1,Programming_Fundamentals-Lab_Repeat_CS2_B,Programming Fundamentals-Lab Repeat,CS2,B,Mr. Asim Irshad,True,Monday,11:00,14:00,SB 306
+Programming_Fundamentals-Repeat_CS2_A_S1,Programming_Fundamentals-Repeat_CS2_A,Programming Fundamentals-Repeat,CS2,A,Ms. Shazia Rizwan,False,Thursday,11:00,12:30,SB 004
+Programming_Fundamentals-Repeat_CS2_A_S2,Programming_Fundamentals-Repeat_CS2_A,Programming Fundamentals-Repeat,CS2,A,Ms. Shazia Rizwan,False,Thursday,15:30,17:00,SLASS 015
+Programming_Fundamentals-Repeat_CS2_B_S1,Programming_Fundamentals-Repeat_CS2_B,Programming Fundamentals-Repeat,CS2,B,Mr. Asim Irshad,False,Thursday,08:00,09:30,SLASS 208
+Programming_Fundamentals-Repeat_CS2_B_S2,Programming_Fundamentals-Repeat_CS2_B,Programming Fundamentals-Repeat,CS2,B,Mr. Asim Irshad,False,Monday,09:30,11:00,SLASS 207

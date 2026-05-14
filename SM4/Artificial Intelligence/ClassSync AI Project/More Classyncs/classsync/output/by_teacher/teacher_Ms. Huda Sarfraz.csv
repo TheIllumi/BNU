@@ -1,0 +1,7 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Data_Structures_&_Algorithms_CS4_A_S1,Data_Structures_&_Algorithms_CS4_A,Data Structures & Algorithms,CS4,A,Ms. Huda Sarfraz,False,Tuesday,11:00,12:30,SLASS SMC 001 Lab
+Data_Structures_&_Algorithms_CS4_A_S2,Data_Structures_&_Algorithms_CS4_A,Data Structures & Algorithms,CS4,A,Ms. Huda Sarfraz,False,Friday,09:30,11:00,SVAD 403 Lab
+Theory_of_Programming_Languages_CS6_A+B_S1,Theory_of_Programming_Languages_CS6_A+B,Theory of Programming Languages,CS6,A+B,Ms. Huda Sarfraz,False,Thursday,15:30,17:00,SLASS 206
+Theory_of_Programming_Languages_CS6_A+B_S2,Theory_of_Programming_Languages_CS6_A+B,Theory of Programming Languages,CS6,A+B,Ms. Huda Sarfraz,False,Tuesday,08:00,09:30,SB 302
+Theory_of_Programming_Languages_CS8_-_S1,Theory_of_Programming_Languages_CS8_-,Theory of Programming Languages,CS8,-,Ms. Huda Sarfraz,False,Friday,14:00,15:30,SB 004
+Theory_of_Programming_Languages_CS8_-_S2,Theory_of_Programming_Languages_CS8_-,Theory of Programming Languages,CS8,-,Ms. Huda Sarfraz,False,Thursday,08:00,09:30,SB 307

@@ -1,0 +1,4 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Artificial_Intelligence_Lab_CS4_C_S1,Artificial_Intelligence_Lab_CS4_C,Artificial Intelligence Lab,CS4,C,Ms. Noreen Khalid,True,Monday,11:00,14:00,SB AUD 001
+Digital_Logic_Design_CS2_D_S2,Digital_Logic_Design_CS2_D,Digital Logic Design,CS2,D,Ms. Arooma Amir,False,Monday,11:00,12:30,SB AUD 001
+Ideology_&_Constitution_of_Pakistan_CS2_B_S2,Ideology_&_Constitution_of_Pakistan_CS2_B,Ideology & Constitution of Pakistan,CS2,B,Mr. M Shafi,False,Thursday,14:00,15:30,SB AUD 001

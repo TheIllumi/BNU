@@ -1,0 +1,3 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Operations_Management_MBC4_-_S1,Operations_Management_MBC4_-,Operations Management,MBC4,-,Dr. Naeem,False,Thursday,15:30,17:00,SLASS 207
+Operations_Management_MBC4_-_S2,Operations_Management_MBC4_-,Operations Management,MBC4,-,Dr. Naeem,False,Monday,08:00,09:30,SLASS 118

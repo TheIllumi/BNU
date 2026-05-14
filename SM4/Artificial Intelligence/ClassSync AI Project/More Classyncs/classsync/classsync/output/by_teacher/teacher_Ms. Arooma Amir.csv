@@ -1,0 +1,5 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Digital_Logic_Design_CS2_C_S1,Digital_Logic_Design_CS2_C,Digital Logic Design,CS2,C,Ms. Arooma Amir,False,Tuesday,14:00,15:30,SLASS 015
+Digital_Logic_Design_CS2_C_S2,Digital_Logic_Design_CS2_C,Digital Logic Design,CS2,C,Ms. Arooma Amir,False,Tuesday,12:30,14:00,SLASS 201
+Digital_Logic_Design_CS2_D_S1,Digital_Logic_Design_CS2_D,Digital Logic Design,CS2,D,Ms. Arooma Amir,False,Wednesday,12:30,14:00,Central block 004
+Digital_Logic_Design_CS2_D_S2,Digital_Logic_Design_CS2_D,Digital Logic Design,CS2,D,Ms. Arooma Amir,False,Thursday,15:30,17:00,SBT 202

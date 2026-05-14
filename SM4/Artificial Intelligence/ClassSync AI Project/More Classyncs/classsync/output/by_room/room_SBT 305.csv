@@ -1,0 +1,9 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Applied_Physics_Lab_SE2_A_S1,Applied_Physics_Lab_SE2_A,Applied Physics Lab,SE2,A,Ms. Amna Rafiq,True,Wednesday,14:00,17:00,SBT 305
+Applied_Physics_Lab_SE2_B_S1,Applied_Physics_Lab_SE2_B,Applied Physics Lab,SE2,B,Ms. Amna Rafiq,True,Thursday,12:30,15:30,SBT 305
+Linear_Algebra_CS4_C_S2,Linear_Algebra_CS4_C,Linear Algebra,CS4,C,Mr. Farhan Ali,False,Friday,08:00,09:30,SBT 305
+Multivariable_Calculus_SE2_F_S2,Multivariable_Calculus_SE2_F,Multivariable Calculus,SE2,F,Mr. Ali Haider,False,Thursday,08:00,09:30,SBT 305
+Object_Oriented_Programming_CS2_B_S1,Object_Oriented_Programming_CS2_B,Object Oriented Programming,CS2,B,Mr. Nouman Ali,False,Wednesday,15:30,17:00,SBT 305
+Object_Oriented_Programming_CS2_C_S2,Object_Oriented_Programming_CS2_C,Object Oriented Programming,CS2,C,Mr. Asim Irshad,False,Thursday,14:00,15:30,SBT 305
+Professional_Practices_CS6_A+B_S2,Professional_Practices_CS6_A+B,Professional Practices,CS6,A+B,Dr. Natash Ali,False,Thursday,15:30,17:00,SBT 305
+Programming_Fundamentals-Repeat_CS2_A_S1,Programming_Fundamentals-Repeat_CS2_A,Programming Fundamentals-Repeat,CS2,A,Ms. Shazia Rizwan,False,Wednesday,12:30,14:00,SBT 305

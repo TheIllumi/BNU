@@ -1,0 +1,6 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Computer_Networks_MBC4_-_S1,Computer_Networks_MBC4_-,Computer Networks,MBC4,-,Mr. Muhammad Ali,False,Tuesday,14:00,15:30,SB 004
+Computer_Networks_MBC4_-_S2,Computer_Networks_MBC4_-,Computer Networks,MBC4,-,Mr. Muhammad Ali,False,Friday,08:00,09:30,SLASS 203
+Data_Structures_&_Algorithms_CS4_C_S1,Data_Structures_&_Algorithms_CS4_C,Data Structures & Algorithms,CS4,C,Mr. Muhammad Ali,False,Tuesday,12:30,14:00,SLASS 208
+Data_Structures_&_Algorithms_CS4_C_S2,Data_Structures_&_Algorithms_CS4_C,Data Structures & Algorithms,CS4,C,Mr. Muhammad Ali,False,Thursday,08:00,09:30,SB 304
+Data_Structures_&_Algorithms_Lab_CS4_C_S1,Data_Structures_&_Algorithms_Lab_CS4_C,Data Structures & Algorithms Lab,CS4,C,Mr. Muhammad Ali,True,Tuesday,11:00,14:00,SB 005

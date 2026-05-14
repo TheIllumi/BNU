@@ -1,0 +1,10 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Applied_Physics_SE2_B_S1,Applied_Physics_SE2_B,Applied Physics,SE2,B,Mr. Uzair Bashir,False,Monday,15:30,17:00,SLASS 015
+Computer_Networks_CS6_A+B_S1,Computer_Networks_CS6_A+B,Computer Networks,CS6,A+B,Mr. Nabeel Ahsan,False,Wednesday,09:30,11:00,SLASS 015
+Data_Structures_&_Algorithms_CS4_B_S1,Data_Structures_&_Algorithms_CS4_B,Data Structures & Algorithms,CS4,B,Ms. Hamna Anwar,False,Thursday,12:30,14:00,SLASS 015
+Digital_Logic_Design_CS2_A_S1,Digital_Logic_Design_CS2_A,Digital Logic Design,CS2,A,Dr. Shafaat Ahmed Bazaz,False,Monday,08:00,09:30,SLASS 015
+Digital_Logic_Design_Lab_CS2_D_S1,Digital_Logic_Design_Lab_CS2_D,Digital Logic Design Lab,CS2,D,Mr. Uzair Bashir,True,Monday,11:00,14:00,SLASS 015
+Ideology_&_Constitution_of_Pakistan_CS2_A_S1,Ideology_&_Constitution_of_Pakistan_CS2_A,Ideology & Constitution of Pakistan,CS2,A,Mr. Inam ul Haq,False,Monday,15:30,17:00,SLASS 015
+Object_Oriented_Programming_SE2_F_S1,Object_Oriented_Programming_SE2_F,Object Oriented Programming,SE2,F,Mr. Ameer Hamza,False,Monday,11:00,12:30,SLASS 015
+Probability_&_Statistics_CS2_D_S1,Probability_&_Statistics_CS2_D,Probability & Statistics,CS2,D,Dr. Aamir Majeed Chaudhary,False,Tuesday,14:00,15:30,SLASS 015
+Probability_for_Data_Science_MBC2_-_S2,Probability_for_Data_Science_MBC2_-,Probability for Data Science,MBC2,-,Ms. Amna Humayun,False,Wednesday,09:30,11:00,SLASS 015

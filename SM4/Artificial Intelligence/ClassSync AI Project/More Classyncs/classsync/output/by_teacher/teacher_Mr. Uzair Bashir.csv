@@ -1,0 +1,9 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Applied_Physics_SE2_A_S1,Applied_Physics_SE2_A,Applied Physics,SE2,A,Mr. Uzair Bashir,False,Monday,08:00,09:30,SB 307
+Applied_Physics_SE2_A_S2,Applied_Physics_SE2_A,Applied Physics,SE2,A,Mr. Uzair Bashir,False,Monday,08:00,09:30,SLASS 309
+Applied_Physics_SE2_B_S1,Applied_Physics_SE2_B,Applied Physics,SE2,B,Mr. Uzair Bashir,False,Monday,15:30,17:00,SLASS 015
+Applied_Physics_SE2_B_S2,Applied_Physics_SE2_B,Applied Physics,SE2,B,Mr. Uzair Bashir,False,Monday,08:00,09:30,SLASS 201
+Digital_Logic_Design_CS2_B_S1,Digital_Logic_Design_CS2_B,Digital Logic Design,CS2,B,Mr. Uzair Bashir,False,Friday,11:00,12:30,SB 307
+Digital_Logic_Design_CS2_B_S2,Digital_Logic_Design_CS2_B,Digital Logic Design,CS2,B,Mr. Uzair Bashir,False,Tuesday,09:30,11:00,SLASS 206
+Digital_Logic_Design_Lab_CS2_C_S1,Digital_Logic_Design_Lab_CS2_C,Digital Logic Design Lab,CS2,C,Mr. Uzair Bashir,True,Wednesday,14:00,17:00,SLASS SMC 001 Lab
+Digital_Logic_Design_Lab_CS2_D_S1,Digital_Logic_Design_Lab_CS2_D,Digital Logic Design Lab,CS2,D,Mr. Uzair Bashir,True,Monday,11:00,14:00,SLASS 015

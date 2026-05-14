@@ -1,0 +1,7 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Advanced_Database_Management_Systems_CS4_C_S2,Advanced_Database_Management_Systems_CS4_C,Advanced Database Management Systems,CS4,C,Ms. Talia Noreen,False,Monday,14:00,15:30,SB 306
+Database_Management_Systems_MBC4_-_S2,Database_Management_Systems_MBC4_-,Database Management Systems,MBC4,-,Ms. Shazia Rizwan,False,Friday,14:00,15:30,SB 306
+Graph_Theory_CS8_-_S1,Graph_Theory_CS8_-,Graph Theory,CS8,-,Mr. Ali Haider,False,Wednesday,09:30,11:00,SB 306
+Ideology_&_Constitution_of_Pakistan_CS2_B_S1,Ideology_&_Constitution_of_Pakistan_CS2_B,Ideology & Constitution of Pakistan,CS2,B,Mr. M Shafi,False,Thursday,11:00,12:30,SB 306
+Object_Oriented_Programming_Lab_CS2_D_S1,Object_Oriented_Programming_Lab_CS2_D,Object Oriented Programming Lab,CS2,D,Mr. Asim Irshad,True,Wednesday,14:00,17:00,SB 306
+Probability_&_Statistics_CS2_A_S2,Probability_&_Statistics_CS2_A,Probability & Statistics,CS2,A,Ms. Amna Humayun,False,Friday,12:30,14:00,SB 306

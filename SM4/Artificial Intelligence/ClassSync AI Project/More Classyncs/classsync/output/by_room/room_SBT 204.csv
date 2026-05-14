@@ -1,0 +1,8 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Artificial_Intelligence_CS4_C_S1,Artificial_Intelligence_CS4_C,Artificial Intelligence,CS4,C,Ms. Noreen Khalid,False,Thursday,12:30,14:00,SBT 204
+Business_Computing_MBC2_-_S2,Business_Computing_MBC2_-,Business Computing,MBC2,-,Ms. Sheeza Batool,False,Friday,11:00,12:30,SBT 204
+Computer_Organization_&_Assembly_Language_CS4_B_S1,Computer_Organization_&_Assembly_Language_CS4_B,Computer Organization & Assembly Language,CS4,B,Ms. Nimra Abbas,False,Monday,11:00,12:30,SBT 204
+Linear_Algebra_CS4_A_S2,Linear_Algebra_CS4_A,Linear Algebra,CS4,A,Mr. Farhan Ali,False,Friday,15:30,17:00,SBT 204
+Multivariable_Calculus_CS2_D_S2,Multivariable_Calculus_CS2_D,Multivariable Calculus,CS2,D,Mr. Ali Haider,False,Friday,15:30,17:00,SBT 204
+Object_Oriented_Programming_Lab_CS2_B_S1,Object_Oriented_Programming_Lab_CS2_B,Object Oriented Programming Lab,CS2,B,Ms. Rameen,True,Monday,09:30,12:30,SBT 204
+Probability_&_Statistics_CS2_D_S2,Probability_&_Statistics_CS2_D,Probability & Statistics,CS2,D,Dr. Aamir Majeed Chaudhary,False,Thursday,09:30,11:00,SBT 204

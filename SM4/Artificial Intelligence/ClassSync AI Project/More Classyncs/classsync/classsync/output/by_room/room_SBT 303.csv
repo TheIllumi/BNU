@@ -1,0 +1,6 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Applied_Physics_Lab_SE2_A_S1,Applied_Physics_Lab_SE2_A,Applied Physics Lab,SE2,A,Ms. Amna Rafiq,True,Wednesday,14:00,17:00,SBT 303
+Artificial_Intelligence_CS6_B_S1,Artificial_Intelligence_CS6_B,Artificial Intelligence,CS6,B,Mr. Saad Azhar Saeed,False,Tuesday,14:00,15:30,SBT 303
+Multivariable_Calculus_SE2_F_S1,Multivariable_Calculus_SE2_F,Multivariable Calculus,SE2,F,Mr. Ali Haider,False,Tuesday,11:00,12:30,SBT 303
+Object_Oriented_Programming_CS2_C_S1,Object_Oriented_Programming_CS2_C,Object Oriented Programming,CS2,C,Mr. Asim Irshad,False,Monday,11:00,12:30,SBT 303
+Object_Oriented_Programming_SE2_F_S1,Object_Oriented_Programming_SE2_F,Object Oriented Programming,SE2,F,Mr. Ameer Hamza,False,Tuesday,08:00,09:30,SBT 303

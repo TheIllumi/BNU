@@ -1,0 +1,7 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Formal_Methods_in_Software_Engineering_SE8_-_S1,Formal_Methods_in_Software_Engineering_SE8_-,Formal Methods in Software Engineering,SE8,-,Dr. Natash Ali,False,Friday,14:00,15:30,SLASS 208
+Formal_Methods_in_Software_Engineering_SE8_-_S2,Formal_Methods_in_Software_Engineering_SE8_-,Formal Methods in Software Engineering,SE8,-,Dr. Natash Ali,False,Monday,12:30,14:00,SB 307
+Management_Information_Systems_MBC4_-_S1,Management_Information_Systems_MBC4_-,Management Information Systems,MBC4,-,Dr. Natash Ali,False,Thursday,12:30,14:00,Central block 003
+Management_Information_Systems_MBC4_-_S2,Management_Information_Systems_MBC4_-,Management Information Systems,MBC4,-,Dr. Natash Ali,False,Wednesday,15:30,17:00,SLASS 202
+Professional_Practices_CS6_A+B_S1,Professional_Practices_CS6_A+B,Professional Practices,CS6,A+B,Dr. Natash Ali,False,Thursday,14:00,15:30,SB 301
+Professional_Practices_CS6_A+B_S2,Professional_Practices_CS6_A+B,Professional Practices,CS6,A+B,Dr. Natash Ali,False,Tuesday,14:00,15:30,SLASS 309

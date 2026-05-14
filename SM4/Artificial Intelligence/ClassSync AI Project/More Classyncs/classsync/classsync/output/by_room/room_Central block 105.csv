@@ -1,0 +1,4 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Artificial_Intelligence_CS6_A_S2,Artificial_Intelligence_CS6_A,Artificial Intelligence,CS6,A,Dr. Usman Nazir,False,Wednesday,15:30,17:00,Central block 105
+Artificial_Intelligence_CS6_B_S2,Artificial_Intelligence_CS6_B,Artificial Intelligence,CS6,B,Mr. Saad Azhar Saeed,False,Tuesday,12:30,14:00,Central block 105
+Linear_Algebra_CS4_C_S1,Linear_Algebra_CS4_C,Linear Algebra,CS4,C,Mr. Farhan Ali,False,Tuesday,14:00,15:30,Central block 105

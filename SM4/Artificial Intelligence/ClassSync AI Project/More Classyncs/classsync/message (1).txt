@@ -1,0 +1,118 @@
+import os
+import sys
+import traceback
+import pandas as pd
+
+from enhanced_timetable_optimizer import (
+    CONFIG,
+    load_course_and_room_data,
+    create_sessions_from_courses,
+    generate_time_slots,
+    generate_population,
+    optimize,
+    format_schedule_by_day,
+    analyze_schedule_quality,
+    check_long_sessions,
+    export_schedule_by_section,
+    export_schedule_by_teacher,
+    export_schedule_by_room
+)
+
+# --- Safe printing wrapper to avoid UnicodeEncodeError on Windows ---
+def safe_print(*args, **kwargs):
+    """Print safely, replacing unsupported characters if needed."""
+    sep = kwargs.get("sep", " ")
+    end = kwargs.get("end", "\n")
+    msg = sep.join(str(a) for a in args) + end
+    enc = getattr(sys.stdout, "encoding", None) or "utf-8"
+    try:
+        sys.stdout.write(msg)
+    except Exception:
+        try:
+            sys.stdout.buffer.write(msg.encode(enc, errors="replace"))
+        except Exception:
+            sys.stdout.write(msg.encode("ascii", errors="replace").decode("ascii"))
+
+def main():
+    safe_print("\nENHANCED UNIVERSITY TIMETABLE OPTIMIZER")
+    safe_print("=" * 50)
+
+    # -------------------------
+    # Load course & room data
+    # -------------------------
+    course_path = os.path.join("data", "Courses.csv")
+    room_path = os.path.join("data", "Rooms.csv")
+
+    safe_print("Loading course and room data...")
+    if not os.path.exists(course_path) or not os.path.exists(room_path):
+        safe_print("ERROR: Missing input files.\nExpected:")
+        safe_print(f" - {course_path}")
+        safe_print(f" - {room_path}")
+        return
+
+    courses_df, rooms_df = load_course_and_room_data(course_path, room_path)
+
+    # Create sessions
+    sessions_df = create_sessions_from_courses(courses_df)
+
+    # Generate time slots
+    slots = generate_time_slots(CONFIG)
+    safe_print(f"[OK] Generated {len(slots)} available time slots")
+
+    # -------------------------
+    # Generate population
+    # -------------------------
+    population, all_forced, all_missed = generate_population(
+        CONFIG.get("population_size", 30),
+        sessions_df,
+        slots,
+        rooms_df,
+        show_progress=True
+    )
+
+    # -------------------------
+    # Run optimization
+    # -------------------------
+    best_schedule, best_score, history = optimize(
+        population,
+        slots,
+        rooms_df,
+        generations=CONFIG.get("generations", 100),
+        elite_size=3,
+        mutation_rate=0.15,
+        adaptive=True
+    )
+
+    safe_print("\nOptimization complete!")
+    safe_print(f"Best fitness score: {best_score}")
+    safe_print(f"Sessions scheduled: {len(best_schedule)} / {len(sessions_df)}")
+
+    # -------------------------
+    # Report & Export
+    # -------------------------
+    format_schedule_by_day(best_schedule)
+    analyze_schedule_quality(best_schedule, sessions_df)
+
+    # Check long sessions
+    overlong = check_long_sessions(best_schedule)
+    if overlong:
+        safe_print(f"\nWARNING: Found {len(overlong)} overlong sessions (> 3 hours):")
+        for course, day, start, end, duration in overlong:
+            safe_print(f" - {course} on {day} {start}-{end} ({duration:.0f} mins)")
+    else:
+        safe_print("\n[OK] No overlong sessions found.")
+
+    # Export schedules
+    export_schedule_by_section(best_schedule, output_dir="exports/sections")
+    export_schedule_by_teacher(best_schedule, output_dir="exports/teachers")
+    export_schedule_by_room(best_schedule, output_dir="exports/rooms")
+
+    safe_print("\nAll schedules exported successfully.")
+
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        safe_print("\nAborted by user.")
+    except Exception:
+        safe_print("Unhandled error:\n", traceback.format_exc())

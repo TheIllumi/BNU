@@ -1,0 +1,7 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Computer_Networks_CS6_A+B_S1,Computer_Networks_CS6_A+B,Computer Networks,CS6,A+B,Mr. Nabeel Ahsan,False,Wednesday,14:00,15:30,SLASS 212
+Computer_Networks_CS6_A+B_S2,Computer_Networks_CS6_A+B,Computer Networks,CS6,A+B,Mr. Nabeel Ahsan,False,Friday,11:00,12:30,SLASS 202
+Professional_Practices_CS6_A+B_S1,Professional_Practices_CS6_A+B,Professional Practices,CS6,A+B,Dr. Natash Ali,False,Thursday,14:00,15:30,SB 301
+Professional_Practices_CS6_A+B_S2,Professional_Practices_CS6_A+B,Professional Practices,CS6,A+B,Dr. Natash Ali,False,Tuesday,14:00,15:30,SLASS 309
+Theory_of_Programming_Languages_CS6_A+B_S1,Theory_of_Programming_Languages_CS6_A+B,Theory of Programming Languages,CS6,A+B,Ms. Huda Sarfraz,False,Friday,08:00,09:30,SLASS 208
+Theory_of_Programming_Languages_CS6_A+B_S2,Theory_of_Programming_Languages_CS6_A+B,Theory of Programming Languages,CS6,A+B,Ms. Huda Sarfraz,False,Friday,08:00,09:30,SBT 305

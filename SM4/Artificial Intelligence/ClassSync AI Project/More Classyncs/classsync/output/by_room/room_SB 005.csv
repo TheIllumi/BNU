@@ -1,0 +1,5 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Computer_Networks_CS6_A+B_S2,Computer_Networks_CS6_A+B,Computer Networks,CS6,A+B,Mr. Nabeel Ahsan,False,Tuesday,09:30,11:00,SB 005
+Computer_Organization_&_Assembly_Language_CS4_A_S2,Computer_Organization_&_Assembly_Language_CS4_A,Computer Organization & Assembly Language,CS4,A,Ms. Nimra Abbas,False,Wednesday,15:30,17:00,SB 005
+Math_II_CS+SE2_B_(Med)_S1,Math_II_CS+SE2_B_(Med),Math II,CS+SE2,B (Med),Ms. Ujala Aftab,False,Wednesday,12:30,14:00,SB 005
+Object_Oriented_Programming_CS2_A_S1,Object_Oriented_Programming_CS2_A,Object Oriented Programming,CS2,A,Mr. Nouman Ali,False,Monday,09:30,11:00,SB 005

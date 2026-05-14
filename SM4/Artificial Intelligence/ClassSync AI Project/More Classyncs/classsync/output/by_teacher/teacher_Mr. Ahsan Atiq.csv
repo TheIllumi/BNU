@@ -1,0 +1,4 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Advanced_Database_Management_Systems_Lab_CS4_A_S1,Advanced_Database_Management_Systems_Lab_CS4_A,Advanced Database Management Systems Lab,CS4,A,Mr. Ahsan Atiq,True,Monday,08:00,11:00,SLASS 202
+Advanced_Database_Management_Systems_Lab_CS4_B_S1,Advanced_Database_Management_Systems_Lab_CS4_B,Advanced Database Management Systems Lab,CS4,B,Mr. Ahsan Atiq,True,Tuesday,09:30,12:30,SB 206
+Advanced_Database_Management_Systems_Lab_CS4_C_S1,Advanced_Database_Management_Systems_Lab_CS4_C,Advanced Database Management Systems Lab,CS4,C,Mr. Ahsan Atiq,True,Friday,14:00,17:00,SLASS 202

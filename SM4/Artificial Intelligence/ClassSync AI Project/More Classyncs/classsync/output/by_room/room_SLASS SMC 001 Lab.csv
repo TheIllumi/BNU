@@ -1,0 +1,6 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Computer_Networks_Lab_CS6_B_S1,Computer_Networks_Lab_CS6_B,Computer Networks Lab,CS6,B,Mr. Shazil Ali,True,Thursday,14:00,17:00,SLASS SMC 001 Lab
+Data_Structures_&_Algorithms_CS4_A_S1,Data_Structures_&_Algorithms_CS4_A,Data Structures & Algorithms,CS4,A,Ms. Huda Sarfraz,False,Tuesday,11:00,12:30,SLASS SMC 001 Lab
+Data_Structures_&_Algorithms_CS4_C_S1,Data_Structures_&_Algorithms_CS4_C,Data Structures & Algorithms,CS4,C,Mr. Muhammad Ali,False,Monday,15:30,17:00,SLASS SMC 001 Lab
+Digital_Logic_Design_Lab_CS2_C_S1,Digital_Logic_Design_Lab_CS2_C,Digital Logic Design Lab,CS2,C,Mr. Uzair Bashir,True,Wednesday,14:00,17:00,SLASS SMC 001 Lab
+Organizational_Behavior_MBC4_-_S2,Organizational_Behavior_MBC4_-,Organizational Behavior,MBC4,-,Dr. Shah Ali Murtaza,False,Monday,12:30,14:00,SLASS SMC 001 Lab

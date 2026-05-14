@@ -1,0 +1,5 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Artificial_Intelligence_CS6_A_S1,Artificial_Intelligence_CS6_A,Artificial Intelligence,CS6,A,Dr. Usman Nazir,False,Tuesday,14:00,15:30,SLASS 208
+Ideology_&_Constitution_of_Pakistan_CS2_C_S1,Ideology_&_Constitution_of_Pakistan_CS2_C,Ideology & Constitution of Pakistan,CS2,C,Mr. Syed Adeel Ijaz,False,Thursday,14:00,15:30,SLASS 208
+Linear_Algebra_CS4_B_S2,Linear_Algebra_CS4_B,Linear Algebra,CS4,B,Mr. Farhan Ali,False,Monday,15:30,17:00,SLASS 208
+Professional_Practices_CS6_A+B_S1,Professional_Practices_CS6_A+B,Professional Practices,CS6,A+B,Dr. Natash Ali,False,Friday,14:00,15:30,SLASS 208

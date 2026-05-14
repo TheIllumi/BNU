@@ -1,0 +1,4 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Advanced_Database_Management_Systems_CS4_A_S1,Advanced_Database_Management_Systems_CS4_A,Advanced Database Management Systems,CS4,A,Ms. Talia Noreen,False,Thursday,12:30,14:00,SLASS 212
+Artificial_Intelligence_CS4_A_S1,Artificial_Intelligence_CS4_A,Artificial Intelligence,CS4,A,Dr. Usman Nazir,False,Friday,14:00,15:30,SLASS 212
+Programming_for_2D_&_Web_3D_Apps_CS6_-_S1,Programming_for_2D_&_Web_3D_Apps_CS6_-,Programming for 2D & Web 3D Apps,CS6,-,Mr. Nouman Ali,False,Wednesday,15:30,17:00,SLASS 212

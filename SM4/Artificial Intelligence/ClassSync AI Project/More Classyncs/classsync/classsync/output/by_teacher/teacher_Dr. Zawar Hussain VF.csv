@@ -1,0 +1,5 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Multivariable_Calculus_CS2_A_S1,Multivariable_Calculus_CS2_A,Multivariable Calculus,CS2,A,Dr. Zawar Hussain VF,False,Monday,15:30,17:00,SB 003 LAB
+Multivariable_Calculus_CS2_A_S2,Multivariable_Calculus_CS2_A,Multivariable Calculus,CS2,A,Dr. Zawar Hussain VF,False,Thursday,15:30,17:00,Central block 004
+Multivariable_Calculus_CS2_B_S1,Multivariable_Calculus_CS2_B,Multivariable Calculus,CS2,B,Dr. Zawar Hussain VF,False,Friday,08:00,09:30,SLASS 202
+Multivariable_Calculus_CS2_B_S2,Multivariable_Calculus_CS2_B,Multivariable Calculus,CS2,B,Dr. Zawar Hussain VF,False,Monday,14:00,15:30,SLASS 201

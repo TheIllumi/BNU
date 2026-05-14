@@ -1,0 +1,6 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Digital_Logic_Design_CS2_A_S1,Digital_Logic_Design_CS2_A,Digital Logic Design,CS2,A,Dr. Shafaat Ahmed Bazaz,False,Friday,12:30,14:00,Central block 003
+Ideology_&_Constitution_of_Pakistan_CS2_A_S1,Ideology_&_Constitution_of_Pakistan_CS2_A,Ideology & Constitution of Pakistan,CS2,A,Mr. Inam ul Haq,False,Tuesday,09:30,11:00,Central block 003
+Management_Information_Systems_MBC4_-_S1,Management_Information_Systems_MBC4_-,Management Information Systems,MBC4,-,Dr. Natash Ali,False,Thursday,12:30,14:00,Central block 003
+Object_Oriented_Programming_Lab_SE2_F_S1,Object_Oriented_Programming_Lab_SE2_F,Object Oriented Programming Lab,SE2,F,Mr. Ameer Hamza,True,Monday,15:30,18:30,Central block 003
+Probability_for_Data_Science_MBC2_-_S2,Probability_for_Data_Science_MBC2_-,Probability for Data Science,MBC2,-,Ms. Amna Humayun,False,Friday,14:00,15:30,Central block 003

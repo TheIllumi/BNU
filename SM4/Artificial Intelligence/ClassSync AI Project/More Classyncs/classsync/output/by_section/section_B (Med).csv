@@ -1,0 +1,3 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Math_II_CS+SE2_B_(Med)_S1,Math_II_CS+SE2_B_(Med),Math II,CS+SE2,B (Med),Ms. Ujala Aftab,False,Wednesday,12:30,14:00,SB 005
+Math_II_CS+SE2_B_(Med)_S2,Math_II_CS+SE2_B_(Med),Math II,CS+SE2,B (Med),Ms. Ujala Aftab,False,Tuesday,09:30,11:00,SLASS 206

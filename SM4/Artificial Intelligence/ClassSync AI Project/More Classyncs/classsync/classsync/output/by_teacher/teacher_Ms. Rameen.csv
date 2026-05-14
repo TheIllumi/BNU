@@ -1,0 +1,4 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Object_Oriented_Programming_Lab_CS2_A_S1,Object_Oriented_Programming_Lab_CS2_A,Object Oriented Programming Lab,CS2,A,Ms. Rameen,True,Monday,15:30,18:30,SB 301
+Object_Oriented_Programming_Lab_CS2_B_S1,Object_Oriented_Programming_Lab_CS2_B,Object Oriented Programming Lab,CS2,B,Ms. Rameen,True,Wednesday,15:30,18:30,SLASS 207
+Object_Oriented_Programming_Lab_CS2_C_S1,Object_Oriented_Programming_Lab_CS2_C,Object Oriented Programming Lab,CS2,C,Ms. Rameen,True,Tuesday,15:30,18:30,SLASS 206

@@ -1,0 +1,4 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Graph_Theory_CS8_-_S1,Graph_Theory_CS8_-,Graph Theory,CS8,-,Mr. Ali Haider,False,Monday,14:00,15:30,SBT 204
+Immersive_Media_CS+SE8_A_S1,Immersive_Media_CS+SE8_A,Immersive Media,CS+SE8,A,SMC Jou.,False,Wednesday,14:00,15:30,SBT 204
+Micro_Economics_MBC2_-_S1,Micro_Economics_MBC2_-,Micro Economics,MBC2,-,Ms. Fatima Malik,False,Wednesday,14:00,15:30,SBT 204

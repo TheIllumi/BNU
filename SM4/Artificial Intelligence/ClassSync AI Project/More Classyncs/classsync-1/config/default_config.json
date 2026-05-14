@@ -1,0 +1,44 @@
+{
+  "time_settings": {
+    "daily_start_time": "08:00",
+    "daily_end_time": "17:00",
+    "class_duration_minutes": 90,
+    "break_duration_minutes": 15
+  },
+  "scheduling_rules": {
+    "working_days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "max_classes_per_day": 4,
+    "max_instructor_hours_per_day": 8,
+    "allow_back_to_back": true,
+    "allow_mixed_sections": true,
+    "allow_evening_classes": true,
+    "evening_threshold": "16:00"
+  },
+  "genetic_algorithm": {
+    "population_size": 30,
+    "generations": 100,
+    "elite_size": 3,
+    "mutation_rate": 0.15,
+    "crossover_rate": 0.8,
+    "tournament_size": 3
+  },
+  "output_settings": {
+    "generate_excel": true,
+    "generate_csv": true,
+    "organize_by_categories": true,
+    "export_categories": ["section", "teacher", "room", "program"]
+  },
+  "excel_styling": {
+    "theme": "minimal",
+    "header_color": "4472C4",
+    "day_color": "D9E2F3",
+    "room_color": "F2F2F2",
+    "font_name": "Calibri",
+    "font_size": 10,
+    "auto_adjust_columns": true
+  },
+  "colors": {
+    "auto_generate": true,
+    "custom_colors": {}
+  }
+}

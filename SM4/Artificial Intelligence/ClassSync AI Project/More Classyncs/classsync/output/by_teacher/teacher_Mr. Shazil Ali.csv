@@ -1,0 +1,5 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Computer_Networks_Lab_CS6_B_S1,Computer_Networks_Lab_CS6_B,Computer Networks Lab,CS6,B,Mr. Shazil Ali,True,Thursday,14:00,17:00,SLASS SMC 001 Lab
+Computer_Networks_Lab_CS6_A_S1,Computer_Networks_Lab_CS6_A,Computer Networks Lab,CS6,A,Mr. Shazil Ali,True,Tuesday,12:30,15:30,SLASS 013
+Database_Management_Systems_Lab_MBC4_-_S1,Database_Management_Systems_Lab_MBC4_-,Database Management Systems Lab,MBC4,-,Mr. Shazil Ali,True,Monday,15:30,18:30,SLASS 013
+Event_Driven_Programming_Lab_MBC2_-_S1,Event_Driven_Programming_Lab_MBC2_-,Event Driven Programming Lab,MBC2,-,Mr. Shazil Ali,True,Thursday,08:00,11:00,SLASS 203

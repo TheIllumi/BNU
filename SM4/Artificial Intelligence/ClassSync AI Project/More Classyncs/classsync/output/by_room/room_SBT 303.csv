@@ -1,0 +1,6 @@
+Session_ID,Course_Key,Course_Name,Program,Section,Instructor,Is_Lab,Weekday,Start_Time,End_Time,Room
+Advanced_Database_Management_Systems_CS4_B_S1,Advanced_Database_Management_Systems_CS4_B,Advanced Database Management Systems,CS4,B,Ms. Talia Noreen,False,Friday,14:00,15:30,SBT 303
+Computer_Organization_&_Assembly_Language_CS4_C_S1,Computer_Organization_&_Assembly_Language_CS4_C,Computer Organization & Assembly Language,CS4,C,Ms. Nimra Abbas,False,Tuesday,12:30,14:00,SBT 303
+Math_II_CS+SE2_A_(Med)_S1,Math_II_CS+SE2_A_(Med),Math II,CS+SE2,A (Med),Ms. Ujala Aftab,False,Tuesday,08:00,09:30,SBT 303
+Multivariable_Calculus_CS2_C_S2,Multivariable_Calculus_CS2_C,Multivariable Calculus,CS2,C,Mr. Farhan Ali,False,Tuesday,08:00,09:30,SBT 303
+Probability_&_Statistics_SE2_E_S2,Probability_&_Statistics_SE2_E,Probability & Statistics,SE2,E,Mr. Hamza Sarfraz,False,Tuesday,14:00,15:30,SBT 303

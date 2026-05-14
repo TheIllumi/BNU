@@ -1,0 +1,19 @@
+Schedule Generation Summary
+========================================
+Total Sessions: 175
+Lab Sessions: 33
+Theory Sessions: 142
+Instructors: 40
+Rooms Used: 34
+Programs: 11
+Sections: 10
+
+Generated Files:
+--------------------
+Section: 20 files
+Teacher: 80 files
+Room: 68 files
+Program: 22 files
+Master: 2 files
+
+All files saved to: output/

@@ -1,0 +1,1387 @@
+import sys
+import os
+import csv
+import json
+import subprocess
+import threading
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, Any, Optional, Tuple
+
+from PyQt6.QtWidgets import (
+    QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
+    QTabWidget, QPushButton, QLabel, QTableWidget, QTableWidgetItem,
+    QHeaderView, QMessageBox, QAbstractItemView, QComboBox, QTimeEdit,
+    QProgressDialog, QFileDialog, QStatusBar, QFrame, QSplitter,
+    QTextEdit, QCheckBox, QSpinBox, QLineEdit, QGroupBox, QGridLayout,
+    QProgressBar, QSizePolicy, QScrollArea
+)
+from PyQt6.QtCore import (
+    Qt, QTime, QPropertyAnimation, QEasingCurve, QThread, pyqtSignal,
+    QTimer, QRect, QParallelAnimationGroup, QSequentialAnimationGroup
+)
+from PyQt6.QtGui import (
+    QIcon, QColor, QPalette, QFont, QPainter, QPainterPath, QLinearGradient,
+    QPixmap, QAction, QKeySequence
+)
+
+# Constants
+COURSES_FILE = 'Courses_Processed.csv'
+ROOMS_FILE = 'Rooms.csv'
+CONFIG_FILE = 'ui_config.json'
+DATA_DIR = 'data'
+
+class OptimizationWorker(QThread):
+    """Background thread for running optimization scripts."""
+    
+    progress_update = pyqtSignal(str)
+    progress_value = pyqtSignal(int)
+    finished_signal = pyqtSignal(bool, str)
+    
+    def __init__(self, config_dict, scripts_to_run):
+        super().__init__()
+        self.config_dict = config_dict
+        self.scripts_to_run = scripts_to_run
+        
+    def run(self):
+        try:
+            self.progress_update.emit("🚀 Starting optimization process...")
+            self.progress_value.emit(10)
+            
+            # Save configuration file
+            os.makedirs(DATA_DIR, exist_ok=True)
+            config_path = os.path.join(DATA_DIR, CONFIG_FILE)
+            with open(config_path, 'w') as f:
+                json.dump(self.config_dict, f, indent=4)
+            
+            self.progress_update.emit("💾 Configuration saved successfully")
+            self.progress_value.emit(20)
+            
+            # Run each script
+            for i, script_path in enumerate(self.scripts_to_run, 1):
+                script_name = os.path.basename(script_path)
+                progress = 20 + (i * 60 // len(self.scripts_to_run))
+                
+                self.progress_update.emit(f"📋 Running {script_name}...")
+                self.progress_value.emit(progress)
+                
+                if not os.path.exists(script_path):
+                    self.finished_signal.emit(False, f"❌ Script not found: {script_path}")
+                    return
+                
+                # Run the script with comprehensive error handling
+                try:
+                    result = subprocess.run(
+                        [sys.executable, script_path], 
+                        capture_output=True, 
+                        text=True,
+                        encoding='utf-8',
+                        errors='replace',  # Replace invalid characters instead of crashing
+                        cwd=os.path.dirname(os.path.abspath(script_path)) if os.path.dirname(script_path) else ".",
+                        timeout=300  # 5 minute timeout
+                    )
+                except subprocess.TimeoutExpired:
+                    self.finished_signal.emit(False, f"❌ {script_name} timed out after 5 minutes")
+                    return
+                except Exception as e:
+                    self.finished_signal.emit(False, f"❌ Error running {script_name}: {str(e)}")
+                    return
+                
+                if result.returncode != 0:
+                    error_msg = f"❌ {script_name} failed:\n{result.stderr}\n{result.stdout}"
+                    self.finished_signal.emit(False, error_msg)
+                    return
+                
+                self.progress_update.emit(f"✅ {script_name} completed successfully")
+            
+            self.progress_value.emit(100)
+            self.progress_update.emit("🎉 All optimization scripts completed successfully!")
+            self.finished_signal.emit(True, "✅ Schedule generation completed successfully!")
+            
+        except Exception as e:
+            self.finished_signal.emit(False, f"❌ Unexpected error: {str(e)}")
+
+class AnimatedButton(QPushButton):
+    """Custom animated button with hover effects and rounded corners."""
+    
+    def __init__(self, text: str, parent=None):
+        super().__init__(text, parent)
+        self.setMinimumHeight(40)
+        self.setAttribute(Qt.WidgetAttribute.WA_Hover, True)
+        
+        # Set custom styling
+        self.setStyleSheet("""
+            QPushButton {
+                background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                    stop:0 #4a90e2, stop:1 #357abd);
+                border: none;
+                border-radius: 20px;
+                color: white;
+                font-weight: bold;
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+            QPushButton:hover {
+                background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                    stop:0 #5ba0f2, stop:1 #458acd);
+            }
+            QPushButton:pressed {
+                background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                    stop:0 #3580d2, stop:1 #2570ad);
+            }
+            QPushButton:disabled {
+                background: #666666;
+                color: #999999;
+            }
+        """)
+
+class EnhancedEntryTab(QWidget):
+    """Enhanced tab for data entry with better styling and validation."""
+    
+    def __init__(self, csv_file: str, columns: list, tab_name: str, 
+                 dropdown_columns: Dict[int, list] = None, required_columns: list = None):
+        super().__init__()
+        self.csv_file = os.path.join(DATA_DIR, csv_file)
+        self.columns = columns
+        self.tab_name = tab_name
+        self.dropdown_columns = dropdown_columns or {}
+        self.required_columns = required_columns or []
+        self.undo_stack = []
+        
+        self.setup_ui()
+        self.load_data()
+        
+    def setup_ui(self):
+        layout = QVBoxLayout()
+        
+        # Header section
+        header_frame = QFrame()
+        header_frame.setStyleSheet("""
+            QFrame {
+                background-color: #3a3a3a;
+                border-radius: 10px;
+                margin: 5px;
+                padding: 10px;
+            }
+        """)
+        header_layout = QHBoxLayout(header_frame)
+        
+        title_label = QLabel(f"📊 {self.tab_name} Management")
+        title_label.setFont(QFont("Arial", 16, QFont.Weight.Bold))
+        title_label.setStyleSheet("color: #4a90e2; padding: 10px;")
+        
+        # Action buttons
+        btn_layout = QHBoxLayout()
+        
+        self.add_btn = AnimatedButton("➕ Add Row")
+        self.remove_btn = AnimatedButton("🗑️ Remove Row")
+        self.undo_btn = AnimatedButton("↩️ Undo")
+        self.import_btn = AnimatedButton("📥 Import")
+        self.export_btn = AnimatedButton("📤 Export")
+        
+        # Set different colors for different button types
+        self.remove_btn.setStyleSheet(self.remove_btn.styleSheet().replace("#4a90e2", "#e74c3c").replace("#357abd", "#c0392b"))
+        self.undo_btn.setStyleSheet(self.undo_btn.styleSheet().replace("#4a90e2", "#f39c12").replace("#357abd", "#e67e22"))
+        self.import_btn.setStyleSheet(self.import_btn.styleSheet().replace("#4a90e2", "#27ae60").replace("#357abd", "#229954"))
+        self.export_btn.setStyleSheet(self.export_btn.styleSheet().replace("#4a90e2", "#8e44ad").replace("#357abd", "#7d3c98"))
+        
+        for btn in [self.add_btn, self.remove_btn, self.undo_btn, self.import_btn, self.export_btn]:
+            btn_layout.addWidget(btn)
+            
+        btn_layout.addStretch()
+        
+        header_layout.addWidget(title_label)
+        header_layout.addLayout(btn_layout)
+        
+        # Table section
+        self.table = QTableWidget()
+        self.table.setColumnCount(len(self.columns))
+        self.table.setHorizontalHeaderLabels(self.columns)
+        self.table.setAlternatingRowColors(True)
+        self.table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        self.table.setEditTriggers(QAbstractItemView.EditTrigger.DoubleClicked)
+        
+        # Enhanced table styling
+        self.table.setStyleSheet("""
+            QTableWidget {
+                background-color: #2b2b2b;
+                alternate-background-color: #3a3a3a;
+                gridline-color: #555555;
+                border-radius: 8px;
+                font-size: 12px;
+            }
+            QTableWidget::item {
+                padding: 8px;
+                border: none;
+            }
+            QTableWidget::item:selected {
+                background-color: #4a90e2;
+            }
+            QHeaderView::section {
+                background-color: #404040;
+                color: white;
+                padding: 10px;
+                border: 1px solid #555555;
+                font-weight: bold;
+            }
+        """)
+        
+        layout.addWidget(header_frame)
+        layout.addWidget(self.table, stretch=1)
+        
+        self.setLayout(layout)
+        self.connect_signals()
+        
+    def connect_signals(self):
+        """Connect button signals to their respective functions."""
+        self.add_btn.clicked.connect(self.add_row)
+        self.remove_btn.clicked.connect(self.remove_row)
+        self.undo_btn.clicked.connect(self.undo_remove)
+        self.import_btn.clicked.connect(self.import_data)
+        self.export_btn.clicked.connect(self.export_data)
+        
+    def load_data(self):
+        """Load data from CSV file with error handling."""
+        os.makedirs(DATA_DIR, exist_ok=True)
+        
+        if not os.path.exists(self.csv_file):
+            return
+            
+        try:
+            with open(self.csv_file, 'r', newline='', encoding='utf-8') as f:
+                reader = csv.reader(f)
+                data = list(reader)
+                
+            if not data:
+                return
+                
+            # Skip header row
+            data_rows = data[1:] if len(data) > 1 else []
+            self.table.setRowCount(len(data_rows))
+            
+            for row_idx, row_data in enumerate(data_rows):
+                for col_idx, cell_data in enumerate(row_data):
+                    if col_idx < len(self.columns):
+                        # Check if this column should have a dropdown
+                        if col_idx in self.dropdown_columns:
+                            combo = QComboBox()
+                            combo.addItems(self.dropdown_columns[col_idx])
+                            if cell_data in self.dropdown_columns[col_idx]:
+                                combo.setCurrentText(cell_data)
+                            combo.setStyleSheet("""
+                                QComboBox {
+                                    background-color: #3a3a3a;
+                                    border-radius: 4px;
+                                    min-height: 10px;
+                                    color: white;
+                                }
+                            """)
+                            self.table.setCellWidget(row_idx, col_idx, combo)
+                        else:
+                            item = QTableWidgetItem(cell_data)
+                            # Highlight required columns
+                            if col_idx in [i for i, col in enumerate(self.columns) if col in self.required_columns]:
+                                item.setBackground(QColor(70, 130, 180, 50))
+                            self.table.setItem(row_idx, col_idx, item)
+                            
+            self.table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+            
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to load data from {self.csv_file}:\n{str(e)}")
+            
+    def add_row(self):
+        """Add a new row with animated feedback."""
+        row_count = self.table.rowCount()
+        self.table.insertRow(row_count)
+        
+        # Add dropdown widgets for appropriate columns
+        for col_idx, options in self.dropdown_columns.items():
+            combo = QComboBox()
+            combo.addItems(options)
+            combo.setStyleSheet("""
+                QComboBox {
+                    background-color: #3a3a3a;
+                    border: 1px solid #555555;
+                    border-radius: 4px;
+                    min-height: 10px;
+                    color: white;
+                }
+            """)
+            self.table.setCellWidget(row_count, col_idx, combo)
+            
+        # Highlight required columns in new row
+        for col_idx, col_name in enumerate(self.columns):
+            if col_name in self.required_columns and col_idx not in self.dropdown_columns:
+                item = QTableWidgetItem("")
+                item.setBackground(QColor(70, 130, 180, 50))
+                self.table.setItem(row_count, col_idx, item)
+                
+        # Scroll to new row
+        self.table.scrollToBottom()
+        
+    def remove_row(self):
+        """Remove selected rows with confirmation."""
+        selected_rows = set(index.row() for index in self.table.selectionModel().selectedRows())
+        
+        if not selected_rows:
+            QMessageBox.information(self, "No Selection", "Please select one or more rows to delete.")
+            return
+            
+        reply = QMessageBox.question(
+            self, "Confirm Deletion",
+            f"Are you sure you want to delete {len(selected_rows)} row(s)?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No
+        )
+        
+        if reply == QMessageBox.StandardButton.Yes:
+            # Store data for undo functionality
+            for row in sorted(selected_rows, reverse=True):
+                row_data = []
+                for col in range(self.table.columnCount()):
+                    widget = self.table.cellWidget(row, col)
+                    if isinstance(widget, QComboBox):
+                        row_data.append(widget.currentText())
+                    else:
+                        item = self.table.item(row, col)
+                        row_data.append(item.text() if item else "")
+                        
+                self.undo_stack.append((row, row_data))
+                self.table.removeRow(row)
+                
+    def undo_remove(self):
+        """Undo the last row removal."""
+        if not self.undo_stack:
+            QMessageBox.information(self, "Nothing to Undo", "No recent deletions to undo.")
+            return
+            
+        row_idx, row_data = self.undo_stack.pop()
+        self.table.insertRow(row_idx)
+        
+        for col_idx, data in enumerate(row_data):
+            if col_idx in self.dropdown_columns:
+                combo = QComboBox()
+                combo.addItems(self.dropdown_columns[col_idx])
+                combo.setCurrentText(data)
+                combo.setStyleSheet("""
+                    QComboBox {
+                        background-color: #3a3a3a;
+                        border-radius: 4px;
+                        min-height: 10px;
+                        color: white;
+                    }
+                """)
+                self.table.setCellWidget(row_idx, col_idx, combo)
+            else:
+                item = QTableWidgetItem(data)
+                if col_idx in [i for i, col in enumerate(self.columns) if col in self.required_columns]:
+                    item.setBackground(QColor(70, 130, 180, 50))
+                self.table.setItem(row_idx, col_idx, item)
+                
+    def import_data(self):
+        """Import data from CSV file."""
+        file_path, _ = QFileDialog.getOpenFileName(
+            self, f"Import {self.tab_name} Data", "",
+            "CSV Files (*.csv);;All Files (*)"
+        )
+        
+        if file_path:
+            try:
+                import shutil
+                shutil.copy(file_path, self.csv_file)
+                self.load_data()
+                QMessageBox.information(self, "Success", f"Data imported successfully from {os.path.basename(file_path)}")
+            except Exception as e:
+                QMessageBox.critical(self, "Import Error", f"Failed to import data:\n{str(e)}")
+                
+    def export_data(self):
+        """Export current table data to CSV file."""
+        file_path, _ = QFileDialog.getSaveFileName(
+            self, f"Export {self.tab_name} Data", f"{self.tab_name}_export.csv",
+            "CSV Files (*.csv);;All Files (*)"
+        )
+        
+        if file_path:
+            try:
+                self.save_data()
+                import shutil
+                shutil.copy(self.csv_file, file_path)
+                QMessageBox.information(self, "Success", f"Data exported successfully to {os.path.basename(file_path)}")
+            except Exception as e:
+                QMessageBox.critical(self, "Export Error", f"Failed to export data:\n{str(e)}")
+                
+    def validate_data(self) -> Tuple[bool, str]:
+        """Validate current table data."""
+        errors = []
+        
+        for row in range(self.table.rowCount()):
+            for col, col_name in enumerate(self.columns):
+                if col_name in self.required_columns:
+                    widget = self.table.cellWidget(row, col)
+                    if isinstance(widget, QComboBox):
+                        value = widget.currentText()
+                    else:
+                        item = self.table.item(row, col)
+                        value = item.text() if item else ""
+                        
+                    if not value.strip():
+                        errors.append(f"Row {row + 1}: {col_name} is required")
+                        
+        return len(errors) == 0, "\n".join(errors)
+        
+    def save_data(self) -> bool:
+        """Save current table data to CSV file."""
+        is_valid, error_msg = self.validate_data()
+        if not is_valid:
+            QMessageBox.warning(self, "Validation Error", f"Please fix the following errors:\n{error_msg}")
+            return False
+            
+        try:
+            headers = self.columns
+            rows = []
+            
+            for row in range(self.table.rowCount()):
+                row_data = []
+                for col in range(self.table.columnCount()):
+                    widget = self.table.cellWidget(row, col)
+                    if isinstance(widget, QComboBox):
+                        row_data.append(widget.currentText())
+                    else:
+                        item = self.table.item(row, col)
+                        row_data.append(item.text() if item else "")
+                rows.append(row_data)
+                
+            os.makedirs(DATA_DIR, exist_ok=True)
+            with open(self.csv_file, 'w', newline='', encoding='utf-8') as f:
+                writer = csv.writer(f)
+                writer.writerow(headers)
+                writer.writerows(rows)
+                
+            return True
+            
+        except Exception as e:
+            QMessageBox.critical(self, "Save Error", f"Failed to save data:\n{str(e)}")
+            return False
+
+class ConfigTab(QWidget):
+    """Enhanced configuration tab with better organization and validation."""
+    
+    def __init__(self):
+        super().__init__()
+        self.config_file = os.path.join(DATA_DIR, CONFIG_FILE)
+        self.setup_ui()
+        self.load_config()
+        
+    def setup_ui(self):
+        layout = QVBoxLayout()
+        
+        # Header
+        header_frame = QFrame()
+        header_frame.setStyleSheet("""
+            QFrame {
+                background-color: #3a3a3a;
+                border-radius: 10px;
+                margin: 5px;
+                padding: 10px;
+            }
+        """)
+        header_layout = QHBoxLayout(header_frame)
+        
+        title_label = QLabel("⚙️ Configuration Settings")
+        title_label.setFont(QFont("Arial", 16, QFont.Weight.Bold))
+        title_label.setStyleSheet("color: #4a90e2; padding: 10px;")
+        
+        header_layout.addWidget(title_label)
+        header_layout.addStretch()
+        
+        # Create scrollable content area
+        scroll_area = QScrollArea()
+        scroll_widget = QWidget()
+        scroll_layout = QVBoxLayout(scroll_widget)
+        
+        # Group configurations by category
+        self.create_time_settings_group(scroll_layout)
+        self.create_scheduling_rules_group(scroll_layout)
+        self.create_optimization_settings_group(scroll_layout)
+        self.create_output_settings_group(scroll_layout)
+        
+        scroll_area.setWidget(scroll_widget)
+        scroll_area.setWidgetResizable(True)
+        scroll_area.setStyleSheet("""
+            QScrollArea {
+                border: none;
+                background-color: #2b2b2b;
+            }
+        """)
+        
+        layout.addWidget(header_frame)
+        layout.addWidget(scroll_area, stretch=1)
+        
+        self.setLayout(layout)
+        
+    def create_time_settings_group(self, parent_layout):
+        """Create time-related settings group."""
+        group = QGroupBox("🕐 Time Settings")
+        group.setStyleSheet("""
+            QGroupBox {
+                font-weight: bold;
+                border: 2px solid #555555;
+                border-radius: 10px;
+                margin-top: 10px;
+                padding-top: 10px;
+                color: white;
+            }
+            QGroupBox::title {
+                subcontrol-origin: margin;
+                left: 10px;
+                padding: 0 10px 0 10px;
+            }
+        """)
+        
+        layout = QGridLayout()
+        
+        # Daily start time
+        layout.addWidget(QLabel("Daily Start Time:"), 0, 0)
+        self.daily_start_time = QTimeEdit()
+        self.daily_start_time.setDisplayFormat("HH:mm")
+        self.daily_start_time.setTime(QTime(8, 0))
+        self.style_widget(self.daily_start_time)
+        layout.addWidget(self.daily_start_time, 0, 1)
+        
+        # Daily end time
+        layout.addWidget(QLabel("Daily End Time:"), 1, 0)
+        self.daily_end_time = QTimeEdit()
+        self.daily_end_time.setDisplayFormat("HH:mm")
+        self.daily_end_time.setTime(QTime(15, 30))
+        self.style_widget(self.daily_end_time)
+        layout.addWidget(self.daily_end_time, 1, 1)
+        
+        # Class duration
+        layout.addWidget(QLabel("Class Duration (minutes):"), 2, 0)
+        self.class_duration = QSpinBox()
+        self.class_duration.setRange(30, 180)
+        self.class_duration.setValue(60)
+        self.class_duration.setSuffix(" min")
+        self.style_widget(self.class_duration)
+        layout.addWidget(self.class_duration, 2, 1)
+        
+        group.setLayout(layout)
+        parent_layout.addWidget(group)
+        
+    def create_scheduling_rules_group(self, parent_layout):
+        """Create scheduling rules group."""
+        group = QGroupBox("📋 Scheduling Rules")
+        group.setStyleSheet("""
+            QGroupBox {
+                font-weight: bold;
+                border: 2px solid #555555;
+                border-radius: 10px;
+                margin-top: 10px;
+                padding-top: 10px;
+                color: white;
+            }
+            QGroupBox::title {
+                subcontrol-origin: margin;
+                left: 10px;
+                padding: 0 10px 0 10px;
+            }
+        """)
+        
+        layout = QGridLayout()
+        
+        # Working days
+        layout.addWidget(QLabel("Working Days:"), 0, 0)
+        self.working_days = QLineEdit("Mon,Tue,Wed,Thu,Fri")
+        self.style_widget(self.working_days)
+        self.working_days.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
+        layout.addWidget(self.working_days, 0, 1)
+
+        # Max classes per day
+        layout.addWidget(QLabel("Max Classes per Day:"), 1, 0)
+        self.max_classes_day = QSpinBox()
+        self.max_classes_day.setRange(1, 10)
+        self.max_classes_day.setValue(4)
+        self.style_widget(self.max_classes_day)
+        self.max_classes_day.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
+        layout.addWidget(self.max_classes_day, 1, 1)
+
+        # Preferred room gap
+        layout.addWidget(QLabel("Preferred Room Gap:"), 2, 0)
+        self.preferred_room_gap = QSpinBox()
+        self.preferred_room_gap.setRange(0, 5)
+        self.preferred_room_gap.setValue(1)
+        self.style_widget(self.preferred_room_gap)
+        self.preferred_room_gap.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
+        layout.addWidget(self.preferred_room_gap, 2, 1)
+
+        # Boolean settings
+        self.allow_back_to_back = QCheckBox("Allow Back-to-Back Classes")
+        self.allow_mixed_sections = QCheckBox("Allow Mixed Sections")
+        self.allow_evening_classes = QCheckBox("Allow Evening Classes")
+        
+        for checkbox in [self.allow_back_to_back, self.allow_mixed_sections, self.allow_evening_classes]:
+            checkbox.setChecked(True)
+            checkbox.setStyleSheet("""
+                QCheckBox {
+                    color: white;
+                    font-size: 12px;
+                }
+                QCheckBox::indicator {
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 3px;
+                    border: 2px solid #555555;
+                }
+                QCheckBox::indicator:checked {
+                    background-color: #4a90e2;
+                    border: 2px solid #4a90e2;
+                }
+            """)
+        
+        layout.addWidget(self.allow_back_to_back, 3, 0, 1, 2)
+        layout.addWidget(self.allow_mixed_sections, 4, 0, 1, 2)
+        layout.addWidget(self.allow_evening_classes, 5, 0, 1, 2)
+        
+        group.setLayout(layout)
+        parent_layout.addWidget(group)
+        
+    def create_optimization_settings_group(self, parent_layout):
+        """Create optimization settings group."""
+        group = QGroupBox("🎯 Optimization Settings")
+        group.setStyleSheet("""
+            QGroupBox {
+                font-weight: bold;
+                border: 2px solid #555555;
+                border-radius: 10px;
+                margin-top: 10px;
+                padding-top: 10px;
+                color: white;
+            }
+            QGroupBox::title {
+                subcontrol-origin: margin;
+                left: 10px;
+                padding: 0 10px 0 10px;
+            }
+        """)
+        
+        layout = QGridLayout()
+        
+        # Population size
+        layout.addWidget(QLabel("Population Size:"), 0, 0)
+        self.population_size = QSpinBox()
+        self.population_size.setRange(10, 100)
+        self.population_size.setValue(30)
+        self.style_widget(self.population_size)
+        layout.addWidget(self.population_size, 0, 1)
+        
+        # Generations
+        layout.addWidget(QLabel("Generations:"), 1, 0)
+        self.generations = QSpinBox()
+        self.generations.setRange(50, 500)
+        self.generations.setValue(100)
+        self.style_widget(self.generations)
+        layout.addWidget(self.generations, 1, 1)
+        
+        group.setLayout(layout)
+        parent_layout.addWidget(group)
+        
+    def create_output_settings_group(self, parent_layout):
+        """Create output settings group."""
+        group = QGroupBox("📊 Output Settings")
+        group.setStyleSheet("""
+            QGroupBox {
+                font-weight: bold;
+                border: 2px solid #555555;
+                border-radius: 10px;
+                margin-top: 10px;
+                padding-top: 10px;
+                color: white;
+            }
+            QGroupBox::title {
+                subcontrol-origin: margin;
+                left: 10px;
+                padding: 0 10px 0 10px;
+            }
+        """)
+        
+        layout = QGridLayout()
+        
+        # Generate visual timetable
+        self.generate_visual = QCheckBox("Generate Visual Timetables")
+        self.generate_visual.setChecked(True)
+        self.generate_visual.setStyleSheet("""
+            QCheckBox {
+                color: white;
+                font-size: 12px;
+            }
+            QCheckBox::indicator {
+                width: 16px;
+                height: 16px;
+                border-radius: 3px;
+                border: 2px solid #555555;
+            }
+            QCheckBox::indicator:checked {
+                background-color: #4a90e2;
+                border: 2px solid #4a90e2;
+            }
+        """)
+        layout.addWidget(self.generate_visual, 0, 0, 1, 2)
+        
+        group.setLayout(layout)
+        parent_layout.addWidget(group)
+        
+    def style_widget(self, widget):
+        """Apply consistent styling to widgets."""
+        widget.setStyleSheet("""
+            QWidget {
+                background-color: #3a3a3a;
+                border: 2px solid #555555;
+                border-radius: 8px;
+                padding: 5px;
+                color: white;
+                font-size: 12px;
+            }
+            QWidget:focus {
+                border-color: #4a90e2;
+            }
+        """)
+        
+    def get_config_dict(self) -> Dict[str, Any]:
+        """Get current configuration as dictionary."""
+        return {
+            "working_days": self.working_days.text(),
+            "daily_start_time": self.daily_start_time.time().toString("HH:mm"),
+            "daily_end_time": self.daily_end_time.time().toString("HH:mm"),
+            "class_duration_minutes": self.class_duration.value(),
+            "max_classes_per_day": self.max_classes_day.value(),
+            "preferred_room_gap": self.preferred_room_gap.value(),
+            "allow_back_to_back": self.allow_back_to_back.isChecked(),
+            "allow_mixed_sections": self.allow_mixed_sections.isChecked(),
+            "allow_evening_classes": self.allow_evening_classes.isChecked(),
+            "population_size": self.population_size.value(),
+            "generations": self.generations.value(),
+            "generate_visual_timetables": self.generate_visual.isChecked()
+        }
+        
+    def set_config_from_dict(self, config: Dict[str, Any]):
+        """Set configuration from dictionary."""
+        try:
+            if "daily_start_time" in config:
+                time_parts = config["daily_start_time"].split(":")
+                self.daily_start_time.setTime(QTime(int(time_parts[0]), int(time_parts[1])))
+                
+            if "daily_end_time" in config:
+                time_parts = config["daily_end_time"].split(":")
+                self.daily_end_time.setTime(QTime(int(time_parts[0]), int(time_parts[1])))
+                
+            self.class_duration.setValue(config.get("class_duration_minutes", 60))
+            self.working_days.setText(config.get("working_days", "Mon,Tue,Wed,Thu,Fri"))
+            self.max_classes_day.setValue(config.get("max_classes_per_day", 4))
+            self.preferred_room_gap.setValue(config.get("preferred_room_gap", 1))
+            self.allow_back_to_back.setChecked(config.get("allow_back_to_back", True))
+            self.allow_mixed_sections.setChecked(config.get("allow_mixed_sections", True))
+            self.allow_evening_classes.setChecked(config.get("allow_evening_classes", True))
+            self.population_size.setValue(config.get("population_size", 30))
+            self.generations.setValue(config.get("generations", 100))
+            self.generate_visual.setChecked(config.get("generate_visual_timetables", True))
+            
+        except Exception as e:
+            QMessageBox.warning(self, "Config Error", f"Error setting configuration: {str(e)}")
+            
+    def save_config(self):
+        """Save current configuration to file."""
+        try:
+            os.makedirs(DATA_DIR, exist_ok=True)
+            config = self.get_config_dict()
+            with open(self.config_file, 'w') as f:
+                json.dump(config, f, indent=4)
+            return True
+        except Exception as e:
+            QMessageBox.critical(self, "Save Error", f"Failed to save configuration:\n{str(e)}")
+            return False
+            
+    def load_config(self):
+        """Load configuration from file."""
+        if os.path.exists(self.config_file):
+            try:
+                with open(self.config_file, 'r') as f:
+                    config = json.load(f)
+                self.set_config_from_dict(config)
+            except Exception as e:
+                QMessageBox.warning(self, "Load Error", f"Failed to load configuration:\n{str(e)}")
+                self.reset_to_defaults()
+        else:
+            self.reset_to_defaults()
+            
+    def reset_to_defaults(self):
+        """Reset all configuration to default values."""
+        default_config = {
+            "working_days": "Mon,Tue,Wed,Thu,Fri",
+            "daily_start_time": "08:00",
+            "daily_end_time": "15:30",
+            "class_duration_minutes": 60,
+            "max_classes_per_day": 4,
+            "preferred_room_gap": 1,
+            "allow_back_to_back": True,
+            "allow_mixed_sections": True,
+            "allow_evening_classes": True,
+            "population_size": 30,
+            "generations": 100,
+            "generate_visual_timetables": True
+        }
+        self.set_config_from_dict(default_config)
+        
+    def validate_config(self) -> Tuple[bool, str]:
+        """Validate current configuration."""
+        errors = []
+        
+        # Time validation
+        if self.daily_start_time.time() >= self.daily_end_time.time():
+            errors.append("Daily start time must be before end time")
+            
+        # Working days validation
+        working_days = self.working_days.text().strip()
+        if not working_days:
+            errors.append("Working days cannot be empty")
+        else:
+            valid_days = {'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'}
+            days = [day.strip() for day in working_days.split(',')]
+            invalid_days = [day for day in days if day not in valid_days]
+            if invalid_days:
+                errors.append(f"Invalid working days: {', '.join(invalid_days)}")
+                
+        return len(errors) == 0, "\n".join(errors)
+
+class ClassSyncAIMainWindow(QMainWindow):
+    """Main application window with enhanced features."""
+    
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("⚙️ ClassSyncAI - Advanced Scheduling Platform")
+        self.setGeometry(100, 100, 1400, 900)
+        
+        # Apply dark theme
+        self.apply_dark_theme()
+        
+        # Initialize components
+        self.setup_ui()
+        self.setup_menubar()
+        self.setup_statusbar()
+        
+        # Background worker
+        self.optimization_worker = None
+        
+    def apply_dark_theme(self):
+        """Apply dark theme to the entire application."""
+        palette = QPalette()
+        
+        # Window colors
+        palette.setColor(QPalette.ColorRole.Window, QColor(35, 35, 35))
+        palette.setColor(QPalette.ColorRole.WindowText, Qt.GlobalColor.white)
+        
+        # Base colors
+        palette.setColor(QPalette.ColorRole.Base, QColor(50, 50, 50))
+        palette.setColor(QPalette.ColorRole.AlternateBase, QColor(60, 60, 60))
+        
+        # Text colors
+        palette.setColor(QPalette.ColorRole.Text, Qt.GlobalColor.white)
+        palette.setColor(QPalette.ColorRole.BrightText, Qt.GlobalColor.red)
+        
+        # Button colors
+        palette.setColor(QPalette.ColorRole.Button, QColor(70, 70, 70))
+        palette.setColor(QPalette.ColorRole.ButtonText, Qt.GlobalColor.white)
+        
+        # Highlight colors
+        palette.setColor(QPalette.ColorRole.Highlight, QColor(74, 144, 226))
+        palette.setColor(QPalette.ColorRole.HighlightedText, Qt.GlobalColor.black)
+        
+        self.setPalette(palette)
+        
+        # Set application-wide stylesheet
+        self.setStyleSheet("""
+            QMainWindow {
+                background-color: #232323;
+            }
+            QTabWidget::pane {
+                border: 1px solid #555555;
+                background-color: #2b2b2b;
+                border-radius: 8px;
+            }
+            QTabWidget::tab-bar {
+                alignment: center;
+            }
+            QTabBar::tab {
+                background-color: #404040;
+                color: white;
+                padding: 10px 20px;
+                margin: 2px;
+                border-radius: 8px;
+                font-weight: bold;
+            }
+            QTabBar::tab:selected {
+                background-color: #4a90e2;
+            }
+            QTabBar::tab:hover {
+                background-color: #5a5a5a;
+            }
+            QLabel {
+                color: white;
+            }
+        """)
+        
+    def setup_ui(self):
+        """Setup the main user interface."""
+        central_widget = QWidget()
+        self.setCentralWidget(central_widget)
+        
+        # Main layout
+        main_layout = QVBoxLayout()
+        
+        # Header section
+        header_frame = QFrame()
+        header_frame.setStyleSheet("""
+            QFrame {
+                background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                    stop:0 #4a90e2, stop:1 #357abd);
+                border-radius: 15px;
+                margin: 10px;
+            }
+        """)
+        header_frame.setMaximumHeight(140)
+        
+        header_layout = QHBoxLayout(header_frame)
+        
+        # App title and description
+        title_layout = QVBoxLayout()
+        app_title = QLabel("⚙️ ClassSyncAI")
+        app_title.setFont(QFont("Arial", 20, QFont.Weight.Bold))
+        app_title.setStyleSheet("color: white;")
+        
+        app_subtitle = QLabel("Advanced AI-Powered Academic Scheduling Platform")
+        app_subtitle.setFont(QFont("Arial", 10))
+        app_subtitle.setStyleSheet("color: white; margin-top: 10px;")
+        
+        title_layout.addWidget(app_title)
+        title_layout.addWidget(app_subtitle)
+        title_layout.addStretch()
+        
+        header_layout.addLayout(title_layout)
+        header_layout.addStretch()
+        
+        # Tab widget
+        self.tabs = QTabWidget()
+        self.tabs.setTabPosition(QTabWidget.TabPosition.North)
+        
+        # Create tabs
+        self.create_tabs()
+        
+        # Control panel
+        control_panel = self.create_control_panel()
+        
+        main_layout.addWidget(header_frame)
+        main_layout.addWidget(self.tabs, stretch=1)
+        main_layout.addWidget(control_panel)
+        
+        central_widget.setLayout(main_layout)
+        
+    def create_tabs(self):
+        """Create and configure all tabs."""
+        # Courses tab
+        course_columns = ["Course Name", "Hours per week", "Program", "Section", "Instructor"]
+        required_courses = ["Course Name", "Program", "Section", "Instructor"]
+        self.course_tab = EnhancedEntryTab(
+            COURSES_FILE, course_columns, "Courses",
+            required_columns=required_courses
+        )
+        
+        # Rooms tab (Fixed to match optimizer expectations)
+        room_columns = ["Rooms", "Type"]  # Changed from "Room Name" to "Rooms"
+        room_dropdowns = {1: ["Lab", "Theory"]}
+        required_rooms = ["Rooms", "Type"]
+        self.room_tab = EnhancedEntryTab(
+            ROOMS_FILE, room_columns, "Rooms",
+            dropdown_columns=room_dropdowns,
+            required_columns=required_rooms
+        )
+        
+        # Configuration tab
+        self.config_tab = ConfigTab()
+        
+        # Add tabs with icons
+        self.tabs.addTab(self.course_tab, "📘 Courses")
+        self.tabs.addTab(self.room_tab, "🏫 Rooms")
+        self.tabs.addTab(self.config_tab, "⚙️ Configuration")
+        
+    def create_control_panel(self):
+        """Create the control panel with action buttons."""
+        control_frame = QFrame()
+        control_frame.setStyleSheet("""
+            QFrame {
+                background-color: #3a3a3a;
+                border-radius: 15px;
+                margin: 10px;
+                padding: 15px;
+            }
+        """)
+        control_frame.setMaximumHeight(150)
+        
+        layout = QVBoxLayout(control_frame)
+        
+        # Status section
+        status_layout = QHBoxLayout()
+        self.status_label = QLabel("Ready to generate schedules")
+        self.status_label.setStyleSheet("color: #4a90e2; font-weight: bold; font-size: 14px;")
+        
+        status_layout.addWidget(self.status_label)
+        status_layout.addStretch()
+        
+        # Progress bar
+        self.progress_bar = QProgressBar()
+        self.progress_bar.setVisible(False)
+        self.progress_bar.setStyleSheet("""
+            QProgressBar {
+                border: 2px solid #555555;
+                border-radius: 8px;
+                text-align: center;
+                background-color: #2b2b2b;
+                color: white;
+            }
+            QProgressBar::chunk {
+                background-color: #4a90e2;
+                border-radius: 6px;
+            }
+        """)
+        
+        # Console output
+        self.console_output = QTextEdit()
+        self.console_output.setMaximumHeight(60)
+        self.console_output.setStyleSheet("""
+            QTextEdit {
+                background-color: #1e1e1e;
+                color: #00ff00;
+                font-family: 'Courier New', monospace;
+                font-size: 10px;
+                border: 1px solid #555555;
+                border-radius: 4px;
+            }
+        """)
+        self.console_output.setReadOnly(True)
+        self.console_output.setVisible(False)
+        
+        # Button section
+        button_layout = QHBoxLayout()
+        
+        self.save_all_btn = AnimatedButton("💾 Save All")
+        self.validate_btn = AnimatedButton("✅ Validate Data")
+        self.run_btn = AnimatedButton("🚀 Generate Schedule")
+        
+        # Style buttons differently
+        self.save_all_btn.setStyleSheet(self.save_all_btn.styleSheet().replace("#4a90e2", "#27ae60").replace("#357abd", "#229954"))
+        self.validate_btn.setStyleSheet(self.validate_btn.styleSheet().replace("#4a90e2", "#f39c12").replace("#357abd", "#e67e22"))
+        
+        # Make run button larger and more prominent
+        self.run_btn.setMinimumSize(180, 50)
+        self.run_btn.setStyleSheet("""
+            QPushButton {
+                background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                    stop:0 #e74c3c, stop:1 #c0392b);
+                border: none;
+                border-radius: 25px;
+                color: white;
+                font-weight: bold;
+                font-size: 16px;
+                padding: 15px 30px;
+            }
+            QPushButton:hover {
+                background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                    stop:0 #f75c4c, stop:1 #d0493b);
+            }
+            QPushButton:pressed {
+                background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                    stop:0 #d73c2c, stop:1 #b0391b);
+            }
+            QPushButton:disabled {
+                background: #666666;
+                color: #999999;
+            }
+        """)
+        
+        button_layout.addWidget(self.save_all_btn)
+        button_layout.addWidget(self.validate_btn)
+        button_layout.addStretch()
+        button_layout.addWidget(self.run_btn)
+        
+        layout.addLayout(status_layout)
+        layout.addWidget(self.progress_bar)
+        layout.addWidget(self.console_output)
+        layout.addLayout(button_layout)
+        
+        # Connect button signals
+        self.save_all_btn.clicked.connect(self.save_all_data)
+        self.validate_btn.clicked.connect(self.validate_all_data)
+        self.run_btn.clicked.connect(self.run_optimization)
+        
+        return control_frame
+        
+    def setup_menubar(self):
+        """Setup the application menu bar."""
+        menubar = self.menuBar()
+        
+        # File menu
+        file_menu = menubar.addMenu("📁 File")
+        
+        save_action = QAction("💾 Save All", self)
+        save_action.setShortcut(QKeySequence.StandardKey.Save)
+        save_action.triggered.connect(self.save_all_data)
+        
+        exit_action = QAction("🚪 Exit", self)
+        exit_action.setShortcut(QKeySequence.StandardKey.Quit)
+        exit_action.triggered.connect(self.close)
+        
+        file_menu.addAction(save_action)
+        file_menu.addSeparator()
+        file_menu.addAction(exit_action)
+        
+        # Tools menu
+        tools_menu = menubar.addMenu("🔧 Tools")
+        
+        validate_action = QAction("✅ Validate All Data", self)
+        validate_action.triggered.connect(self.validate_all_data)
+        
+        tools_menu.addAction(validate_action)
+        
+        # Help menu
+        help_menu = menubar.addMenu("❓ Help")
+        
+        about_action = QAction("ℹ️ About ClassSyncAI", self)
+        about_action.triggered.connect(self.show_about)
+        
+        help_menu.addAction(about_action)
+        
+    def setup_statusbar(self):
+        """Setup the status bar."""
+        self.statusbar = QStatusBar()
+        self.setStatusBar(self.statusbar)
+        
+        # Add permanent widgets to status bar
+        self.data_status = QLabel("Data: Ready")
+        self.config_status = QLabel("Config: Loaded")
+        
+        self.statusbar.addWidget(self.data_status)
+        self.statusbar.addPermanentWidget(self.config_status)
+        
+        self.statusbar.showMessage("ClassSyncAI initialized successfully")
+        
+    # Event handlers and utility methods
+    def save_all_data(self):
+        """Save all tab data."""
+        success_count = 0
+        errors = []
+        
+        # Save courses
+        try:
+            if self.course_tab.save_data():
+                success_count += 1
+                self.data_status.setText("Data: Courses Saved")
+            else:
+                errors.append("Courses data validation failed")
+        except Exception as e:
+            errors.append(f"Error saving courses: {str(e)}")
+            
+        # Save rooms
+        try:
+            if self.room_tab.save_data():
+                success_count += 1
+                self.data_status.setText("Data: Rooms Saved")
+            else:
+                errors.append("Rooms data validation failed")
+        except Exception as e:
+            errors.append(f"Error saving rooms: {str(e)}")
+            
+        # Save configuration
+        try:
+            if self.config_tab.save_config():
+                success_count += 1
+                self.config_status.setText("Config: Saved")
+        except Exception as e:
+            errors.append(f"Error saving configuration: {str(e)}")
+            
+        # Show results
+        if errors:
+            QMessageBox.warning(self, "Save Results", 
+                              f"Saved {success_count}/3 components successfully.\n\nErrors:\n" + "\n".join(errors))
+        else:
+            QMessageBox.information(self, "Success", "All data saved successfully!")
+            self.statusbar.showMessage("All data saved successfully", 3000)
+            
+    def validate_all_data(self):
+        """Validate all data across tabs."""
+        validation_results = []
+        
+        # Validate courses
+        is_valid, error_msg = self.course_tab.validate_data()
+        if is_valid:
+            validation_results.append("✅ Courses: Valid")
+        else:
+            validation_results.append(f"❌ Courses: {error_msg}")
+            
+        # Validate rooms
+        is_valid, error_msg = self.room_tab.validate_data()
+        if is_valid:
+            validation_results.append("✅ Rooms: Valid")
+        else:
+            validation_results.append(f"❌ Rooms: {error_msg}")
+            
+        # Validate configuration
+        is_valid, error_msg = self.config_tab.validate_config()
+        if is_valid:
+            validation_results.append("✅ Configuration: Valid")
+        else:
+            validation_results.append(f"❌ Configuration: {error_msg}")
+            
+        # Show results
+        result_text = "\n".join(validation_results)
+        if all("✅" in result for result in validation_results):
+            QMessageBox.information(self, "Validation Results", f"All data is valid!\n\n{result_text}")
+        else:
+            QMessageBox.warning(self, "Validation Results", f"Some data needs attention:\n\n{result_text}")
+            
+    def run_optimization(self):
+        """Run the scheduling optimization with enhanced UI feedback."""
+        # First save all data
+        self.save_all_data()
+        
+        # Validate before running
+        validation_errors = []
+        course_valid, course_error = self.course_tab.validate_data()
+        room_valid, room_error = self.room_tab.validate_data()
+        config_valid, config_error = self.config_tab.validate_config()
+        
+        if not course_valid:
+            validation_errors.append(f"Courses: {course_error}")
+        if not room_valid:
+            validation_errors.append(f"Rooms: {room_error}")
+        if not config_valid:
+            validation_errors.append(f"Configuration: {config_error}")
+            
+        if validation_errors:
+            QMessageBox.critical(self, "Validation Failed", 
+                               "Please fix the following errors before running:\n\n" + "\n".join(validation_errors))
+            return
+        
+        # Define scripts to run (updated with correct names)
+        scripts_to_run = [
+            "enhanced_run_optimizer.py",        # Main optimizer script
+            "generate_visual_timetables.py"     # Visual timetable generator
+        ]
+        
+        # Check if first script exists (required)
+        if not os.path.exists(scripts_to_run[0]):
+            QMessageBox.critical(self, "Script Missing", 
+                               f"Required optimizer script not found: {scripts_to_run[0]}")
+            return
+        
+        # Remove second script if it doesn't exist (optional)
+        if len(scripts_to_run) > 1 and not os.path.exists(scripts_to_run[1]):
+            scripts_to_run = scripts_to_run[:1]
+            self.update_console(f"Note: {scripts_to_run[1]} not found, skipping visual generation")
+            
+        # Start optimization
+        self.start_optimization_process(scripts_to_run)
+            
+    def start_optimization_process(self, scripts_to_run):
+        """Start the optimization process in background thread."""
+        config_dict = self.config_tab.get_config_dict()
+        
+        # Update UI for running state
+        self.run_btn.setEnabled(False)
+        self.progress_bar.setVisible(True)
+        self.console_output.setVisible(True)
+        self.console_output.clear()
+        self.progress_bar.setValue(0)
+        
+        # Start worker thread
+        self.optimization_worker = OptimizationWorker(config_dict, scripts_to_run)
+        self.optimization_worker.progress_update.connect(self.update_console)
+        self.optimization_worker.progress_value.connect(self.progress_bar.setValue)
+        self.optimization_worker.finished_signal.connect(self.optimization_finished)
+        self.optimization_worker.start()
+        
+    def update_console(self, message):
+        """Update console output and status."""
+        self.console_output.append(message)
+        self.status_label.setText(message)
+        
+        # Auto-scroll to bottom
+        cursor = self.console_output.textCursor()
+        cursor.movePosition(cursor.MoveOperation.End)
+        self.console_output.setTextCursor(cursor)
+        
+    def optimization_finished(self, success, message):
+        """Handle optimization completion."""
+        self.run_btn.setEnabled(True)
+        
+        if success:
+            self.status_label.setText("✅ Optimization completed successfully!")
+            self.progress_bar.setValue(100)
+            QMessageBox.information(self, "Success", message)
+            
+            # Check if output files were created
+            output_locations = []
+            if os.path.exists("output"):
+                output_locations.append("output/ directory")
+            if os.path.exists("exports"):
+                output_locations.append("exports/ directory")
+                
+            if output_locations:
+                self.statusbar.showMessage(f"Results saved to: {', '.join(output_locations)}", 5000)
+        else:
+            self.status_label.setText("❌ Optimization failed")
+            self.progress_bar.setVisible(False)
+            QMessageBox.critical(self, "Optimization Failed", message)
+            
+        # Keep progress bar and console visible for a moment if successful
+        if success:
+            QTimer.singleShot(3000, lambda: self.progress_bar.setVisible(False))
+            QTimer.singleShot(3000, lambda: self.console_output.setVisible(False))
+        else:
+            self.console_output.setVisible(False)
+            
+    def show_about(self):
+        """Show about dialog."""
+        QMessageBox.about(self, "About ClassSyncAI", 
+                         """<h3>ClassSyncAI</h3>
+                         <p>Advanced AI-Powered Academic Scheduling Platform</p>
+                         <p>Version 2.0</p>
+                         <p>Intelligently generates optimized class schedules using genetic algorithms.</p>
+                         <p><b>Features:</b></p>
+                         <ul>
+                         <li>Advanced conflict detection and resolution</li>
+                         <li>Customizable scheduling constraints</li>
+                         <li>Visual timetable generation</li>
+                         <li>Multi-format export options</li>
+                         </ul>""")
+
+def main():
+    """Main application entry point."""
+    try:
+        app = QApplication(sys.argv)
+        app.setStyle("Fusion")
+        
+        # Set application properties
+        app.setApplicationName("ClassSyncAI")
+        app.setApplicationVersion("2.0")
+        app.setOrganizationName("ClassSyncAI")
+        
+        window = ClassSyncAIMainWindow()
+        window.show()
+        
+        sys.exit(app.exec())
+        
+    except Exception as e:
+        print(f"Application error: {e}")
+        import traceback
+        traceback.print_exc()
+
+if __name__ == '__main__':
+    main()

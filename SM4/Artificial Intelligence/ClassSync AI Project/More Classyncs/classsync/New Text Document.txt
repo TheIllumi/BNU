@@ -1,0 +1,22 @@
+classsync/
+├── main.py                     # Application entry point
+├── requirements.txt            # Minimal dependencies (4 packages only)
+├── SETUP_GUIDE.md             # Comprehensive setup guide
+├── core/                       # Core business logic
+│   ├── __init__.py
+│   ├── config_manager.py       # JSON config with validation
+│   ├── data_manager.py         # Data loading/validation
+│   └── optimizer.py            # Enhanced GA (preserved original)
+├── gui/                        # Clean, professional interface
+│   ├── __init__.py
+│   ├── main_window.py          # Main application window
+│   ├── data_tabs.py           # Data entry interface
+│   └── config_tab.py          # Configuration interface
+├── output/                     # Output generation
+│   ├── __init__.py
+│   ├── excel_generator.py      # Minimal Excel styling
+│   └── file_organizer.py       # Category organization
+├── config/
+│   └── default_config.json     # Default settings
+│   └── ui_theme.json     # UI settings
+└── data/                       # Input data directory
