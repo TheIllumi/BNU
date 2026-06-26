@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HCI &amp; Computer Graphics - Final Exam Study Tracker</title>
+  <meta name="description" content="A complete study and revision dashboard for CSC-335 HCI & Computer Graphics final exam preparation." />
+
+  <!-- Fonts: load Inter + JetBrains Mono when online; system fonts are used offline. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="themes.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-row">
+          <div class="brand-mark" id="brandMark"></div>
+          <div>
+            <div class="brand-title">HCI Study Tracker</div>
+            <div class="brand-sub">CSC-335 &middot; Final Exam</div>
+          </div>
+        </div>
+      </div>
+      <nav class="side-scroll" id="navList"></nav>
+      <div class="side-foot">
+        <button id="exportBtn" title="Save your progress to a file"></button>
+        <button id="importBtn" title="Load progress from a file"></button>
+        <button id="resetBtn" title="Clear all progress"></button>
+        <input type="file" id="importFile" accept="application/json" hidden />
+      </div>
+    </aside>
+
+    <div class="mobile-overlay" id="overlay"></div>
+
+    <!-- Main -->
+    <div class="main">
+      <header class="header">
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu"></button>
+        <div class="search-wrap">
+          <span class="s-ico" id="searchIco"></span>
+          <input type="text" id="globalSearch" placeholder="Search topics, questions, definitions..." autocomplete="off" />
+        </div>
+        <div class="header-right">
+          <button class="icon-btn" id="miniTimer" title="Focus timer"></button>
+          <button class="icon-btn" id="themeToggle" title="Switch theme" aria-label="Switch theme"></button>
+        </div>
+      </header>
+
+      <main class="content">
+        <div id="searchView" class="view"></div>
+        <div id="dashboardView" class="view"></div>
+        <div id="studyView" class="view"></div>
+        <div id="theoryView" class="view"></div>
+        <div id="scenarioView" class="view"></div>
+        <div id="mcqView" class="view"></div>
+        <div id="diagramView" class="view"></div>
+        <div id="revisionView" class="view"></div>
+        <div id="scopeView" class="view"></div>
+        <div id="timerView" class="view"></div>
+        <div id="notesView" class="view"></div>
+        <div id="glossaryView" class="view"></div>
+      </main>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

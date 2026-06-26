@@ -1,0 +1,32 @@
+# Task List — Frontend Implementation
+
+- [x] Task 1: Environment Setup & Verification
+  - [x] Create `frontend/.env` file
+  - [x] Run `npm install` and verify local dev environment
+  - [x] Build and verify frontend Docker container (Skipped: Docker daemon not running locally)
+- [x] Task 2: F1 — Enhanced Manager Review Queue
+  - [x] Add filter dropdowns (Crew, Complexity) and state in `InspectionQueue.jsx`
+  - [x] Create collapsible detail panel UI in queue items
+  - [x] Integrate fetching of task revision history (`GET /api/tasks/{task_id}/history`)
+  - [x] Create "Confirm All" batch action button with parallel promises
+  - [x] Apply CSS styles in `index.css`
+- [x] Task 3: F2 — Employee Workload View
+  - [x] Create `WorkloadView.jsx` component for grouping by complexity
+  - [x] Add "Board View" / "Workload View" toggle switch to `EmployeeDashboard.jsx`
+  - [x] Implement client-side progress bar calculations per complexity bucket
+  - [x] Apply CSS styles in `index.css`
+- [x] Task 4: F4 — Dark/Light Theme Toggle
+  - [x] Create theme management utility `theme.js`
+  - [x] Restructure CSS variables in `index.css` for light mode overrides
+  - [x] Initialize theme state in `App.jsx`
+  - [x] Render toggle button in `Topbar.jsx`
+- [x] Task 5: F3 — Drag-and-Drop Board
+  - [x] Add HTML5 draggable attributes and handlers to `TicketCard.jsx`
+  - [x] Add drop event listeners and indicators to `BoardColumn.jsx`
+  - [x] Connect drop events to start, submit, and review endpoints
+  - [x] Add rejection feedback prompt and state reversion logic
+- [x] Task 6: F5 — Notification Bell
+  - [x] Create `NotificationBell.jsx` component
+  - [x] Add client-side task polling with 10s interval
+  - [x] Implement task state delta comparison
+  - [x] Display bell badge and dropdown tray in `Topbar.jsx`

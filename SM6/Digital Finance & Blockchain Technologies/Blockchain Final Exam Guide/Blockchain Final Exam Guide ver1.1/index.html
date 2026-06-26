@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlockStudy — Blockchain Final Exam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="logo">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3H8l-2 4h12z"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
+      BlockStudy
+    </div>
+    <button class="sidebar-close icon-btn" id="sidebarClose" title="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <nav class="sidebar-nav">
+    <button class="nav-item active" data-view="dashboard">
+      <span class="nav-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></span>
+      Dashboard
+    </button>
+    <button class="nav-item" data-view="topics">
+      <span class="nav-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+      Topics
+    </button>
+    <button class="nav-item" data-view="mcq">
+      <span class="nav-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+      MCQ Practice
+    </button>
+    <button class="nav-item" data-view="questions">
+      <span class="nav-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
+      Question Bank
+    </button>
+    <button class="nav-item" data-view="diagrams">
+      <span class="nav-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+      Diagrams
+    </button>
+    <button class="nav-item" data-view="calculations">
+      <span class="nav-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg></span>
+      Calculations
+    </button>
+    <button class="nav-item" data-view="revision">
+      <span class="nav-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+      Last-Min Revision
+    </button>
+    <button class="nav-item" data-view="search">
+      <span class="nav-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+      Search
+    </button>
+  </nav>
+
+  <div class="sidebar-footer">
+    <button class="btn-ghost" id="themeToggle">
+      <span class="nav-icon" id="themeIcon">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </span>
+      Toggle Theme
+    </button>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<div class="main-wrapper">
+  <header class="topbar">
+    <button class="hamburger icon-btn" id="hamburger">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="topbar-title" id="topbarTitle">Dashboard</div>
+    <div class="topbar-actions">
+      <input type="text" id="globalSearch" class="search-mini" placeholder="Quick search…" />
+      <button class="btn-outline icon-label" id="exportBtn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Export
+      </button>
+      <button class="btn-outline icon-label" id="importBtnTrigger">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        Import
+      </button>
+      <button class="btn-danger-sm icon-label" id="resetBtn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.7"/></svg>
+        Reset
+      </button>
+      <input type="file" id="importFileInput" accept=".json" style="display:none" />
+    </div>
+  </header>
+
+  <main class="content" id="mainContent">
+
+    <!-- VIEW: DASHBOARD -->
+    <section class="view active" id="view-dashboard">
+      <h1 class="page-title">Exam Dashboard</h1>
+
+      <div class="exam-meta-banner">
+        <div class="meta-item"><strong>50 Marks</strong> Total</div>
+        <div class="meta-sep"></div>
+        <div class="meta-item">Part 1 — 10M MCQs</div>
+        <div class="meta-item">Part 2 — 20M Theory &amp; Diagrams</div>
+        <div class="meta-item">Part 3 — 20M Calculations</div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card" id="sc-readiness">
+          <div class="readiness-ring-wrap">
+            <svg class="readiness-ring" viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg">
+              <circle class="ring-bg" cx="44" cy="44" r="36"/>
+              <circle class="ring-fill" id="readinessFill" cx="44" cy="44" r="36"/>
+            </svg>
+            <div class="readiness-center">
+              <div class="stat-big" id="readinessScore">0</div>
+              <div class="stat-denom">/ 100</div>
+            </div>
+          </div>
+          <div class="stat-label">Readiness Score</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-big" id="topicsDone">0</div>
+          <div class="stat-label">Topics Completed</div>
+          <div class="stat-sub" id="topicsDoneOf">of 0 total</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-big" id="revisionCount">0</div>
+          <div class="stat-label">Marked for Revision</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-big" id="mcqAccuracy">—</div>
+          <div class="stat-label">MCQ Accuracy</div>
+          <div class="stat-sub" id="mcqStat">0 attempted</div>
+        </div>
+      </div>
+
+      <div class="progress-section">
+        <div class="progress-row">
+          <span>Overall Completion</span>
+          <span id="pctTopics">0%</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill" id="barTopics"></div></div>
+        <div class="progress-row">
+          <span>Diagrams Practised</span>
+          <span id="pctDiagrams">0%</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill c2" id="barDiagrams"></div></div>
+        <div class="progress-row">
+          <span>Calculations Done</span>
+          <span id="pctCalcs">0%</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill c3" id="barCalcs"></div></div>
+        <div class="progress-row">
+          <span>Questions Practised</span>
+          <span id="pctQuestions">0%</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill c4" id="barQuestions"></div></div>
+      </div>
+
+      <div class="diff-row">
+        <div class="diff-badge easy"><span class="dot"></span>Easy: <span id="dEasy">0</span> remaining</div>
+        <div class="diff-badge medium"><span class="dot"></span>Medium: <span id="dMedium">0</span> remaining</div>
+        <div class="diff-badge hard"><span class="dot"></span>Hard: <span id="dHard">0</span> remaining</div>
+      </div>
+
+      <div class="widget-card">
+        <div class="widget-title">Study Next — Smart Recommendations</div>
+        <div id="studyNext" class="study-next-list"></div>
+      </div>
+
+      <div class="widget-card prediction-card">
+        <div class="widget-title">High-Confidence Exam Predictions</div>
+        <div class="pred-grid">
+          <div class="pred-col">
+            <div class="pred-head">Part 1 — MCQs (10M)</div>
+            <ul>
+              <li>SHA-256 &amp; Merkle root location</li>
+              <li>Digital signatures — 3 guarantees</li>
+              <li>Ethereum facts (Buterin, gas, Solidity)</li>
+              <li>PoW vs PoS; permissionless</li>
+              <li>Smallest units (satoshi, wei)</li>
+              <li>Public Distributed Ledger</li>
+            </ul>
+          </div>
+          <div class="pred-col">
+            <div class="pred-head">Part 2 — Theory &amp; Diagrams (20M)</div>
+            <ul>
+              <li>Block structure <span class="sure">✦</span></li>
+              <li>Merkle tree &amp; root <span class="sure">✦</span></li>
+              <li>Bitcoin transaction chain <span class="sure">✦</span></li>
+              <li>Hashing vs encryption</li>
+              <li>Digital signatures (ANI trio)</li>
+              <li>Ethereum vs Bitcoin; gas</li>
+            </ul>
+          </div>
+          <div class="pred-col">
+            <div class="pred-head">Part 3 — Calculations (20M)</div>
+            <ul>
+              <li>Target from nBits + leading zeros <span class="sure">✦✦</span></li>
+              <li>Difficulty from two targets <span class="sure">✦✦</span></li>
+              <li>n from hash rate (n=log₂(600P)) <span class="sure">✦</span></li>
+              <li>Bytecode disassembly + stored value <span class="sure">✦</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW: TOPICS -->
+    <section class="view" id="view-topics">
+      <h1 class="page-title">Study Topics</h1>
+      <div class="topics-toolbar">
+        <input type="text" id="topicSearch" class="search-bar" placeholder="Filter topics…" />
+        <select id="topicFilter" class="select-filter">
+          <option value="all">All Statuses</option>
+          <option value="not-started">Not Started</option>
+          <option value="in-progress">In Progress</option>
+          <option value="completed">Completed</option>
+          <option value="revision">For Revision</option>
+        </select>
+        <select id="diffFilter" class="select-filter">
+          <option value="all">All Difficulty</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <button class="btn-outline icon-label" id="markAllTopics">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Mark All Done
+        </button>
+      </div>
+      <div id="topicsList" class="topics-list"></div>
+    </section>
+
+    <!-- VIEW: MCQ -->
+    <section class="view" id="view-mcq">
+      <h1 class="page-title">MCQ Practice</h1>
+      <div class="mcq-meta-bar">
+        <span>Attempted: <strong id="mcqAttempted">0</strong></span>
+        <span>Correct: <strong id="mcqCorrect">0</strong></span>
+        <span>Accuracy: <strong id="mcqAcc">—</strong></span>
+        <button class="btn-outline icon-label" id="resetMCQ">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.7"/></svg>
+          Reset Score
+        </button>
+        <select id="mcqDiffFilter" class="select-filter">
+          <option value="all">All MCQs</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <button class="btn-primary icon-label" id="shuffleMCQ">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+          Shuffle
+        </button>
+      </div>
+
+      <div class="mcq-card" id="mcqCard">
+        <div class="mcq-counter" id="mcqCounter">Q 1 / 100</div>
+        <div class="mcq-question" id="mcqQuestion">Loading…</div>
+        <div class="mcq-options" id="mcqOptions"></div>
+        <div class="mcq-explanation hidden" id="mcqExplanation"></div>
+        <div class="mcq-controls">
+          <button class="btn-outline icon-label" id="prevMCQ">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Prev
+          </button>
+          <button class="btn-primary" id="revealMCQ">Reveal Answer</button>
+          <button class="btn-outline icon-label" id="nextMCQ">
+            Next
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="mcq-nav-strip" id="mcqNavStrip"></div>
+    </section>
+
+    <!-- VIEW: QUESTION BANK -->
+    <section class="view" id="view-questions">
+      <h1 class="page-title">Question Bank</h1>
+      <div class="qbank-tabs">
+        <button class="qtab active" data-qtype="short">Short Qs</button>
+        <button class="qtab" data-qtype="long">Long Qs</button>
+        <button class="qtab" data-qtype="diagram">Diagram Qs</button>
+        <button class="qtab" data-qtype="calc">Calculation Qs</button>
+      </div>
+      <div id="questionBankList" class="qbank-list"></div>
+    </section>
+
+    <!-- VIEW: DIAGRAMS -->
+    <section class="view" id="view-diagrams">
+      <h1 class="page-title">Diagram Practice</h1>
+      <p class="view-subtitle">Practice drawing each diagram from memory. These are guaranteed marks in Part 2.</p>
+      <div id="diagramsList" class="diagrams-list"></div>
+    </section>
+
+    <!-- VIEW: CALCULATIONS -->
+    <section class="view" id="view-calculations">
+      <h1 class="page-title">Calculation Practice</h1>
+      <p class="view-subtitle">Part 3 is 20 marks — all scoreable with exact answers. Master these formulas.</p>
+
+      <div class="formula-box">
+        <div class="formula-title">Key Formulas</div>
+        <pre class="formula-code">target     = mantissa × 2^(8 × (exponent − 3))
+difficulty = difficulty_1_target / current_target
+n          = log₂(600 × P)          [computations needed]
+hashRate   = difficulty × 2³² / 600
+txID       = SHA256(SHA256(txRecord))
+address    = RIPEMD160(SHA256(publicKey))
+1 BTC = 10⁸ satoshi  |  1 Ether = 10¹⁸ wei</pre>
+      </div>
+
+      <div id="calcList" class="calc-list"></div>
+    </section>
+
+    <!-- VIEW: LAST-MIN REVISION -->
+    <section class="view" id="view-revision">
+      <h1 class="page-title">Last-Minute Revision</h1>
+      <p class="view-subtitle">Read this the night before and 30 minutes before the exam.</p>
+
+      <div class="revision-grid">
+        <div class="rev-card">
+          <div class="rev-title">Key Definitions</div>
+          <ul class="rev-list" id="revDefinitions"></ul>
+        </div>
+        <div class="rev-card">
+          <div class="rev-title">Key Formulas</div>
+          <pre class="formula-code small" id="revFormulas"></pre>
+        </div>
+        <div class="rev-card">
+          <div class="rev-title">Important Differences</div>
+          <ul class="rev-list" id="revDifferences"></ul>
+        </div>
+        <div class="rev-card warning-card">
+          <div class="rev-title">Common MCQ Traps</div>
+          <ul class="rev-list trap-list" id="revTraps"></ul>
+        </div>
+        <div class="rev-card highlight-card">
+          <div class="rev-title">Highest Yield Concepts</div>
+          <div id="revHighYield" class="tag-cloud"></div>
+        </div>
+        <div class="rev-card">
+          <div class="rev-title">Must-Draw Diagrams</div>
+          <div class="diagram-checklist" id="revDiagrams"></div>
+        </div>
+      </div>
+
+      <div class="widget-card" style="margin-top:2rem">
+        <div class="widget-title">Your Revision Bookmarks</div>
+        <div id="revisionBookmarks" class="revision-bookmarks"></div>
+      </div>
+    </section>
+
+    <!-- VIEW: SEARCH -->
+    <section class="view" id="view-search">
+      <h1 class="page-title">Search</h1>
+      <input type="text" id="searchInput" class="search-bar large" placeholder="Search topics, MCQs, questions, calculations…" />
+      <div id="searchResults" class="search-results"></div>
+    </section>
+
+  </main>
+</div>
+
+<!-- TOPIC DETAIL MODAL -->
+<div class="modal-overlay hidden" id="topicModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle"></div>
+      <button class="modal-close icon-btn" id="modalClose">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-footer">
+      <div class="status-selector">
+        <button class="status-btn" data-status="not-started">Not Started</button>
+        <button class="status-btn" data-status="in-progress">In Progress</button>
+        <button class="status-btn" data-status="completed">Completed</button>
+      </div>
+      <div class="right-actions">
+        <button class="btn-outline icon-label" id="modalRevisionToggle">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          <span id="revisionToggleText">Add to Revision</span>
+        </button>
+        <div class="diff-selector">
+          <button class="diff-btn" data-diff="easy" title="Easy">E</button>
+          <button class="diff-btn" data-diff="medium" title="Medium">M</button>
+          <button class="diff-btn" data-diff="hard" title="Hard">H</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast hidden" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

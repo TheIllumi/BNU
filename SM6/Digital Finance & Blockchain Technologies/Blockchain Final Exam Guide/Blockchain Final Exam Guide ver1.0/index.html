@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>⛓️ Blockchain Final Exam — Study Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ══════════════ SIDEBAR ══════════════ -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="logo">⛓️ BlockStudy</div>
+    <button class="sidebar-close" id="sidebarClose" title="Close sidebar">✕</button>
+  </div>
+
+  <nav class="sidebar-nav">
+    <button class="nav-item active" data-view="dashboard">🏠 Dashboard</button>
+    <button class="nav-item" data-view="topics">📚 Topics</button>
+    <button class="nav-item" data-view="mcq">🧠 MCQ Practice</button>
+    <button class="nav-item" data-view="questions">❓ Question Bank</button>
+    <button class="nav-item" data-view="diagrams">✏️ Diagrams</button>
+    <button class="nav-item" data-view="calculations">🔢 Calculations</button>
+    <button class="nav-item" data-view="revision">⚡ Last-Min Revision</button>
+    <button class="nav-item" data-view="search">🔍 Search</button>
+  </nav>
+
+  <div class="sidebar-footer">
+    <button class="btn-ghost" id="themeToggle">🌙 Toggle Theme</button>
+  </div>
+</aside>
+
+<!-- ══════════════ MAIN ══════════════ -->
+<div class="main-wrapper">
+  <header class="topbar">
+    <button class="hamburger" id="hamburger">☰</button>
+    <div class="topbar-title" id="topbarTitle">Dashboard</div>
+    <div class="topbar-actions">
+      <input type="text" id="globalSearch" class="search-mini" placeholder="Quick search…" />
+      <button class="btn-outline" id="exportBtn">⬇ Export</button>
+      <button class="btn-outline" id="importBtnTrigger">⬆ Import</button>
+      <button class="btn-danger-sm" id="resetBtn">↺ Reset</button>
+      <input type="file" id="importFileInput" accept=".json" style="display:none" />
+    </div>
+  </header>
+
+  <main class="content" id="mainContent">
+
+    <!-- ══ VIEW: DASHBOARD ══ -->
+    <section class="view active" id="view-dashboard">
+      <h1 class="page-title">📊 Exam Preparation Dashboard</h1>
+
+      <div class="exam-meta-banner">
+        <div class="meta-item">📝 <strong>50 Marks</strong> Total</div>
+        <div class="meta-item">📌 Part 1: 10M MCQs</div>
+        <div class="meta-item">📌 Part 2: 20M Theory/Diagrams</div>
+        <div class="meta-item">📌 Part 3: 20M Calculations</div>
+      </div>
+
+      <!-- Stats row -->
+      <div class="stats-grid">
+        <div class="stat-card" id="sc-readiness">
+          <div class="stat-big" id="readinessScore">0</div>
+          <div class="stat-label">Readiness Score <span class="stat-sub">/100</span></div>
+          <div class="readiness-bar"><div class="readiness-fill" id="readinessFill"></div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-big" id="topicsDone">0</div>
+          <div class="stat-label">Topics Completed</div>
+          <div class="stat-sub" id="topicsDoneOf">of 0 total</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-big" id="revisionCount">0</div>
+          <div class="stat-label">Marked for Revision</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-big" id="mcqAccuracy">—</div>
+          <div class="stat-label">MCQ Accuracy</div>
+          <div class="stat-sub" id="mcqStat">0 attempted</div>
+        </div>
+      </div>
+
+      <!-- Progress bars -->
+      <div class="progress-section">
+        <div class="progress-row">
+          <span>Overall Completion</span>
+          <span id="pctTopics">0%</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill" id="barTopics"></div></div>
+
+        <div class="progress-row">
+          <span>Diagrams Practised</span>
+          <span id="pctDiagrams">0%</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill accent2" id="barDiagrams"></div></div>
+
+        <div class="progress-row">
+          <span>Calculations Done</span>
+          <span id="pctCalcs">0%</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill accent3" id="barCalcs"></div></div>
+
+        <div class="progress-row">
+          <span>Questions Practised</span>
+          <span id="pctQuestions">0%</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill accent4" id="barQuestions"></div></div>
+      </div>
+
+      <!-- Difficulty stats -->
+      <div class="diff-row">
+        <div class="diff-badge easy">🟢 Easy: <span id="dEasy">0</span> remaining</div>
+        <div class="diff-badge medium">🟡 Medium: <span id="dMedium">0</span> remaining</div>
+        <div class="diff-badge hard">🔴 Hard: <span id="dHard">0</span> remaining</div>
+      </div>
+
+      <!-- Study Next -->
+      <div class="widget-card">
+        <div class="widget-title">🎯 Study Next (Smart Recommendations)</div>
+        <div id="studyNext" class="study-next-list"></div>
+      </div>
+
+      <!-- Exam Prediction -->
+      <div class="widget-card prediction-card">
+        <div class="widget-title">🔮 Exam Prediction — High Confidence</div>
+        <div class="pred-grid">
+          <div class="pred-col">
+            <div class="pred-head">Part 1 MCQs (10M)</div>
+            <ul>
+              <li>SHA-256 & Merkle root location</li>
+              <li>Digital signatures 3 guarantees</li>
+              <li>Ethereum facts (Buterin, gas, Solidity)</li>
+              <li>PoW vs PoS; permissionless</li>
+              <li>Smallest units (satoshi, wei)</li>
+              <li>Public Distributed Ledger</li>
+            </ul>
+          </div>
+          <div class="pred-col">
+            <div class="pred-head">Part 2 Theory/Diagrams (20M)</div>
+            <ul>
+              <li>Block structure ✦ (almost certain)</li>
+              <li>Merkle tree & root ✦ (almost certain)</li>
+              <li>Bitcoin transaction chain ✦</li>
+              <li>Hashing vs encryption</li>
+              <li>Digital signatures (ANI trio)</li>
+              <li>Ethereum vs Bitcoin; gas</li>
+            </ul>
+          </div>
+          <div class="pred-col">
+            <div class="pred-head">Part 3 Calculations (20M)</div>
+            <ul>
+              <li>Target from nBits + leading zeros ✦✦</li>
+              <li>Difficulty from two targets ✦✦</li>
+              <li>n from hash rate (n=log₂(600P)) ✦</li>
+              <li>Bytecode disassembly + stored value ✦</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ VIEW: TOPICS ══ -->
+    <section class="view" id="view-topics">
+      <h1 class="page-title">📚 Study Topics</h1>
+      <div class="topics-toolbar">
+        <input type="text" id="topicSearch" class="search-bar" placeholder="Filter topics…" />
+        <select id="topicFilter" class="select-filter">
+          <option value="all">All Statuses</option>
+          <option value="not-started">Not Started</option>
+          <option value="in-progress">In Progress</option>
+          <option value="completed">Completed</option>
+          <option value="revision">For Revision</option>
+        </select>
+        <select id="diffFilter" class="select-filter">
+          <option value="all">All Difficulty</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <button class="btn-outline" id="markAllTopics">✅ Mark All Done</button>
+      </div>
+      <div id="topicsList" class="topics-list"></div>
+    </section>
+
+    <!-- ══ VIEW: MCQ ══ -->
+    <section class="view" id="view-mcq">
+      <h1 class="page-title">🧠 MCQ Practice</h1>
+      <div class="mcq-meta-bar">
+        <span>Attempted: <strong id="mcqAttempted">0</strong></span>
+        <span>Correct: <strong id="mcqCorrect">0</strong></span>
+        <span>Accuracy: <strong id="mcqAcc">—</strong></span>
+        <button class="btn-outline" id="resetMCQ">↺ Reset Score</button>
+        <select id="mcqDiffFilter" class="select-filter">
+          <option value="all">All MCQs</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <button class="btn-primary" id="shuffleMCQ">🔀 Shuffle</button>
+      </div>
+
+      <div class="mcq-card" id="mcqCard">
+        <div class="mcq-counter" id="mcqCounter">Q 1 / 150</div>
+        <div class="mcq-question" id="mcqQuestion">Loading…</div>
+        <div class="mcq-options" id="mcqOptions"></div>
+        <div class="mcq-explanation hidden" id="mcqExplanation"></div>
+        <div class="mcq-controls">
+          <button class="btn-outline" id="prevMCQ">← Prev</button>
+          <button class="btn-primary" id="revealMCQ">Reveal Answer</button>
+          <button class="btn-outline" id="nextMCQ">Next →</button>
+        </div>
+      </div>
+
+      <div class="mcq-nav-strip" id="mcqNavStrip"></div>
+    </section>
+
+    <!-- ══ VIEW: QUESTION BANK ══ -->
+    <section class="view" id="view-questions">
+      <h1 class="page-title">❓ Question Bank</h1>
+      <div class="qbank-tabs">
+        <button class="qtab active" data-qtype="short">Short Qs</button>
+        <button class="qtab" data-qtype="long">Long Qs</button>
+        <button class="qtab" data-qtype="diagram">Diagram Qs</button>
+        <button class="qtab" data-qtype="calc">Calculation Qs</button>
+      </div>
+      <div id="questionBankList" class="qbank-list"></div>
+    </section>
+
+    <!-- ══ VIEW: DIAGRAMS ══ -->
+    <section class="view" id="view-diagrams">
+      <h1 class="page-title">✏️ Diagram Practice</h1>
+      <p class="view-subtitle">Practice drawing each diagram from memory. These are guaranteed marks in Part 2.</p>
+      <div id="diagramsList" class="diagrams-list"></div>
+    </section>
+
+    <!-- ══ VIEW: CALCULATIONS ══ -->
+    <section class="view" id="view-calculations">
+      <h1 class="page-title">🔢 Calculation Practice</h1>
+      <p class="view-subtitle">Part 3 is 20 marks — all "scoreable" with exact answers. Master these formulas.</p>
+
+      <div class="formula-box">
+        <div class="formula-title">🗝️ Key Formulas</div>
+        <pre class="formula-code">target     = mantissa × 2^(8 × (exponent − 3))
+difficulty = difficulty_1_target / current_target
+n          = log₂(600 × P)          [computations needed]
+hashRate   = difficulty × 2³² / 600
+txID       = SHA256(SHA256(txRecord))
+address    = RIPEMD160(SHA256(publicKey))
+1 BTC = 10⁸ satoshi  |  1 Ether = 10¹⁸ wei</pre>
+      </div>
+
+      <div id="calcList" class="calc-list"></div>
+    </section>
+
+    <!-- ══ VIEW: LAST-MIN REVISION ══ -->
+    <section class="view" id="view-revision">
+      <h1 class="page-title">⚡ Last-Minute Revision</h1>
+      <p class="view-subtitle">Read this the night before and 30 minutes before the exam.</p>
+
+      <div class="revision-grid">
+        <div class="rev-card">
+          <div class="rev-title">📖 Key Definitions</div>
+          <ul class="rev-list" id="revDefinitions"></ul>
+        </div>
+        <div class="rev-card">
+          <div class="rev-title">🔢 Key Formulas</div>
+          <pre class="formula-code small" id="revFormulas"></pre>
+        </div>
+        <div class="rev-card">
+          <div class="rev-title">⚔️ Important Differences</div>
+          <ul class="rev-list" id="revDifferences"></ul>
+        </div>
+        <div class="rev-card warning-card">
+          <div class="rev-title">⚠️ Common MCQ Traps</div>
+          <ul class="rev-list trap-list" id="revTraps"></ul>
+        </div>
+        <div class="rev-card highlight-card">
+          <div class="rev-title">🔥 Highest Yield Concepts</div>
+          <div id="revHighYield" class="tag-cloud"></div>
+        </div>
+        <div class="rev-card">
+          <div class="rev-title">📐 Must-Draw Diagrams</div>
+          <div class="diagram-checklist" id="revDiagrams"></div>
+        </div>
+      </div>
+
+      <!-- Topics marked for revision -->
+      <div class="widget-card" style="margin-top:2rem">
+        <div class="widget-title">⭐ Your Revision Bookmarks</div>
+        <div id="revisionBookmarks" class="revision-bookmarks"></div>
+      </div>
+    </section>
+
+    <!-- ══ VIEW: SEARCH ══ -->
+    <section class="view" id="view-search">
+      <h1 class="page-title">🔍 Search</h1>
+      <input type="text" id="searchInput" class="search-bar large" placeholder="Search topics, MCQs, questions, calculations…" />
+      <div id="searchResults" class="search-results"></div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ══ TOPIC DETAIL MODAL ══ -->
+<div class="modal-overlay hidden" id="topicModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle"></div>
+      <button class="modal-close" id="modalClose">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-footer">
+      <div class="status-selector">
+        <button class="status-btn" data-status="not-started">☐ Not Started</button>
+        <button class="status-btn" data-status="in-progress">◐ In Progress</button>
+        <button class="status-btn" data-status="completed">☑ Completed</button>
+      </div>
+      <div class="right-actions">
+        <button class="btn-outline" id="modalRevisionToggle">⭐ Revision</button>
+        <div class="diff-selector">
+          <button class="diff-btn" data-diff="easy">🟢</button>
+          <button class="diff-btn" data-diff="medium">🟡</button>
+          <button class="diff-btn" data-diff="hard">🔴</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TOAST ══ -->
+<div class="toast hidden" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blockchain Final Exam Study Tracker</title>
+  <meta name="description" content="Track your blockchain exam preparation, revise faster, and complete every topic before the exam.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='5' fill='%234fd1c5'/></svg>">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="app-header">
+    <div class="header-inner">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      <div class="brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0e1118" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+            <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+            <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+            <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+            <line x1="10" y1="6.5" x2="14" y2="6.5"></line>
+            <line x1="6.5" y1="10" x2="6.5" y2="14"></line>
+            <line x1="17.5" y1="10" x2="17.5" y2="14"></line>
+            <line x1="10" y1="17.5" x2="14" y2="17.5"></line>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>Blockchain Final Exam Study Tracker</h1>
+          <p>Track your preparation, revise faster, and complete every topic before the exam.</p>
+        </div>
+      </div>
+
+      <div class="header-tools">
+        <div class="timer" id="timerWrap">
+          <div>
+            <div class="timer-label">Focus</div>
+            <div class="timer-time mono" id="timerTime">25:00</div>
+          </div>
+          <button class="icon-btn" id="timerToggle" aria-label="Start or pause timer"></button>
+          <button class="icon-btn" id="timerReset" aria-label="Reset timer"></button>
+        </div>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle light or dark theme"></button>
+        <button class="btn danger" id="resetAll">Reset all</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="backdrop" id="backdrop"></div>
+
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="side-card">
+        <h3>Sections</h3>
+        <div class="nav-list" id="navList"></div>
+        <div style="display:flex; gap:6px; margin-top:10px;">
+          <button class="btn btn-sm ghost" id="expandAll" style="flex:1">Expand all</button>
+          <button class="btn btn-sm ghost" id="collapseAll" style="flex:1">Collapse all</button>
+        </div>
+      </div>
+
+      <div class="side-card">
+        <h3>Quick notes</h3>
+        <textarea class="notes-area" id="notes" placeholder="e.g. Revise Merkle tree again. Practice leading zeros. Ask about bytecode."></textarea>
+        <div class="notes-saved" id="notesSaved">Saved automatically</div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+
+      <!-- Hero / overall progress -->
+      <div class="hero">
+        <div class="hero-top">
+          <div>
+            <div class="hero-pct">
+              <span class="big mono" id="heroPct">0</span>
+              <span class="lbl">% complete</span>
+            </div>
+            <div class="hero-sub"><b id="heroDone" class="mono">0</b> of <b id="heroTotal" class="mono">0</b> study items done. Every checkmark is one block added to your chain.</div>
+          </div>
+        </div>
+        <div class="chain-strip" id="chainStrip" aria-hidden="true"></div>
+        <div class="stat-grid" id="statGrid"></div>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <div class="search-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input class="search-input" id="search" type="text" placeholder="Search topics: Merkle tree, UTXO, Ethereum, bytecode, leading zeros...">
+        </div>
+        <div class="filter-chips">
+          <button class="chip-btn active" data-filter="all">All</button>
+          <button class="chip-btn" data-filter="remaining">Remaining</button>
+          <button class="chip-btn" data-filter="completed">Completed</button>
+          <button class="chip-btn" data-filter="high">High priority</button>
+        </div>
+        <button class="chip-btn revision-toggle" id="revisionToggle">Revision mode</button>
+      </div>
+
+      <!-- Sections render here -->
+      <div id="sections"></div>
+
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <div>Nothing matches. Try a different search or clear the filters.</div>
+      </div>
+
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

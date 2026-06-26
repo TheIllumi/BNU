@@ -1,0 +1,169 @@
+/* ============================================================
+   themes.css
+   All colours live here. style.css never hardcodes a colour.
+   Two themes: Light (default) and Dark.
+   Edit a value here once and it updates everywhere.
+   ============================================================ */
+
+/* ---------- LIGHT THEME (default) ----------
+   Feel: energetic, readable, academic, warm.
+   Base palette given by instructor:
+   primary #FCDC4D  secondary #313D5A  accent #F0544F
+   dark #183642     background #FDF0D5
+*/
+:root {
+  /* raw palette */
+  --c-yellow:  #FCDC4D;
+  --c-blue:    #313D5A;
+  --c-coral:   #F0544F;
+  --c-deep:    #183642;
+  --c-cream:   #FDF0D5;
+
+  /* semantic surfaces (no pure white) */
+  --bg:          #FDF0D5;
+  --surface:     #FFFBF1;
+  --surface-2:   #F7EBCF;
+  --surface-3:   #F1E2C0;
+
+  /* text (no harsh pure black) */
+  --text:        #1E3540;
+  --text-soft:   #41545C;
+  --text-muted:  #6B7A80;
+  --text-invert: #FDF0D5;
+
+  /* lines + structure */
+  --border:      #E6D6AC;
+  --border-soft: #EFE3C4;
+
+  /* brand + accents */
+  --primary:        #FCDC4D;   /* highlight / progress fill */
+  --primary-ink:    #5A4A00;   /* readable text on yellow */
+  --secondary:      #313D5A;   /* nav brand, headings accents */
+  --accent:         #F0544F;   /* main action colour */
+  --accent-strong:  #D63E39;   /* hover for accent */
+  --accent-soft:    #FBE0DE;   /* tint background */
+  --on-accent:      #FFFBF1;   /* text on accent */
+
+  /* status */
+  --done:        #2E7D5B;
+  --done-soft:   #DDEFE5;
+  --progress:    #C98A00;
+  --progress-soft:#FBEBC6;
+  --todo:        #6B7A80;
+  --danger:      #F0544F;
+  --info:        #313D5A;
+
+  /* sidebar */
+  --side-bg:     #313D5A;
+  --side-text:   #DDE2EE;
+  --side-muted:  #9AA4BE;
+  --side-active: #F0544F;
+  --side-active-bg: rgba(240,84,79,0.16);
+  --side-hover-bg:  rgba(255,255,255,0.06);
+  --side-border: rgba(255,255,255,0.08);
+
+  /* tags */
+  --tag-bg:      #F7EBCF;
+  --tag-text:    #41545C;
+
+  /* effects */
+  --shadow-sm: 0 1px 2px rgba(24,54,66,0.06), 0 1px 3px rgba(24,54,66,0.08);
+  --shadow-md: 0 4px 14px rgba(24,54,66,0.10);
+  --shadow-lg: 0 12px 32px rgba(24,54,66,0.16);
+  --ring:      rgba(240,84,79,0.40);
+
+  /* scrollbar */
+  --sb-track: #FDF0D5;
+  --sb-thumb: #313D5A;
+  --sb-hover: #F0544F;
+}
+
+/* ---------- DARK THEME ----------
+   Feel: premium, cinematic, deep, distraction-free.
+   Base palette given by instructor:
+   #191528  #3C162F  #5C162E  #7C162E  background #110E1B
+*/
+[data-theme="dark"] {
+  /* raw palette */
+  --c-1:  #191528;
+  --c-2:  #3C162F;
+  --c-3:  #5C162E;
+  --c-4:  #7C162E;
+  --c-bg: #110E1B;
+
+  /* semantic surfaces (no pure black) */
+  --bg:          #110E1B;
+  --surface:     #191528;
+  --surface-2:   #221B33;
+  --surface-3:   #2B2140;
+
+  /* text (no harsh pure white) */
+  --text:        #ECE6F3;
+  --text-soft:   #C5BCD6;
+  --text-muted:  #948AA8;
+  --text-invert: #ECE6F3;
+
+  /* lines + structure */
+  --border:      #2E2542;
+  --border-soft: #261E38;
+
+  /* brand + accents */
+  --primary:        #E0A33C;   /* warm gold highlight that reads on dark */
+  --primary-ink:    #2B1A05;
+  --secondary:      #C9A6C0;
+  --accent:         #A8324F;   /* lifted from maroon family for legibility */
+  --accent-strong:  #C24160;
+  --accent-soft:    #2A1626;
+  --on-accent:      #FCEFF3;
+
+  /* status */
+  --done:        #5FB98C;
+  --done-soft:   #16312A;
+  --progress:    #E0A33C;
+  --progress-soft:#322415;
+  --todo:        #948AA8;
+  --danger:      #C24160;
+  --info:        #C9A6C0;
+
+  /* sidebar */
+  --side-bg:     #150F22;
+  --side-text:   #D8D0E6;
+  --side-muted:  #8A7FA3;
+  --side-active: #E0859B;
+  --side-active-bg: rgba(168,50,79,0.30);
+  --side-hover-bg:  rgba(255,255,255,0.05);
+  --side-border: rgba(255,255,255,0.06);
+
+  /* tags */
+  --tag-bg:      #2B2140;
+  --tag-text:    #C5BCD6;
+
+  /* effects */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.40), 0 1px 3px rgba(0,0,0,0.50);
+  --shadow-md: 0 6px 18px rgba(0,0,0,0.50);
+  --shadow-lg: 0 16px 40px rgba(0,0,0,0.60);
+  --ring:      rgba(168,50,79,0.55);
+
+  /* scrollbar */
+  --sb-track: #110E1B;
+  --sb-thumb: #5C162E;
+  --sb-hover: #7C162E;
+}
+
+/* ---------- CUSTOM SCROLLBARS (match active theme) ---------- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--sb-thumb) var(--sb-track);
+}
+*::-webkit-scrollbar { width: 11px; height: 11px; }
+*::-webkit-scrollbar-track {
+  background: var(--sb-track);
+  border-radius: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb);
+  border-radius: 8px;
+  border: 2px solid var(--sb-track);
+}
+*::-webkit-scrollbar-thumb:hover { background: var(--sb-hover); }
+*::-webkit-scrollbar-corner { background: var(--sb-track); }

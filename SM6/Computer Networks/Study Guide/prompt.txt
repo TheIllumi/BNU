@@ -1,0 +1,507 @@
+I will provide 17 Markdown (.md) files containing my complete course preparation material.
+
+Your task is to transform all of those Markdown files into a complete interactive study guide web app.
+
+The final output must be a downloadable browser-based web app that runs locally by opening index.html directly in a browser.
+
+Use all 17 .md files as the source of truth.
+
+Do not skip important content.
+
+The app should not be just a checklist. It should be a full study platform where I can:
+- read the actual study content
+- understand topics in simple English
+- track preparation progress
+- mark topics as done
+- revise weak areas
+- practice theory and numericals
+- use it as a complete exam preparation dashboard
+
+Important context from the teacher:
+
+"Final Exam Syllabus:
+All topics covered in the course are included.
+Lecture-1 to Lecture-16.
+
+Evaluations done are also posted for your reference.
+Go through all lectures paying special attention to the concepts and concept application.
+
+Exam will be divided into two sections:
+Section-I: Theoretical questions to see if you have good understanding of concepts (30%)
+Section-II: Numerical questions (70%)"
+
+Please use this exam structure while organizing content and priority.
+
+--------------------------------------------------
+TECHNICAL REQUIREMENTS
+--------------------------------------------------
+
+Use only:
+- HTML
+- CSS
+- JavaScript
+
+Do not use:
+- React
+- backend
+- database
+- build tools
+- frameworks
+
+The app must:
+- work offline
+- run by opening index.html
+- save progress using localStorage
+- be easy to modify later
+- be responsive on laptop and mobile
+- be interactive
+- use smooth animations where appropriate
+
+Generate complete code for:
+1. index.html
+2. style.css
+3. script.js
+
+Optional:
+4. single-file version where everything is inside one index.html
+
+--------------------------------------------------
+DESIGN REQUIREMENTS
+--------------------------------------------------
+
+Use this exact color palette:
+
+- #606C38
+- #283618
+- #FEFAE0
+- #DDA15E
+- #BC6C25
+
+Important:
+- Follow this palette properly throughout the app
+- The design should feel clean, modern, professional, and student-friendly
+- Add both Light Theme and Dark Theme
+- Make sure both themes use the palette in a visually balanced way
+- Include a theme toggle
+- Use good spacing, cards, badges, progress bars, and section containers
+- Use smooth transitions and subtle animations where necessary
+- No childish design
+- Make it suitable for long study sessions and night studying
+
+Very important:
+- Never use any emojis
+- You may use only minimalist icons from Lucide or a similar clean icon set
+- No emojis anywhere in the UI or content
+
+--------------------------------------------------
+LANGUAGE REQUIREMENTS
+--------------------------------------------------
+
+Use very easy and simple English everywhere.
+
+This is extremely important.
+
+That includes:
+- topic explanations
+- summaries
+- definitions
+- labels
+- buttons
+- instructions
+- notes
+- revision content
+- jargon explanations
+
+The app should make difficult course material easier to understand.
+
+If the source material is too difficult, simplify it while preserving the actual meaning.
+
+--------------------------------------------------
+CONTENT INTEGRATION REQUIREMENTS
+--------------------------------------------------
+
+Read and integrate content properly from all 17 .md files.
+
+Do not only extract headings.
+
+For every topic, include the actual study content inside the app so I can read and study there directly.
+
+Each topic/module should include, where available:
+- title
+- explanation
+- important points
+- examples
+- formulas
+- steps
+- important notes
+- theory questions
+- numerical questions
+- revision notes
+
+Do not make the app only a tracker.
+It must be both:
+1. a study guide
+2. a preparation tracker
+
+--------------------------------------------------
+APP STRUCTURE
+--------------------------------------------------
+
+Create a complete study dashboard with:
+
+- Top header
+- App title
+- Subtitle
+- Theme toggle
+- Search bar
+- Navigation/sidebar
+- Main content area
+- Progress overview
+- Revision overview
+- Study timer
+- Notes area
+- Definitions / Appendix page
+
+Suggested title:
+“Final Exam Study Tracker”
+
+Suggested subtitle:
+“Study smarter, track your progress, revise faster, and complete every topic before the exam.”
+
+--------------------------------------------------
+DASHBOARD FEATURES
+--------------------------------------------------
+
+At the top/dashboard show:
+
+- Overall progress percentage
+- Completed items / total items
+- Remaining items
+- Progress bar
+- Circular or visual progress indicator
+- Revision count
+- Numerical practice count
+- Theory preparation count
+- Readiness score
+
+Since the teacher said:
+- Theory = 30%
+- Numerical = 70%
+
+Reflect this in the app structure and readiness logic.
+
+For example:
+- show separate theory progress
+- show separate numerical progress
+- give more weight to numerical completion in readiness score
+
+--------------------------------------------------
+TOPIC / SECTION ORGANIZATION
+--------------------------------------------------
+
+Convert all major headings and subheadings from the 17 Markdown files into interactive study sections.
+
+Each main section should be collapsible.
+
+Each section should contain:
+- actual content
+- checklist items
+- progress count
+- “Mark all done” button
+- “Reset section” button
+
+Each topic/item should have:
+- status: Not Started / In Progress / Completed
+- mark for revision
+- tags
+- difficulty
+- content displayed under it
+
+--------------------------------------------------
+STATUS + TRACKING
+--------------------------------------------------
+
+Each topic should support:
+
+- Not Started
+- In Progress
+- Completed
+
+These states should update progress automatically.
+
+Save everything in localStorage so it remains after refresh.
+
+Also include:
+- Reset all progress
+- Export progress
+- Import progress
+
+--------------------------------------------------
+SEARCH + FILTERS
+--------------------------------------------------
+
+Add instant search across:
+- topics
+- definitions
+- questions
+- calculations
+- diagrams
+- keywords
+
+Add filters:
+- Show all
+- Show completed
+- Show remaining
+- Show in progress
+- Show marked for revision
+- Show theory
+- Show numerical
+- Show high priority
+- Show difficult topics
+
+--------------------------------------------------
+PRIORITY TAGS
+--------------------------------------------------
+
+Add visual tags such as:
+- High Priority
+- Must Revise
+- Theory
+- Numerical
+- Formula
+- Definition
+- Diagram
+- Exam Likely
+- Practice Needed
+
+Use the syllabus structure and content to assign these tags intelligently.
+
+Because the teacher emphasized concepts and concept application, make sure:
+- concept-heavy topics are highlighted
+- numerical-heavy topics are highlighted
+- final exam likely areas are easy to find
+
+--------------------------------------------------
+THEORY + NUMERICAL DIVISION
+--------------------------------------------------
+
+Because the exam has:
+- Section I = Theoretical questions (30%)
+- Section II = Numerical questions (70%)
+
+The app must clearly separate these two preparation streams.
+
+Create dedicated areas/tabs for:
+- Theory Preparation
+- Numerical Practice
+
+Theory area may include:
+- concept explanations
+- short questions
+- long questions
+- definitions
+- conceptual understanding
+- likely theory questions
+
+Numerical area may include:
+- formulas
+- worked examples
+- practice questions
+- step-by-step solutions
+- important numerical methods
+
+--------------------------------------------------
+QUESTION BANK
+--------------------------------------------------
+
+If the Markdown files contain questions, organize them into proper sections such as:
+- MCQs
+- Short Questions
+- Long Questions
+- Theoretical Questions
+- Numerical Questions
+- Practice Questions
+- Diagram Questions
+
+For each question, add actions like:
+- Mark as Practiced
+- Mark as Mastered
+- Mark for Revision
+- Show Answer
+- Show Explanation
+
+--------------------------------------------------
+REVISION MODE
+--------------------------------------------------
+
+Add a “Revision Mode” or “Last-Minute Revision” section.
+
+This should show only:
+- high-priority topics
+- marked-for-revision topics
+- remaining topics
+- formulas
+- important definitions
+- exam-likely questions
+- difficult topics
+- numerical methods
+- key theory concepts
+
+This mode should help for quick revision before the exam.
+
+--------------------------------------------------
+STUDY TIMER
+--------------------------------------------------
+
+Add a simple focus timer:
+- 25-minute timer
+- Start
+- Pause
+- Reset
+
+Keep it simple and clean.
+
+--------------------------------------------------
+NOTES FEATURE
+--------------------------------------------------
+
+Add a personal notes area where I can type quick notes.
+
+Examples:
+- revise this again
+- practice this numerical
+- learn this definition
+- ask about this concept
+
+Save notes in localStorage.
+
+--------------------------------------------------
+APPENDIX / DEFINITIONS PAGE
+--------------------------------------------------
+
+Add a dedicated final section/page for definitions.
+This can be called:
+- Appendix
+- Glossary
+- Definitions
+
+This section is very important.
+
+It should include simple definitions of specific words and jargon used across the course material.
+
+For each jargon word, provide:
+- the term
+- a simple meaning
+- a very easy explanation in plain English
+
+This glossary should help me understand technical words quickly.
+
+Examples of glossary-style entries:
+- term
+- meaning
+- why it matters
+
+Make sure jargon across all 17 .md files is covered properly.
+
+--------------------------------------------------
+DIFFICULTY SYSTEM
+--------------------------------------------------
+
+Allow topics/questions to be grouped by difficulty:
+- Easy
+- Medium
+- Hard
+
+Show statistics for difficulty if possible.
+
+--------------------------------------------------
+STUDY NEXT / SMART RECOMMENDATION
+--------------------------------------------------
+
+Add a “Study Next” widget.
+
+Recommend the next topics based on:
+1. incomplete high-priority topics
+2. difficult topics
+3. revision-marked topics
+4. remaining numericals
+5. exam-likely questions
+
+--------------------------------------------------
+ANIMATIONS
+--------------------------------------------------
+
+Use smooth animations where necessary, such as:
+- section expand/collapse
+- progress bar updates
+- hover states
+- theme switching
+- modal or panel transitions
+- subtle card entrance animations
+
+Do not overdo animations.
+They should feel polished and professional.
+
+--------------------------------------------------
+DATA STRUCTURE
+--------------------------------------------------
+
+In JavaScript, create a clean data structure for the study material.
+
+For example:
+
+const studyData = [
+  {
+    section: "Section Name",
+    type: "theory",
+    items: [
+      {
+        id: "unique-id",
+        title: "Topic Title",
+        content: "Actual explanation from the markdown, rewritten in easy English if needed",
+        status: "not-started",
+        difficulty: "medium",
+        tags: ["High Priority", "Theory", "Exam Likely"],
+        revision: false
+      }
+    ]
+  }
+];
+
+This data should be created from all the provided Markdown files.
+
+--------------------------------------------------
+FINAL OUTPUT REQUIREMENTS
+--------------------------------------------------
+
+Please provide the complete final code in separate code blocks:
+
+1. index.html
+2. style.css
+3. script.js
+
+Also explain:
+- how to save the files
+- how to open the app in a browser
+- how localStorage saving works
+- how to reset progress
+- how to export/import progress
+
+Also, if possible, provide a single-file version with HTML, CSS, and JavaScript combined.
+
+--------------------------------------------------
+VERY IMPORTANT REMINDERS
+--------------------------------------------------
+
+- Use all 17 .md files
+- Properly integrate all content
+- Add more supportive structure where needed
+- Keep all English very simple and easy
+- No emojis at all
+- Use only minimal icons if needed
+- Include both dark and light themes
+- Follow the exact color palette
+- Make the app responsive and interactive
+- Include theory and numerical separation
+- Include glossary/appendix/definitions section
+- Make this feel like a full exam preparation platform, not a simple webpage

@@ -1,0 +1,2222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assignment 3 — DevOps Pipeline Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e1a;
+    --surface: #0f1626;
+    --surface2: #151d30;
+    --border: #1e2d4a;
+    --accent: #00d4ff;
+    --accent2: #7c3aed;
+    --accent3: #10b981;
+    --warn: #f59e0b;
+    --danger: #ef4444;
+    --text: #e2e8f0;
+    --text-muted: #64748b;
+    --text-dim: #94a3b8;
+    --code-bg: #0d1117;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-ui: 'Syne', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-ui);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* GRID BACKGROUND */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* HEADER */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,14,26,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .logo {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .header-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .header-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 400;
+    font-family: var(--font-mono);
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .deadline-badge {
+    background: rgba(239,68,68,0.15);
+    border: 1px solid rgba(239,68,68,0.4);
+    color: #fca5a5;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-family: var(--font-mono);
+    font-weight: 600;
+  }
+
+  .progress-ring-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  .progress-ring-wrap svg { width: 40px; height: 40px; }
+  .ring-bg { fill: none; stroke: var(--border); stroke-width: 3; }
+  .ring-fill { fill: none; stroke: var(--accent3); stroke-width: 3;
+    stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100;
+    transform: rotate(-90deg); transform-origin: 50% 50%;
+    transition: stroke-dashoffset 0.5s ease; }
+
+  .progress-pct {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent3);
+    font-family: var(--font-mono);
+  }
+
+  /* LAYOUT */
+  .layout {
+    display: flex;
+    min-height: calc(100vh - 65px);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    padding: 20px 0;
+    position: sticky;
+    top: 65px;
+    height: calc(100vh - 65px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  .sidebar-section {
+    padding: 0 12px 16px;
+  }
+
+  .sidebar-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0 8px;
+    margin-bottom: 6px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.15s;
+    position: relative;
+  }
+
+  .nav-item:hover { background: var(--surface2); }
+  .nav-item.active {
+    background: rgba(0,212,255,0.08);
+    color: var(--accent);
+  }
+  .nav-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 3px; height: 60%;
+    background: var(--accent);
+    border-radius: 0 2px 2px 0;
+  }
+
+  .nav-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 2px solid var(--text-muted);
+    transition: all 0.2s;
+  }
+
+  .nav-dot.done { background: var(--accent3); border-color: var(--accent3); }
+  .nav-dot.active { background: var(--accent); border-color: var(--accent); }
+
+  .nav-text {
+    font-size: 12px;
+    font-weight: 600;
+    flex: 1;
+    line-height: 1.3;
+  }
+
+  .nav-marks {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    background: var(--surface2);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  /* MAIN CONTENT */
+  .main {
+    flex: 1;
+    padding: 32px;
+    max-width: 900px;
+    overflow-x: hidden;
+  }
+
+  /* PART PANEL */
+  .part-panel { display: none; }
+  .part-panel.active { display: block; animation: fadeSlide 0.25s ease; }
+
+  @keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .part-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .part-title-wrap {}
+
+  .part-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    font-family: var(--font-mono);
+  }
+
+  .badge-a { background: rgba(0,212,255,0.12); color: var(--accent); border: 1px solid rgba(0,212,255,0.3); }
+  .badge-b { background: rgba(124,58,237,0.12); color: #a78bfa; border: 1px solid rgba(124,58,237,0.3); }
+  .badge-c { background: rgba(16,185,129,0.12); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.3); }
+  .badge-d { background: rgba(245,158,11,0.12); color: #fcd34d; border: 1px solid rgba(245,158,11,0.3); }
+
+  .part-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .part-marks {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    font-family: var(--font-mono);
+  }
+
+  .done-toggle {
+    flex-shrink: 0;
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+
+  .done-toggle:hover { border-color: var(--accent3); color: var(--accent3); }
+  .done-toggle.marked { background: rgba(16,185,129,0.15); border-color: var(--accent3); color: var(--accent3); }
+
+  /* INFO BANNER */
+  .banner {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    line-height: 1.6;
+  }
+
+  .banner-info { background: rgba(0,212,255,0.07); border: 1px solid rgba(0,212,255,0.2); color: var(--text-dim); }
+  .banner-warn { background: rgba(245,158,11,0.07); border: 1px solid rgba(245,158,11,0.25); color: #fde68a; }
+  .banner-done { background: rgba(16,185,129,0.07); border: 1px solid rgba(16,185,129,0.25); color: #a7f3d0; }
+
+  .banner-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+  /* SECTION CARD */
+  .section-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .section-card-header {
+    padding: 14px 18px;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .section-card-header:hover { background: rgba(255,255,255,0.03); }
+
+  .section-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    background: var(--border);
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+
+  .collapse-icon {
+    color: var(--text-muted);
+    transition: transform 0.2s;
+    font-size: 12px;
+  }
+
+  .collapse-icon.open { transform: rotate(180deg); }
+
+  .section-card-body {
+    padding: 18px;
+    display: none;
+  }
+
+  .section-card-body.open { display: block; }
+
+  /* STEP */
+  .step-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    font-family: var(--font-mono);
+  }
+
+  .step-desc {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    line-height: 1.7;
+  }
+
+  /* CODE BLOCK */
+  .code-wrap {
+    position: relative;
+    margin-bottom: 16px;
+  }
+
+  .code-header {
+    background: #1c2333;
+    border: 1px solid var(--border);
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .code-lang {
+    font-size: 11px;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+  }
+
+  .copy-btn {
+    font-size: 11px;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    color: var(--text-muted);
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 3px 10px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .copy-btn:hover { color: var(--accent); border-color: var(--accent); }
+  .copy-btn.copied { color: var(--accent3); border-color: var(--accent3); }
+
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 0 0 8px 8px;
+    padding: 16px;
+    overflow-x: auto;
+    margin: 0;
+  }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 1.7;
+    color: #c9d1d9;
+  }
+
+  code .cm { color: #8b949e; }
+  code .kw { color: #ff7b72; }
+  code .str { color: #a5d6ff; }
+  code .var { color: #ffa657; }
+
+  /* SCREENSHOT CARD */
+  .ss-card {
+    background: rgba(0,212,255,0.04);
+    border: 1px solid rgba(0,212,255,0.15);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    position: relative;
+  }
+
+  .ss-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .ss-num {
+    background: var(--accent);
+    color: #000;
+    font-weight: 800;
+    font-size: 11px;
+    font-family: var(--font-mono);
+    padding: 2px 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  .ss-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .ss-body {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+
+  .ss-body strong { color: var(--text); }
+
+  .ss-filename {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-top: 8px;
+    color: var(--accent);
+  }
+
+  /* CHECKLIST */
+  .checklist {
+    list-style: none;
+    margin-top: 8px;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 13px;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li:hover { color: var(--text); }
+
+  .check-box {
+    width: 18px; height: 18px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    margin-top: 1px;
+  }
+
+  .check-box.checked {
+    background: var(--accent3);
+    border-color: var(--accent3);
+  }
+
+  .check-box.checked::after {
+    content: '✓';
+    font-size: 11px;
+    color: #000;
+    font-weight: 900;
+  }
+
+  .check-text.checked {
+    color: var(--text-muted);
+    text-decoration: line-through;
+  }
+
+  /* OVERVIEW PANEL */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .stat-card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-2px); }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--card-accent, var(--accent));
+  }
+
+  .stat-value {
+    font-size: 28px;
+    font-weight: 800;
+    font-family: var(--font-mono);
+    color: var(--card-accent, var(--accent));
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  .stat-marks {
+    font-size: 11px;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 20px 0;
+  }
+
+  /* inline code */
+  .ic {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    padding: 1px 6px;
+    border-radius: 3px;
+    color: var(--accent);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    .sidebar { display: none; }
+    .main { padding: 20px 16px; }
+    .overview-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  /* YAML block style */
+  .yaml code { color: #e6edf3; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <div class="logo">⚙️</div>
+    <div>
+      <div class="header-title">Assignment 3 — DevOps Pipeline</div>
+      <div class="header-sub">Kubernetes Orchestration · 100 marks</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="deadline-badge">⏰ Due Jun 3, 11:59 PM</div>
+    <div class="progress-ring-wrap" onclick="showPanel('overview')">
+      <svg viewBox="0 0 36 36">
+        <circle class="ring-bg" cx="18" cy="18" r="15.9"/>
+        <circle class="ring-fill" id="mainRing" cx="18" cy="18" r="15.9"/>
+      </svg>
+      <span class="progress-pct" id="mainPct">0%</span>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Navigation</div>
+
+      <div class="nav-item active" id="nav-overview" onclick="showPanel('overview')">
+        <div class="nav-dot active" id="dot-overview"></div>
+        <span class="nav-text">Overview</span>
+        <span class="nav-marks">100</span>
+      </div>
+
+      <div class="nav-item" id="nav-a" onclick="showPanel('a')">
+        <div class="nav-dot" id="dot-a"></div>
+        <span class="nav-text">Part A — Git</span>
+        <span class="nav-marks">10</span>
+      </div>
+
+      <div class="nav-item" id="nav-b" onclick="showPanel('b')">
+        <div class="nav-dot" id="dot-b"></div>
+        <span class="nav-text">Part B — Docker</span>
+        <span class="nav-marks">20</span>
+      </div>
+
+      <div class="nav-item" id="nav-c" onclick="showPanel('c')">
+        <div class="nav-dot" id="dot-c"></div>
+        <span class="nav-text">Part C — CI/CD</span>
+        <span class="nav-marks">15</span>
+      </div>
+
+      <div class="nav-item" id="nav-d1" onclick="showPanel('d1')">
+        <div class="nav-dot" id="dot-d1"></div>
+        <span class="nav-text">D1 — Namespace & Deploy</span>
+        <span class="nav-marks">10</span>
+      </div>
+
+      <div class="nav-item" id="nav-d2" onclick="showPanel('d2')">
+        <div class="nav-dot" id="dot-d2"></div>
+        <span class="nav-text">D2 — Services</span>
+        <span class="nav-marks">10</span>
+      </div>
+
+      <div class="nav-item" id="nav-d3" onclick="showPanel('d3')">
+        <div class="nav-dot" id="dot-d3"></div>
+        <span class="nav-text">D3 — Storage (PV/PVC)</span>
+        <span class="nav-marks">10</span>
+      </div>
+
+      <div class="nav-item" id="nav-d4" onclick="showPanel('d4')">
+        <div class="nav-dot" id="dot-d4"></div>
+        <span class="nav-text">D4 — Secrets & Apply</span>
+        <span class="nav-marks">10</span>
+      </div>
+
+      <div class="nav-item" id="nav-d5" onclick="showPanel('d5')">
+        <div class="nav-dot" id="dot-d5"></div>
+        <span class="nav-text">D5 — Scaling & Updates</span>
+        <span class="nav-marks">10</span>
+      </div>
+
+      <div class="nav-item" id="nav-d6" onclick="showPanel('d6')">
+        <div class="nav-dot" id="dot-d6"></div>
+        <span class="nav-text">D6 — E2E Verification</span>
+        <span class="nav-marks">5</span>
+      </div>
+
+      <div class="nav-item" id="nav-final" onclick="showPanel('final')">
+        <div class="nav-dot" id="dot-final"></div>
+        <span class="nav-text">Final Checklist</span>
+        <span class="nav-marks">★</span>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+
+    <!-- ===== OVERVIEW ===== -->
+    <div class="part-panel active" id="panel-overview">
+      <div class="part-header">
+        <div class="part-title-wrap">
+          <div class="part-title" style="font-size:30px">Assignment 3</div>
+          <div class="part-marks">Kubernetes Orchestration & Full DevOps Pipeline</div>
+        </div>
+      </div>
+
+      <div class="banner banner-warn">
+        <span class="banner-icon">📌</span>
+        <span><strong>Submission:</strong> Do NOT upload <span class="ic">.ova</span> directly to LMS. Upload to Google Drive, set sharing to "Anyone with the link can edit", then submit the link on GCR + PDF Report.</span>
+      </div>
+
+      <div class="overview-grid">
+        <div class="stat-card" style="--card-accent:#00d4ff" onclick="showPanel('a')">
+          <div class="stat-value">A</div>
+          <div class="stat-label">Git & Version Control</div>
+          <div class="stat-marks">10 marks · 5 screenshots</div>
+        </div>
+        <div class="stat-card" style="--card-accent:#7c3aed" onclick="showPanel('b')">
+          <div class="stat-value">B</div>
+          <div class="stat-label">Containerization (Docker)</div>
+          <div class="stat-marks">20 marks · 8 screenshots</div>
+        </div>
+        <div class="stat-card" style="--card-accent:#10b981" onclick="showPanel('c')">
+          <div class="stat-value">C</div>
+          <div class="stat-label">CI/CD — GitHub Actions</div>
+          <div class="stat-marks">15 marks · 3 screenshots</div>
+        </div>
+        <div class="stat-card" style="--card-accent:#f59e0b" onclick="showPanel('d1')">
+          <div class="stat-value">D</div>
+          <div class="stat-label">Kubernetes (D1–D6)</div>
+          <div class="stat-marks">55 marks · 10 screenshots</div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title">📸 All 26 Screenshots Required</div>
+          <span class="collapse-icon">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;font-family:var(--font-mono);color:var(--text-muted);">
+            <div>part-a-git-config.png</div><div>part-a-git-branches.png</div>
+            <div>part-a-git-log.png</div><div>part-a-github-repo.png</div>
+            <div>part-a-gitignore.png</div><div>part-b-docker-ps.png</div>
+            <div>part-b-docker-networks.png</div><div>part-b-network-inspect.png</div>
+            <div>part-b-docker-volumes.png</div><div>part-b-health-check.png</div>
+            <div>part-b-create-item.png</div><div>part-b-volume-persistence.png</div>
+            <div>part-b-dockerfiles.png</div><div>part-c-github-secrets.png</div>
+            <div>part-c-github-actions-success.png</div><div>part-c-dockerhub-images.png</div>
+            <div>part-d1-minikube-status.png</div><div>part-d1-kubectl-get-all.png</div>
+            <div>part-d3-pv-pvc-bound.png</div><div>part-d4-secrets-configmaps.png</div>
+            <div>part-d5-scaling-3-pods.png</div><div>part-d5-rolling-update.png</div>
+            <div>part-d5-rollback.png</div><div>part-d6-e2e-curl.png</div>
+            <div>part-d6-self-healing.png</div><div>part-d6-persistence-proof.png</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title">📄 PDF Report Must Include</div>
+          <span class="collapse-icon">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <ol style="padding-left:18px;font-size:13px;color:var(--text-dim);line-height:2;">
+            <li><strong style="color:var(--text)">Architecture Diagram</strong> — 3-tier system (Nginx → Flask → MySQL) with K8s concepts</li>
+            <li>Part A section — screenshots 1–5</li>
+            <li>Part B section — screenshots 6–13</li>
+            <li>Part C section — screenshots 14–16</li>
+            <li>Part D section — screenshots 17–26</li>
+            <li><strong style="color:var(--text)">YAML Explanations</strong> — one paragraph per manifest</li>
+            <li><strong style="color:var(--text)">Service Types</strong> — why ClusterIP for MySQL/Flask, NodePort for Nginx</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PART A ===== -->
+    <div class="part-panel" id="panel-a">
+      <div class="part-header">
+        <div class="part-title-wrap">
+          <div class="part-badge badge-a">Part A</div>
+          <div class="part-title">Git & Version Control</div>
+          <div class="part-marks">10 marks · 5 screenshots · Run in Ubuntu VM terminal</div>
+        </div>
+        <button class="done-toggle" id="done-a" onclick="toggleDone('a')">Mark Done</button>
+      </div>
+
+      <div class="banner banner-done">
+        <span class="banner-icon">✅</span>
+        <span>Part A should already be done. Run the recovery commands below to capture all missing screenshots.</span>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">A.1</span> Recovery Commands</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <div class="step-desc">Run all these in your Ubuntu VM terminal to capture proof for Part A.</div>
+          <div class="code-wrap">
+            <div class="code-header">
+              <span class="code-lang">bash</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code># 1. Show Git identity config
+git config --list | grep user
+
+# 2. Show all branches (local + remote)
+git branch -a
+
+# 3. Show commit history (last 15)
+git log --oneline -15
+
+# 4. Show .gitignore contents
+cat ~/assignment3/.gitignore</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">A.2</span> Required Screenshots</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 1</span><span class="ss-title">Git Config</span></div>
+            <div class="ss-body"><strong>When:</strong> After <span class="ic">git config --list | grep user</span><br><strong>Show:</strong> Lines with <span class="ic">user.name</span> and <span class="ic">user.email</span><br><strong>Why:</strong> Proves Git identity is configured</div>
+            <div class="ss-filename">📁 part-a-git-config.png</div>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 2</span><span class="ss-title">Git Branches</span></div>
+            <div class="ss-body"><strong>When:</strong> After <span class="ic">git branch -a</span><br><strong>Show:</strong> At least 3 branches: <span class="ic">main</span>, <span class="ic">develop</span>, and one <span class="ic">feature/</span> branch<br><strong>Why:</strong> Proves branching strategy (3 marks)</div>
+            <div class="ss-filename">📁 part-a-git-branches.png</div>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 3</span><span class="ss-title">Git Log</span></div>
+            <div class="ss-body"><strong>When:</strong> After <span class="ic">git log --oneline -15</span><br><strong>Show:</strong> 10+ commits with descriptive messages<br><strong>Why:</strong> Proves meaningful commit history (3 marks)</div>
+            <div class="ss-filename">📁 part-a-git-log.png</div>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 4</span><span class="ss-title">GitHub Repository</span></div>
+            <div class="ss-body"><strong>When:</strong> Open browser → your GitHub repo<br><strong>Show:</strong> Full repo page with files + commit count + branches<br><strong>Why:</strong> Proves code pushed to GitHub (2 marks)</div>
+            <div class="ss-filename">📁 part-a-github-repo.png</div>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 5</span><span class="ss-title">.gitignore Contents</span></div>
+            <div class="ss-body"><strong>When:</strong> After <span class="ic">cat ~/assignment3/.gitignore</span><br><strong>Show:</strong> File with <span class="ic">__pycache__/</span>, <span class="ic">.env</span>, <span class="ic">.vscode/</span>, <span class="ic">.DS_Store</span><br><strong>Why:</strong> Proves proper .gitignore (2 marks)</div>
+            <div class="ss-filename">📁 part-a-gitignore.png</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">✓</span> Part A Checklist</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <ul class="checklist" id="cl-a">
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">git config shows name + email</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">git branch -a shows 3+ branches</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">git log --oneline shows 10+ commits</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">GitHub repo is public and accessible</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">.gitignore has all required exclusions</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">All 5 screenshots collected</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PART B ===== -->
+    <div class="part-panel" id="panel-b">
+      <div class="part-header">
+        <div class="part-title-wrap">
+          <div class="part-badge badge-b">Part B</div>
+          <div class="part-title">Containerization with Docker</div>
+          <div class="part-marks">20 marks · 8 screenshots · Run in Ubuntu VM terminal</div>
+        </div>
+        <button class="done-toggle" id="done-b" onclick="toggleDone('b')">Mark Done</button>
+      </div>
+
+      <div class="banner banner-done">
+        <span class="banner-icon">✅</span>
+        <span>Part B should be done. Run recovery steps to capture screenshots. If containers are not running, use <span class="ic">docker compose up -d</span> first.</span>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">B.1</span> Recovery Commands</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code>cd ~/assignment3/app
+docker compose up -d
+
+# Wait ~30 seconds, then:
+docker ps
+docker network ls
+docker network inspect app-network
+docker volume ls
+curl http://localhost/health
+
+# Create test item
+curl -X POST http://localhost/api/items \
+  -H "Content-Type: application/json" \
+  -d '{"name": "Test Item", "description": "Docker test"}'
+
+curl http://localhost/api/items
+
+# Test persistence
+docker compose down
+docker compose up -d
+# Wait ~30 seconds
+curl http://localhost/api/items</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">B.2</span> File Verification</div>
+          <span class="collapse-icon">▼</span>
+        </div>
+        <div class="section-card-body">
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code>ls ~/assignment3/app/nginx/Dockerfile
+ls ~/assignment3/app/flask-api/Dockerfile
+ls ~/assignment3/app/docker-compose.yml
+cat ~/assignment3/app/nginx/Dockerfile
+cat ~/assignment3/app/flask-api/Dockerfile</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">B.3</span> Required Screenshots (SS 6–13)</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 6</span><span class="ss-title">Docker Containers Running</span></div>
+            <div class="ss-body"><strong>When:</strong> After <span class="ic">docker ps</span> with all 3 up<br><strong>Show:</strong> nginx, flask-api, mysql with STATUS "Up"<br><strong>Why:</strong> Proves Docker Compose orchestration (6 marks)</div>
+            <div class="ss-filename">📁 part-b-docker-ps.png</div>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 7</span><span class="ss-title">Docker Networks</span></div>
+            <div class="ss-body"><strong>When:</strong> After <span class="ic">docker network ls</span><br><strong>Show:</strong> <span class="ic">app-network</span> (or <span class="ic">assignment3_app-network</span>) listed<br><strong>Why:</strong> Proves custom bridge network (4 marks)</div>
+            <div class="ss-filename">📁 part-b-docker-networks.png</div>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 8</span><span class="ss-title">Network Inspection</span></div>
+            <div class="ss-body"><strong>When:</strong> After <span class="ic">docker network inspect app-network</span><br><strong>Show:</strong> JSON with all 3 containers under "Containers"<br><strong>Why:</strong> Proves inter-container communication</div>
+            <div class="ss-filename">📁 part-b-network-inspect.png</div>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 9</span><span class="ss-title">Docker Volumes</span></div>
+            <div class="ss-body"><strong>When:</strong> After <span class="ic">docker volume ls</span><br><strong>Show:</strong> <span class="ic">mysql-data</span> volume listed<br><strong>Why:</strong> Proves named volume (4 marks)</div>
+            <div class="ss-filename">📁 part-b-docker-volumes.png</div>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 10</span><span class="ss-title">Health Endpoint</span></div>
+            <div class="ss-body"><strong>When:</strong> After <span class="ic">curl http://localhost/health</span><br><strong>Show:</strong> <span class="ic">{"service":"flask-api","status":"healthy"}</span><br><strong>Why:</strong> Proves full stack (Nginx → Flask)</div>
+            <div class="ss-filename">📁 part-b-health-check.png</div>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 11</span><span class="ss-title">Create Item</span></div>
+            <div class="ss-body"><strong>When:</strong> After the POST curl command<br><strong>Show:</strong> <span class="ic">{"id":1,"name":"Test Item","description":"Docker test"}</span><br><strong>Why:</strong> Proves Flask API + MySQL connected</div>
+            <div class="ss-filename">📁 part-b-create-item.png</div>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 12</span><span class="ss-title">Volume Persistence</span></div>
+            <div class="ss-body"><strong>When:</strong> After <span class="ic">down</span> + <span class="ic">up</span> + <span class="ic">curl /api/items</span><br><strong>Show:</strong> The created item still appears<br><strong>Why:</strong> Proves data persistence (4 marks)</div>
+            <div class="ss-filename">📁 part-b-volume-persistence.png</div>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 13</span><span class="ss-title">Dockerfiles</span></div>
+            <div class="ss-body"><strong>When:</strong> After <span class="ic">cat</span> of both Dockerfiles<br><strong>Show:</strong> Both Dockerfile contents visible<br><strong>Why:</strong> Proves correct Dockerfile setup (6 marks)</div>
+            <div class="ss-filename">📁 part-b-dockerfiles.png</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">✓</span> Part B Checklist</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <ul class="checklist">
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">All 3 containers running (docker ps)</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Custom bridge network exists, all containers on it</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Named volume mysql-data exists</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">curl /health returns healthy</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">POST /api/items works</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Data survives docker compose down + up</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Both Dockerfiles correct</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">All 8 screenshots collected</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PART C ===== -->
+    <div class="part-panel" id="panel-c">
+      <div class="part-header">
+        <div class="part-title-wrap">
+          <div class="part-badge badge-c">Part C</div>
+          <div class="part-title">CI/CD with GitHub Actions</div>
+          <div class="part-marks">15 marks · 3 screenshots</div>
+        </div>
+        <button class="done-toggle" id="done-c" onclick="toggleDone('c')">Mark Done</button>
+      </div>
+
+      <div class="banner banner-warn">
+        <span class="banner-icon">⚠️</span>
+        <span>Complete this if not done yet.</span>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">C.1</span> Setup DockerHub</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <div class="step-desc">Go to <strong>hub.docker.com</strong> → create account if needed → <strong>Account Settings → Security → New Access Token</strong> → Name: <span class="ic">github-actions</span> → Copy the token immediately (won't be shown again).</div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">C.2</span> Add GitHub Secrets</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <div class="step-desc">GitHub repo → <strong>Settings → Secrets and variables → Actions → New repository secret</strong></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+            <div style="background:var(--code-bg);border:1px solid var(--border);border-radius:6px;padding:10px;">
+              <div style="font-size:10px;color:var(--text-muted);margin-bottom:4px;font-family:var(--font-mono);">NAME</div>
+              <div style="font-family:var(--font-mono);font-size:12px;color:var(--accent)">DOCKERHUB_USERNAME</div>
+            </div>
+            <div style="background:var(--code-bg);border:1px solid var(--border);border-radius:6px;padding:10px;">
+              <div style="font-size:10px;color:var(--text-muted);margin-bottom:4px;font-family:var(--font-mono);">NAME</div>
+              <div style="font-family:var(--font-mono);font-size:12px;color:var(--accent)">DOCKERHUB_TOKEN</div>
+            </div>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 14</span><span class="ss-title">GitHub Secrets</span></div>
+            <div class="ss-body"><strong>When:</strong> After adding both secrets<br><strong>Show:</strong> Both secrets listed (values are hidden, that's fine)<br><strong>Why:</strong> Proves no hardcoded credentials (2 marks)</div>
+            <div class="ss-filename">📁 part-c-github-secrets.png</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">C.3</span> Create CI/CD Workflow File</div>
+          <span class="collapse-icon">▼</span>
+        </div>
+        <div class="section-card-body">
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code>mkdir -p ~/assignment3/.github/workflows
+nano ~/assignment3/.github/workflows/ci-cd.yml</code></pre>
+          </div>
+          <div class="step-desc">Paste this exactly:</div>
+          <div class="code-wrap yaml">
+            <div class="code-header"><span class="code-lang">yaml</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code>name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push Flask API image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./app/flask-api
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/flask-api:latest
+
+      - name: Build and push Nginx image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./app/nginx
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/nginx-proxy:latest</code></pre>
+          </div>
+          <div class="step-desc">Save: <span class="ic">Ctrl+O</span> → Enter → <span class="ic">Ctrl+X</span></div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">C.4</span> Commit and Push</div>
+          <span class="collapse-icon">▼</span>
+        </div>
+        <div class="section-card-body">
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code>cd ~/assignment3
+git checkout main
+git add .github/workflows/ci-cd.yml
+git commit -m "feat: add GitHub Actions CI/CD pipeline"
+git push origin main</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">C.5</span> Verify Pipeline + Screenshots</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <div class="step-desc">Go to GitHub repo → <strong>Actions tab</strong>. Wait 2–3 minutes for green checkmark.</div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 15</span><span class="ss-title">GitHub Actions Success</span></div>
+            <div class="ss-body"><strong>Show:</strong> Workflow run with all steps green ✅<br><strong>Why:</strong> Main proof for CI/CD (15 marks)</div>
+            <div class="ss-filename">📁 part-c-github-actions-success.png</div>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 16</span><span class="ss-title">DockerHub Images</span></div>
+            <div class="ss-body"><strong>Show:</strong> Both <span class="ic">flask-api</span> and <span class="ic">nginx-proxy</span> repos with "last pushed" timestamp<br><strong>Why:</strong> Proves images built and pushed (8 marks)</div>
+            <div class="ss-filename">📁 part-c-dockerhub-images.png</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">✓</span> Part C Checklist</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <ul class="checklist">
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">DockerHub account + access token created</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Both GitHub secrets added</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">ci-cd.yml created in .github/workflows/</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Pushed to main branch</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">GitHub Actions shows green checkmark</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Both images visible on DockerHub</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">3 screenshots collected</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== D1 ===== -->
+    <div class="part-panel" id="panel-d1">
+      <div class="part-header">
+        <div class="part-title-wrap">
+          <div class="part-badge badge-d">Part D-1</div>
+          <div class="part-title">Namespace & Deployments</div>
+          <div class="part-marks">10 marks · Ubuntu VM terminal</div>
+        </div>
+        <button class="done-toggle" id="done-d1" onclick="toggleDone('d1')">Mark Done</button>
+      </div>
+
+      <div class="banner banner-warn">
+        <span class="banner-icon">⚠️</span>
+        <span><strong>DO NOT apply deployments yet.</strong> First complete D3 (PV/PVC) and D4 (Secrets/ConfigMaps), then apply everything using D4's apply order.</span>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">D1.1</span> Start Minikube</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code>minikube start --driver=docker --memory=2048 --cpus=2
+minikube status
+kubectl get nodes</code></pre>
+          </div>
+          <div class="step-desc">Expected: <span class="ic">minikube   Ready   control-plane</span></div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 17</span><span class="ss-title">Minikube Running</span></div>
+            <div class="ss-body"><strong>Show:</strong> minikube status + kubectl get nodes both showing Running/Ready</div>
+            <div class="ss-filename">📁 part-d1-minikube-status.png</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">D1.2</span> Create Namespace</div>
+          <span class="collapse-icon">▼</span>
+        </div>
+        <div class="section-card-body">
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code>mkdir -p ~/assignment3/k8s
+cat > ~/assignment3/k8s/namespace.yml << 'EOF'
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: assignment3
+EOF
+
+kubectl apply -f ~/assignment3/k8s/namespace.yml
+kubectl get namespaces</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">D1.3</span> Create MySQL Deployment YAML</div>
+          <span class="collapse-icon">▼</span>
+        </div>
+        <div class="section-card-body">
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code>cat > ~/assignment3/k8s/mysql-deployment.yml << 'EOF'
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  namespace: assignment3
+  labels:
+    app: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:8.0
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: mysql_root_password
+            - name: MYSQL_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: mysql_database
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: mysql_user
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: mysql_password
+          volumeMounts:
+            - name: mysql-storage
+              mountPath: /var/lib/mysql
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+      volumes:
+        - name: mysql-storage
+          persistentVolumeClaim:
+            claimName: mysql-pvc
+EOF</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">D1.4</span> Flask & Nginx Deployment YAMLs</div>
+          <span class="collapse-icon">▼</span>
+        </div>
+        <div class="section-card-body">
+          <div class="step-desc">⚠️ Replace <span class="ic">YOUR_DOCKERHUB_USERNAME</span> with your actual username.</div>
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code>DHUSER="YOUR_DOCKERHUB_USERNAME"
+
+cat > ~/assignment3/k8s/flask-deployment.yml << EOF
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-api
+  namespace: assignment3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-api
+  template:
+    metadata:
+      labels:
+        app: flask-api
+    spec:
+      containers:
+        - name: flask-api
+          image: ${DHUSER}/flask-api:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: flask-config
+                  key: db_host
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: mysql_user
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: mysql_password
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: flask-config
+                  key: db_name
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "250m"
+EOF
+
+cat > ~/assignment3/k8s/nginx-deployment.yml << EOF
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  namespace: assignment3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: ${DHUSER}/nginx-proxy:latest
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: nginx-config
+              mountPath: /etc/nginx/conf.d
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "50m"
+            limits:
+              memory: "128Mi"
+              cpu: "100m"
+      volumes:
+        - name: nginx-config
+          configMap:
+            name: nginx-config
+EOF</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">✓</span> D1 Checklist</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <ul class="checklist">
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Minikube running</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">k8s/namespace.yml created</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">k8s/mysql-deployment.yml created</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">k8s/flask-deployment.yml created (with your DockerHub username)</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">k8s/nginx-deployment.yml created (with your DockerHub username)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== D2 ===== -->
+    <div class="part-panel" id="panel-d2">
+      <div class="part-header">
+        <div class="part-title-wrap">
+          <div class="part-badge badge-d">Part D-2</div>
+          <div class="part-title">Services & Networking</div>
+          <div class="part-marks">10 marks · Ubuntu VM terminal</div>
+        </div>
+        <button class="done-toggle" id="done-d2" onclick="toggleDone('d2')">Mark Done</button>
+      </div>
+
+      <div class="banner banner-warn">
+        <span class="banner-icon">⚠️</span>
+        <span><strong>Do NOT apply yet.</strong> Apply everything together in D4's apply sequence.</span>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">D2.1</span> Create All Service Files</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code># MySQL Service (ClusterIP - internal only)
+cat > ~/assignment3/k8s/mysql-service.yml << 'EOF'
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+  namespace: assignment3
+spec:
+  type: ClusterIP
+  selector:
+    app: mysql
+  ports:
+    - port: 3306
+      targetPort: 3306
+EOF
+
+# Flask API Service (ClusterIP - internal only)
+cat > ~/assignment3/k8s/flask-service.yml << 'EOF'
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-api
+  namespace: assignment3
+spec:
+  type: ClusterIP
+  selector:
+    app: flask-api
+  ports:
+    - port: 5000
+      targetPort: 5000
+EOF
+
+# Nginx Service (NodePort - external access on port 30080)
+cat > ~/assignment3/k8s/nginx-service.yml << 'EOF'
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  namespace: assignment3
+spec:
+  type: NodePort
+  selector:
+    app: nginx
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30080
+EOF</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">✓</span> D2 Checklist</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <ul class="checklist">
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">k8s/mysql-service.yml created (ClusterIP)</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">k8s/flask-service.yml created (ClusterIP)</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">k8s/nginx-service.yml created (NodePort 30080)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== D3 ===== -->
+    <div class="part-panel" id="panel-d3">
+      <div class="part-header">
+        <div class="part-title-wrap">
+          <div class="part-badge badge-d">Part D-3</div>
+          <div class="part-title">Persistent Storage (PV/PVC)</div>
+          <div class="part-marks">10 marks · Ubuntu VM terminal</div>
+        </div>
+        <button class="done-toggle" id="done-d3" onclick="toggleDone('d3')">Mark Done</button>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">D3.1</span> Create PV and PVC Files</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code># PersistentVolume (cluster-level, no namespace)
+cat > ~/assignment3/k8s/mysql-pv.yml << 'EOF'
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-pv
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: /data/mysql
+EOF
+
+# PersistentVolumeClaim (inside namespace)
+cat > ~/assignment3/k8s/mysql-pvc.yml << 'EOF'
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pvc
+  namespace: assignment3
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+EOF</code></pre>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 19</span><span class="ss-title">PV and PVC Bound</span></div>
+            <div class="ss-body"><strong>When:</strong> After applying (in D4 step) — run <span class="ic">kubectl get pv</span> and <span class="ic">kubectl get pvc -n assignment3</span><br><strong>Show:</strong> mysql-pv and mysql-pvc both STATUS = <strong>Bound</strong><br><strong>Why:</strong> Proves persistent storage setup (D3, 10 marks)</div>
+            <div class="ss-filename">📁 part-d3-pv-pvc-bound.png</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">✓</span> D3 Checklist</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <ul class="checklist">
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">k8s/mysql-pv.yml created</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">k8s/mysql-pvc.yml created</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== D4 ===== -->
+    <div class="part-panel" id="panel-d4">
+      <div class="part-header">
+        <div class="part-title-wrap">
+          <div class="part-badge badge-d">Part D-4</div>
+          <div class="part-title">ConfigMaps, Secrets & Apply Everything</div>
+          <div class="part-marks">10 marks · Ubuntu VM terminal</div>
+        </div>
+        <button class="done-toggle" id="done-d4" onclick="toggleDone('d4')">Mark Done</button>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">D4.1</span> Create Secret + ConfigMaps</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code># Secret (base64 encoded values: rootpass/flaskuser/flaskpass/flaskdb)
+cat > ~/assignment3/k8s/mysql-secret.yml << 'EOF'
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysql-secret
+  namespace: assignment3
+type: Opaque
+data:
+  mysql_root_password: cm9vdHBhc3M=
+  mysql_user: Zmxhc2t1c2Vy
+  mysql_password: Zmxhc2twYXNz
+  mysql_database: Zmxhc2tkYg==
+EOF
+
+# Flask ConfigMap
+cat > ~/assignment3/k8s/flask-configmap.yml << 'EOF'
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: flask-config
+  namespace: assignment3
+data:
+  db_host: "mysql"
+  db_name: "flaskdb"
+  app_env: "production"
+EOF
+
+# Nginx ConfigMap
+cat > ~/assignment3/k8s/nginx-configmap.yml << 'EOF'
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+  namespace: assignment3
+data:
+  default.conf: |
+    upstream flask_api {
+        server flask-api:5000;
+    }
+    server {
+        listen 80;
+        server_name localhost;
+        location / {
+            proxy_pass http://flask_api;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+    }
+EOF</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">D4.2</span> Apply Everything in Correct Order</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code>cd ~/assignment3
+
+kubectl apply -f k8s/namespace.yml
+sleep 2
+
+kubectl apply -f k8s/mysql-secret.yml
+kubectl apply -f k8s/flask-configmap.yml
+kubectl apply -f k8s/nginx-configmap.yml
+
+kubectl apply -f k8s/mysql-pv.yml
+kubectl apply -f k8s/mysql-pvc.yml
+
+kubectl apply -f k8s/mysql-deployment.yml
+kubectl apply -f k8s/mysql-service.yml
+
+echo "Waiting for MySQL to be ready..."
+kubectl wait --for=condition=Ready pod -l app=mysql -n assignment3 --timeout=120s
+
+kubectl apply -f k8s/flask-deployment.yml
+kubectl apply -f k8s/flask-service.yml
+
+kubectl apply -f k8s/nginx-configmap.yml
+kubectl apply -f k8s/nginx-deployment.yml
+kubectl apply -f k8s/nginx-service.yml
+
+echo "Waiting for all pods..."
+kubectl wait --for=condition=Ready pod --all -n assignment3 --timeout=180s
+
+kubectl get all -n assignment3</code></pre>
+          </div>
+          <div class="step-desc">Expected: all deployments show READY, all pods Running.</div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 18</span><span class="ss-title">All Resources Running</span></div>
+            <div class="ss-body"><strong>When:</strong> After <span class="ic">kubectl get all -n assignment3</span><br><strong>Show:</strong> All deployments READY, all pods Running, all services listed<br><strong>Why:</strong> Core proof for D1+D2 (20 marks combined)</div>
+            <div class="ss-filename">📁 part-d1-kubectl-get-all.png</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">D4.3</span> Verify Secrets + ConfigMaps</div>
+          <span class="collapse-icon">▼</span>
+        </div>
+        <div class="section-card-body">
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code>kubectl get secrets -n assignment3
+kubectl get configmaps -n assignment3
+kubectl describe secret mysql-secret -n assignment3
+kubectl describe configmap flask-config -n assignment3
+
+# Also get PV/PVC status
+kubectl get pv
+kubectl get pvc -n assignment3</code></pre>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 20</span><span class="ss-title">Secrets and ConfigMaps</span></div>
+            <div class="ss-body"><strong>Show:</strong> mysql-secret, flask-config, nginx-config all listed<br><strong>Why:</strong> Proves D4 (10 marks)</div>
+            <div class="ss-filename">📁 part-d4-secrets-configmaps.png</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">✓</span> D4 Checklist</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <ul class="checklist">
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">mysql-secret.yml created</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">flask-configmap.yml created</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">nginx-configmap.yml created</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">All manifests applied in correct order</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">All pods Running</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">PV + PVC both show Bound</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Secrets + ConfigMaps verified</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">3 screenshots collected (SS 18, 19, 20)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== D5 ===== -->
+    <div class="part-panel" id="panel-d5">
+      <div class="part-header">
+        <div class="part-title-wrap">
+          <div class="part-badge badge-d">Part D-5</div>
+          <div class="part-title">Scaling & Updates</div>
+          <div class="part-marks">10 marks · 3 screenshots</div>
+        </div>
+        <button class="done-toggle" id="done-d5" onclick="toggleDone('d5')">Mark Done</button>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">D5.1</span> Scale Flask to 3 Replicas</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code>kubectl scale deployment flask-api --replicas=3 -n assignment3
+kubectl get pods -n assignment3 -l app=flask-api</code></pre>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 21</span><span class="ss-title">3 Flask Pods Running</span></div>
+            <div class="ss-body"><strong>Show:</strong> 3 flask-api pods, all STATUS = Running<br><strong>Why:</strong> Proves scaling (3 marks)</div>
+            <div class="ss-filename">📁 part-d5-scaling-3-pods.png</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">D5.2</span> Rolling Update</div>
+          <span class="collapse-icon">▼</span>
+        </div>
+        <div class="section-card-body">
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code>cd ~/assignment3/app/flask-api
+DHUSER="YOUR_DOCKERHUB_USERNAME"
+
+# Add version to health response
+sed -i "s/return jsonify({'status': 'healthy', 'service': 'flask-api'})/return jsonify({'status': 'healthy', 'service': 'flask-api', 'version': 'v2'})/" app.py
+
+docker build -t ${DHUSER}/flask-api:v2 .
+docker push ${DHUSER}/flask-api:v2
+
+# Trigger rolling update
+kubectl set image deployment/flask-api flask-api=${DHUSER}/flask-api:v2 -n assignment3
+kubectl rollout status deployment/flask-api -n assignment3</code></pre>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 22</span><span class="ss-title">Rolling Update</span></div>
+            <div class="ss-body"><strong>Show:</strong> "successfully rolled out" message<br><strong>Why:</strong> Proves rolling update (3 marks)</div>
+            <div class="ss-filename">📁 part-d5-rolling-update.png</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">D5.3</span> Rollback</div>
+          <span class="collapse-icon">▼</span>
+        </div>
+        <div class="section-card-body">
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code>kubectl rollout history deployment/flask-api -n assignment3
+kubectl rollout undo deployment/flask-api -n assignment3
+kubectl rollout status deployment/flask-api -n assignment3
+kubectl describe deployment flask-api -n assignment3 | grep Image</code></pre>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 23</span><span class="ss-title">Rollback Success</span></div>
+            <div class="ss-body"><strong>Show:</strong> Rollback confirmation + image reverting to <span class="ic">:latest</span><br><strong>Why:</strong> Proves rollback capability (3 marks)</div>
+            <div class="ss-filename">📁 part-d5-rollback.png</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">✓</span> D5 Checklist</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <ul class="checklist">
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Flask scaled to 3 replicas</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">v2 image built and pushed to DockerHub</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Rolling update performed</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Rollback performed</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">3 screenshots collected</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== D6 ===== -->
+    <div class="part-panel" id="panel-d6">
+      <div class="part-header">
+        <div class="part-title-wrap">
+          <div class="part-badge badge-d">Part D-6</div>
+          <div class="part-title">End-to-End Verification</div>
+          <div class="part-marks">5 marks · 3 screenshots</div>
+        </div>
+        <button class="done-toggle" id="done-d6" onclick="toggleDone('d6')">Mark Done</button>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">D6.1</span> Get Minikube IP & Test</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code>MINK_IP=$(minikube ip)
+echo "App URL: http://${MINK_IP}:30080"
+
+curl http://${MINK_IP}:30080/health
+
+# Create + list items
+curl -X POST http://${MINK_IP}:30080/api/items \
+  -H "Content-Type: application/json" \
+  -d '{"name": "Kubernetes Item", "description": "Created on K8s"}'
+
+curl http://${MINK_IP}:30080/api/items</code></pre>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 24</span><span class="ss-title">End-to-End Curl Output</span></div>
+            <div class="ss-body"><strong>Show:</strong> Health check response + POST response + GET with item<br><strong>Why:</strong> Proves app accessible via NodePort (2 marks)</div>
+            <div class="ss-filename">📁 part-d6-e2e-curl.png</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">D6.2</span> Self-Healing Demonstration</div>
+          <span class="collapse-icon">▼</span>
+        </div>
+        <div class="section-card-body">
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code>kubectl get pods -n assignment3 -l app=flask-api
+
+FLASK_POD=$(kubectl get pod -l app=flask-api -n assignment3 \
+  -o jsonpath='{.items[0].metadata.name}')
+kubectl delete pod ${FLASK_POD} -n assignment3
+
+# Watch K8s recreate (Ctrl+C after new pod is Running)
+kubectl get pods -n assignment3 -l app=flask-api -w</code></pre>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 25</span><span class="ss-title">Self-Healing</span></div>
+            <div class="ss-body"><strong>When:</strong> While watching pods with <span class="ic">-w</span><br><strong>Show:</strong> Old pod Terminating + new pod ContainerCreating → Running<br><strong>Why:</strong> Proves self-healing (1.5 marks)</div>
+            <div class="ss-filename">📁 part-d6-self-healing.png</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">D6.3</span> Data Persistence After MySQL Pod Deletion</div>
+          <span class="collapse-icon">▼</span>
+        </div>
+        <div class="section-card-body">
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code>MINK_IP=$(minikube ip)
+curl http://${MINK_IP}:30080/api/items
+
+MYSQL_POD=$(kubectl get pod -l app=mysql -n assignment3 \
+  -o jsonpath='{.items[0].metadata.name}')
+kubectl delete pod ${MYSQL_POD} -n assignment3
+
+kubectl get pods -n assignment3 -l app=mysql -w
+# Wait for Running, then:
+curl http://${MINK_IP}:30080/api/items</code></pre>
+          </div>
+          <div class="ss-card">
+            <div class="ss-header"><span class="ss-num">SS 26</span><span class="ss-title">Persistence After MySQL Pod Deletion</span></div>
+            <div class="ss-body"><strong>Show:</strong> Old pod deleted + new pod running + curl returning items<br><strong>Why:</strong> Proves data persistence via PVC (1.5 marks)</div>
+            <div class="ss-filename">📁 part-d6-persistence-proof.png</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title"><span class="section-num">✓</span> D6 Checklist</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <ul class="checklist">
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">App accessible via minikube ip:30080</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Health endpoint returns healthy</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">POST and GET items working</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Flask pod deleted and recreated automatically</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">MySQL pod deleted + data still there</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">3 screenshots collected</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FINAL CHECKLIST ===== -->
+    <div class="part-panel" id="panel-final">
+      <div class="part-header">
+        <div class="part-title-wrap">
+          <div class="part-title">🏁 Final Submission Checklist</div>
+          <div class="part-marks">Due Jun 3, 11:59 PM · 26 screenshots + .ova + PDF</div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title">Git & Code</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <ul class="checklist">
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">All code committed to GitHub</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">10+ meaningful commits</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">3+ branches used (main, develop, feature/...)</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">.gitignore present with correct exclusions</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">GitHub repo is public</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title">Kubernetes Files (all in k8s/)</div>
+          <span class="collapse-icon">▼</span>
+        </div>
+        <div class="section-card-body">
+          <ul class="checklist">
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">namespace.yml</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">mysql-secret.yml</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">flask-configmap.yml</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">nginx-configmap.yml</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">mysql-pv.yml</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">mysql-pvc.yml</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">mysql-deployment.yml + mysql-service.yml</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">flask-deployment.yml + flask-service.yml</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">nginx-deployment.yml + nginx-service.yml</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title">Startup Script</div>
+          <span class="collapse-icon">▼</span>
+        </div>
+        <div class="section-card-body">
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code>cat > ~/assignment3/start.sh << 'EOF'
+#!/bin/bash
+cd ~/assignment3
+echo "Starting Minikube..."
+minikube start --driver=docker --memory=2048 --cpus=2
+kubectl wait --for=condition=Ready node/minikube --timeout=120s
+
+kubectl apply -f k8s/namespace.yml
+sleep 2
+kubectl apply -f k8s/mysql-secret.yml
+kubectl apply -f k8s/flask-configmap.yml
+kubectl apply -f k8s/mysql-pv.yml
+kubectl apply -f k8s/mysql-pvc.yml
+kubectl apply -f k8s/mysql-deployment.yml
+kubectl apply -f k8s/mysql-service.yml
+
+kubectl wait --for=condition=Ready pod -l app=mysql -n assignment3 --timeout=120s
+
+kubectl apply -f k8s/flask-deployment.yml
+kubectl apply -f k8s/flask-service.yml
+kubectl apply -f k8s/nginx-configmap.yml
+kubectl apply -f k8s/nginx-deployment.yml
+kubectl apply -f k8s/nginx-service.yml
+
+kubectl wait --for=condition=Ready pod --all -n assignment3 --timeout=180s
+
+kubectl get all -n assignment3
+minikube service nginx -n assignment3 --url
+EOF
+
+chmod +x ~/assignment3/start.sh</code></pre>
+          </div>
+          <ul class="checklist">
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">start.sh created at ~/assignment3/start.sh</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">start.sh is executable (chmod +x)</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">start.sh tested and works end-to-end</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-card-header" onclick="toggleCard(this)">
+          <div class="section-card-title">📦 Export & Submit VM</div>
+          <span class="collapse-icon open">▼</span>
+        </div>
+        <div class="section-card-body open">
+          <ul class="checklist">
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Stop Minikube: minikube stop</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Export VM: VirtualBox → File → Export Appliance → .ova</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">File named: RollNumber_Assignment3.ova</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Upload .ova to Google Drive</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Google Drive sharing set: "Anyone with the link can edit"</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Build PDF report (RollNumber_Assignment3_Report.pdf)</span></li>
+            <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Submit Drive link + PDF on Google Classroom by Jun 3, 11:59 PM</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  // State
+  const doneState = JSON.parse(localStorage.getItem('a3done') || '{}');
+  const checkState = JSON.parse(localStorage.getItem('a3checks') || '{}');
+  let currentPanel = 'overview';
+
+  function saveState() {
+    localStorage.setItem('a3done', JSON.stringify(doneState));
+    localStorage.setItem('a3checks', JSON.stringify(checkState));
+  }
+
+  function showPanel(id) {
+    document.querySelectorAll('.part-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.getElementById('panel-' + id).classList.add('active');
+    const navEl = document.getElementById('nav-' + id);
+    if (navEl) navEl.classList.add('active');
+    currentPanel = id;
+    window.scrollTo(0, 0);
+  }
+
+  function toggleCard(header) {
+    const body = header.nextElementSibling;
+    const icon = header.querySelector('.collapse-icon');
+    body.classList.toggle('open');
+    icon.classList.toggle('open');
+  }
+
+  function toggleCheck(li) {
+    const box = li.querySelector('.check-box');
+    const text = li.querySelector('.check-text');
+    const panel = li.closest('.part-panel');
+    const key = (panel ? panel.id : 'global') + '-' + li.textContent.trim().substring(0, 40);
+    
+    box.classList.toggle('checked');
+    text.classList.toggle('checked');
+    checkState[key] = box.classList.contains('checked');
+    saveState();
+    updateProgress();
+  }
+
+  function toggleDone(part) {
+    doneState[part] = !doneState[part];
+    const btn = document.getElementById('done-' + part);
+    const dot = document.getElementById('dot-' + part);
+    if (doneState[part]) {
+      btn.classList.add('marked');
+      btn.textContent = '✓ Done';
+      if (dot) dot.classList.add('done');
+    } else {
+      btn.classList.remove('marked');
+      btn.textContent = 'Mark Done';
+      if (dot) dot.classList.remove('done');
+    }
+    saveState();
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const parts = ['a','b','c','d1','d2','d3','d4','d5','d6'];
+    const done = parts.filter(p => doneState[p]).length;
+    const pct = Math.round(done / parts.length * 100);
+    const offset = 100 - pct;
+    document.getElementById('mainRing').style.strokeDashoffset = offset;
+    document.getElementById('mainPct').textContent = pct + '%';
+  }
+
+  function copyCode(btn) {
+    const pre = btn.closest('.code-wrap').querySelector('pre');
+    navigator.clipboard.writeText(pre.textContent).then(() => {
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  // Restore state on load
+  function restoreState() {
+    Object.keys(doneState).forEach(part => {
+      if (doneState[part]) {
+        const btn = document.getElementById('done-' + part);
+        const dot = document.getElementById('dot-' + part);
+        if (btn) { btn.classList.add('marked'); btn.textContent = '✓ Done'; }
+        if (dot) dot.classList.add('done');
+      }
+    });
+    updateProgress();
+  }
+
+  restoreState();
+</script>
+</body>
+</html>
